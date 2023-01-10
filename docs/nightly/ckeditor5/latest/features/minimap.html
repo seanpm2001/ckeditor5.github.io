@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Jan 09 2023 03:35:49 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Tue Jan 10 2023 03:32:32 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Content minimap - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -1048,7 +1048,7 @@ import Minimap from '@ckeditor/ckeditor5-minimap/src/minimap';
 
 DecoupledEditor
     .create( document.querySelector( '#editor-content' ), {
-        plugins: [ Minimap, ... ],
+        plugins: [ Minimap, /* ... */ ],
         minimap: {
             container: document.querySelector( '.minimap-container' ),
         }
@@ -1058,7 +1058,7 @@ DecoupledEditor
 
         toolbarContainer.appendChild( editor.ui.view.toolbar.element );
     } )
-    .catch( ... );
+    .catch( /* ... */ );
 </code></pre>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
 <p>To add the content minimap feature to your editor, install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-minimap"><code>@ckeditor/ckeditor5-minimap</code></a> package:</p>
@@ -1070,13 +1070,14 @@ import Minimap from '@ckeditor/ckeditor5-minimap/src/minimap';
 
 DecoupledEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Minimap, ... ],
+        plugins: [ Minimap, /* ... */ ],
         minimap: {
+            // Reference to the container element as shown in the configuration section of the guide
             // ...
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice"><p>Read more about <a href="../installation/getting-started/installing-plugins.html">installing plugins</a>.</p></div>
 <h2 id="configuration"><a class="headerlink" href="#configuration">#</a> Configuration</h2>
@@ -1088,13 +1089,13 @@ import Minimap from '@ckeditor/ckeditor5-minimap/src/minimap';
 
 DecoupledEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Minimap, ... ],
+        plugins: [ Minimap, /* ... */ ],
         minimap: {
             container: document.querySelector( '.minimap-container' )
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h3 id="content-styles-and-classes"><a class="headerlink" href="#content-styles-and-classes">#</a> Content styles and classes</h3>
 <p>The minimap feature uses <code>&lt;iframe&gt;</code> internally. For a proper look and operation, is is essential for the content (clone) inside the <code>&lt;iframe&gt;</code> to have exactly the same styles as the main editor document. If the content of your editor inherits styles from parent containers, you may need to pass the class names of these containers in the feature configuration to maintain style parity. See the <a href="../api/module_minimap_minimap-MinimapConfig.html#member-extraClasses">detailed classes documentation</a> to learn more.</p>
