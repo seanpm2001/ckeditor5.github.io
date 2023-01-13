@@ -7,7 +7,7 @@
     <meta name="description" content="CKEditor 5 API Documentation. The Class CommentsRepository. Stores the list of CommentThread and provides event-driven API for managing them. It is also responsible for using the comments adapter to communicate with the data source. CommentsRepository is a context plugin.">
     <meta name="twitter:card" content="CKEditor 5 API Documentation. The Class CommentsRepository. Stores the list of CommentThread and provides event-driven API for managing them. It is also responsible for using the comments adapter to communicate with the data source. CommentsRepository is a context plugin. It can be added to a context or to an editor. Add it to the context configuration if you use Context in your integration. The event-driven API makes it possible to attach a listener to each action that changes comment data.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 10 2023 03:31:46 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Fri Jan 13 2023 03:34:38 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Class CommentsRepository (comments/comments/commentsrepository~CommentsRepository) - CKEditor 5 API docs">
     <meta property="og:description" content="CKEditor 5 API Documentation. The Class CommentsRepository. Stores the list of CommentThread and provides event-driven API for managing them. It is also responsible for using the comments adapter to communicate with the data source. CommentsRepository is a context plugin. It can be added to a context or to an editor. Add it to the context configuration if you use Context in your integration. The event-driven API makes it possible to attach a listener to each action that changes comment data.">
     <meta property="og:type" content="website">
@@ -285,7 +285,7 @@ is not empty and <code>commentThreadData.isFromAdapter</code> is set to <code>fa
                                         </dd>
                                         <dt><code>[ data.target ]
                                             :
- <span>HTMLElement</span> | <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span> | <span>function</span></code></dt>
+ <span>HTMLElement</span> | <span>Array.&lt;HTMLElement&gt;</span> | <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span> | <span>function</span></code></dt>
                                         <dd><p>The target that the comment
 balloon should be attached to. If a function is passed, it should return a DOM element or <code>Rect</code>.</p>
                                         </dd>
@@ -534,7 +534,7 @@ Random id will be generated if it is not set. All thread IDs should be unique.</
                                                       </dd>
                                                       <dt><code>commentThreadData.target
                                                           :
- <span>HTMLElement</span> | <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span> | <span>function</span></code></dt>
+ <span>HTMLElement</span> | <span>Array.&lt;HTMLElement&gt;</span> | <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span> | <span>function</span></code></dt>
                                                       <dd><p>The target that the comment
 balloon should be attached to. If a function is passed, it should return a DOM element or <code>Rect</code>.</p>
                                                       </dd>
@@ -723,7 +723,7 @@ commentsRepository.on( `addCommentThread:${ channelId }`, ( evt, data ) =&gt; {
                                                       </dd>
                                                       <dt><code>[ data.target ]
                                                           :
- <span>HTMLElement</span> | <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span> | <span>function</span></code></dt>
+ <span>HTMLElement</span> | <span>Array.&lt;HTMLElement&gt;</span> | <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span> | <span>function</span></code></dt>
                                                       <dd><p>The target that the comment
 balloon should be attached to.</p>
                                                       </dd>
@@ -6267,6 +6267,9 @@ a remote client (<code>true</code>) or a local one (<code>false</code>).</p>
               <ul>
                 <li><a href="module_special-characters_specialcharacters-SpecialCharacters.html">
                     <div class="tree__item__wrapper" data-ln="module:special-characters/specialcharacters~SpecialCharacters"><span class="tree__item--class tree__item__text">SpecialCharacters</span></div></a>
+                </li>
+                <li><a href="module_special-characters_specialcharacters-SpecialCharactersConfig.html">
+                    <div class="tree__item__wrapper" data-ln="module:special-characters/specialcharacters~SpecialCharactersConfig"><span class="tree__item--interface tree__item__text">SpecialCharactersConfig</span></div></a>
                 </li>
                 <li><a href="module_special-characters_specialcharacters-SpecialCharacterDefinition.html">
                     <div class="tree__item__wrapper" data-ln="module:special-characters/specialcharacters~SpecialCharacterDefinition"><span class="tree__item--typedef tree__item__text">SpecialCharacterDefinition</span></div></a>

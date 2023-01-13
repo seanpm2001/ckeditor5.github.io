@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 10 2023 03:32:36 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Fri Jan 13 2023 03:35:29 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Tables - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -1470,7 +1470,7 @@ ClassicEditor
 <li><a href="../api/module_table_table-TableConfig.html#member-tableCellProperties"><code>tableCellProperties.borderColors</code></a> – Defines the color palette for cell borders.</li>
 <li><a href="../api/module_table_table-TableConfig.html#member-tableCellProperties"><code>tableCellProperties.backgroundColors</code></a> – Defines the color palette for cell background.</li>
 </ul>
-<div class="info-box notice"><p>The above configurations <strong>do not</strong> impact the <a href="../installation/getting-started/basic-api.html#setting-the-editor-data-with-setdata">data loaded into the editor</a>, i.e. they do not limit or filter the colors in the data. They are used only in the user interface allowing users to pick colors in a more convenient way.</p></div>
+<div class="info-box notice"><p>The above configurations <strong>do not</strong> impact the <a href="../installation/getting-started/getting-and-setting-data.html#setting-the-editor-data-with-setdata">data loaded into the editor</a>, i.e. they do not limit or filter the colors in the data. They are used only in the user interface allowing users to pick colors in a more convenient way.</p></div>
 <p>For instance, to define the same color palette for all border and background configurations, use the following code snippet:</p>
 <pre class="highlight"><code class="js">const customColorPalette = [
     {
@@ -1637,7 +1637,7 @@ ClassicEditor
 </div>
 </div>
 <p>Read more about all supported properties for the <a href="../api/module_table_tableproperties-TablePropertiesOptions.html">table</a> and <a href="../api/module_table_tablecellproperties-TableCellPropertiesOptions.html">table cell</a> features in their API documentation.</p>
-<div class="info-box notice"><p>The default table and table cell styles <strong>do</strong> impact the <a href="../installation/getting-started/basic-api.html#setting-the-editor-data-with-setdata">data loaded into the editor</a>. Default properties will not be kept in the editor model.</p></div>
+<div class="info-box notice"><p>The default table and table cell styles <strong>do</strong> impact the <a href="../installation/getting-started/getting-and-setting-data.html#setting-the-editor-data-with-setdata">data loaded into the editor</a>. Default properties will not be kept in the editor model.</p></div>
 <h2 id="block-vs-inline-content-in-table-cells"><a class="headerlink" href="#block-vs-inline-content-in-table-cells">#</a> Block vs inline content in table cells</h2>
 <p>The table feature allows for creating block content (like paragraphs, lists, headings, etc.) inside table cells. However, if a table cell contains just one paragraph and this paragraph has no special attributes (like text alignment), the cell content is considered “inline” and the paragraph is not rendered.</p>
 <p>This means that a table cell can have two states: with inline content or with block content. The reason for this differentiation is that most tables contain only inline content (e.g. in the <a href="#demos">demo</a> above) and it is common for “data tables” to not contain any block content. In such a scenario, printing out <code>&lt;p&gt;</code> elements would be semantically incorrect and also unnecessary. There are, however, scenarios where the user wants to create, for example, a list inside a table cell and then the support for block content is necessary.</p>

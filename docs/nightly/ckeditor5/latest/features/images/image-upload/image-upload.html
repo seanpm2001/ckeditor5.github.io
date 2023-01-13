@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 10 2023 03:32:28 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Fri Jan 13 2023 03:35:21 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Overview - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -469,11 +469,9 @@
 <li><strong>Pasting</strong> and URL to an image, either into the editor dialog or directly into the content.</li>
 </ul>
 <p>With the exception of pasting URLs, all other solutions require the image to be uploaded to a server. The server will then be responsible for providing the image URL used by CKEditor 5 to display the image in the document.</p>
-<!-- This image basically does nothing for the user except some distraction and we could drop it.
-<img src="../../../assets/img/image-upload-animation.svg" data-lightbox="true" alt="The visualization of the image upload process in a WYSIWYG editor." width="650">-->
 <p>The software that makes the image upload possible is called an <strong>upload adapter</strong>. It is a callback that tells the WYSIWYG editor how to send the file to the server. There are two main strategies of getting the image upload to work that you can adopt in your project:</p>
 <ul>
-<li><a href="#official-upload-adapters"><strong>Official upload adapters</strong></a> – There are several features providing upload adapters developed and maintained by the CKEditor team. Pick the best one for your integration and let it handle the image upload in your project.</li>
+<li><a href="#official-upload-adapters"><strong>Official upload adapters</strong></a> – There are several features like CKBox providing upload adapters developed and maintained by the CKEditor team. Pick the best one for your integration and let it handle the image upload in your project.</li>
 <li><a href="#implementing-your-own-upload-adapter"><strong>Custom upload adapters</strong></a> – Create your own upload adapter from scratch using the open API architecture of CKEditor 5.</li>
 </ul>
 <p>Read our comprehensive blog post about <a href="https://ckeditor.com/blog/managing-images-with-ckeditor-5/">Managing images with CKEditor 5</a> to find out more details about image upload and management and to compare the available options.</p>
@@ -488,19 +486,13 @@
 </div>
 <h2 id="official-upload-adapters"><a class="headerlink" href="#official-upload-adapters">#</a> Official upload adapters</h2>
 <h3 id="ckbox"><a class="headerlink" href="#ckbox">#</a> CKBox</h3>
-<p>CKBox is a modern SaaS file management platform with a clean interface, responsive images and top-notch UX. If you are a part of an organization with many different files to manage, such as images or documents, and regularly have issues finding the right files for the task at hand, CKBox is the right solution.</p>
+<p>CKBox is a modern SaaS file management platform with a clean interface, responsive images and top-notch UX. We keep expanding and updating it constantly, adding new features and functions. If you are a part of an organization with many different files to manage, such as images or documents, and regularly have issues finding the right files for the task at hand, CKBox is the right solution.</p>
 <p>CKBox is a part of the commercial <a href="https://ckeditor.com/ckeditor-cloud-services/">CKEditor Cloud Services</a> offer.</p>
-<p>With the CKBox platform, users can upload files and categorize them into different groups. They can also change the way the files are organized as various interface modification options exist – like changing the image thumbnail sizes or changing how many files are displayed within the navigation that users can view. Files can be uploaded, deleted, renamed. File properties like dimensions, upload date or size are also easily accessible and can be used to sort the files view.</p>
+<p>With the CKBox platform, users can upload files and categorize them into different groups. They can also change the way the files are organized as various interface modification options exist. For example, you can modify the image thumbnail sizes or decide how many files are displayed within the navigation that users can view. Files can be uploaded, deleted, renamed, and tagged. File properties like dimensions, upload date or size are also easily accessible and can be used to sort the files view alonside a regular search.</p>
 <p><a href="ckbox.html"><strong>Learn how to use CKBox in your project</strong></a>.</p>
 <h3 id="easy-image"><a class="headerlink" href="#easy-image">#</a> Easy Image</h3>
-<p>CKEditor 5 introduces a new way of handling images, with a strong focus on the end–user experience. This feature is called <a href="easy-image.html">Easy Image</a> and its goal is to make the image upload as effortless and intuitive as possible.</p>
-<p>Easy Image is part of the commercial <a href="https://ckeditor.com/ckeditor-cloud-services/">CKEditor Cloud Services</a> offer. It is a <abbr title="Software as a service">SaaS</abbr> product that:</p>
-<ul>
-<li>securely uploads images,</li>
-<li>takes care of rescaling and optimizing them as well as providing various image sizes (responsive images),</li>
-<li>delivers uploaded images through a blazing-fast CDN.</li>
-</ul>
-<p>All that with virtually zero server setup.</p>
+<p>The <a href="easy-image.html">Easy Image</a> feature comes with a strong focus on the end–user experience. Its goal is to make the image upload as effortless and intuitive as possible.</p>
+<p>Easy Image is part of the commercial <a href="https://ckeditor.com/ckeditor-cloud-services/">CKEditor Cloud Services</a> offer. It is a <abbr title="Software as a service">SaaS</abbr> product that securely uploads images, takes care of rescaling and optimizing them as well as providing various image sizes (responsive images), and delivers uploaded images through a blazing-fast CDN. All that with virtually zero server setup.</p>
 <p><a href="easy-image.html"><strong>Learn how to use Easy Image in your project</strong></a>.</p>
 <h3 id="ckfinder"><a class="headerlink" href="#ckfinder">#</a> CKFinder</h3>
 <p>The <a href="ckfinder.html">CKFinder feature</a> provides a bridge between the rich-text editor and <a href="https://ckeditor.com/ckfinder/">CKFinder</a>, a browser-based commercial file uploader with its server-side connectors (PHP, Java and ASP.NET).</p>
@@ -525,7 +517,7 @@
 <p>The <a href="simple-upload-adapter.html">Simple upload adapter</a> allows uploading images to your server using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"><code>XMLHttpRequest</code></a> API with a minimal editor configuration.</p>
 <p><a href="simple-upload-adapter.html"><strong>Learn how to use the Simple upload adapter in CKEditor 5</strong></a>.</p>
 <h3 id="base64-adapter"><a class="headerlink" href="#base64-adapter">#</a> Base64 adapter</h3>
-<p>The <a href="base64-upload-adapter.html">Base64 upload feature</a> converts images inserted into the editor into <a href="https://en.wikipedia.org/wiki/Base64">Base64 strings</a> in the <a href="../../../installation/advanced/saving-data.html">editor output</a>.</p>
+<p>The <a href="base64-upload-adapter.html">Base64 upload feature</a> converts images inserted into the editor into <a href="https://en.wikipedia.org/wiki/Base64">Base64 strings</a> in the <a href="../../../installation/getting-started/getting-and-setting-data.html">editor output</a>.</p>
 <div class="info-box notice notice__warning"><p>Please remember that while <code>Base64</code> upload is a very easy solution, it is also highly inefficient. The image file itself is kept as data in the database, generating a much heavier data load and higher transfer. We recommend using alternative ways to upload images into CKEditor 5.</p></div>
 <p><a href="base64-upload-adapter.html"><strong>Learn how to use Base64–encoded images in CKEditor 5</strong></a>.</p>
 <h2 id="implementing-your-own-upload-adapter"><a class="headerlink" href="#implementing-your-own-upload-adapter">#</a> Implementing your own upload adapter</h2>

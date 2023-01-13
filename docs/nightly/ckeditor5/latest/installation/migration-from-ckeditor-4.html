@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 10 2023 03:32:39 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Fri Jan 13 2023 03:35:32 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Migration from CKEditor 4 - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -103,8 +103,11 @@
                                   <li><a href="getting-started/installing-plugins.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
                                       </div></a></li>
-                                  <li><a href="getting-started/basic-api.html">
-                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Basic API</span>
+                                  <li><a href="getting-started/editor-lifecycle.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor lifecycle</span>
+                                      </div></a></li>
+                                  <li><a href="getting-started/getting-and-setting-data.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and setting data</span>
                                       </div></a></li>
                             </ul>
                           </li>
@@ -141,9 +144,6 @@
                             <ul class="tree__item-nested-list">
                                   <li><a href="advanced/using-two-editors.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using two different editors</span>
-                                      </div></a></li>
-                                  <li><a href="advanced/saving-data.html">
-                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and saving data</span>
                                       </div></a></li>
                                   <li><a href="advanced/content-styles.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Content styles</span>
@@ -205,7 +205,7 @@
 <div class="info-box notice notice__hint"><p><strong>Quick recap</strong></p><p>In previous tutorials of this section you could learn about installing, configuring and extending your editor. This guide assumes that you know a bit about CKEditor 5, so if you are completely new to CKEditor 5, check the previous articles!</p><p>Before starting, be sure that migrating is your best choice.</p></div>
 <p>When compared to its predecessor, CKEditor 5 should be considered <strong>a totally new editor</strong>.</p>
 <p>The very first aspect that changed with CKEditor 5 is its installation procedure. It became much more modern with the introduction of modular patterns, UMD, npm, etc. Refer to <a href="getting-started/quick-start-other.html">Installation</a> for more details.</p>
-<p>The API for integrating CKEditor with your pages also changed. It is worth checking <a href="getting-started/basic-api.html">Basic API</a> for an introduction.</p>
+<p>The API for integrating CKEditor with your pages also changed. It is worth checking <a href="getting-started/editor-lifecycle.html">Editor Lifecycle</a> and <a href="getting-started/getting-and-setting-data.html">Getting and setting data</a> for an introduction.</p>
 <p>When it comes to <a href="../features/index.html">features</a>, there are two aspects that need to be taken into consideration. CKEditor 5 may still not have all the same features available as CKEditor 4 yet and some existing features may behave differently. Therefore, it is worth spending some time analyzing the features you need in your implementation.</p>
 <p>To proceed with the upgrade, please refer to the <a href="../updating/migration-from-ckeditor-4.html">Migration from CKEditor 4</a> guide for further details and features comparison.</p>
 
@@ -252,8 +252,11 @@
                                     <li><a href="getting-started/installing-plugins.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
                                         </div></a></li>
-                                    <li><a href="getting-started/basic-api.html">
-                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Basic API</span>
+                                    <li><a href="getting-started/editor-lifecycle.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor lifecycle</span>
+                                        </div></a></li>
+                                    <li><a href="getting-started/getting-and-setting-data.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and setting data</span>
                                         </div></a></li>
                             </ul>
                           </li>
@@ -290,9 +293,6 @@
                             <ul class="tree__item-nested-list">
                                     <li><a href="advanced/using-two-editors.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using two different editors</span>
-                                        </div></a></li>
-                                    <li><a href="advanced/saving-data.html">
-                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and saving data</span>
                                         </div></a></li>
                                     <li><a href="advanced/content-styles.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Content styles</span>

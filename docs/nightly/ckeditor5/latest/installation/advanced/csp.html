@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 10 2023 03:32:45 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Fri Jan 13 2023 03:35:38 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Content Security Policy - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -103,8 +103,11 @@
                                   <li><a href="../getting-started/installing-plugins.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
                                       </div></a></li>
-                                  <li><a href="../getting-started/basic-api.html">
-                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Basic API</span>
+                                  <li><a href="../getting-started/editor-lifecycle.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor lifecycle</span>
+                                      </div></a></li>
+                                  <li><a href="../getting-started/getting-and-setting-data.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and setting data</span>
                                       </div></a></li>
                             </ul>
                           </li>
@@ -141,9 +144,6 @@
                             <ul class="tree__item-nested-list">
                                   <li><a href="using-two-editors.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using two different editors</span>
-                                      </div></a></li>
-                                  <li><a href="saving-data.html">
-                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and saving data</span>
                                       </div></a></li>
                                   <li><a href="content-styles.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Content styles</span>
@@ -217,7 +217,7 @@
 <p><code>connect-src 'self'</code></p>
 <ul>
 <li>Allows the <a href="../../features/images/image-upload/image-upload.html">editor upload features</a> to use <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"><code>XMLHttpReqests</code></a> (Ajax) to upload files to the server, for instance, when an image is pasted or dropped into the editor content. The <code>'self</code>’ value ensures the requests remain within the same host.</li>
-<li>Allows <a href="saving-data.html#autosave-feature">auto–saving editor data</a> using <code>XMLHttpRequest</code>.</li>
+<li>Allows <a href="../getting-started/getting-and-setting-data.html#autosave-feature">auto–saving editor data</a> using <code>XMLHttpRequest</code>.</li>
 </ul>
 <p><strong>Note</strong>: To use <a href="https://ckeditor.com/ckeditor-cloud-services/">CKEditor Cloud Services</a>, include the <code>http://*.cke-cs.com</code> domain in the <code>connect-src</code> directive, for instance: <code>connect-src 'self' http://*.cke-cs.com</code>.</p>
 </li>
@@ -310,8 +310,11 @@
                                     <li><a href="../getting-started/installing-plugins.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
                                         </div></a></li>
-                                    <li><a href="../getting-started/basic-api.html">
-                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Basic API</span>
+                                    <li><a href="../getting-started/editor-lifecycle.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor lifecycle</span>
+                                        </div></a></li>
+                                    <li><a href="../getting-started/getting-and-setting-data.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and setting data</span>
                                         </div></a></li>
                             </ul>
                           </li>
@@ -348,9 +351,6 @@
                             <ul class="tree__item-nested-list">
                                     <li><a href="using-two-editors.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using two different editors</span>
-                                        </div></a></li>
-                                    <li><a href="saving-data.html">
-                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and saving data</span>
                                         </div></a></li>
                                     <li><a href="content-styles.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Content styles</span>

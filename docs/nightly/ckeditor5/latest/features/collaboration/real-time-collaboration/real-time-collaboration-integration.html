@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 10 2023 03:32:34 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Fri Jan 13 2023 03:35:27 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Integration - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -721,7 +721,7 @@ export default { ClassicEditor, EditorWatchdog };
 <div class="info-box notice"><p>Using the autosave feature with large documents may result in a lot of data being sent to your server and can have a negative impact on the editor user experience.</p><p>We recommend using the {@link @cs guides/collaboration/document-storage document storage} feature instead.</p></div>
 <p>The second helper is the <a href="../../../api/module_autosave_autosave-Autosave.html"><code>Autosave</code></a> plugin.</p>
 <p>The autosave plugin triggers the save callback whenever the user changes the content. It takes care of throttling the callback execution to limit the number of calls to the database. It also automatically secures the user from leaving the page before the content is saved.</p>
-<p>The autosave plugin is by default not included in any of the predefined builds nor is it automatically required by the real-time collaboration plugins, so you need to <a href="../../../installation/getting-started/installing-plugins.html">install it</a> separately. To learn more about this plugin, refer to the <a href="../../../installation/advanced/saving-data.html#autosave-feature">Getting and saving data</a> guide.</p>
+<p>The autosave plugin is by default not included in any of the predefined builds nor is it automatically required by the real-time collaboration plugins, so you need to <a href="../../../installation/getting-started/installing-plugins.html">install it</a> separately. To learn more about this plugin, refer to the <a href="../../../installation/getting-started/getting-and-setting-data.html#autosave-feature">Getting and setting data</a> guide.</p>
 <h4 id="autosave-for-revision-history"><a class="headerlink" href="#autosave-for-revision-history">#</a> Autosave for revision history</h4>
 <p>If you are using the revision history feature, your autosave callback should take care of updating the recent revision data. See the example below:</p>
 <pre class="highlight"><code class="js">autosave: {

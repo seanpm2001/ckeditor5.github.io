@@ -7,7 +7,7 @@
     <meta name="description" content="CKEditor 5 API Documentation. The Class Annotation. Represents an annotation. Annotation is an entity that combines an AnnotationView and an annotation target (a DOM element or a Rect) to which the annotation is bound.">
     <meta name="twitter:card" content="CKEditor 5 API Documentation. The Class Annotation. Represents an annotation. Annotation is an entity that combines an AnnotationView and an annotation target (a DOM element or a Rect) to which the annotation is bound.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 10 2023 03:31:45 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Fri Jan 13 2023 03:34:37 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Class Annotation (comments/annotations/annotation~Annotation) - CKEditor 5 API docs">
     <meta property="og:description" content="CKEditor 5 API Documentation. The Class Annotation. Represents an annotation. Annotation is an entity that combines an AnnotationView and an annotation target (a DOM element or a Rect) to which the annotation is bound.">
     <meta property="og:type" content="website">
@@ -172,7 +172,7 @@ and an annotation target (a DOM element or a <a href="module_utils_dom_rect-Rect
                         </div>
                         <div class="collapsing-list__description">
                           <div class="collapsing-list__content"><p>A collection of DOM elements which, when focused, make the annotation active.</p>
-<p>By default this collection only contains the annotation view element.
+<p>By default, this collection only contains the annotation view element.
 It can be extended with custom targets that will be tracked by the annotation focus tracking system.</p>
                           </div>
                         </div>
@@ -213,18 +213,18 @@ It can be extended with custom targets that will be tracked by the annotation fo
                       </li>
                       <li class="collapsing-list__item collapsing-list__item--visible" data-public="true">
                         <div class="collapsing-list__term toggler--collapsed" id="member-target">
-                          <h3><code><a class="member-name" href="#member-target">target</a> : <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span> | <span>Element</span></code><span class="collapsing-list__dev-names" aria-hidden="true" title="module:comments/annotations/annotation~Annotation#target"><code>module:comments/annotations/annotation~Annotation#target</code></span>
+                          <h3><code><a class="member-name" href="#member-target">target</a> : <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span> | <span>Array.&lt;Element&gt;</span> | <span>null</span></code><span class="collapsing-list__dev-names" aria-hidden="true" title="module:comments/annotations/annotation~Annotation#target"><code>module:comments/annotations/annotation~Annotation#target</code></span>
                           </h3>
                         </div>
                         <div class="collapsing-list__description">
                           <div class="collapsing-list__content"><p>The annotation target to which the annotation view should be pinned.</p>
-<p>It is either a DOM element or <a href="module_utils_dom_rect-Rect.html">a rect instance</a>.</p>
+<p>It can be an array of DOM elements or <a href="module_utils_dom_rect-Rect.html">a rect instance</a> or <code>null</code>.</p>
                           </div>
                         </div>
                       </li>
                       <li class="collapsing-list__item collapsing-list__item--visible" data-public="true">
                         <div class="collapsing-list__term toggler--collapsed" id="member-targetRect">
-                          <h3><code><a class="member-name" href="#member-targetRect">targetRect</a> : <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span></code><span class="collapsing-list__dev-names" aria-hidden="true" title="module:comments/annotations/annotation~Annotation#targetRect"><code>module:comments/annotations/annotation~Annotation#targetRect</code></span>
+                          <h3><code><a class="member-name" href="#member-targetRect">targetRect</a> : <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span> | <span>null</span></code><span class="collapsing-list__dev-names" aria-hidden="true" title="module:comments/annotations/annotation~Annotation#targetRect"><code>module:comments/annotations/annotation~Annotation#targetRect</code></span>
                           </h3>
                         </div>
                         <div class="collapsing-list__description">
@@ -278,7 +278,7 @@ It can be extended with custom targets that will be tracked by the annotation fo
                                                       </dd>
                                                       <dt><code>options.target
                                                           :
- <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span> | <span>function</span> | <span>Element</span></code></dt>
+ <span><a class="collapsing-list__type" href="module_utils_dom_rect-Rect.html">Rect</a></span> | <span>function</span> | <span>Element</span> | <span>Array.&lt;Element&gt;</span></code></dt>
                                                       <dd><p>The annotation target.</p>
                                                       </dd>
                                                       <dt><code>options.type
@@ -5684,6 +5684,9 @@ set the <code>display</code> attribute to <code>none</code>.</p>
               <ul>
                 <li><a href="module_special-characters_specialcharacters-SpecialCharacters.html">
                     <div class="tree__item__wrapper" data-ln="module:special-characters/specialcharacters~SpecialCharacters"><span class="tree__item--class tree__item__text">SpecialCharacters</span></div></a>
+                </li>
+                <li><a href="module_special-characters_specialcharacters-SpecialCharactersConfig.html">
+                    <div class="tree__item__wrapper" data-ln="module:special-characters/specialcharacters~SpecialCharactersConfig"><span class="tree__item--interface tree__item__text">SpecialCharactersConfig</span></div></a>
                 </li>
                 <li><a href="module_special-characters_specialcharacters-SpecialCharacterDefinition.html">
                     <div class="tree__item__wrapper" data-ln="module:special-characters/specialcharacters~SpecialCharacterDefinition"><span class="tree__item--typedef tree__item__text">SpecialCharacterDefinition</span></div></a>
