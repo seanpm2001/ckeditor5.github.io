@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Jan 16 2023 03:39:50 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Tue Jan 17 2023 03:40:28 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Word and character count - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -517,7 +517,7 @@
 
         wordCountWrapper.appendChild( wordCountPlugin.wordCountContainer );
     } )
-    .catch( ... );
+    .catch( /* ... */ );
 </code></pre>
 <h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
 <p>CKEditor 5 provides other productivity-boosting features that you may find helpful:</p>
@@ -552,7 +552,7 @@
 <p>You can execute your custom callback every time content statistics change by defining <a href="../api/module_word-count_wordcount-WordCountConfig.html#member-onUpdate"><code>config.wordCount.onUpdate</code></a> in the editor configuration:</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ WordCount, ... ],
+        plugins: [ WordCount, /* ... */ ],
         wordCount: {
             onUpdate: stats =&gt; {
                 // Prints the current content statistics.
@@ -560,8 +560,8 @@
             }
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <p><strong>Note</strong>: For performance reasons, your callback will be throttled and may not be up–to–date. Use the <a href="../api/module_word-count_wordcount-WordCount.html#member-characters"><code>characters</code></a> and <a href="../api/module_word-count_wordcount-WordCount.html#member-words"><code>words</code></a> plugin properties to retrieve the precise numbers on demand.</p>
 <p>Below you can play with a demo post editor with a soft 120 characters limit and a progress chart below indicating how many characters are in the content. The progress chart changes its color as the limit is near or exceeded. Type in the editor to see the feature in action. See the code used to create the demo listed below in this section.</p>
@@ -688,7 +688,7 @@ BalloonEditor
             }
         }
     } )
-    .catch( ... );
+    .catch( /* ... */ );
 </code></pre>
 <p>Here is the HTML structure used to create the customized word and character count implementation above:</p>
 <pre class="highlight"><code class="html">&lt;style&gt;
@@ -781,10 +781,10 @@ BalloonEditor
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ WordCount, ... ],
+        plugins: [ WordCount, /* ... */ ],
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice notice__info"><p>Read more about <a href="../installation/getting-started/installing-plugins.html">installing plugins</a>.</p></div>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>

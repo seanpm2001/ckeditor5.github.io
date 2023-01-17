@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Jan 16 2023 03:39:39 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Tue Jan 17 2023 03:40:16 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Inserting images via URL - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -469,8 +469,8 @@
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ ... , ImageInsert ],
-        toolbar: [ ... , 'insertImage' ]
+        plugins: [ /* ... */ , ImageInsert ],
+        toolbar: [ /* ... */ , 'insertImage' ]
     } )
 </code></pre>
 <p>This will add a new <strong>Insert image</strong> dropdown <span class="editor-icon"><img src="../../../assets/icons/f84d67b4f3.svg" class="editor-icon__image" alt="Insert image"></span> in the toolbar. To upload the image, click on the image icon. To open the panel and add the image URL, click the arrow next to the image button. Check the demo below to insert a new image via URL or update an existing image by selecting it, opening the dropdown panel and pasting a new URL.</p>
@@ -489,7 +489,7 @@ ClassicEditor
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ ... , AutoImage ]
+        plugins: [ /* ... */ , AutoImage ]
     } )
 </code></pre>
 <div class="info-box notice"><p>The image URL must be the only content pasted to be properly embedded. Multiple links (<code>"http://image.url http://another.image.url"</code>) as well as bigger chunks of content (<code>"This link http://image.url will not be auto–embedded when pasted."</code>) are ignored.</p></div>

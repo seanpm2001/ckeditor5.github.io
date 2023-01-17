@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Jan 16 2023 03:39:34 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Tue Jan 17 2023 03:40:10 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="CKBox file manager - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -503,14 +503,15 @@
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ CKBox, ... ],
-        toolbar: [ 'ckbox', ... ], // Depending on your preference.
+        plugins: [ CKBox, /* ... */ ],
+        toolbar: [ 'ckbox', /* ... */ ], // Depending on your preference.
         ckbox: {
             // Feature configuration.
+            // ...
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h2 id="configuration"><a class="headerlink" href="#configuration">#</a> Configuration</h2>
 <p>The feature can be configured via the <a href="../../../api/module_ckbox_ckbox-CKBoxConfig.html"><code>config.ckbox</code></a> object.</p>
@@ -524,8 +525,8 @@ ClassicEditor
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ CKBox, ... ],
-        toolbar: [ 'ckbox', ... ],
+        plugins: [ CKBox, /* ... */ ],
+        toolbar: [ 'ckbox', /* ... */ ],
         ckbox: {
             defaultUploadCategories: {
                 Bitmaps: [ 'bmp' ],
@@ -536,8 +537,8 @@ ClassicEditor
             }
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <p>Please keep in mind that if you define your own upload category mappings for a particular image type, only your first found category will be taken into account while finding the appropriate category for the uploaded image. Category mappings configured on the server will not be searched in that case. The image will not be uploaded (and hence inserted into the editor) in the following cases:</p>
 <ul>
@@ -559,14 +560,14 @@ ClassicEditor
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ CKBox, ... ],
-        toolbar: [ 'ckbox', ... ],
+        plugins: [ CKBox, /* ... */ ],
+        toolbar: [ 'ckbox', /* ... */ ],
         ckbox: {
             ignoreDataId: true
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h3 id="changing-the-language"><a class="headerlink" href="#changing-the-language">#</a> Changing the language</h3>
 <p>By default, the CKBox dialog takes the current language from the editor. If you want to use a different language, you can set the language code in the <a href="../../../api/module_ckbox_ckbox-CKBoxConfig.html#member-language"><code>config.ckbox.language</code></a> option:</p>
@@ -574,14 +575,14 @@ ClassicEditor
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ CKBox, ... ],
-        toolbar: [ 'ckbox', ... ],
+        plugins: [ CKBox, /* ... */ ],
+        toolbar: [ 'ckbox', /* ... */ ],
         ckbox: {
             language: 'es'
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <p>Also, make sure to include the translation file after loading the CKBox library:</p>
 <pre class="highlight"><code class="html">&lt;script src="https://cdn.ckbox.io/CKBox/1.2.1/ckbox.js"&gt;&lt;/script&gt;
@@ -593,14 +594,14 @@ ClassicEditor
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ CKBox, ... ],
-        toolbar: [ 'ckbox', ... ],
+        plugins: [ CKBox, /* ... */ ],
+        toolbar: [ 'ckbox', /* ... */ ],
         ckbox: {
             tokenUrl: 'https://example.com/cs-token-endpoint'
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h3 id="configuring-the-api-service-and-assets-origin"><a class="headerlink" href="#configuring-the-api-service-and-assets-origin">#</a> Configuring the API service and assets origin</h3>
 <p>If the cloud service is hosted in your own environment you should configure the base URL of the API service via the <a href="../../../api/module_ckbox_ckbox-CKBoxConfig.html#member-serviceOrigin"><code>config.ckbox.serviceOrigin</code></a>, and <a href="../../../api/module_ckbox_ckbox-CKBoxConfig.html#member-assetsOrigin"><code>config.ckbox.assetsOrigin</code></a> options:</p>
@@ -608,15 +609,15 @@ ClassicEditor
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ CKBox, ... ],
-        toolbar: [ 'ckbox', ... ],
+        plugins: [ CKBox, /* ... */ ],
+        toolbar: [ 'ckbox', /* ... */ ],
         ckbox: {
             serviceOrigin: 'https://example.com/',
             assetsOrigin: 'https://cloud.example.com/',
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
 <p>The <a href="../../../api/module_ckbox_ckbox-CKBox.html"><code>CKBox</code></a> plugin registers:</p>
