@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:45:12 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:26 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Improving accessibility and adding a command - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -175,7 +175,7 @@
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                               </div></a></li>
                                           <li><a href="../../tutorials/data-from-external-source.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                               </div></a></li>
                                           <li><a href="../../tutorials/using-react-in-a-widget.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>
@@ -329,15 +329,18 @@ import { icons } from '@ckeditor/ckeditor5-core';
 
 export default class FormView extends View {
     constructor( locale ) {
+        // View class constructor invoke.
         // ...
 
         this.focusTracker = new FocusTracker();
         this.keystrokes = new KeystrokeHandler();
 
+        // Code prepared in the previous part.
         // ...
     }
 
     render() {
+        // View.render() invocation and adding a submit handler.
         // ...
 
         this.childViews._items.forEach( view =&gt; {
@@ -356,6 +359,7 @@ export default class FormView extends View {
         this.keystrokes.destroy();
     }
 
+    // Previously declared helper methods.
     // ...
 }
 </code></pre>
@@ -378,6 +382,7 @@ import { icons } from '@ckeditor/ckeditor5-core';
 export default class FormView extends View {
     constructor( locale ) {
 
+        // Previous code from the constructor.
         // ...
 
         this._focusCycler = new FocusCycler( {
@@ -394,21 +399,27 @@ export default class FormView extends View {
         } );
 
         this.setTemplate( {
+            // Setting the form template.
             // ...
         } );
     }
 
+    // Previously declared methods.
     // ...
 }
 </code></pre>
 <p>Now we can add the <kbd>Esc</kbd> button handler in our <code>_createFromView()</code> function, which will hide the UI and fire off <code>cancel</code> on the form.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationui.js
+
+// Previously imported packages.
 // ...
 
 export default class AbbreviationUI extends Plugin {
+    // Previously declared methods.
     // ...
 
     _createFormView() {
+        // Form view initialization.
         // ...
 
         // Close the panel on esc key press when the form has focus.
@@ -420,6 +431,7 @@ export default class AbbreviationUI extends Plugin {
         return formView;
     }
 
+    // Previously declared helper methods.
     // ...
 }
 </code></pre>
@@ -446,10 +458,14 @@ export default function getRangeText( range ) {
 <p>Now, in <code>AbbreviationUI</code> we can adjust the <code>_showUI()</code> method to display the selected text in the abbreviation input field. We import <code>getRangeText</code> and pass the first range in the selection (using the <code>getFirstRange()</code> method) as an argument.</p>
 <p>We will also disable the input field when the selection is not collapsed, because it would be hard to change the text of the abbreviation if the selection spans multiple paragraphs.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationui.js
+
+// Previously imported packages.
 // ...
+
 import getRangeText from './utils.js';
 
 export default class AbbreviationUI extends Plugin {
+    // Previously declared methods.
     // ...
 
     _showUI() {
@@ -470,14 +486,18 @@ export default class AbbreviationUI extends Plugin {
         this.formView.focus();
     }
 
+    // Previously declared helper methods.
     // ...
 }
 </code></pre>
 <p>Since we are disabling the first input field in some cases, let’s update the <code>focus()</code> method in our form view accordingly.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationview.js
+
+// Previously imported packages.
 // ...
 
 export default class FormView extends View {
+    // Previously declared constructor and other methods.
     // ...
 
     focus() {
@@ -490,6 +510,8 @@ export default class FormView extends View {
             this.titleInputView.focus();
         }
     }
+
+    // Previously declared helper methods.
     // ...
 }
 </code></pre>
@@ -535,14 +557,18 @@ export default class AbbreviationEditing extends Plugin {
         );
     }
 
+    // Previously declared methods.
     // ...
 }
 </code></pre>
 <p>We can now replace the action called on <code>submit</code> with our new command, passing it into editor’s <code>execute()</code> method, along with the abbreviation and title values.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationui.js
+
+// Previously imported packages.
 // ...
 
 export default class AbbreviationUI extends Plugin {
+    // Previously declared methods.
     // ...
 
     _createFormView() {
@@ -560,9 +586,11 @@ export default class AbbreviationUI extends Plugin {
             this._hideUI();
         } );
 
+        // Handle clicking outside the balloon and on the "Cancel" button.
         // ...
     }
 
+    // Previously declared helper methods.
     // ...
 }
 </code></pre>
@@ -588,6 +616,7 @@ export default class AbbreviationCommand extends Command {
     }
 
     execute( { title, abbr } ) {
+        // The code runs after command execution.
         // ...
     }
 }
@@ -628,10 +657,12 @@ export default class AbbreviationCommand extends Command {
             }
         }
 
+        // The code that enables the command.
         // ...
     }
 
     execute( { title, abbr } ) {
+        // The code runs after command execution.
         // ...
     }
 }
@@ -639,6 +670,8 @@ export default class AbbreviationCommand extends Command {
 <p>If the selection is not collapsed, we check if it has the <code>abbreviation</code> model attribute. If so, we will again grab the full range of the abbreviation and compare it with the user selection.</p>
 <p>When the user selects a bit of text with the abbreviation attribute, along with a bit without it, we do not want to change the command’s value. So, we will use the <code>containsRange()</code> method to see if the selected range is within the abbreviation range. The second parameter makes it a <code>loose</code> check, meaning the selected range can start, end, or be equal to the abbreviation range.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationcommand.js
+
+// Previously imported packages.
 //...
 
 export default class AbbreviationCommand extends Command {
@@ -648,6 +681,8 @@ export default class AbbreviationCommand extends Command {
         const firstRange = selection.getFirstRange();
 
         if ( firstRange.isCollapsed ) {
+            // When the selection is collapsed, the command has a value
+            // if the caret is in an abbreviation.
             // ...
         }
         // When the selection is not collapsed, the command has a value if the selection
@@ -676,10 +711,12 @@ export default class AbbreviationCommand extends Command {
             }
         }
 
+        // The code that enables the command.
         // ...
     }
 
     execute( { title, abbr } ) {
+        // The code runs after command execution.
         // ...
     }
 }
@@ -689,9 +726,12 @@ export default class AbbreviationCommand extends Command {
 <p>We can now check the command value when the user presses the toolbar abbreviation button, and insert both abbreviation text and title values into the form’s input fields.</p>
 <p>In the <code>AbbreviationUI</code> add a simple <code>if</code> statement to fill the form using either the value of the command, or the selected text (as we did before).</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationui.js
+
+// Previously imported packages.
 // ...
 
 export default class AbbreviationUI extends Plugin {
+    // Previously declared methods.
     // ...
 
     _showUI() {
@@ -725,6 +765,7 @@ export default class AbbreviationUI extends Plugin {
         this.formView.focus();
     }
 
+    // Previously declared helper methods.
     // ...
 }
 
@@ -734,10 +775,13 @@ export default class AbbreviationUI extends Plugin {
 <p>So if the selection is not collapsed, we will gather all the ranges, that are allowed to use the <code>abbreviation</code> model attribute, using the schema’s <code>getValidRanges()</code> method. Then we will use the <code>setAttribute()</code>, to add the title value to each of the ranges.</p>
 <p>If the selection is collapsed, we will keep our <code>insertContent()</code> model method from before. Then, we need to use <code>removeSelectionAttribute</code> method, to stop adding new content into the abbreviation if the user starts to type.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationcommand.js
+
+// Previously imported packages.
 // ...
 
 export default class AbbreviationCommand extends Command {
     refresh() {
+        // The code runs after the command refresh.
         // ...
     }
 
@@ -775,10 +819,13 @@ export default class AbbreviationCommand extends Command {
 <p>Now we can use the command’s state to check whether the selection is inside an existing abbreviation. If the command’s value is not <code>null</code>, we will grab the whole range, and update its text and title.</p>
 <p>We will create a position at the end of the inserted abbreviation, and set a selection there. The <a href="../../../../api/module_engine_model_model-Model.html#function-insertContent"><code>insertContent()</code></a> method returns a range, and we grab its end position to define our <code>positionAfter</code>.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationcommand.js
+
+// Previously imported packages.
 // ...
 
 export default class AbbreviationCommand extends Command {
     refresh() {
+        // The code runs after the command refresh.
         // ...
     }
 
@@ -804,6 +851,8 @@ export default class AbbreviationCommand extends Command {
 
                 writer.removeSelectionAttribute( 'abbreviation' );
             } else {
+                // When the selection has non-collapsed node ranges, change the attribute on nodes inside those ranges
+                // omitting nodes where the "abbreviation" attribute is disallowed.
                 // ...
             }
         } );
@@ -813,11 +862,14 @@ export default class AbbreviationCommand extends Command {
 <p>If the collapsed selection is not inside an existing abbreviation, we will insert a text node with the “abbreviation” attribute in place of the caret.</p>
 <p>The user might place the abbreviation inside a text, which already has some other model attributes, like “bold” or “italic”. We should first collect them along with our abbreviation attribute, and use the whole list when inserting the abbreviation into the document. We will use our <a href="../../../../api/module_utils_tomap.html#function-toMap"><code>toMap</code></a> helper function to collect all attributes.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationcommand.js
+
+// More imports.
 // ...
 import { toMap } from '@ckeditor/ckeditor5-utils';					// ADDED
 
 export default class AbbreviationCommand extends Command {
     refresh() {
+        // The code runs after the command refresh.
         // ...
     }
 
@@ -828,6 +880,8 @@ export default class AbbreviationCommand extends Command {
         model.change( writer =&gt; {
             if ( selection.isCollapsed ) {
                 if ( this.value ) {
+                    // When a collapsed selection is inside text
+                    // with the "abbreviation" attribute, update texts.
                     // ...
                 }
                 // If the collapsed selection is not in an existing abbreviation,
@@ -855,6 +909,8 @@ export default class AbbreviationCommand extends Command {
 
                 writer.removeSelectionAttribute( 'abbreviation' );
             } else {
+                // When the selection has non-collapsed node ranges, change the attribute on nodes inside those ranges
+                // omitting nodes where the "abbreviation" attribute is disallowed.
                 // ...
             }
         } );
@@ -908,7 +964,7 @@ export default class AbbreviationCommand extends Command {
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Fplugins%2Fabbreviation-plugin%2Fabbreviation-plugin-level-3.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Fplugins%2Fabbreviation-plugin%2Fabbreviation-plugin-level-3.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>
@@ -1007,7 +1063,7 @@ export default class AbbreviationCommand extends Command {
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                                   </div></a></li>
                                               <li><a href="../../tutorials/data-from-external-source.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                                   </div></a></li>
                                               <li><a href="../../tutorials/using-react-in-a-widget.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>

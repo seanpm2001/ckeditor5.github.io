@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:44:52 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:06 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Mentions - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -485,7 +485,7 @@
     .create( document.querySelector( '#editor' ), {
         // This feature is not available in any of the builds.
         // See the "Installation" section.
-        plugins: [ Mention, ... ],
+        plugins: [ Mention, /* ... */ ],
 
         mention: {
             feeds: [
@@ -497,8 +497,8 @@
             ]
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <p>Additionally, you can configure:</p>
 <ul>
@@ -519,7 +519,7 @@
     .create( document.querySelector( '#editor' ), {
         // This feature is not available in any of the builds.
         // See the "Installation" section.
-        plugins: [ Mention, ... ],
+        plugins: [ Mention, /* ... */ ],
 
         mention: {
             feeds: [
@@ -530,8 +530,8 @@
             }
         ]
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 
 const items = [
     { id: '@swarley', userId: '1', name: 'Barney Stinson', link: 'https://www.imdb.com/title/tt0460649/characters/nm0000439' },
@@ -578,19 +578,19 @@ function getFeedItems( queryText ) {
 <p>This callback takes a feed item (it contains at least the <code>name</code> property) and must return a new DOM element.</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Mention, ... ],
+        plugins: [ Mention, /* ... */ ],
         mention: {
             feeds: [
                 {
-                    feed: [ ... ],
+                    feed: [ /* ... */ ],
                     // Define the custom item renderer.
                     itemRenderer: customItemRenderer
                 }
             ]
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 
 function customItemRenderer( item ) {
     const itemElement = document.createElement( 'span' );
@@ -614,18 +614,19 @@ function customItemRenderer( item ) {
 <p>The number of items displayed in the autocomplete list can be customized by defining the <a href="../api/module_mention_mention-MentionConfig.html#member-dropdownLimit"><code>dropdownLimit</code></a> option.</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Mention, ... ],
+        plugins: [ Mention, /* ... */ ],
         mention: {
             // Define the custom number of visible mentions.
             dropdownLimit: 4
             feeds: [
-                { ... }
-                ...
+                { /* ... */ }
+                // More feeds.
+                // ...
             ]
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <p>A full, working demo with all possible customizations and its source code is available <a href="#fully-customized-mention-feed">at the end of this section</a>.</p>
 <h3 id="customizing-the-output"><a class="headerlink" href="#customizing-the-output">#</a> Customizing the output</h3>
@@ -642,13 +643,14 @@ function customItemRenderer( item ) {
 <p><strong>Note:</strong> The feature prevents copying fragments of existing mentions. If only a part of a mention is selected, it will be copied as plain text. The internal converter with the <a href="../api/module_engine_conversion_conversion-ConverterDefinition.html"><code>'highest'</code> priority</a> controls this behaviour; thus, we do not recommend adding mention converters with the <code>'highest'</code> priority to avoid collisions and quirky results.</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Mention, MentionCustomization, ... ], // Add the custom mention plugin function.
+        plugins: [ Mention, MentionCustomization, /* ... */ ], // Add the custom mention plugin function.
         mention: {
-            // Configuration...
+            // Configuration.
+            // ...
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 
 function MentionCustomization( editor ) {
     // The upcast converter will convert view &lt;a class="mention" href="" data-user-id=""&gt;
@@ -741,7 +743,7 @@ function MentionCustomization( editor ) {
 <h4 id="source-code"><a class="headerlink" href="#source-code">#</a> Source code</h4>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#snippet-mention-customization' ), {
-        plugins: [ Mention, MentionCustomization, ... ],
+        plugins: [ Mention, MentionCustomization, /* ... */ ],
         mention: {
             dropdownLimit: 4,
             feeds: [
@@ -908,13 +910,14 @@ function customItemRenderer( item ) {
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Mention, ... ],
+        plugins: [ Mention, /* ... */ ],
         mention: {
-            // Configuration...
+            // Configuration.
+            // ...
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice notice__info"><p>Read more about <a href="../installation/getting-started/installing-plugins.html">installing plugins</a>.</p></div>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
@@ -934,7 +937,7 @@ ClassicEditor
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fmentions.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fmentions.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:44:49 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:03 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Image styles - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -567,8 +567,8 @@
 
 ClassicEditor
     .create( document.querySelector( '#editor' ) )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h3 id="presentational-styles"><a class="headerlink" href="#presentational-styles">#</a> Presentational styles</h3>
 <p>Presentational styles do not relate to any special meaning of the content. They directly control the visual aspect of an image. The default available presentational styles determine the image alignment behavior. Check the list of the available semantical styles in the <a href="#ready-to-use-styles">table</a> below.</p>
@@ -644,8 +644,8 @@ ClassicEditor
 
 DecoupledEditor.
     .create( document.querySelector( '#editor' ) )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice notice__warning"><p>At the moment it is not possible to apply multiple styles (classes) to the image at the same time. To apply multiple CSS rules to the image (e.g. a red border AND a left alignment), you should probably consider using the <a href="#semantical-styles">semantical styles</a>.</p></div>
 <h2 id="configuring-the-styles"><a class="headerlink" href="#configuring-the-styles">#</a> Configuring the styles</h2>
@@ -910,7 +910,8 @@ DecoupledEditor.
 <p>The editor presented above uses custom image styles, custom image toolbar configuration with <a href="../../api/module_image_imagestyle_imagestyleui-ImageStyleDropdownDefinition.html">declarative drop-downs</a>, and some modified <a href="#ready-to-use-styles">default styles</a>. You can find some more examples of using and modifying these styles in the <a href="../../api/module_image_image-ImageConfig.html#member-styles"><code>config.image.styles</code></a> API documentation.</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        ...
+        // More of editor's config.
+        // ...
         image: {
             styles: {
                 // Defining custom styling options for the images.
@@ -966,8 +967,8 @@ DecoupledEditor.
             ]
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <p>It also applies multiple CSS rules to not only display custom image styles (the <code>'image-margin-right'</code>, <code>'image-margin-left'</code> and <code>'image-side'</code> classes) properly, but also to provide the default <a href="../../installation/advanced/content-styles.html">content styles</a>, so the appearance of headers, paragraphs, links, captions and newly inserted images is consistent.</p>
 <p>The most important rules regarding the image styling are presented below. You can see the complete content stylesheet <a href="https://github.com/ckeditor/ckeditor5/blob/a95554244e9fc71af5aa9e53c6841f114c6d2483/packages/ckeditor5-image/docs/_snippets/features/image-semantical-style-custom.html">here</a>.</p>
@@ -1165,7 +1166,7 @@ placed on the editor margins. */
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fimages%2Fimages-styles.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fimages%2Fimages-styles.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

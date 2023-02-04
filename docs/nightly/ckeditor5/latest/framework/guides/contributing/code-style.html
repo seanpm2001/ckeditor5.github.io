@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:45:13 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:28 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Code style - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -172,7 +172,7 @@
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                               </div></a></li>
                                           <li><a href="../tutorials/data-from-external-source.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                               </div></a></li>
                                           <li><a href="../tutorials/using-react-in-a-widget.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>
@@ -319,7 +319,8 @@ foo( bar() );
 </code></pre>
 <p>No whitespace for an <strong>empty parenthesis</strong>:</p>
 <pre class="highlight"><code class="js">const a = () =&gt; {
-    // Statements...
+    // Statements.
+    // ...
 };
 
 a();
@@ -330,7 +331,8 @@ a();
 a( 1, 2, 3 );
 
 for ( const i = 0; i &lt; 100; i++ ) {
-    // Statements...
+    // Statements.
+    // ...
 }
 </code></pre>
 <h2 id="indentation"><a class="headerlink" href="#indentation">#</a> Indentation</h2>
@@ -340,7 +342,8 @@ for ( const i = 0; i &lt; 100; i++ ) {
     a() {
         while ( b in a ) {
             if ( b == c ) {
-                // Statements...
+                // Statements.
+                // ...
             }
         }
     }
@@ -352,7 +355,8 @@ for ( const i = 0; i &lt; 100; i++ ) {
     condition || with &amp;&amp;
     ( multiple == lines )
 ) {
-    // Statements...
+    // Statements.
+    // ...
 }
 
 while (
@@ -360,28 +364,35 @@ while (
     condition || with &amp;&amp;
     ( multiple == lines )
 ) {
-    // Statements...
+    // Statements.
+    // ...
 }
 </code></pre>
 <div class="info-box notice"><p>We do our best to avoid complex conditions. As a rule of thumb, we first recommend finding a way to move the complexity out of the condition, for example, to a separate function with early returns for each “sentence” in such a condition.</p><p>However, overdoing things is not good as well and sometimes such a condition can be perfectly readable (which is the ultimate goal here).</p></div>
 <h2 id="braces"><a class="headerlink" href="#braces">#</a> Braces</h2>
 <p>Braces <strong>start at the same line</strong> as the head statement and end aligned with it:</p>
 <pre class="highlight"><code class="js">function a() {
-    // Statements...
+    // Statements.
+    // ...
 }
 
 if ( a ) {
-    // Statements...
+    // Statements.
+    // ...
 } else if ( b ) {
-    // Statements...
+    // Statements.
+    // ...
 } else {
-    // Statements...
+    // Statements.
+    // ...
 }
 
 try {
-    // Statements...
+    // Statements.
+    // ...
 } catch ( e ) {
-    // Statements...
+    // Statements.
+    // ...
 }
 </code></pre>
 <h2 id="blank-lines"><a class="headerlink" href="#blank-lines">#</a> Blank lines</h2>
@@ -473,7 +484,8 @@ try {
 
 fooBar(
     () =&gt; {
-        // Statements...
+        // Statements.
+        // ...
     }
 );
 
@@ -488,9 +500,8 @@ fooBar(
 fooBar(
     'A very long string',
     () =&gt; {
-        // ... some kind
-        // ... of a
-        // ... callback
+        // Some kind of a callback.
+        // ...
     },
     5,
     new MyClass(
@@ -538,7 +549,8 @@ fooBar(
  * @returns {Object} Something.
  */
 someMethod() {
-    // Statements...
+    // Statements.
+    // ...
 }
 </code></pre>
 <p>All <strong>other comments</strong> use <strong>line comments</strong> (<code>//</code>):</p>
@@ -650,7 +662,9 @@ function doSomething() {
 <h2 id="getters"><a class="headerlink" href="#getters">#</a> Getters</h2>
 <p>You can use ES6 getters to simplify class API:</p>
 <pre class="highlight"><code class="js">class Position {
+    // More methods.
     // ...
+    
     get offset() {
         return this.path[ this.path.length - 1 ];
     }
@@ -688,9 +702,10 @@ function doSomething() {
 <p>The outermost <code>describe()</code> calls should create meaningful groups, so when all tests are run together a failing TC can be identified within the code base. For example:</p>
 <pre class="highlight"><code class="js">describe( 'Editor', () =&gt; {
     describe( 'constructor()', () =&gt; {
-        it( ... );
+        it( /* ... */ );
     } );
 
+    // More test cases.
     // ...
 } );
 </code></pre>
@@ -765,8 +780,8 @@ const a = new MyClass();
 </code></pre>
 <p>Mixins must be named in <a href="http://en.wikipedia.org/wiki/CamelCase">UpperCamelCase</a>, postfixed with “Mixin”:</p>
 <pre class="highlight"><code class="js">const SomeMixin = {
-    method1: ...,
-    method2: ...
+    method1: /* ... */,
+    method2: /* ... */
 };
 </code></pre>
 <p>Global namespacing variables must be named in <a href="http://en.wikipedia.org/wiki/All_caps">ALLCAPS</a>:</p>
@@ -1115,7 +1130,7 @@ You may need an additional loader to handle the result of these loaders.
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Fcontributing%2Fcode-style.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Fcontributing%2Fcode-style.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>
@@ -1214,7 +1229,7 @@ You may need an additional loader to handle the result of these loaders.
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                                   </div></a></li>
                                               <li><a href="../tutorials/data-from-external-source.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                                   </div></a></li>
                                               <li><a href="../tutorials/using-react-in-a-widget.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>

@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:44:49 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:03 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Resizing images - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -521,11 +521,12 @@ import ImageResizeHandles from '@ckeditor/ckeditor5-image/src/imageresize/imager
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Image, ImageResizeEditing, ImageResizeHandles, ... ],
-        ...
+        plugins: [ Image, ImageResizeEditing, ImageResizeHandles, /* ... */ ],
+        // More of editor's config.
+        // ...
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <p>Both ways enable resize handles by default.</p>
 <h3 id="using-resize-dropdown"><a class="headerlink" href="#using-resize-dropdown">#</a> Using resize dropdown</h3>
@@ -549,7 +550,7 @@ ClassicEditor
             label: '60%'
         }
     ],
-    toolbar: [ ..., 'resizeImage' ]
+    toolbar: [ 'resizeImage', /* ... */ ]
 }
 </code></pre>
 <p>Try out the live demo of the resize dropdown <span class="editor-icon"><img src="../../assets/icons/6946ebb622.svg" class="editor-icon__image" alt="Image resize"></span> available in the image toolbar below.</p>
@@ -611,10 +612,11 @@ ClassicEditor
         }
     ],
     toolbar: [
-        ...,
         'resizeImage:50',
         'resizeImage:75',
         'resizeImage:original',
+        // More toolbar options.
+        // ...
     ]
 }
 </code></pre>
@@ -661,7 +663,7 @@ ClassicEditor
 </div>
 <h2 id="disabling-image-resize-handles"><a class="headerlink" href="#disabling-image-resize-handles">#</a> Disabling image resize handles</h2>
 <p>If, for some reason, you want to configure the editor in such a way that images can be resized only by buttons, you can do so by omitting the <a href="../../api/module_image_imageresize_imageresizehandles-ImageResizeHandles.html"><code>ImageResizeHandles</code></a> plugin.</p>
-<p>As a result, your plugin setup should look like this: <code>plugins: [ 'ImageResizeEditing', 'ImageResizeButtons', ... ]</code> as opposed to <code>plugins: [ 'ImageResize', ... ]</code>.</p>
+<p>As a result, your plugin setup should look like this: <code>plugins: [ 'ImageResizeEditing', 'ImageResizeButtons', /* ... */ ]</code> as opposed to <code>plugins: [ 'ImageResize', /* ... */ ]</code>.</p>
 <p>This will enable the image resize feature only by means of the chosen UI: either a <a href="#using-resize-dropdown">dropdown</a> or <a href="#using-standalone-resize-buttons">standalone buttons</a>) in the image toolbar.</p>
 <pre class="highlight"><code class="js">import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
@@ -670,7 +672,7 @@ import ImageResizeButtons from '@ckeditor/ckeditor5-image/src/imageresize/imager
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Image, ImageResizeEditing, ImageResizeButtons, ImageToolbar, ... ],
+        plugins: [ Image, ImageResizeEditing, ImageResizeButtons, ImageToolbar, /* ... */ ],
         image: {
             resizeOptions: [
             {
@@ -690,15 +692,15 @@ ClassicEditor
             }
         ],
         toolbar: [
-            // ...,
             'resizeImage:50',
             'resizeImage:75',
             'resizeImage:original',
-        ]
-        }
+            // More toolbar options.
+            // ...
+        ] }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h2 id="markup-and-styling"><a class="headerlink" href="#markup-and-styling">#</a> Markup and styling</h2>
 <p>When you resize an image, the inline <code>width</code> style is used and the <code>&lt;figure&gt;</code> element is assigned the <code>image_resized</code> class:</p>
@@ -759,8 +761,8 @@ ClassicEditor
             ]
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <p>The following demo uses CSS to set up the fixed image aspect ratio, so a 200px wide image automatically gets the same height.</p>
 <div id="aspect-ratio-css"></div>
@@ -856,11 +858,12 @@ import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Image, ImageResize, ... ],
-        ...
+        plugins: [ Image, ImageResize, /* ... */ ],
+        // More of editor's config.
+        // ...
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
 <p>The <a href="../../api/module_image_imageresize-ImageResize.html"><code>ImageResize</code></a> plugin registers:</p>
@@ -875,7 +878,7 @@ ClassicEditor
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fimages%2Fimages-resizing.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fimages%2Fimages-resizing.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

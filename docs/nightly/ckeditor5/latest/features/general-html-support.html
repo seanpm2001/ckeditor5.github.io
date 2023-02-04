@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:44:45 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:00 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="General HTML Support - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -503,7 +503,11 @@
 </div>
 <div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
 <h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
-<p>There is a closely related <a href="source-editing.html">source editing feature</a> which allows access and edition of the HTML source code of the document. When paired, these two plugins let the user gain powerful control over the content editing.</p>
+<p>There are other HTML editing related CKEditor 5 features you may want to check:</p>
+<ul>
+<li><a href="source-editing.html">Source editing</a> – Provides the ability for viewing and editing the source of the document. When paired, these two plugins let the user gain powerful control over the content editing.</li>
+<li><a href="html-embed.html">HTML embed</a> – Allows embedding an arbitrary HTML snippet in the editor. It is a more constrained and controllable approach to arbitrary HTML than GHS.</li>
+</ul>
 <h2 id="level-of-support"><a class="headerlink" href="#level-of-support">#</a> Level of support</h2>
 <p>The difference between specific CKEditor 5 features such as <a href="basic-styles.html">basic styles</a> or <a href="headings.html">headings</a> and the HTML features enabled by GHS is that a plugin that supports a specific HTML feature provides a complete user experience for that feature, whereas GHS ensures only that such a content is accepted by the editor.</p>
 <p>For instance, the dedicated <a href="basic-styles.html#available-text-styles">bold</a> feature offers a toolbar button used to make the selected text bold. Together with the <a href="autoformat.html">autoformatting feature</a>, it also allows for applying bold style to content by typing a Markdown shortcode (<code>**foo**</code>) in the editor. The <a href="headings.html">headings</a> feature offers a dropdown from which the user can choose a heading level and ensures that pressing <kbd>Enter</kbd> at the end of a heading creates a new paragraph (and not another heading).</p>
@@ -523,10 +527,10 @@
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ GeneralHtmlSupport, ... ],
+        plugins: [ GeneralHtmlSupport, /* ... */ ],
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice notice__info"><p>Read more about <a href="../installation/getting-started/installing-plugins.html">installing plugins</a>.</p></div>
 <h2 id="configuration"><a class="headerlink" href="#configuration">#</a> Configuration</h2>
@@ -760,10 +764,10 @@ dataFilter.allowElement( 'object-block' );
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ HtmlComment, ... ],
+        plugins: [ HtmlComment, /* ... */ ],
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice notice__info"><p>Read more about <a href="../installation/getting-started/installing-plugins.html">installing plugins</a>.</p></div>
 <p>HTML comment feature does not require any configuration.</p>
@@ -782,7 +786,7 @@ ClassicEditor
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fgeneral-html-support.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fgeneral-html-support.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

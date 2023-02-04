@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data from external source - CKEditor 5 Documentation</title>
+    <title>Data from an external source - CKEditor 5 Documentation</title>
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:45:19 GMT+0000 (Coordinated Universal Time)">
-    <meta property="og:title" content="Data from external source - CKEditor 5 Documentation">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:32 GMT+0000 (Coordinated Universal Time)">
+    <meta property="og:title" content="Data from an external source - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/tutorials/data-from-external-source.html">
     <meta property="DC.language" content="en">
     <meta property="DC.publisher" content="CKSource">
     <meta property="DC.creator" content="CKEditor">
-    <meta property="DC.title" content="Data from external source - CKEditor 5 Documentation">
+    <meta property="DC.title" content="Data from an external source - CKEditor 5 Documentation">
     <meta property="DC.format" content="text/html">
     <meta property="DC.type" content="Text">
     <meta property="DC.description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
@@ -175,7 +175,7 @@
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                               </div></a></li>
                                           <li><a href="">
-                                              <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                              <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                               </div></a></li>
                                           <li><a href="using-react-in-a-widget.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>
@@ -302,7 +302,7 @@
           </div>
           <div class="rwd-breadcrumbs"><a href="../../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">Framework</a>
           </div>
-          <h1 class="main__content-title"><img src="../../../../../assets/2.3.0/img/book.svg" alt="guide">Data from external source
+          <h1 class="main__content-title"><img src="../../../../../assets/2.3.0/img/book.svg" alt="guide">Data from an external source
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#before-you-start-️">Before you start ⚠️</a></li><li><a href="#bootstrapping-the-project">Bootstrapping the project</a></li><li><a href="#the-model-and-the-view-layers">The model and the view layers</a><ol><li><a href="#defining-the-schema">Defining the schema</a></li><li><a href="#defining-converters">Defining converters</a></li><li><a href="#feature-styles">Feature styles</a></li><li><a href="#the-command">The command</a></li></ol></li><li><a href="#creating-the-ui">Creating the UI</a></li><li><a href="#handling-the-external-source">Handling the external source</a></li><li><a href="#demo">Demo</a></li><li><a href="#final-solution">Final solution</a></li></ol></nav>
 <p>In this tutorial, you will learn how to implement a widget that fetches data from an external source and updates all own instances in a set interval of time.</p>
 <p>You will build an “external data fetch” feature that allows users to insert a predefined widget that will show the current Bitcoin rate and it will be updated with the set time interval fetching data from a predefined external source. You will use widget utilities and conversion in order to define the behavior of this feature. Later on, you will use <a href="../architecture/ui-library.html">UI library</a> to create a <a href="../../../api/module_ui_button_buttonview-ButtonView.html"><code>ButtonView</code></a> that will allow for inserting new instances of external source widgets. You will also learn how to update the widget data based on the editor API.</p>
@@ -458,7 +458,7 @@ ClassicEditor
 │
 └── webpack.config.js
 </code></pre>
-<p>You can see that the external data widget feature follows an established plugin structure: the master (glue) plugin (<code>external-data-widget/externaldatawidget.js</code>), the “editing” (<code>external-data-widget/externaldatawidgetediting.js</code>) and the “UI” (<code>external-data-widget/externaldatawidgetui.js</code>) parts.</p>
+<p>You can see that the external data widget feature follows an established plugin structure: the master (glue) plugin (<code>external-data-widget/externaldatawidget.js</code>), the “editing” (<code>external-data-widget/externaldatawidgetediting.js</code>), and the “UI” (<code>external-data-widget/externaldatawidgetui.js</code>) parts.</p>
 <p>The master (glue) plugin:</p>
 <pre class="highlight"><code class="js">// external-data-widget/externaldatawidget.js
 
@@ -542,7 +542,7 @@ export default class ExternalDataWidgetEditing extends Plugin {
 </code></pre>
 <ul>
 <li><a href="../deep-dive/conversion/upcast.html"><strong>Upcast conversion</strong></a>. This view-to-model converter will look for <code>&lt;span&gt;</code>s with the <code>data-resource-url</code> attribute and will create model <code>&lt;externalElement&gt;</code> elements with the same <code>data-resource-url</code> attribute set accordingly.</li>
-<li><a href="../deep-dive/conversion/downcast.html"><strong>Downcast conversion</strong></a>. The model-to-view conversion will be slightly different for “editing” and “data” pipelines as the “editing downcast” pipeline will use widget utilities to enable widget-specific behavior in the editing view. In both pipelines, the element will be rendered using the same structure.</li>
+<li><a href="../deep-dive/conversion/downcast.html"><strong>Downcast conversion</strong></a>. The model-to-view conversion will be slightly different for the “editing” and “data” pipelines as the “editing downcast” pipeline will use widget utilities to enable widget-specific behavior in the editing view. In both pipelines, the element will be rendered using the same structure.</li>
 </ul>
 <pre class="highlight"><code class="js">// external-data-widget/externaldatawidgetediting.js
 
@@ -567,6 +567,7 @@ export default class ExternalDataWidgetEditing extends Plugin {
     }
 
     _defineSchema() {                                                          // ADDED
+        // Previously registered schema.
         // ...
     }
 
@@ -615,7 +616,7 @@ export default class ExternalDataWidgetEditing extends Plugin {
 }
 </code></pre>
 <h3 id="feature-styles"><a class="headerlink" href="#feature-styles">#</a> Feature styles</h3>
-<p>As you might have noticed, the editing part imports the <code>./theme/externaldatawidget.css</code> CSS file which describes how the widget will look like and how it will be animated when new value arrives:</p>
+<p>As you might have noticed, the editing part imports the <code>./theme/externaldatawidget.css</code> CSS file which describes how the widget will look like and how it will be animated when a new value arrives:</p>
 <pre class="highlight"><code class="css">/* external-data-widget/theme/externaldatawidget.css */
 
 .external-data-widget {
@@ -705,17 +706,19 @@ export default class ExternalDataWidgetEditing extends Plugin {
     }
 
     _defineSchema() {
+        // Previously registered schema.
         // ...
     }
 
     _defineConverters() {
+        // Previously defined converters.
         // ...
     }
 }
 </code></pre>
 <h2 id="creating-the-ui"><a class="headerlink" href="#creating-the-ui">#</a> Creating the UI</h2>
-<p>The UI part provides a <a href="../../../api/module_ui_button_buttonview-ButtonView.html"><code>ButtonView</code></a> that user can click to insert the external data widget into the editor.</p>
-<p>Register and configure the toolbar button as show below. The icon of the button can be found among official <a href="https://en.bitcoin.it/wiki/Promotional_graphics">Bitcoin promotional graphics</a>. Put the SVG file in the <code>./theme</code> directory and import it next to the UI plugin so it can be used by the button.</p>
+<p>The UI part provides a <a href="../../../api/module_ui_button_buttonview-ButtonView.html"><code>ButtonView</code></a> that users can click to insert the external data widget into the editor.</p>
+<p>Register and configure the toolbar button as shown below. The icon of the button can be found among official <a href="https://en.bitcoin.it/wiki/Promotional_graphics">Bitcoin promotional graphics</a>. Put the SVG file in the <code>./theme</code> directory and import it next to the UI plugin so it can be used by the button.</p>
 <pre class="highlight"><code class="js">// external-data-widget/externaldatawidgetui.js
 
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
@@ -789,7 +792,7 @@ ClassicEditor
 <p>In this tutorial we will use an external API that provides a current Bitcoin rate (in USD). This endpoint does not need any API keys and it is free to use but it has some <a href="https://binance-docs.github.io/apidocs/spot/en/#limits">limitations</a>.</p>
 <pre class="highlight"><code class="js">'https://api2.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
 </code></pre>
-<p>The data will be fetched every 10 seconds. Eeach instance of the widget will be updated at the same time. To achieve that, we need to modify the <code>ExternalDataWidgetEditing</code> class.</p>
+<p>The data will be fetched every 10 seconds. Each instance of the widget will be updated at the same time. To achieve that, we need to modify the <code>ExternalDataWidgetEditing</code> class.</p>
 <pre class="highlight"><code class="js">
 class ExternalDataWidgetEditing extends Plugin {
     //
@@ -853,10 +856,12 @@ class ExternalDataWidgetEditing extends Plugin {
     }
 
     _defineSchema() {
+        // Previously registered schema.
         // ...
     }
 
     _defineConverters() {
+        // Previously defined upcast and data downcast converters.
         // ...
 
         editor.conversion.for( 'editingDowncast' ).elementToElement( {
@@ -1130,7 +1135,7 @@ ClassicEditor
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Ftutorials%2Fdata-from-external-source.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Ftutorials%2Fdata-from-external-source.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>
@@ -1229,7 +1234,7 @@ ClassicEditor
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                                   </div></a></li>
                                               <li><a href="">
-                                                  <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                                  <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                                   </div></a></li>
                                               <li><a href="using-react-in-a-widget.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>

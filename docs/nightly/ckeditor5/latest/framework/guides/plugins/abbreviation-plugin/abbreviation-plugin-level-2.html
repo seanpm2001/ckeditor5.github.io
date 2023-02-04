@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:45:12 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:26 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Getting user input with a custom UI - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -175,7 +175,7 @@
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                               </div></a></li>
                                           <li><a href="../../tutorials/data-from-external-source.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                               </div></a></li>
                                           <li><a href="../../tutorials/using-react-in-a-widget.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>
@@ -347,10 +347,12 @@ import {
 
 export default class FormView extends View {
     constructor( locale ) {
-        // ...
 
         this.abbrInputView = this._createInput( 'Add abbreviation' );
         this.titleInputView = this._createInput( 'Add title' );
+        
+        // Previously set template.
+        // ...
     }
 
     _createInput( label ) {
@@ -378,6 +380,7 @@ import { icons } from '@ckeditor/ckeditor5-core';	// ADDED
 
 export default class FormView extends View {
     constructor( locale ) {
+        // Previously created inputs.
         // ...
 
         // Create the save and cancel buttons.
@@ -391,9 +394,13 @@ export default class FormView extends View {
         this.cancelButtonView = this._createButton(
             'Cancel', icons.cancel, 'ck-button-cancel'
         );
+
+        // Previously set template.
+        // ...
     }
 
     _createInput( label ) {
+        // Input initialization.
         // ...
     }
 
@@ -415,10 +422,13 @@ export default class FormView extends View {
 <div class="info-box notice"><p>Event delegation allows selected events of one emitter to be fired off by another emitter. Read about it in our <a href="../../architecture/core-editor-architecture.html#event-system-and-observables">introduction to the event system</a> and more on <a href="../../deep-dive/event-system.html#delegating-events">delegating events</a>.</p></div>
 <p>For now, we delegate <code>cancelButtonView#execute</code> to the FormView, so pressing the <code>cancel</code> button will fire off <code>FormView#cancel</code>. We will handle delegating the submit event in a couple of steps.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationview.js
+
+// Previously imported packages.
 // ...
 
 export default class FormView extends View {
     constructor( locale ) {
+        // Previously created inputs.
         // ...
 
         this.saveButtonView = this._createButton(
@@ -430,13 +440,18 @@ export default class FormView extends View {
         );
         // Delegate ButtonView#execute to FormView#cancel.
         this.cancelButtonView.delegate( 'execute' ).to( this, 'cancel' );
+
+        // Previously set template.
+        // ...
     }
 
     _createInput( label ) {
+        // Input initialization.
         // ...
     }
 
     _createButton( label, icon, className ) {
+        // Button initialization.
         // ...
     }
 }
@@ -480,6 +495,7 @@ import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 import './styles.css';											// ADDED
 
 export default class AbbreviationUI extends Plugin {
+    // Definition of Abbreviation UI class.
     // ...
 }
 </code></pre>
@@ -501,6 +517,7 @@ import { icons } from '@ckeditor/ckeditor5-core';
 
 export default class FormView extends View {
     constructor( locale ) {
+        // Previously created elements.
         // ...
 
         this.childViews = this.createCollection( [
@@ -513,6 +530,7 @@ export default class FormView extends View {
         this.setTemplate( {
             tag: 'form',
             attributes: {
+                // Attributes of a form template.
                 // ...
             },
             children: this.childViews				// ADDED
@@ -534,10 +552,12 @@ export default class FormView extends View {
     }
 
     _createInput( label ) {
+        // Input initialization.
         // ...
     }
 
     _createButton( label, icon, className ) {
+        // Button initialization.
         // ...
     }
 }
@@ -604,6 +624,7 @@ export default class AbbreviationUI extends Plugin {
         this.formView = this._createFormView();
 
         editor.ui.componentFactory.add( 'abbreviation', () =&gt; {
+            // A component factory callback that creates a button.
             // ...
         } );
     }
@@ -634,12 +655,16 @@ export default class AbbreviationUI extends Plugin {
 <p>We can now change what happens when the user clicks the toolbar button. We will replace inserting the hard-coded abbreviation with one defined by the user.</p>
 <p>Let’s write a <code>_showUI()</code> method which will show our UI elements by adding the form view to our balloon and setting its position. The last thing is to focus the form view, so the user can immediately start typing in the first input field.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationui.js
+
+// Previously imported packages.
 // ...
 
 export default class AbbreviationUI extends Plugin {
+    // More methods.
     // ...
 
     init() {
+        // The balloon and the view initialization.
         // ...
 
         editor.ui.componentFactory.add( 'abbreviation', () =&gt; {
@@ -648,10 +673,12 @@ export default class AbbreviationUI extends Plugin {
     }
 
     _createFormView() {
+        // The form view initialization.
         // ...
     }
 
     _getBalloonPositionData() {
+        // Getting position data for the balloon.
         // ...
     }
 
@@ -671,6 +698,8 @@ export default class AbbreviationUI extends Plugin {
 <p>Now is the time to replace the hard-coded “WYSIWYG” abbreviation with the user input. We will be getting values from the form and listening to the <code>submit</code> event on the form view, which we delegated from the save button (with the help of <code>submitHandler</code>).</p>
 <p>We use the same callback function we had in the toolbar button in the first part of the tutorial. We just need to replace the “WYSIWYG” abbreviation with values from our input views.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationui.js
+
+// Previously imported packages.
 // ...
 
 export default class AbbreviationUI extends Plugin {
@@ -679,6 +708,7 @@ export default class AbbreviationUI extends Plugin {
     }
 
     init() {
+        // The balloon and the view initialization.
         // ...
     }
 
@@ -702,10 +732,12 @@ export default class AbbreviationUI extends Plugin {
     }
 
     _getBalloonPositionData() {
+        // Getting position data for the balloon.
         // ...
     }
 
     _showUI() {
+        // Displaying balloon for the user.
         // ...
     }
 }
@@ -722,6 +754,7 @@ export default class AbbreviationUI extends Plugin {
 <p>Additionally, we will import the <code>clickOutsideHandler()</code> method, which will take our <code>_hideUI()</code> function as a callback. It will be emitted from our form view, and activated when the form view is visible. We also need to set <code>contextElements</code> for the handler to determine its scope. Clicking on HTML elements listed there will not fire the callback.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationui.js
 
+// Previously imported packages.
 // ...
 
 import { ContextualBalloon, clickOutsideHandler } from '@ckeditor/ckeditor5-ui'; // ADDED
@@ -732,6 +765,7 @@ export default class AbbreviationUI extends Plugin {
     }
 
     init() {
+        // The balloon and the view initialization.
         // ...
     }
 
@@ -740,6 +774,7 @@ export default class AbbreviationUI extends Plugin {
         const formView = new FormView( editor.locale );
 
         this.listenTo( formView, 'submit', () =&gt; {
+            // Setting texts: title and abbreviation.
             // ...
 
             // Hide the form view after submit.
@@ -774,10 +809,12 @@ export default class AbbreviationUI extends Plugin {
     }
 
     _getBalloonPositionData() {
+        // Getting position data for the balloon.
         // ...
     }
 
     _showUI() {
+        // Displaying balloon for the user.
         // ...
     }
 }
@@ -827,7 +864,7 @@ export default class AbbreviationUI extends Plugin {
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Fplugins%2Fabbreviation-plugin%2Fabbreviation-plugin-level-2.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Fplugins%2Fabbreviation-plugin%2Fabbreviation-plugin-level-2.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>
@@ -926,7 +963,7 @@ export default class AbbreviationUI extends Plugin {
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                                   </div></a></li>
                                               <li><a href="../../tutorials/data-from-external-source.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                                   </div></a></li>
                                               <li><a href="../../tutorials/using-react-in-a-widget.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>

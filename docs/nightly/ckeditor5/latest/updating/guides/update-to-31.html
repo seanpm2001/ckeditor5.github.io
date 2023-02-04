@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:45:03 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:19 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Update to v31.x - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -174,7 +174,7 @@
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#update-to-ckeditor-5-v3110">Update to CKEditor 5 v31.1.0</a><ol><li><a href="#interactive-content-filtering-in-the-link-frameworkguidesarchitectureediting-engineediting-pipeline-editing-pipeline">Interactive content filtering in the editing pipeline</a><ol><li><a href="#interactive-attributes">Interactive attributes</a></li><li><a href="#blocking-script-elements">Blocking script elements</a></li></ol></li><li><a href="#the-table-and-tablecell-attributes-names-change">The table and tableCell attributes’ names change</a></li></ol></li><li><a href="#update-to-ckeditor-5-v3100">Update to CKEditor 5 v31.0.0</a><ol><li><a href="#html-embed-commands">HTML embed commands</a></li></ol></li></ol></nav>
 <div class="info-box notice"><p>When updating your CKEditor 5 installation, make sure <strong>all the packages are the same version</strong> to avoid errors.</p><p>For custom builds, you may try removing the <code>package-lock.json</code> or <code>yarn.lock</code> files (if applicable) and reinstalling all packages before rebuilding the editor. For best results, make sure you use the most recent package versions.</p></div>
 <h2 id="update-to-ckeditor-5-v3110"><a class="headerlink" href="#update-to-ckeditor-5-v3110">#</a> Update to CKEditor 5 v31.1.0</h2>
-<p>For the entire list of changes introduced in version 31.1.0, see the <a href="https://github.com/ckeditor/ckeditor5/blob/master/CHANGELOG.md#3110-2021-12-03">changelog for CKEditor 5 v31.1.0</a>.</p>
+<p>For the entire list of changes introduced in version 31.1.0, see the <a href="https://github.com/ckeditor/ckeditor5/releases/tag/v31.1.0">release notes for CKEditor 5 v31.1.0</a>.</p>
 <p>Listed below are the most important changes that require your attention when upgrading to CKEditor 5 v31.1.0.</p>
 <h3 id="interactive-content-filtering-in-the-link-frameworkguidesarchitectureediting-engineediting-pipeline-editing-pipeline"><a class="headerlink" href="#interactive-content-filtering-in-the-link-frameworkguidesarchitectureediting-engineediting-pipeline-editing-pipeline">#</a> Interactive content filtering in the <a href="../../framework/guides/architecture/editing-engine.html#editing-pipeline">editing pipeline</a></h3>
 <h4 id="interactive-attributes"><a class="headerlink" href="#interactive-attributes">#</a> Interactive attributes</h4>
@@ -218,7 +218,7 @@ const paragraph = writer.createContainerElement( 'p',
 <p>The affected attributes include: <code>backgroundColor</code>, <code>padding</code>, <code>width</code>, <code>height</code>, <code>borderStyle</code>, <code>borderColor</code>, <code>borderWidth</code>, <code>verticalAlignment</code> and <code>horizontalAlignment</code>.</p>
 <p>These were changed to <code>tableCellBackgroundColor</code>, <code>tableCellPadding</code>, <code>tableCellWidth</code>, <code>tableCellHeight</code>, <code>tableCellBorderStyle</code>, <code>tableCellBorderColor</code>, <code>tableCellBorderWidth</code>, <code>tableCellVerticalAlignment</code> and <code>tableCellHorizontalAlignment</code> respectively.</p>
 <h2 id="update-to-ckeditor-5-v3100"><a class="headerlink" href="#update-to-ckeditor-5-v3100">#</a> Update to CKEditor 5 v31.0.0</h2>
-<p>For the entire list of changes introduced in version 31.0.0, see the <a href="https://github.com/ckeditor/ckeditor5/blob/master/CHANGELOG.md#3100-2021-10-25">changelog for CKEditor 5 v31.0.0</a>.</p>
+<p>For the entire list of changes introduced in version 31.0.0, see the <a href="https://github.com/ckeditor/ckeditor5/releases/tag/v31.1.0">release notes for CKEditor 5 v31.1.0</a>.</p>
 <p>Listed below are the most important changes that require your attention when upgrading to CKEditor 5 v31.0.0.</p>
 <h3 id="html-embed-commands"><a class="headerlink" href="#html-embed-commands">#</a> HTML embed commands</h3>
 <p>Starting from v31.0.0, the <code>'insertHtmlEmbed'</code> and <code>'updateHtmlEmbed'</code> commands are no longer available. They have been replaced with a new, unified command: <code>'htmlEmbed'</code>.</p>
@@ -246,7 +246,7 @@ editor.execute( 'htmlEmbed', '&lt;b&gt;New content.&lt;/b&gt;' );
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22updating%2Fguides%2Fupdate-to-31.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22updating%2Fguides%2Fupdate-to-31.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

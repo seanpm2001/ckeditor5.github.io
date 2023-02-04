@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:44:56 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:10 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Styles - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -632,10 +632,30 @@
 	}
 
 	.ck.ck-content pre.fancy-code::before {
+		--ck-fancy-code-disc-radius: 6px;
+
 		content: "";
 		display: block;
-		height: 13px;
-		background: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NCAxMyI+CiAgPGNpcmNsZSBjeD0iNi41IiBjeT0iNi41IiByPSI2LjUiIGZpbGw9IiNGMzZCNUMiLz4KICA8Y2lyY2xlIGN4PSIyNi41IiBjeT0iNi41IiByPSI2LjUiIGZpbGw9IiNGOUJFNEQiLz4KICA8Y2lyY2xlIGN4PSI0Ny41IiBjeT0iNi41IiByPSI2LjUiIGZpbGw9IiM1NkM0NTMiLz4KPC9zdmc+Cg==);
+		height: calc(var(--ck-fancy-code-disc-radius) * 2);
+		background-image: radial-gradient(
+			circle,
+			#f16b5d var(--ck-fancy-code-disc-radius),
+			#0000 var(--ck-fancy-code-disc-radius)
+		),
+		radial-gradient(
+			circle,
+			#f5be4d var(--ck-fancy-code-disc-radius),
+			#0000 var(--ck-fancy-code-disc-radius)
+		),
+		radial-gradient(
+			circle,
+			#56c452 var(--ck-fancy-code-disc-radius),
+			#0000 var(--ck-fancy-code-disc-radius)
+		);
+		background-size: calc(var(--ck-fancy-code-disc-radius) * 2)
+			calc(var(--ck-fancy-code-disc-radius) * 2);
+		background-position: 0 0, calc(var(--ck-fancy-code-disc-radius) * 3) 0,
+			calc(var(--ck-fancy-code-disc-radius) * 6) 0;
 		margin-bottom: 8px;
 		background-repeat: no-repeat;
 	}
@@ -865,32 +885,35 @@ style: {
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Style, ... ],
+        plugins: [ Style, /* ... */ ],
         toolbar: {
             items: [
+                'style',
+                // More toolbar items.
                 // ...
-                'style'
             ],
         },
         style: {
             definitions: [
+                // Styles definitions. 
                 // ...
             ]
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice notice__info"><p>Read more about <a href="../installation/getting-started/installing-plugins.html">installing plugins</a>.</p></div>
 <h2 id="configuration"><a class="headerlink" href="#configuration">#</a> Configuration</h2>
 <p>Configuring the styles feature takes two steps. First you need to define the styles in the configuration file, for example:</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Style, ... ],
+        plugins: [ Style, /* ... */ ],
         toolbar: {
             items: [
+                'style',
+                // More toolbar items.
                 // ...
-                'style'
             ],
         },
         style: {
@@ -908,8 +931,8 @@ ClassicEditor
             ]
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 
 </code></pre>
 <p>Then, corresponding CSS styles need to be defined for the document:</p>
@@ -952,7 +975,7 @@ editor.execute( 'style', 'Article category' );
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fstyle.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fstyle.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

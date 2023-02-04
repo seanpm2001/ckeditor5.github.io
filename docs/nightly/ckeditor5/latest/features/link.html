@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:44:51 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:05 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Link - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -527,8 +527,9 @@
     .create( document.querySelector( '#editor' ), {
         toolbar: {
             items: [
+                'link',
+                // More toolbar items. 
                 // ...
-                'link'
             ],
         },
         link: {
@@ -547,8 +548,8 @@
             ]
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h3 id="configuration"><a class="headerlink" href="#configuration">#</a> Configuration</h3>
 <p>Decorators are configured through definitions provided in the <a href="../api/module_link_link-LinkConfig.html#member-decorators"><code>config.link.decorators</code></a> configuration option.</p>
@@ -558,18 +559,18 @@
 <p>A very common use case for (automatic) link decorators is adding <code>target="_blank"</code> and <code>rel="noopener noreferrer"</code> attributes to all external links in the document. A dedicated <a href="../api/module_link_link-LinkConfig.html#member-addTargetToExternalLinks"><code>config.link.addTargetToExternalLinks</code></a> configuration has been created for that purpose. When this option is set to <code>true</code>, all links starting with <code>http://</code>, <code>https://</code> or <code>//</code> are “decorated” with <code>target</code> and <code>rel</code> attributes.</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        // ...
         link: {
             addTargetToExternalLinks: true
         }
+        // More of editor's config.
+ 		// ...
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <p>Internally, this configuration corresponds to an <a href="#adding-attributes-to-links-based-on-predefined-rules-automatic-decorators">automatic decorator</a> with the following <a href="../api/module_link_link-LinkDecoratorAutomaticDefinition.html">definition</a>:</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        // ...
         link: {
             decorators: {
                 addTargetToExternalLinks: {
@@ -582,14 +583,15 @@
                 }
             }
         }
+        // More of editor's config.
+ 		// ...
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <p>If you want to leave the decision whether a link should open in a new tab to the users, do not use the <code>config.link.addTargetToExternalLinks</code> configuration but define a new <a href="#adding-attributes-to-links-using-the-ui-manual-decorators">manual decorator</a> with the following definition instead:</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        // ...
         link: {
             decorators: {
                 openInNewTab: {
@@ -602,9 +604,11 @@
                 }
             }
         }
+        // More of editor's config.
+ 		// ...
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h4 id="adding-default-link-protocol-to-external-links"><a class="headerlink" href="#adding-default-link-protocol-to-external-links">#</a> Adding default link protocol to external links</h4>
 <p>A default link protocol can be useful when the user forgets to type the full URL address to an external source or website. Sometimes copying the text, like for example <code>ckeditor.com</code>, and converting it to a link may cause some issues. As a result, the created link will direct you to <code>yourdomain.com/ckeditor.com</code> because of the missing protocol. This makes the link relative to the site where it appears.</p>
@@ -612,13 +616,14 @@
 <p>See a basic configuration example:</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        // ...
         link: {
             defaultProtocol: 'http://'
         }
+        // More of editor's config.
+ 		// ...
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice"><p>With the <code>config.link.defaultProtocol</code> option enabled, you are still able to link things locally using <code>#</code> or <code>/</code>. The protocol will not be added to these links.</p><p>When enabled, this feature also provides the <strong>email address auto-detection</strong> feature. When you submit <code>hello@example.com</code> in your content, the plugin will automatically change it to <code>mailto:hello@example.com</code>.</p></div>
 <h4 id="adding-attributes-to-links-based-on-predefined-rules-automatic-decorators"><a class="headerlink" href="#adding-attributes-to-links-based-on-predefined-rules-automatic-decorators">#</a> Adding attributes to links based on pre–defined rules (automatic decorators)</h4>
@@ -626,7 +631,6 @@
 <p>For instance, to create an automatic decorator that adds the <code>download="file.pdf"</code> attribute to all links ending with the <code>".pdf"</code> extension, you should add the following <a href="../api/module_link_link-LinkDecoratorAutomaticDefinition.html">definition</a> to <a href="../api/module_link_link-LinkConfig.html#member-decorators"><code>config.link.decorators</code></a>:</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        // ...
         link: {
             decorators: {
                 detectDownloadable: {
@@ -638,9 +642,11 @@
                 }
             }
         }
+        // More of editor's config.
+ 		// ...
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice"><p>If you want the <code>target</code> and <code>rel</code> attributes to be added to all external links in your content, we prepared a <a href="#adding-target-and-rel-attributes-to-external-links">dedicated configuration</a> exactly for that purpose so you do not have to define the automatic decorator by yourself.</p></div>
 <h4 id="adding-attributes-to-links-using-the-ui-manual-decorators"><a class="headerlink" href="#adding-attributes-to-links-using-the-ui-manual-decorators">#</a> Adding attributes to links using the UI (manual decorators)</h4>
@@ -648,7 +654,6 @@
 <p>To configure a “Downloadable” switch button in the link editing balloon that adds the <code>download="file"</code> attribute to the link when turned on, add the following definition to <a href="../api/module_link_link-LinkConfig.html#member-decorators"><code>config.link.decorators</code></a>:</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        // ...
         link: {
             decorators: {
                 toggleDownloadable: {
@@ -669,9 +674,11 @@
                 }
             }
         }
+        // More of editor's config.
+ 		// ...
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h2 id="autolink-feature"><a class="headerlink" href="#autolink-feature">#</a> Autolink feature</h2>
 <p>Automatic linking of URLs typed or pasted into the editor is enabled by default in the predefined builds. The <a href="../api/module_link_autolink-AutoLink.html"><code>AutoLink</code></a> feature will automatically turn URLs or e-mail addresses into real, working links.</p>
@@ -695,11 +702,11 @@ import AutoLink from '@ckeditor/ckeditor5-link/src/autolink';
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Link, AutoLink, ... ],
-        toolbar: [ 'link', ... ],
+        plugins: [ Link, AutoLink, /* ... */ ],
+        toolbar: [ 'link', /* ... */ ],
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice notice__info"><p>Read more about <a href="../installation/getting-started/installing-plugins.html">installing plugins</a>.</p></div>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
@@ -728,7 +735,7 @@ editor.execute( 'unlink' );
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Flink.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Flink.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

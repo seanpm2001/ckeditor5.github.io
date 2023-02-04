@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:45:13 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:27 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="UI library - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -172,7 +172,7 @@
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                               </div></a></li>
                                           <li><a href="../tutorials/data-from-external-source.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                               </div></a></li>
                                           <li><a href="../tutorials/using-react-in-a-widget.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>
@@ -547,7 +547,7 @@ const dropdownView = createDropdown( locale, SplitButtonView );
 </ul>
 <h4 id="setting-label-icon-and-tooltip"><a class="headerlink" href="#setting-label-icon-and-tooltip">#</a> Setting label, icon, and tooltip</h4>
 <p>To customize the button of the dropdown, use the <a href="../../../api/module_ui_dropdown_dropdownview-DropdownView.html#member-buttonView"><code>buttonView</code></a> property. It gives a direct access to the <a href="../../../api/module_ui_button_buttonview-ButtonView.html"><code>ButtonView</code> instance</a> used by your dropdown.</p>
-<div class="info-box notice"><p>If your dropdown has been created using the <a href="../../../api/module_ui_dropdown_button_splitbuttonview-SplitButtonView.html"><code>SplitButtonView</code></a>, use the <a href="../../../api/module_ui_dropdown_button_splitbuttonview-SplitButtonView.html#member-actionView"><code>actionView</code></a> to access its main region, e.g. <code>dropdownView.buttonView.actionView.set( ... )</code>.</p></div>
+<div class="info-box notice"><p>If your dropdown has been created using the <a href="../../../api/module_ui_dropdown_button_splitbuttonview-SplitButtonView.html"><code>SplitButtonView</code></a>, use the <a href="../../../api/module_ui_dropdown_button_splitbuttonview-SplitButtonView.html#member-actionView"><code>actionView</code></a> to access its main region, e.g. <code>dropdownView.buttonView.actionView.set( /* ... */ )</code>.</p></div>
 <p>To control the label of the dropdown, first make it visible using the <a href="../../../api/module_ui_button_buttonview-ButtonView.html#member-withText"><code>withText</code></a> property and then set the text of the <a href="../../../api/module_ui_button_buttonview-ButtonView.html#member-label"><code>label</code></a>:</p>
 <pre class="highlight"><code class="js">const dropdownView = createDropdown( locale );
 
@@ -559,6 +559,7 @@ dropdownView.buttonView.set( {
 <p>The dropdown button can display an icon too. First, import the SVG file and then pass it to the <a href="../../../api/module_ui_button_buttonview-ButtonView.html#member-icon"><code>icon</code></a> property of the button:</p>
 <pre class="highlight"><code class="js">import iconFile from 'path/to/icon.svg';
 
+// The code that creates a dropdown view.
 // ...
 
 dropdownView.buttonView.set( {
@@ -638,7 +639,7 @@ dropdownView.bind( 'isEnabled' ).toMany( buttons, 'isEnabled',
 <p>It is advised that for the best user experience the editing view gets <a href="../../../api/module_engine_view_view-View.html#function-focus">focused</a> upon any user action (e.g. executing a command) to make sure the editor retains focus:</p>
 <pre class="highlight"><code class="js">// Execute some action on dropdown#execute event.
 dropdownView.buttonView.on( 'execute', () =&gt; {
-    editor.execute( 'command', { value: ... } );
+    editor.execute( 'command', { value: "command-value" } );
     editor.editing.view.focus();
 } );
 </code></pre>
@@ -649,6 +650,7 @@ dropdownView.buttonView.on( 'execute', () =&gt; {
 <p>The <a href="../../../api/module_utils_focustracker-FocusTracker.html"><code>FocusTracker</code></a> class can observe a number of HTML elements and determine if one of them is focused either by the user (clicking, typing) or using the <code>HTMLElement.focus()</code> DOM method.</p>
 <pre class="highlight"><code class="js">import FocusTracker from '@ckeditor/ckeditor5-utils/src/focustracker';
 
+// More imports.
 // ...
 
 const focusTracker = new FocusTracker();
@@ -672,6 +674,7 @@ focusTracker.add( viewInstance.element );
 <p>The <a href="../../../api/module_utils_keystrokehandler-KeystrokeHandler.html"><code>KeystrokeHandler</code></a> listens to the keystroke events fired by an HTML element or any of its descendants and executes pre–defined actions when the keystroke is pressed. Usually, each <a href="#views">view</a> creates its own keystroke handler instance which takes care of the keystrokes fired by the elements the view has rendered.</p>
 <pre class="highlight"><code class="js">import KeystrokeHandler from '@ckeditor/ckeditor5-utils/src/keystrokehandler';
 
+// More imports.
 // ...
 
 const keystrokeHandler = new KeystrokeHandler();
@@ -710,7 +713,7 @@ keystrokeHandler.set( 'Ctrl+A', ( keyEvtData ) =&gt; {
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Farchitecture%2Fui-library.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Farchitecture%2Fui-library.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>
@@ -809,7 +812,7 @@ keystrokeHandler.set( 'Ctrl+A', ( keyEvtData ) =&gt; {
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                                   </div></a></li>
                                               <li><a href="../tutorials/data-from-external-source.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                                   </div></a></li>
                                               <li><a href="../tutorials/using-react-in-a-widget.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>

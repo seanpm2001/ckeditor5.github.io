@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Jan 24 2023 03:45:19 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 04 2023 03:47:33 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Implementing an inline widget - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -175,7 +175,7 @@
                                               <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                               </div></a></li>
                                           <li><a href="data-from-external-source.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                               </div></a></li>
                                           <li><a href="using-react-in-a-widget.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>
@@ -564,6 +564,7 @@ export default class PlaceholderEditing extends Plugin {
     }
 
     _defineSchema() {
+        // Previously registered schema.
         // ...
     }
 
@@ -691,10 +692,12 @@ export default class PlaceholderEditing extends Plugin {
     }
 
     _defineSchema() {
+        // Previously registered schema.
         // ...
     }
 
     _defineConverters() {
+        // Previously defined converters.
         // ...
     }
 }
@@ -756,10 +759,12 @@ export default class PlaceholderEditing extends Plugin {
     }
 
     _defineSchema() {
+        // Previously registered schema.
         // ...
     }
 
     _defineConverters() {
+        // Previously defined converters.
         // ...
     }
 }
@@ -858,15 +863,18 @@ ClassicEditor
         toolbar: [ 'heading', 'bold', 'italic', 'numberedList', 'bulletedList', '|', 'placeholder' ]
     } )
     .then( editor =&gt; {
+        // This code runs after the editor initialization.
         // ...
     } )
     .catch( error =&gt; {
+        // Error handling if something goes wrong during initialization.
         // ...
     } );
 </code></pre>
 <p>To make this plugin extensible, placeholder types will be read from the editor configuration.</p>
 <p>The first step is to define the placeholder configuration in the editing plugin:</p>
-<pre class="highlight"><code class="js">// ... imports
+<pre class="highlight"><code class="js">// Previously imported packages.
+// ...
 
 export default class PlaceholderEditing extends Plugin {
     static get requires() {
@@ -892,10 +900,12 @@ export default class PlaceholderEditing extends Plugin {
     }
 
     _defineConverters() {
+        // Previously defined converters.
         // ...
     }
 
     _defineSchema() {
+        // Previously registered schema.
         // ...
     }
 }
@@ -910,13 +920,15 @@ export default class PlaceholderUI extends Plugin {
         const placeholderNames = editor.config.get( 'placeholderConfig.types' );            // CHANGED
 
         editor.ui.componentFactory.add( 'placeholder', locale =&gt; {
+            // Previously registered dropdown among UI components.
             // ...
         } );
     }
 }
 </code></pre>
 <p>The plugin is now ready to accept the configuration. Check how this works by adding the <code>placeholderConfig</code> configuration in the editor’s <code>create()</code> method:</p>
-<pre class="highlight"><code class="js">// ... imports
+<pre class="highlight"><code class="js">// Previously imported packages.
+// ...
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
@@ -926,6 +938,7 @@ ClassicEditor
             types: [ 'date', 'color', 'first name', 'surname' ]                             // ADDED
         }
     } )
+    // Promise handling.
     // ...
 </code></pre>
 <p>If you open the dropdown in the toolbar, you will see a new list of placeholders to insert.</p>
@@ -1165,7 +1178,7 @@ ClassicEditor
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Ftutorials%2Fimplementing-an-inline-widget.html%22&amp;project-version=35.4.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Ftutorials%2Fimplementing-an-inline-widget.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>
@@ -1264,7 +1277,7 @@ ClassicEditor
                                                   <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Implementing an inline widget</span>
                                                   </div></a></li>
                                               <li><a href="data-from-external-source.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from external source</span>
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Data from an external source</span>
                                                   </div></a></li>
                                               <li><a href="using-react-in-a-widget.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using a React component in a widget</span>
