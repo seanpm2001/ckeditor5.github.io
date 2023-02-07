@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Feb 06 2023 03:48:01 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Tue Feb 07 2023 08:29:43 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Focus tracking - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -439,6 +439,7 @@ class MyListItemView extends View {
     constructor( locale, text ) {
         super( locale );
 
+        // More initializations.
         // ...
 
         this.setTemplate( {
@@ -450,6 +451,7 @@ class MyListItemView extends View {
         } );
     }
 
+    // More methods.
     // ...
 
     focus() {
@@ -464,6 +466,7 @@ class MyListView extends View {
     constructor( locale ) {
         super( locale );
 
+        // More initializations.
         // ...
 
         this.items = this.createCollection();
@@ -474,6 +477,7 @@ class MyListView extends View {
         } );
     }
 
+    // More methods.
     // ...
 
     focus() {
@@ -514,28 +518,34 @@ class MyListView extends View {
     constructor( locale ) {
         super( locale );
 
+        // More initializations.
         // ...
 
         // A view collection containing items of the list.
         this.items = this.createCollection();
 
+        // Setting the template.
         // ...
 
         // The instance of the focus tracker that tracks focus in #items.
         this.focusTracker = new FocusTracker();
     }
 
+    // More methods.
     // ...
 }
 </code></pre>
 <p>To make sure your focus tracker instance and the <code>items</code> view collection stay synchronized, create  listeners that will update the tracker when a new child view is added or some are removed (<a href="../../../../api/module_ui_viewcollection-ViewCollection.html">view collections fire events</a>). The best way to do that is inside the <a href="../../../../api/module_ui_view-View.html#function-render"><code>render()</code></a> method:</p>
-<pre class="highlight"><code class="js">// ...
+<pre class="highlight"><code class="js">// Previously imported packages.
+// ...
 
 class MyListView extends View {
     constructor( locale ) {
+        // More initializations.
         // ...
     }
 
+    // More methods.
     // ...
 
     render() {
@@ -557,6 +567,7 @@ class MyListView extends View {
         } );
     }
 
+    // More methods.
     // ...
 }
 </code></pre>
@@ -573,6 +584,7 @@ export default class MyListView extends View {
     constructor( locale ) {
         super( locale );
 
+        // More initializations.
         // ...
 
         // The keystroke handler that will help the focus cycler respond to the keystrokes.
@@ -582,6 +594,7 @@ export default class MyListView extends View {
     render() {
         super.render();
 
+        // Setting the focus tracker.
         // ...
 
         // Start listening for the keystrokes coming from #element, which will allow
@@ -594,6 +607,7 @@ export default class MyListView extends View {
         this.keystrokes.destroy();
     }
 
+    // More methods.
     // ...
 }
 </code></pre>
@@ -610,6 +624,7 @@ class MyListView extends View {
     constructor( locale ) {
         super( locale );
 
+        // More initializations.
         // ...
 
         // The view collection containing items of the list.
@@ -636,21 +651,22 @@ class MyListView extends View {
         } );
     }
 
+    // More methods.
     // ...
 }
 </code></pre>
 <p>Similarly to the previous sections of this guide, feed the focus tracker and synchronize it with the list items collection in the <code>render()</code> method. Since the <a href="../../../../api/module_ui_view-View.html#member-element"><code>MyListView#element</code></a> has already been rendered at that stage, this is also the right moment to start listening to the keyboard events:</p>
-<pre class="highlight"><code class="js">// ...
+<pre class="highlight"><code class="js">// Previously imported packages.
+// ...
 
 class MyListView extends View {
     constructor( locale ) {
+        // More initializations.
         // ...
     }
 
     render() {
         super.render();
-
-        // ...
 
         // Items added before rendering should be known to the #focusTracker.
         for ( const item of this.items ) {
@@ -684,6 +700,7 @@ class MyListView extends View {
         this.keystrokes.destroy();
     }
 
+    // More methods.
     // ...
 }
 </code></pre>
@@ -721,6 +738,7 @@ class MyListView extends View {
             }
         } );
 
+        // More intializations.
         // ...
 
         this.setTemplate( {
@@ -731,8 +749,6 @@ class MyListView extends View {
 
     render() {
         super.render();
-
-        // ...
 
         // Items added before rendering should be known to the #focusTracker.
         for ( const item of this.items ) {
@@ -771,6 +787,7 @@ class MyListItemView extends View {
     constructor( locale, text ) {
         super( locale );
 
+        // More initializations.
         // ...
 
         this.setTemplate( {
@@ -782,6 +799,7 @@ class MyListItemView extends View {
         } );
     }
 
+    // More methods.
     // ...
 
     focus() {
@@ -792,6 +810,7 @@ class MyListItemView extends View {
 <p>You can quickly run it in the context of an existing editor in the following way:</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
+        // The editor's configuration.
         // ...
     } )
     .then( editor =&gt; {

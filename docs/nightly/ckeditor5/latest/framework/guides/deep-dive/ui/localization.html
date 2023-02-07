@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Feb 06 2023 03:48:01 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Tue Feb 07 2023 08:29:44 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Localization - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -354,7 +354,10 @@ t( { string: '%1 %0 emoji', plural: '%1 %0 emojis', id: 'ACTION_N_EMOJIS' }, [ q
 </code></pre>
 <h3 id="example-localizing-the-plugin-ui"><a class="headerlink" href="#example-localizing-the-plugin-ui">#</a> Example: Localizing the plugin UI</h3>
 <p>This example shows how to create a localizable user interface of a plugin. Here is how you can create a button that will insert a smiling face emoji. The button will have a localizable tooltip.</p>
-<pre class="highlight"><code class="js">// ...
+<pre class="highlight"><code class="js">// Custom plugin configuration, including necessary imports.
+// The code below should be put into a custom plugin class extending the Plugin class.
+// ...
+
 editor.ui.componentFactory.add( 'smilingFaceEmoji', locale =&gt; {
     const buttonView = new ButtonView( locale );
 
@@ -375,18 +378,20 @@ editor.ui.componentFactory.add( 'smilingFaceEmoji', locale =&gt; {
         editor.editing.view.focus();
     } );
 } );
+
+// The rest of the custom plugin configuration.
 // ...
 </code></pre>
 <div class="info-box notice notice__warning"><p>See <a href="../../plugins/creating-simple-plugin-timestamp.html">how to create a complete plugin</a> to have a better understanding of creating CKEditor 5 plugins.</p></div>
 <h3 id="example-localizing-pending-actions"><a class="headerlink" href="#example-localizing-pending-actions">#</a> Example: Localizing pending actions</h3>
 <p><a href="../../../../api/module_core_pendingactions-PendingActions.html">Pending actions</a> are used to inform the user that an action is in progress and they will lose data if they exit the editor at the given moment. Here is how you can localize them:</p>
 <pre class="highlight"><code class="js">class FileRepository {
+    // More methods.
     // ...
+    
     updatePendingAction() {
-        // ...
         const pendingActions = this.editor.plugins.get( PendingActions );
-
-        // ...
+        
         const t = this.editor.t;
         const getMessage = value =&gt; t( 'Upload in progress (%0%).', value ); // Upload in progress (12%).
 
@@ -437,7 +442,8 @@ t( { string: 'Add space', plural: 'Add %0 spaces' }, 5 ) // "Dodaj 5 spacji"
         // Note that you only need to pass this function when you add translations for a new language.
         getPluralForm: n =&gt; n == 1 ? 0 : n % 10 &gt;= 2 &amp;&amp; n % 10 &lt;= 4 &amp;&amp; ( n % 100 &lt; 10 || n % 100 &gt;= 20 ) ? 1 : 2
     }
-    // Other languages...
+    // Other languages.
+    // ...
 }
 </code></pre>
 <p>It is important to extend the existing properties in the <code>window.CKEDITOR_TRANSLATIONS</code> object to not lose other translations. This can be achieved easily using <code>Object.assign()</code> and the <code>||</code> operator.</p>
