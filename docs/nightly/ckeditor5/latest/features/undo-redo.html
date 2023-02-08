@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Feb 07 2023 08:29:26 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Wed Feb 08 2023 03:50:19 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Undo/Redo - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -467,7 +467,7 @@
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>Use the demo below to try out the undo and redo mechanism. Play around the content, try to introduce some changes and then use the toolbar buttons to undo <span class="editor-icon"><img src="../assets/icons/632898522e.svg" class="editor-icon__image" alt="Undo"></span> or redo <span class="editor-icon"><img src="../assets/icons/342d04ddab.svg" class="editor-icon__image" alt="Redo"></span> these.</p>
 <p>Alternatively, utilize the well-known keyboard shortcut <kbd>Ctrl</kbd> + <kbd>Z</kbd> (it would be <kbd>Cmd</kbd> + <kbd>Z</kbd> on Mac) for undo. For a redo you can use either <kbd>Ctrl</kbd> + <kbd>Y</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> (respectively with <kbd>Cmd</kbd> on Mac).</p>
-<div class="live-snippet"><script src="https://cdn.ckbox.io/CKBox/1.2.1/ckbox.js"></script>
+<div class="live-snippet"><script src="https://cdn.ckbox.io/ckbox/1.3.0/ckbox.js"></script>
 <div id="undo-redo">
 	<h2><strong>The purpose of writing</strong></h2>
 	<figure class="image image-style-side"><img src="../assets/img/mirror.jpg" alt="Everything is a dim image in a mirror.">
@@ -500,7 +500,7 @@ ClassicEditor
     .then( /* ... */ )
     .catch( /* ... */ );
 </code></pre>
-<div class="info-box notice notice__info"><p>Read more about <a href="../installation/getting-started/installing-plugins.html">installing plugins</a> and <a href="toolbar/toolbar.html">toolbar configuration</a>.</p></div>
+<div class="info-box notice notice__info"><p>Read more about <a href="../installation/plugins/installing-plugins.html">installing plugins</a> and <a href="toolbar/toolbar.html">toolbar configuration</a>.</p></div>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
 <p>The <a href="../api/module_undo_undo-Undo.html">Undo</a> plugin is a “glue” plugin that loads the <a href="../api/module_undo_undoediting-UndoEditing.html"><code>UndoEditing</code></a> engine and the <a href="../api/module_undo_undoui-UndoUI.html"><code>UndoUI</code></a> features.</p>
 <p>The <code>UndoEditing</code> feature registers the following commands:</p>
@@ -525,7 +525,7 @@ ClassicEditor
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fundo-redo.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fundo-redo.html%22&amp;project-version=36.0.1" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

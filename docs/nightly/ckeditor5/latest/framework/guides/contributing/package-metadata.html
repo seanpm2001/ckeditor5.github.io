@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Feb 07 2023 08:29:42 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Wed Feb 08 2023 03:50:36 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Package metadata - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -302,7 +302,7 @@
           <h1 class="main__content-title"><img src="../../../../../assets/2.3.0/img/book.svg" alt="guide">Package metadata
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#data-format-for-plugin-metadata">Data format for plugin metadata</a></li></ol></nav>
 <p>The package metadata is a set of CKEditor 5-related data describing plugins that the package delivers. It allows for an automated detection of plugins and building them by an external builder.</p>
-<p>In case of official CKEditor 5 packages (as well as some partner ones), this data is used by the <a href="https://ckeditor.com/ckeditor-5/online-builder/">CKEditor 5 Online Builder</a> and allows for building the <a href="../../../installation/advanced/features-html-output-overview.html">Features’ HTML output</a> page presenting all official CKEditor 5 plugins.</p>
+<p>In case of official CKEditor 5 packages (as well as some partner ones), this data is used by the <a href="https://ckeditor.com/ckeditor-5/online-builder/">CKEditor 5 Online Builder</a> and allows for building the <a href="../../../installation/plugins/features-html-output-overview.html">Features’ HTML output</a> page presenting a list of all official CKEditor 5 plugins.</p>
 <p>The package metadata should be saved in the special <code>ckeditor5-metadata.json</code> file in the root of the package published on npm.</p>
 <div class="info-box notice"><p>Only plugins that provide major functionalities should be described in the metadata file. For example, the <a href="https://github.com/ckeditor/ckeditor5/blob/master/packages/ckeditor5-mention/ckeditor5-metadata.json">metadata file for the <code>@ckeditor/ckeditor5-mention</code> package</a> describes only the <code>Mention</code> plugin, which is a “glue plugin” that loads both the editing and UI parts of the mention feature. This package does not expose the <code>MentionEditing</code> and <code>MentionUI</code> plugins that cannot be used alone.</p></div>
 <h2 id="data-format-for-plugin-metadata"><a class="headerlink" href="#data-format-for-plugin-metadata">#</a> Data format for plugin metadata</h2>
@@ -362,7 +362,7 @@
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Fcontributing%2Fpackage-metadata.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Fcontributing%2Fpackage-metadata.html%22&amp;project-version=36.0.1" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

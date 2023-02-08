@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Feb 07 2023 08:29:21 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Wed Feb 08 2023 03:50:14 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Integration - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -464,7 +464,7 @@
 <div class="info-box notice"><p>This is an additionally payable feature. <a href="https://ckeditor.com/contact/?sales=true#contact-form">Contact us</a> to receive an offer tailored to your needs. If you already have a valid license, please log into your <a href="https://dashboard.ckeditor.com/">user dashboard</a> to access the feature settings.</p></div>
 <p>The real-time collaboration feature needs a server to synchronize content between the clients, so in order to use it, you need to sign up to the collaboration service first. Refer to the {@link @cs guides/collaboration/quick-start CKEditor Cloud Services Collaboration – Quick Start} guide for more details. There is also {@link @trial guides/overview Premium features free trial} available for testing purposes, that will provide the necessary backend.</p>
 <h2 id="prepare-editor-build"><a class="headerlink" href="#prepare-editor-build">#</a> Prepare editor build</h2>
-<p>Once you have the server ready, the next step is to <a href="../../../installation/getting-started/installing-plugins.html#adding-a-plugin-to-a-build">create a custom CKEditor 5 build</a>. It needs to include the real-time collaboration feature, because it is not present in any of the predefined builds. The following instructions describe this process step-by-step.</p>
+<p>Once you have the server ready, the next step is to <a href="../../../installation/plugins/installing-plugins.html#adding-a-plugin-to-a-build">create a custom CKEditor 5 build</a>. It needs to include the real-time collaboration feature, because it is not present in any of the predefined builds. The following instructions describe this process step-by-step.</p>
 <div class="info-box notice notice__info"><p>Real-time collaboration is a complex topic and despite having over 10.000 tests we cannot guarantee that no error will show during a long collaboration session. This is why we recommend to use the <a href="../../watchdog.html">watchdog</a> feature. It is a helpful utility which ensures that an editor instance is running and, in case of an error, tries to restore the editor to a working state. We highly recommend it using watchdog, even though using collaboration features without it is still possible.</p></div>
 <p>First, clone the editor build that you want to integrate.</p>
 <pre class="highlight"><code class="bash">git clone -b stable https://github.com/ckeditor/ckeditor5
@@ -541,7 +541,7 @@ export default { ClassicEditor, EditorWatchdog };
 <p>After the above steps are done, your custom build needs to be bundled using webpack:</p>
 <pre class="highlight"><code class="bash">npm run build
 </code></pre>
-<div class="info-box notice notice__info"><p>Read more about installing plugins in the dedicated <a href="../../../installation/getting-started/installing-plugins.html">Installing plugins</a> guide.</p></div>
+<div class="info-box notice notice__info"><p>Read more about installing plugins in the dedicated <a href="../../../installation/plugins/installing-plugins.html">Installing plugins</a> guide.</p></div>
 <h2 id="prepare-the-html-structure"><a class="headerlink" href="#prepare-the-html-structure">#</a> Prepare the HTML structure</h2>
 <p>Having configured the plugins, you need to place your bundle in an HTML document and create the editor.</p>
 <p>For the sake of completeness, the examples below implement the <a href="../annotations/annotations-display-mode.html#wide-sidebar">wide sidebar display mode</a> for comments and suggestions annotations. If you want to use the inline display mode, remove parts of the snippets that set up the wide sidebar.</p>
@@ -721,7 +721,7 @@ export default { ClassicEditor, EditorWatchdog };
 <div class="info-box notice"><p>Using the autosave feature with large documents may result in a lot of data being sent to your server and can have a negative impact on the editor user experience.</p><p>We recommend using the {@link @cs guides/collaboration/document-storage document storage} feature instead.</p></div>
 <p>The second helper is the <a href="../../../api/module_autosave_autosave-Autosave.html"><code>Autosave</code></a> plugin.</p>
 <p>The autosave plugin triggers the save callback whenever the user changes the content. It takes care of throttling the callback execution to limit the number of calls to the database. It also automatically secures the user from leaving the page before the content is saved.</p>
-<p>The autosave plugin is by default not included in any of the predefined builds nor is it automatically required by the real-time collaboration plugins, so you need to <a href="../../../installation/getting-started/installing-plugins.html">install it</a> separately. To learn more about this plugin, refer to the <a href="../../../installation/getting-started/getting-and-setting-data.html#autosave-feature">Getting and setting data</a> guide.</p>
+<p>The autosave plugin is by default not included in any of the predefined builds nor is it automatically required by the real-time collaboration plugins, so you need to <a href="../../../installation/plugins/installing-plugins.html">install it</a> separately. To learn more about this plugin, refer to the <a href="../../../installation/getting-started/getting-and-setting-data.html#autosave-feature">Getting and setting data</a> guide.</p>
 <h4 id="autosave-for-revision-history"><a class="headerlink" href="#autosave-for-revision-history">#</a> Autosave for revision history</h4>
 <p>If you are using the revision history feature, your autosave callback should take care of updating the recent revision data. See the example below:</p>
 <pre class="highlight"><code class="js">autosave: {
@@ -765,7 +765,7 @@ export default { ClassicEditor, EditorWatchdog };
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fcollaboration%2Freal-time-collaboration%2Freal-time-collaboration-integration.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22features%2Fcollaboration%2Freal-time-collaboration%2Freal-time-collaboration-integration.html%22&amp;project-version=36.0.1" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

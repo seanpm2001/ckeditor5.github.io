@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Feb 07 2023 08:29:39 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Wed Feb 08 2023 03:50:31 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Customized installation - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -100,14 +100,26 @@
                                   <li><a href="configuration.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Configuration</span>
                                       </div></a></li>
-                                  <li><a href="installing-plugins.html">
-                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
-                                      </div></a></li>
                                   <li><a href="editor-lifecycle.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor lifecycle</span>
                                       </div></a></li>
                                   <li><a href="getting-and-setting-data.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and setting data</span>
+                                      </div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Plugins</span>
+                            </div>
+                            <ul class="tree__item-nested-list">
+                                  <li><a href="../plugins/plugins.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugins in CKEditor 5</span>
+                                      </div></a></li>
+                                  <li><a href="../plugins/features-html-output-overview.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugin list</span>
+                                      </div></a></li>
+                                  <li><a href="../plugins/installing-plugins.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
                                       </div></a></li>
                             </ul>
                           </li>
@@ -150,12 +162,6 @@
                                       </div></a></li>
                                   <li><a href="../advanced/csp.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Content Security Policy</span>
-                                      </div></a></li>
-                                  <li><a href="../advanced/plugins.html">
-                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Custom plugins</span>
-                                      </div></a></li>
-                                  <li><a href="../advanced/features-html-output-overview.html">
-                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Features' HTML output</span>
                                       </div></a></li>
                                   <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>
@@ -213,7 +219,7 @@
 <h2 id="creating-custom-builds-with-online-builder"><a class="headerlink" href="#creating-custom-builds-with-online-builder">#</a> Creating custom builds with online builder</h2>
 <p>Although the CKEditor 5 WYSIWYG editor comes with handy <a href="predefined-builds.html">predefined builds</a>, sometimes these predefined bundled versions are not enough and a need for more customized  builds arises. Some of the reasons for creating custom builds are:</p>
 <ul>
-<li>Adding <a href="../advanced/plugins.html">plugin-driven features</a> which are not included in the existing builds.</li>
+<li>Adding <a href="../plugins/plugins.html">plugin-driven features</a> which are not included in the existing builds.</li>
 <li>Removing unnecessary features present in a build.</li>
 <li>Designing a <a href="configuration.html#toolbar-setup">customized toolbar experience</a>.</li>
 <li>Changing the <a href="predefined-builds.html#available-builds">editor type build</a>.</li>
@@ -330,7 +336,7 @@ module.exports = {
 </code></pre>
 <div class="info-box notice"><p>If you cannot use the latest webpack (at the moment of writing this guide, it is 5), the provided configuration will also work with webpack 4.</p></div>
 <h3 id="creating-an-editor"><a class="headerlink" href="#creating-an-editor">#</a> Creating an editor</h3>
-<p>You can now install some of the CKEditor 5 Framework packages which will allow you to initialize a simple rich-text editor. Keep in mind, however, that all packages (excluding <code>@ckeditor/ckeditor5-dev-*</code>) <a href="installing-plugins.html#requirements">must have the same version as the base editor package</a>.</p>
+<p>You can now install some of the CKEditor 5 Framework packages which will allow you to initialize a simple rich-text editor. Keep in mind, however, that all packages (excluding <code>@ckeditor/ckeditor5-dev-*</code>) <a href="../plugins/installing-plugins.html#requirements">must have the same version as the base editor package</a>.</p>
 <p>You can start with the <a href="../../examples/builds/classic-editor.html">classic editor</a> with a small set of features.</p>
 <pre class="highlight"><code class="bash">npm install --save \
     @ckeditor/ckeditor5-dev-utils \
@@ -342,7 +348,7 @@ module.exports = {
 </code></pre>
 <p>Based on these packages you can create a simple application.</p>
 <div class="info-box notice"><p>This guide is using the ES6 modules syntax. If you are not familiar with it, check out <a href="http://exploringjs.com/es6/ch_modules.html">this article</a>.</p></div>
-<div class="info-box notice notice__warning"><p>Note that in this guide, the editor class is used directly (i.e. you use <code>@ckeditor/ckeditor5-editor-classic</code> instead of <code>@ckeditor/ckeditor5-build-classic</code>).</p><p>No <a href="predefined-builds.html">predefined editor builds</a> are used, because adding new plugins to these requires rebuilding them anyway. This can be done by <a href="installing-plugins.html">customizing a build</a> or by including the CKEditor 5 source into your application (like in this guide).</p></div>
+<div class="info-box notice notice__warning"><p>Note that in this guide, the editor class is used directly (i.e. you use <code>@ckeditor/ckeditor5-editor-classic</code> instead of <code>@ckeditor/ckeditor5-build-classic</code>).</p><p>No <a href="predefined-builds.html">predefined editor builds</a> are used, because adding new plugins to these requires rebuilding them anyway. This can be done by <a href="../plugins/installing-plugins.html">customizing a build</a> or by including the CKEditor 5 source into your application (like in this guide).</p></div>
 <pre class="highlight"><code class="js">// app.js
 
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
@@ -472,7 +478,7 @@ For example, use the following command to get to the classic build:</p>
 <p>Then, you can add missing dependencies (i.e. packages you want to add to your build). The easiest way to do so is by typing:</p>
 <pre class="highlight"><code class="bash">npm install --save-dev &lt;package-name&gt;
 </code></pre>
-<p>This will install the package and add it to <code>package.json</code>. You can also edit <code>package.json</code> manually. Keep in mind, however, that all packages (excluding <code>@ckeditor/ckeditor5-dev-*</code>) <a href="installing-plugins.html#requirements">must have the same version as the base editor package</a>.</p>
+<p>This will install the package and add it to <code>package.json</code>. You can also edit <code>package.json</code> manually. Keep in mind, however, that all packages (excluding <code>@ckeditor/ckeditor5-dev-*</code>) <a href="../plugins/installing-plugins.html#requirements">must have the same version as the base editor package</a>.</p>
 <div class="info-box notice notice__hint"><p>Due to the non-deterministic way how npm installs packages, it is recommended to run <code>rm -rf node_modules &amp;&amp; npm install</code> when in doubt. This will prevent some packages from getting installed more than once in <code>node_modules/</code> (which might lead to broken builds).</p><p>You can also give <a href="https://yarnpkg.com/lang/en/">Yarn</a> a try.</p></div>
 <h4 id="updating-build-configuration"><a class="headerlink" href="#updating-build-configuration">#</a> Updating build configuration</h4>
 <p>If you added or removed dependencies, you will also need to modify the <code>src/ckeditor.js</code> file.</p>
@@ -539,7 +545,7 @@ git merge upstream/stable
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22installation%2Fgetting-started%2Fquick-start-other.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22installation%2Fgetting-started%2Fquick-start-other.html%22&amp;project-version=36.0.1" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>
@@ -576,14 +582,26 @@ git merge upstream/stable
                                     <li><a href="configuration.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Configuration</span>
                                         </div></a></li>
-                                    <li><a href="installing-plugins.html">
-                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
-                                        </div></a></li>
                                     <li><a href="editor-lifecycle.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor lifecycle</span>
                                         </div></a></li>
                                     <li><a href="getting-and-setting-data.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and setting data</span>
+                                        </div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Plugins</span>
+                            </div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="../plugins/plugins.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugins in CKEditor 5</span>
+                                        </div></a></li>
+                                    <li><a href="../plugins/features-html-output-overview.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugin list</span>
+                                        </div></a></li>
+                                    <li><a href="../plugins/installing-plugins.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
                                         </div></a></li>
                             </ul>
                           </li>
@@ -626,12 +644,6 @@ git merge upstream/stable
                                         </div></a></li>
                                     <li><a href="../advanced/csp.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Content Security Policy</span>
-                                        </div></a></li>
-                                    <li><a href="../advanced/plugins.html">
-                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Custom plugins</span>
-                                        </div></a></li>
-                                    <li><a href="../advanced/features-html-output-overview.html">
-                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Features' HTML output</span>
                                         </div></a></li>
                                     <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>

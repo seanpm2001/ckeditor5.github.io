@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Feb 07 2023 08:29:29 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Wed Feb 08 2023 03:50:22 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="CKEditor 5 changelog">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -171,10 +171,16 @@
           <div class="rwd-breadcrumbs"><a href="../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">Updating</a>
           </div>
           <h1 class="main__content-title"><img src="../../../../assets/2.3.0/img/book.svg" alt="guide">CKEditor 5 changelog
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#ckeditor-5-3600-release">CKEditor 5 36.0.0 release</a></li><li><a href="#ckeditor-5-3540-release">CKEditor 5 35.4.0 release</a></li><li><a href="#ckeditor-5-3532-release">CKEditor 5 35.3.2 release</a></li></ol></nav>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#ckeditor-5-3601-release">CKEditor 5 36.0.1 release</a></li><li><a href="#ckeditor-5-3600-release">CKEditor 5 36.0.0 release</a></li><li><a href="#ckeditor-5-3540-release">CKEditor 5 35.4.0 release</a></li></ol></nav>
 <p>This is the CKEditor 5 changelog guide. Here you will find information about the most important changes introduced in the release, new features and bugfixes. Information about both major and minor breaking changes is available, too, if such were introduced. You can read more about breaking changes in CKEditor 5 in the <a href="https://ckeditor.com/docs/ckeditor5/latest/support/versioning-policy.html#major-and-minor-breaking-changes">Versioning policy</a> guide.</p>
 <p>You can find additional information about each release in the blog posts linked at the start of each entry.</p>
 <p>This guide only provides the changelog information for the latest 3 releases of CKEditor 5. For older releases, refer to the <a href="https://github.com/ckeditor/ckeditor5/releases">release notes on GitHub</a>.</p>
+<h2 id="ckeditor-5-3601-release"><a class="headerlink" href="#ckeditor-5-3601-release">#</a> CKEditor 5 36.0.1 release</h2>
+<h3 id="bug-fixes"><a class="headerlink" href="#bug-fixes">#</a> Bug fixes</h3>
+<ul>
+<li><strong><a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-clipboard">clipboard</a></strong>: Dragging images in the editor should not lag in Firefox. Closes <a href="https://github.com/ckeditor/ckeditor5/issues/13366">#13366</a>. (<a href="https://github.com/ckeditor/ckeditor5/commit/74af23792bf0b060df1bc2665b63139a63001c71">commit</a>)</li>
+<li><strong><a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-engine">engine</a></strong>: Dragging images in the editor should not lag in Firefox. Closes <a href="https://github.com/ckeditor/ckeditor5/issues/13366">#13366</a>. (<a href="https://github.com/ckeditor/ckeditor5/commit/74af23792bf0b060df1bc2665b63139a63001c71">commit</a>)</li>
+</ul>
 <h2 id="ckeditor-5-3600-release"><a class="headerlink" href="#ckeditor-5-3600-release">#</a> CKEditor 5 36.0.0 release</h2>
 <h3 id="major-breaking-changes"><a class="headerlink" href="#major-breaking-changes">#</a> MAJOR BREAKING CHANGES</h3>
 <ul>
@@ -201,7 +207,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="bug-fixes"><a class="headerlink" href="#bug-fixes">#</a> Bug fixes</h3>
+<h3 id="bug-fixes-2"><a class="headerlink" href="#bug-fixes-2">#</a> Bug fixes</h3>
 <ul>
 <li><strong><a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-engine">engine</a></strong>: Markers that are next to an auto-paragraphed text nodes will be moved to the new paragraph together with the text. (<a href="https://github.com/ckeditor/ckeditor5/commit/e89f0218862dbfb035f9ac07128dbee83c4e1f98">commit</a>)</li>
 <li><strong><a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-engine">engine</a></strong>: Fixed focus handling issue which happened on Chrome after a nested editable was clicked. (<a href="https://github.com/ckeditor/ckeditor5/commit/4d31c6ced78ed83c3556635b0cf6e246e975b159">commit</a>)</li>
@@ -266,7 +272,7 @@
 <li><strong><a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-track-changes">track-changes</a></strong>: Added track changes integration for lists, document list properties, and table resize features.</li>
 <li><strong><a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-track-changes">track-changes</a></strong>: Introduced the <code>trackChanges.trackFormatChanges</code> configuration property which can be used to disable tracking of format changes.</li>
 </ul>
-<h3 id="bug-fixes-2"><a class="headerlink" href="#bug-fixes-2">#</a> Bug fixes</h3>
+<h3 id="bug-fixes-3"><a class="headerlink" href="#bug-fixes-3">#</a> Bug fixes</h3>
 <ul>
 <li><strong><a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-clipboard">clipboard</a></strong>: Replace a tab with four spaces when pasting data from clipboard. Closes <a href="https://github.com/ckeditor/ckeditor5/issues/12806">#12806</a>. (<a href="https://github.com/ckeditor/ckeditor5/commit/8aa3b3af0e4a8ffe0af1c7e036fd6cd3b7ab6b67">commit</a>)</li>
 <li><strong><a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-comments">comments</a></strong>: It is no longer necessary to make two mouse clicks to move the selection if the annotation in a wide sidebar was focused before.</li>
@@ -313,16 +319,11 @@
 </li>
 <li>Updated translations. (<a href="https://github.com/ckeditor/ckeditor5/commit/7b606f2c6cccb778ab54d4dfa29de222398e2c20">commit</a>)</li>
 </ul>
-<h2 id="ckeditor-5-3532-release"><a class="headerlink" href="#ckeditor-5-3532-release">#</a> CKEditor 5 35.3.2 release</h2>
-<h3 id="bug-fixes-3"><a class="headerlink" href="#bug-fixes-3">#</a> Bug fixes</h3>
-<ul>
-<li><strong><a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-engine">engine</a></strong>: Improved support for dictation (via VoiceControl) on iOS and multi-line text replacements on macOS. Closes <a href="https://github.com/ckeditor/ckeditor5/issues/2045">#2045</a>, <a href="https://github.com/ckeditor/ckeditor5/issues/11443">#11443</a>. (<a href="https://github.com/ckeditor/ckeditor5/commit/6f639c7c6327f1852756ba42510f8a0caeaf5ac6">commit</a>)</li>
-</ul>
 
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22updating%2Fguides%2Fchangelog.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22updating%2Fguides%2Fchangelog.html%22&amp;project-version=36.0.1" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

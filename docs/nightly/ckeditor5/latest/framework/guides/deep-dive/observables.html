@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Feb 07 2023 08:29:44 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Wed Feb 08 2023 03:50:38 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Observables - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -308,6 +308,7 @@
 import mix from '@ckeditor/ckeditor5-utils/src/mix';
 
 class AnyClass {
+    // Any class definition.
     // ...
 }
 
@@ -338,6 +339,7 @@ mix( AnyClass, ObservableMixin );
         // this.isEnabled is observable and true.
         this.set( 'isEnabled', true );
 
+        // More observable's properties.
         // ...
     }
 }
@@ -371,6 +373,7 @@ view.type = 'submit'; // Changing a regular property fires no event.
     constructor() {
         super();
 
+        // Previously defined properties.
         // ...
 
         // This template will have the following symbolic representation in DOM:
@@ -433,20 +436,20 @@ const command = editor.commands.get( 'bold' );
 </ul>
 <p>Note that <code>command.isEnabled</code> <strong>must</strong> be defined using the <code>set()</code> method for the binding to be dynamic. In this case we are lucky because <a href="../../../api/module_core_command-Command.html#member-isEnabled"><code>isEnabled</code></a> is a standard observable property of every command in the editor. But keep in mind that when you create your own observable class, using <code>set()</code> method is the only way to define observable properties.</p>
 <h4 id="renaming-properties"><a class="headerlink" href="#renaming-properties">#</a> Renaming properties</h4>
-<p>Now let’s dive into the <code>bind( ... ).to( ... )</code> syntax for a minute. As a matter of fact, the last example corresponds to the following code:</p>
+<p>Now let’s dive into the <code>bind( /* ... */ ).to( /* ... */ )</code> syntax for a minute. As a matter of fact, the last example corresponds to the following code:</p>
 <pre class="highlight"><code class="js">const button = new Button();
 const command = editor.commands.get( 'bold' );
 
 button.bind( 'isEnabled' ).to( command, 'isEnabled' );
 </code></pre>
-<p>You probably noticed the <code>to( ... )</code> interface which helps specify the name of the property (or just “rename” the property in the binding).</p>
+<p>You probably noticed the <code>to( /* ... */ )</code> interface which helps specify the name of the property (or just “rename” the property in the binding).</p>
 <p>Both <code>Button</code> and <code>Command</code> class share the same <code>isEnabled</code> property, which allowed us to shorten the code. But if we decided to bind the <code>Button#isOn</code> to the <code>Command#value</code>, the code would be as follows:</p>
 <pre class="highlight"><code class="js">button.bind( 'isOn' ).to( command, 'value' );
 </code></pre>
 <p>The property has been “renamed” in the binding and from now on, whenever <code>command.value</code> changes, the value of <code>button.isOn</code> will reflect it.</p>
 <h4 id="processing-a-property-value"><a class="headerlink" href="#processing-a-property-value">#</a> Processing a property value</h4>
 <p>Another use case is processing the bound property value, for instance, when a button should be disabled only if certain conditions are met. Passing a callback as the third parameter allows implementing a custom logic.</p>
-<p>In the example below, the <code>isEnabled</code> property will be set to <code>true</code> only when <code>command.value</code> equals <code>'heading1</code>.</p>
+<p>In the example below, the <code>isEnabled</code> property will be set to <code>true</code> only when <code>command.value</code> equals <code>'heading1'</code>.</p>
 <pre class="highlight"><code class="js">const command = editor.commands.get( 'heading' );
 button.bind( 'isOn' ).to( command, 'value', value =&gt; value === 'heading1' );
 </code></pre>
@@ -498,6 +501,7 @@ const command = editor.commands.get( 'bold' );
 
 button.bind( 'isOn', 'isEnabled' ).to( command, 'value', 'isEnabled' );
 
+// More bindings.
 // ...
 
 // From now on, button#isEnabled is no longer bound to the command.
@@ -509,6 +513,7 @@ const command = editor.commands.get( 'bold' );
 
 button.bind( 'isOn', 'isEnabled' ).to( command, 'value', 'isEnabled' );
 
+// More bindings.
 // ...
 
 // Both #isEnabled and #isOn properties are independent back again.
@@ -521,6 +526,7 @@ button.unbind();
 <p>Decorating is possible using the <a href="../../../api/module_utils_observablemixin-ObservableMixin.html#function-decorate"><code>decorate()</code></a> method. Let’s decorate a <code>focus</code> method of a <code>Button</code> class we created in the <a href="#making-properties-observable">previous chapters</a> and see what if offers:</p>
 <pre class="highlight"><code class="js">class Button extends View {
     constructor() {
+        // Setting the template and bindings.
         // ...
 
         this.decorate( 'focus' );
@@ -603,7 +609,7 @@ button.focus( true ); // -&gt; 'Focusing button, force="true"'
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Fdeep-dive%2Fobservables.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22framework%2Fguides%2Fdeep-dive%2Fobservables.html%22&amp;project-version=36.0.1" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>

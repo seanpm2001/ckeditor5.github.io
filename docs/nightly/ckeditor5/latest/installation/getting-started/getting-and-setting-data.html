@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Feb 07 2023 08:29:39 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Wed Feb 08 2023 03:50:31 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Getting and setting data - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -103,14 +103,26 @@
                                   <li><a href="configuration.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Configuration</span>
                                       </div></a></li>
-                                  <li><a href="installing-plugins.html">
-                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
-                                      </div></a></li>
                                   <li><a href="editor-lifecycle.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor lifecycle</span>
                                       </div></a></li>
                                   <li><a href="">
                                       <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Getting and setting data</span>
+                                      </div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Plugins</span>
+                            </div>
+                            <ul class="tree__item-nested-list">
+                                  <li><a href="../plugins/plugins.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugins in CKEditor 5</span>
+                                      </div></a></li>
+                                  <li><a href="../plugins/features-html-output-overview.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugin list</span>
+                                      </div></a></li>
+                                  <li><a href="../plugins/installing-plugins.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
                                       </div></a></li>
                             </ul>
                           </li>
@@ -153,12 +165,6 @@
                                       </div></a></li>
                                   <li><a href="../advanced/csp.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Content Security Policy</span>
-                                      </div></a></li>
-                                  <li><a href="../advanced/plugins.html">
-                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Custom plugins</span>
-                                      </div></a></li>
-                                  <li><a href="../advanced/features-html-output-overview.html">
-                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Features' HTML output</span>
                                       </div></a></li>
                                   <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>
@@ -216,7 +222,7 @@
 &lt;head&gt;
     &lt;meta charset="utf-8"&gt;
     &lt;title&gt;CKEditor 5 - Classic editor&lt;/title&gt;
-    &lt;script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;h1&gt;Classic editor&lt;/h1&gt;
@@ -295,7 +301,7 @@ document.querySelector( '#submit' ).addEventListener( 'click', () =&gt; {
 <div class="info-box notice notice__warning"><p>Enabling the <code>updateSourceElementOnDestroy</code> option in your configuration might have some security implications, depending on plugins you use. While the editing view is secured, there might be some unsafe content in the data output, so enable this option only if you know what you are doing. Be especially careful when using the Markdown, General HTML Support and HTML embed features.</p></div>
 <h2 id="autosave-feature"><a class="headerlink" href="#autosave-feature">#</a> Autosave feature</h2>
 <p>The <a href="../../api/module_autosave_autosave-Autosave.html"><code>Autosave</code></a> feature allows you to automatically save the data (e.g. send it to the server) when needed (when the user changed the content).</p>
-<div class="info-box notice"><p>This plugin is unavailable in any of the builds by default so you need to <a href="installing-plugins.html">install it</a>.</p></div>
+<div class="info-box notice"><p>This plugin is unavailable in any of the builds by default so you need to <a href="../plugins/installing-plugins.html">install it</a>.</p></div>
 <p>Assuming that you implemented a <code>saveData()</code> function that sends the data to your server and returns a promise which is resolved once the data is successfully saved, configuring the autosave feature is as simple as:</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
@@ -512,7 +518,7 @@ function displayStatus( editor ) {
 <p>To handle the former situation you can listen to the native <a href="https://developer.mozilla.org/en-US/docs/Web/Events/beforeunload"><code>window#beforeunload</code></a> event. The latter situation can be handled by using CKEditor 5 <a href="../../api/module_core_pendingactions-PendingActions.html"><code>PendingActions</code></a> plugin.</p>
 <h3 id="demo-2"><a class="headerlink" href="#demo-2">#</a> Demo</h3>
 <p>The example below shows how all these mechanisms can be used together to enable or disable a “Save” button and block the user from leaving the page without saving the data.</p>
-<div class="info-box notice"><p>The <a href="../../api/module_core_pendingactions-PendingActions.html"><code>PendingActions</code></a> plugin is unavailable in any of the builds by default so you need to <a href="installing-plugins.html">install it</a>.</p></div>
+<div class="info-box notice"><p>The <a href="../../api/module_core_pendingactions-PendingActions.html"><code>PendingActions</code></a> plugin is unavailable in any of the builds by default so you need to <a href="../plugins/installing-plugins.html">install it</a>.</p></div>
 <pre class="highlight"><code class="js">// Note: We need to build the editor from source.
 // We cannot use existing builds in this case.
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
@@ -744,7 +750,7 @@ function updateStatus( editor ) {
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22installation%2Fgetting-started%2Fgetting-and-setting-data.html%22&amp;project-version=36.0.0" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22installation%2Fgetting-started%2Fgetting-and-setting-data.html%22&amp;project-version=36.0.1" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>
@@ -781,14 +787,26 @@ function updateStatus( editor ) {
                                     <li><a href="configuration.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Configuration</span>
                                         </div></a></li>
-                                    <li><a href="installing-plugins.html">
-                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
-                                        </div></a></li>
                                     <li><a href="editor-lifecycle.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor lifecycle</span>
                                         </div></a></li>
                                     <li><a href="">
                                         <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Getting and setting data</span>
+                                        </div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Plugins</span>
+                            </div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="../plugins/plugins.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugins in CKEditor 5</span>
+                                        </div></a></li>
+                                    <li><a href="../plugins/features-html-output-overview.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugin list</span>
+                                        </div></a></li>
+                                    <li><a href="../plugins/installing-plugins.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing plugins</span>
                                         </div></a></li>
                             </ul>
                           </li>
@@ -831,12 +849,6 @@ function updateStatus( editor ) {
                                         </div></a></li>
                                     <li><a href="../advanced/csp.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Content Security Policy</span>
-                                        </div></a></li>
-                                    <li><a href="../advanced/plugins.html">
-                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Custom plugins</span>
-                                        </div></a></li>
-                                    <li><a href="../advanced/features-html-output-overview.html">
-                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Features' HTML output</span>
                                         </div></a></li>
                                     <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>
