@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Wed Feb 08 2023 03:50:00 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 09 2023 03:58:24 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Base64 upload adapter - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
     <link rel="icon" type="image/png" href="../../../assets/img/favicons/96x96.png" sizes="96x96">
     <link rel="apple-touch-icon" type="image/png" href="../../../assets/img/favicons/200x200.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
-    <link rel="stylesheet" href="../../../../../assets/2.3.0/css/styles.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../../../../../assets/2.3.1/css/styles.css" type="text/css" media="all">
     <link rel="stylesheet" href="../../../assets/styles.css" type="text/css">
     <link rel="stylesheet" href="../../../snippets/features/base64-upload/snippet.css" type="text/css" data-cke="true">
     <link rel="stylesheet" href="../../../assets/snippet-styles.css" type="text/css" data-cke="true">
@@ -62,7 +62,7 @@
         <div class="header__main-title"><a class="header__main-title-home" href="../../../../../index.html">CKEditor Ecosystem Documentation</a></div>
         <div class="top__search">
           <input class="top__search__box" type="text" id="docsearch_input" placeholder="Search in CKEditor 5">
-          <div class="top__search__button"><img src="../../../../../assets/2.3.0/img/loupe.svg" alt="Search"></div>
+          <div class="top__search__button"><img src="../../../../../assets/2.3.1/img/loupe.svg" alt="Search"></div>
         </div>
       </div>
       <div class="header__sub">
@@ -454,24 +454,26 @@
     <main class="main">
       <section class="main__content formatted">
         <div class="main__content-inner">
-          <div class="github-contrib"><a href="https://github.com/ckeditor/ckeditor5/blob/master/packages/ckeditor5-upload/docs/features/base64-upload-adapter.md" title="Contribute to this guide"><img src="../../../../../assets/2.3.0/img/edit.svg" alt="Contribute to this guide"></a>
+          <div class="github-contrib"><a href="https://github.com/ckeditor/ckeditor5/blob/master/packages/ckeditor5-upload/docs/features/base64-upload-adapter.md" title="Contribute to this guide"><img src="../../../../../assets/2.3.1/img/edit.svg" alt="Contribute to this guide"></a>
           </div>
           <div class="rwd-breadcrumbs"><a href="../../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">Features</a>
           </div>
-          <h1 class="main__content-title"><img src="../../../../../assets/2.3.0/img/book.svg" alt="guide">Base64 image upload adapter
+          <h1 class="main__content-title"><img src="../../../../../assets/2.3.1/img/book.svg" alt="guide">Base64 image upload adapter
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#installation">Installation</a></li><li><a href="#configuration">Configuration</a><ol><li><a href="#configuring-allowed-file-types">Configuring allowed file types</a><ol><li><a href="#client-side-configuration">Client-side configuration</a></li><li><a href="#server-side-configuration">Server-side configuration</a></li></ol></li></ol></li><li><a href="#whats-next">What’s next?</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
 <p>The Base64 image upload adapter converts images inserted into the rich-text editor into <a href="https://en.wikipedia.org/wiki/Base64">Base64-encoded strings</a> in the <a href="../../../installation/getting-started/getting-and-setting-data.html">editor output</a>.</p>
 <p>This kind of image upload does not require any server-side processing — images are stored with the rest of the text and displayed by the web browser without additional requests. On the downside, this approach can bloat your database with very long data strings which has a negative impact on the performance.</p>
 <div class="info-box notice notice__warning"><p>Please remember that while <code>Base64</code> upload is a very easy solution, it is also highly inefficient. The image file itself is kept as data in the database, generating a much heavier data load and higher transfer. <code>Base64</code> images are never cached by the browser so loading and saving such data will always be slower.</p><p>This can be troublesome for some features: <a href="../../collaboration/revision-history/revision-history.html">revision history</a> may hence take longer to load revisions; the same applies e.g. to <a href="../../collaboration/comments/comments.html">comments</a>. Content with <code>Base64</code> images may also exceed the allowed file size when your document is <a href="../../export-pdf.html">exported to PDF</a> or <a href="../../export-word.html">to Word</a>.</p><p>Therefore using the <code>Base64</code> feature is a less efficient option to use than some other available ones. Check out the comprehensive <a href="image-upload.html">image upload overview</a> guide to learn about other ways to upload images into CKEditor 5.</p></div>
+<div class="info-box notice notice__info"><p>This feature is enabled by default in the <a href="../../../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only. See the <a href="#installation">installation</a> section to learn how to enable it in your editor.</p></div>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>Use the editor below to see the adapter in action. Open the web browser console and click the button below to see the base64–encoded image in the editor output data.</p>
 <div class="live-snippet"><div id="snippet-image-base64-upload">
-	<p><strong>CKEditor 5</strong> offers multiple ways to include images in your rich content. You can choose whichever you find more comfortable and efficient for you needs. Use classic interface, or boost productivity with the advanced image handling offered.</p>
+	<p><strong>CKEditor 5</strong> offers multiple ways to include images in your rich content. You can choose whichever you find more comfortable and efficient for your needs. Use the classic interface, or boost productivity with the advanced image handling offered.</p>
 	<p>Paste or drop an image directly into the editor. You can also use the "Insert image" button in the toolbar.</p>
 </div>
 
 <button type="button" id="log-data">Log editor data</button>
 </div>
+<div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
 <p>First, install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-upload"><code>@ckeditor/ckeditor5-upload</code></a> package:</p>
 <pre class="highlight"><code class="plaintext">npm install --save @ckeditor/ckeditor5-upload
@@ -890,7 +892,7 @@ apiKey:'fc463c26455365ad403d5ec51796cd73',indexName:'ckeditor_nightly',inputSele
 transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_ranking = a.custom_ranking || 0;b.custom_ranking = b.custom_ranking || 0;if ( a.custom_ranking === b.custom_ranking ) return a.index - b.index;if ( a.custom_ranking > b.custom_ranking ) return -1;if ( a.custom_ranking < b.custom_ranking ) return 1;};var result = [];var tags = [ 'installation', 'features', 'examples', 'updating', 'support', 'framework', 'api' ];var hitsGrouped = { api: [] };hitsGrouped[ 'features' ] = hits.filter( function( h ) {return h.tags.includes( 'ckeditor5' ) && h.tags.includes( 'features' );} ).slice( 0, 7 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn );tags.forEach( function( tag ) {if ( tag !== 'features' ) {hitsGrouped[ tag ] = hits.filter( function( h ) {return h.tags.includes( 'ckeditor5' ) && h.tags.includes( tag );} ).slice( 0, 10 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn ).slice( 0, 3 );}} );var apiSearchHits = [];if ( window.apiSearch ) apiSearchHits = window.apiSearch();hitsGrouped.api = hitsGrouped.api.filter( function( h ) {var isDuplicated = false;for ( var i = 0; i < apiSearchHits.length; i++ ) {if ( h.url.includes( apiSearchHits[ i ].urlShort ) ) {isDuplicated = true;break;}}return !isDuplicated;} );hitsGrouped.api = ( apiSearchHits || [] ).concat( hitsGrouped.api );result = result.concat( hitsGrouped[ 'features' ] );tags.forEach( function( tag ) {if ( tag !== 'features' ) result = result.concat( hitsGrouped[ tag ].slice( 0, 4 ) );} );return result;}
 });
 </script>
-    <script src="../../../../../assets/2.3.0/scripts/app.js"></script>
+    <script src="../../../../../assets/2.3.1/scripts/app.js"></script>
     <script src="../../../assets/snippet.js"></script>
     <script src="../../../snippets/assets.js"></script>
     <script src="../../../snippets/features/base64-upload/snippet.js"></script>

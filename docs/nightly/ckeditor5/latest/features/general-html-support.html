@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Wed Feb 08 2023 03:50:06 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 09 2023 03:58:29 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="General HTML Support - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
     <link rel="icon" type="image/png" href="../assets/img/favicons/96x96.png" sizes="96x96">
     <link rel="apple-touch-icon" type="image/png" href="../assets/img/favicons/200x200.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
-    <link rel="stylesheet" href="../../../assets/2.3.0/css/styles.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../../../assets/2.3.1/css/styles.css" type="text/css" media="all">
     <link rel="stylesheet" href="../assets/styles.css" type="text/css">
     <link rel="stylesheet" href="../snippets/features/general-html-support/snippet.css" type="text/css" data-cke="true">
     <link rel="stylesheet" href="../snippets/features/general-html-support-source/snippet.css" type="text/css" data-cke="true">
@@ -63,7 +63,7 @@
         <div class="header__main-title"><a class="header__main-title-home" href="../../../index.html">CKEditor Ecosystem Documentation</a></div>
         <div class="top__search">
           <input class="top__search__box" type="text" id="docsearch_input" placeholder="Search in CKEditor 5">
-          <div class="top__search__button"><img src="../../../assets/2.3.0/img/loupe.svg" alt="Search"></div>
+          <div class="top__search__button"><img src="../../../assets/2.3.1/img/loupe.svg" alt="Search"></div>
         </div>
       </div>
       <div class="header__sub">
@@ -455,11 +455,11 @@
     <main class="main">
       <section class="main__content formatted">
         <div class="main__content-inner">
-          <div class="github-contrib"><a href="https://github.com/ckeditor/ckeditor5/blob/master/packages/ckeditor5-html-support/docs/features/general-html-support.md" title="Contribute to this guide"><img src="../../../assets/2.3.0/img/edit.svg" alt="Contribute to this guide"></a>
+          <div class="github-contrib"><a href="https://github.com/ckeditor/ckeditor5/blob/master/packages/ckeditor5-html-support/docs/features/general-html-support.md" title="Contribute to this guide"><img src="../../../assets/2.3.1/img/edit.svg" alt="Contribute to this guide"></a>
           </div>
           <div class="rwd-breadcrumbs"><a href="../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="index.html">Features</a>
           </div>
-          <h1 class="main__content-title"><img src="../../../assets/2.3.0/img/book.svg" alt="guide">General HTML Support
+          <h1 class="main__content-title"><img src="../../../assets/2.3.1/img/book.svg" alt="guide">General HTML Support
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#related-features">Related features</a></li><li><a href="#level-of-support">Level of support</a></li><li><a href="#installation">Installation</a></li><li><a href="#configuration">Configuration</a><ol><li><a href="#enabling-all-html-features">Enabling all HTML features</a></li><li><a href="#security">Security</a></li><li><a href="#enabling-custom-elements">Enabling custom elements</a></li></ol></li><li><a href="#known-issues">Known issues</a></li><li><a href="#html-comments">HTML comments</a><ol><li><a href="#demo-2">Demo</a></li><li><a href="#installation-2">Installation</a></li><li><a href="#known-issues-2">Known issues</a></li></ol></li><li><a href="#related-features-2">Related features</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
 
 <p>The General HTML Support (“GHS”) feature allows developers to easily enable HTML features that are not explicitly supported by any other dedicated CKEditor 5 plugins. GHS allows for adding markup like elements, attributes, classes and styles to the source and prevents it from being filtered from the editor window and the output.</p>
@@ -476,7 +476,7 @@
 </li>
 </ul>
 <p>The enabled HTML features can be loaded (e.g. via <code>editor.setData()</code>), pasted, output (e.g. via <code>editor.getData()</code>), and are visible in the editing area. Such content can also be edited in the editor, although, to a limited extent. Read more about it in the <a href="#level-of-support">Level of support</a> section.</p>
-<div class="info-box notice notice__info"><p>The GHS feature is enabled by default in the <a href="../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only. See the <a href="#installation">installation</a> section to learn how to enable it in your editor.</p></div>
+<div class="info-box notice notice__info"><p>This feature is enabled by default in the <a href="../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only. See the <a href="#installation">installation</a> section to learn how to enable it in your editor.</p></div>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>Use the <a href="source-editing.html">source editing feature</a> toolbar button <span class="editor-icon"><img src="../assets/icons/091bc0faa9.svg" class="editor-icon__image" alt="Source editing"></span> to view and edit the HTML source of the document in the demo below. The configuration of this snippet can be found below the demo editor window.</p>
 <p>The General HTML Support feature is configured via the <code>config.htmlSupport</code> property. In it, you need to list the HTML features that should be handled by GHS.</p>
@@ -741,6 +741,7 @@ dataFilter.allowElement( 'object-block' );
 <h2 id="html-comments"><a class="headerlink" href="#html-comments">#</a> HTML comments</h2>
 <p>By default, all HTML comments are filtered out during the editor initialization. The HTML Comments feature allows developers to keep them in the document content and retrieve them back, e.g. while <a href="../installation/getting-started/getting-and-setting-data.html">saving the editor data</a>. The comments are transparent from the users point of view and they are not displayed in the editable content.</p>
 <div class="info-box notice"><p>The HTML comment feature is <strong>experimental and not yet production-ready</strong>.</p><p>The support for HTML comments is at the basic level so far - see the <a href="#known-issues-2">known issues</a> section below.</p></div>
+<div class="info-box notice notice__info"><p>This feature is enabled by default in the <a href="../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only. See the <a href="#installation-2">installation</a> section to learn how to enable it in your editor.</p></div>
 <h3 id="demo-2"><a class="headerlink" href="#demo-2">#</a> Demo</h3>
 <p>The CKEditor 5 instance below is configured to keep the HTML comments in the document content. You can view the source of the document using <a href="source-editing.html">source editing</a> feature. Toggle the source editing mode <span class="editor-icon"><img src="../assets/icons/091bc0faa9.svg" class="editor-icon__image" alt="Source editing"></span> to see that the HTML comment is present in the document source. You can uncomment the paragraph below the picture and upon leaving the source editing mode, you will see this paragraph in the editable area.</p>
 <div class="live-snippet"><div id="snippet-html-comment">
@@ -755,6 +756,7 @@ dataFilter.allowElement( 'object-block' );
 	<p>Getting used to an entirely different culture can be challenging. While it’s also nice to learn about cultures online or from books, nothing comes close to experiencing the cultural diversity in person. You learn to appreciate each and every single one of the differences while you become more culturally fluid.</p>
 </div>
 </div>
+<div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
 <h3 id="installation-2"><a class="headerlink" href="#installation-2">#</a> Installation</h3>
 <p>To add this feature to your rich-text editor, install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-html-support"><code>@ckeditor/ckeditor5-html-support</code></a> package:</p>
 <pre class="highlight"><code class="plaintext">npm install --save @ckeditor/ckeditor5-html-support
@@ -1166,7 +1168,7 @@ apiKey:'fc463c26455365ad403d5ec51796cd73',indexName:'ckeditor_nightly',inputSele
 transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_ranking = a.custom_ranking || 0;b.custom_ranking = b.custom_ranking || 0;if ( a.custom_ranking === b.custom_ranking ) return a.index - b.index;if ( a.custom_ranking > b.custom_ranking ) return -1;if ( a.custom_ranking < b.custom_ranking ) return 1;};var result = [];var tags = [ 'installation', 'features', 'examples', 'updating', 'support', 'framework', 'api' ];var hitsGrouped = { api: [] };hitsGrouped[ 'features' ] = hits.filter( function( h ) {return h.tags.includes( 'ckeditor5' ) && h.tags.includes( 'features' );} ).slice( 0, 7 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn );tags.forEach( function( tag ) {if ( tag !== 'features' ) {hitsGrouped[ tag ] = hits.filter( function( h ) {return h.tags.includes( 'ckeditor5' ) && h.tags.includes( tag );} ).slice( 0, 10 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn ).slice( 0, 3 );}} );var apiSearchHits = [];if ( window.apiSearch ) apiSearchHits = window.apiSearch();hitsGrouped.api = hitsGrouped.api.filter( function( h ) {var isDuplicated = false;for ( var i = 0; i < apiSearchHits.length; i++ ) {if ( h.url.includes( apiSearchHits[ i ].urlShort ) ) {isDuplicated = true;break;}}return !isDuplicated;} );hitsGrouped.api = ( apiSearchHits || [] ).concat( hitsGrouped.api );result = result.concat( hitsGrouped[ 'features' ] );tags.forEach( function( tag ) {if ( tag !== 'features' ) result = result.concat( hitsGrouped[ tag ].slice( 0, 4 ) );} );return result;}
 });
 </script>
-    <script src="../../../assets/2.3.0/scripts/app.js"></script>
+    <script src="../../../assets/2.3.1/scripts/app.js"></script>
     <script src="../assets/snippet.js"></script>
     <script src="../snippets/assets.js"></script>
     <script src="../snippets/features/general-html-support-source/snippet.js"></script>
