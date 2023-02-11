@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Feb 09 2023 03:58:41 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 11 2023 04:02:01 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Undo/Redo - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -459,7 +459,7 @@
           <div class="rwd-breadcrumbs"><a href="../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../assets/2.3.1/img/book.svg" alt="guide">Undo/Redo
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#installation">Installation</a></li><li><a href="#common-api">Common API</a></li></ol></nav>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#installation">Installation</a></li><li><a href="#common-api">Common API</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
 <p>The undo features lets the user withdraw recent changes done to the editor content, as well as bring them back again. All operations are remembered and organized into batches, that can later be easily undone or redone. By utilizing the batches approach, the feature is capable of selectively reverting past changes, not just the latest ones. This allows handling asynchronous actions such as image uploads without blocking the user from editing the document in the meantime.</p>
 <p>The selective undo is heavily used in <a href="collaboration/real-time-collaboration/real-time-collaboration.html">real-time collaboration</a> environments. In such scenario, a specific user should only be able to revert their changes, while keeping the changes made by other users intact (unless there is an editing conflict). By omitting some changes and going down the stack, it is possible to only revert selected changes.</p>
 <p>The feature supports both toolbar buttons and <a href="keyboard-support.html">keyboard shortcuts</a> for convenient and easy operation.</p>
@@ -521,6 +521,8 @@ ClassicEditor
 </ul>
 <p>The <a href="../api/module_undo_undoui-UndoUI.html"><code>UndoUI</code></a> feature introduces the <code>undo</code> and <code>redo</code> buttons to the editor toolbar.</p>
 <div class="info-box notice"><p>We recommend using the official <a href="../framework/guides/development-tools.html#ckeditor-5-inspector">CKEditor 5 inspector</a> for development and debugging. It will give you tons of useful information about the state of the editor such as internal data structures, selection, commands, and many more.</p></div>
+<h2 id="contribute"><a class="headerlink" href="#contribute">#</a> Contribute</h2>
+<p>The source code of the feature is available on GitHub in <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-undo">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-undo</a>.</p>
 
           <div class="info-box notice notice__feedback">
             <p>

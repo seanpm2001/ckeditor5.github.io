@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Feb 09 2023 03:58:41 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 11 2023 04:02:02 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Watchdog - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -503,17 +503,19 @@ watchdog.setCreator( ( elementOrData, editorConfig ) =&gt; {
         .create( elementOrData, editorConfig )
         .then( editor =&gt; {
             // Do something with the new editor instance.
+            // ...
         } );
 } );
 
 // Do something before the editor is destroyed. Return a promise.
 watchdog.setDestructor( editor =&gt; {
+    // Do something before the editor is destroyed.
     // ...
-
     return editor
         .destroy()
         .then( () =&gt; {
             // Do something after the editor is destroyed.
+            // ...
         } );
 } );
 
@@ -583,8 +585,10 @@ const watchdog = new ContextWatchdog( Context, {
 // Initialize the watchdog with the context configuration:
 await watchdog.create( {
     plugins: [
+        // A list of plugins for the context.
         // ...
     ],
+    // More configuration options for the plugin.
     // ...
 } );
 
@@ -650,6 +654,7 @@ watchdog.setCreator( async config =&gt; {
     const context = await Context.create( config );
 
     // Do something when the context is initialized.
+    // ...
 
     return context;
 } );
@@ -658,6 +663,7 @@ watchdog.setCreator( async config =&gt; {
 watchdog.setDestructor( async context =&gt; {
 
     // Do something before destroy.
+    // ...
 
     await context.destroy();
 } );
@@ -684,6 +690,7 @@ await watchdog.add( [
     	creator: createEditor,
     	destructor: destroyEditor,
     },
+    // More configuration items.
     // ...
 ] );
 
