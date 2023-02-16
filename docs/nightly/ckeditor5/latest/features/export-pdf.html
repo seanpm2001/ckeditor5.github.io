@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Feb 13 2023 04:03:50 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 16 2023 04:03:58 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Export to PDF - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -569,11 +569,8 @@
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ ExportPdf, ... ],
-        toolbar: [
-            'exportPdf', '|',
-            ...
-        ],
+        plugins: [ ExportPdf, /* ... */ ],
+        toolbar: [ 'exportPdf', '|', /* ... */ ],
         exportPdf: {
             tokenUrl: 'https://example.com/cs-token-endpoint',
             stylesheets: [
@@ -592,8 +589,8 @@ ClassicEditor
             }
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice"><p>Read more about <a href="../installation/plugins/installing-plugins.html">installing plugins</a>.</p></div>
 <h2 id="configuration"><a class="headerlink" href="#configuration">#</a> Configuration</h2>
@@ -720,11 +717,8 @@ import ExportPdf from '@ckeditor/ckeditor5-export-pdf/src/exportpdf';
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ ExportPdf, ... ],
-        toolbar: [
-            'exportPdf', '|',
-            // ...
-        ],
+        plugins: [ ExportPdf, /* ... */ ],
+        toolbar: [ 'exportPdf', '|', /* ... */ ],
         exportPdf: {
             stylesheets: [
                 'EDITOR_STYLES',
@@ -734,8 +728,8 @@ ClassicEditor
             fileName: 'my-document.pdf'
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 
 </code></pre>
 <p>This is how the corresponding editor styles may look like:</p>
@@ -764,11 +758,8 @@ import ExportPdf from '@ckeditor/ckeditor5-export-pdf/src/exportpdf';
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ ExportPdf, ... ],
-        toolbar: [
-            'exportPdf', '|',
-            // ...
-        ],
+        plugins: [ ExportPdf, /* ... */ ],
+        toolbar: [ 'exportPdf', '|', /* ... */ ],
         exportPdf: {
             stylesheets: [
                 'EDITOR_STYLES',
@@ -787,8 +778,8 @@ ClassicEditor
             }
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 
 </code></pre>
 <div class="info-box notice"><p>This example focuses only on preparing the editable to match the converter settings. Please keep in mind that as a result, the appearance of your editor may change. Depending on your editor type and implementation or even some inherited global styles like <code>box-sizing</code>, applying new <code>padding</code> values may change the size of the editor on your website.</p><p>For the purpose of this example, <code>box-sizing: border-box</code> was implemented to make sure that the editor’s width will not change.</p></div>
@@ -828,22 +819,20 @@ import ExportPdf from '@ckeditor/ckeditor5-export-pdf/src/exportpdf';
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ ExportPdf, ... ],
-        toolbar: [
-            'exportPdf', '|',
-            ...
-        ],
+        plugins: [ ExportPdf, /* ... */ ],
+        toolbar: [ 'exportPdf', '|', /* ... */ ],
         exportPdf: {
             stylesheets: [
                 // Add the external stylesheet before the 'EDITOR_STYLES' token.
                 './styles/fonts.css',
                 'EDITOR_STYLES'
             ],
+            // More configuration of the Export to PDF.
             // ...
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 
 </code></pre>
 <p>Thanks to this, the editor inherits the font settings and you can be sure that they will be applied in the generated PDF file as well.</p>
@@ -874,14 +863,16 @@ html, body {
 <p>Apart from adding a header and a footer, there is also the possibility of adding a watermark to the generated document. This can be achieved by utilising <a href="../api/module_export-pdf_exportpdf-ExportPdfConfig.html#member-dataCallback"><code>config.exportPdf.dataCallback</code></a>.</p>
 <p>To do this, you need to get the data that is being sent to the converter first and update it with a watermark markup:</p>
 <pre class="highlight"><code class="js">exportPdf: {
-    ...
+    // More configuration of the Export to PDF.
+    // ...
     dataCallback: ( editor ) =&gt; {
         return `
             ${ editor.getData() }
             &lt;div class="watermark"&gt;Draft document&lt;/div&gt;
         `;
     },
-    ...
+    // More configuration of the Export to PDF.
+    // ...
 }
 </code></pre>
 <p>Then <a href="#re-using-custom-editor-styling">update the custom CSS file</a> with the proper styles:</p>

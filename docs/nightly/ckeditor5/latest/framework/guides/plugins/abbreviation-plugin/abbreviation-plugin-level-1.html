@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Creating a toolbar button - CKEditor 5 Documentation</title>
+    <title>Defining a model and a view - CKEditor 5 Documentation</title>
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Feb 13 2023 04:04:15 GMT+0000 (Coordinated Universal Time)">
-    <meta property="og:title" content="Creating a toolbar button - CKEditor 5 Documentation">
+    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:24 GMT+0000 (Coordinated Universal Time)">
+    <meta property="og:title" content="Defining a model and a view - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ckeditor.com/docs/ckeditor5/latest/framework/guides/plugins/abbreviation-plugin/abbreviation-plugin-level-1.html">
     <meta property="DC.language" content="en">
     <meta property="DC.publisher" content="CKSource">
     <meta property="DC.creator" content="CKEditor">
-    <meta property="DC.title" content="Creating a toolbar button - CKEditor 5 Documentation">
+    <meta property="DC.title" content="Defining a model and a view - CKEditor 5 Documentation">
     <meta property="DC.format" content="text/html">
     <meta property="DC.type" content="Text">
     <meta property="DC.description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
@@ -137,7 +137,7 @@
                                             </div>
                                             <ul class="tree__item-nested-list">
                                                   <li><a href="">
-                                                      <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Creating a toolbar button</span>
+                                                      <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Defining a model and a view</span>
                                                       </div></a></li>
                                                   <li><a href="abbreviation-plugin-level-2.html">
                                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting user input with a custom UI</span>
@@ -302,8 +302,8 @@
           </div>
           <div class="rwd-breadcrumbs"><a href="../../../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../../index.html">Framework</a>
           </div>
-          <h1 class="main__content-title"><img src="../../../../../../assets/2.3.1/img/book.svg" alt="guide">Creating a toolbar button
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#lets-start">Let’s start!</a></li><li><a href="#plugin-structure">Plugin structure</a></li><li><a href="#the-model-and-the-view-layers">The model and the view layers</a><ol><li><a href="#defining-the-schema">Defining the schema</a></li><li><a href="#defining-converters">Defining converters</a><ol><li><a href="#downcast-conversion">Downcast conversion</a></li><li><a href="#upcast-conversion">Upcast conversion</a></li></ol></li></ol></li><li><a href="#creating-a-toolbar-button-2">Creating a toolbar button</a></li><li><a href="#demo">Demo</a></li><li><a href="#final-code">Final code</a></li></ol></nav>
+          <h1 class="main__content-title"><img src="../../../../../../assets/2.3.1/img/book.svg" alt="guide">Defining a model and a view
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#lets-start">Let’s start!</a></li><li><a href="#plugin-structure">Plugin structure</a></li><li><a href="#the-model-and-the-view-layers">The model and the view layers</a><ol><li><a href="#defining-the-schema">Defining the schema</a></li><li><a href="#defining-converters">Defining converters</a><ol><li><a href="#downcast-conversion">Downcast conversion</a></li><li><a href="#upcast-conversion">Upcast conversion</a></li></ol></li></ol></li><li><a href="#creating-a-toolbar-button">Creating a toolbar button</a></li><li><a href="#demo">Demo</a></li><li><a href="#final-code">Final code</a></li></ol></nav>
 <p>This guide will show you how to create a simple abbreviation plugin for CKEditor 5.</p>
 <p>We will create a toolbar button that lets the users insert abbreviations into their document. These abbreviations will use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr"><code>&lt;abbr&gt;</code>&nbsp;<abbr title="HyperText Markup Language">HTML</abbr> element</a> with a ‘title’ attribute that will show up in a tooltip when the user hovers over the&nbsp;element. You can check the mechanism hovering over the underlined “HTML” text in the previous sentence.</p>
 <p>This first part of the tutorial will only cover the basics. We will just insert one possible abbreviation: “WYSIWYG”. We will get user input in the <a href="abbreviation-plugin-level-2.html">next part of this tutorial series</a>.</p>
@@ -564,7 +564,7 @@ export default class AbbreviationEditing extends Plugin {
 </code></pre>
 <p>Thanks to the upcast conversion, our abbreviation added in the <code>index.html</code> should work now. Rebuild the editor and check it out yourself.</p>
 <p><img src="../../../../assets/img/abbreviation-part1-3.png" data-lightbox="true" alt="Screenshot of the editor showing working abbreviation."></p>
-<h2 id="creating-a-toolbar-button-2"><a class="headerlink" href="#creating-a-toolbar-button-2">#</a> Creating a toolbar button</h2>
+<h2 id="creating-a-toolbar-button"><a class="headerlink" href="#creating-a-toolbar-button">#</a> Creating a toolbar button</h2>
 <p>Now we can create our <code>Abbreviation</code> toolbar button using the <a href="../../../../api/module_ui_button_buttonview-ButtonView.html"><code>ButtonView</code></a> class.</p>
 <p>We need to register it in the editor’s UI <code>componentFactory</code>, so it can be displayed in the toolbar.</p>
 <pre class="highlight"><code class="js">// abbreviation/abbreviationui.js
@@ -732,7 +732,7 @@ class AbbreviationUI extends Plugin {
                                                 </div>
                                                 <ul class="tree__item-nested-list">
                                                         <li><a href="">
-                                                            <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Creating a toolbar button</span>
+                                                            <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Defining a model and a view</span>
                                                             </div></a></li>
                                                         <li><a href="abbreviation-plugin-level-2.html">
                                                             <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting user input with a custom UI</span>

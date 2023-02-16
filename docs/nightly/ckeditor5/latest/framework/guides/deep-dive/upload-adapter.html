@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Feb 13 2023 04:04:20 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:29 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Custom upload adapter - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -134,7 +134,7 @@
                                             </div>
                                             <ul class="tree__item-nested-list">
                                                   <li><a href="../plugins/abbreviation-plugin/abbreviation-plugin-level-1.html">
-                                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Creating a toolbar button</span>
+                                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Defining a model and a view</span>
                                                       </div></a></li>
                                                   <li><a href="../plugins/abbreviation-plugin/abbreviation-plugin-level-2.html">
                                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting user input with a custom UI</span>
@@ -454,11 +454,13 @@
         this.loader = loader;
     }
 
+    // More methods.
     // ...
 }
 </code></pre>
 <p>Implement the minimal <code>UploadAdapter</code> adapter interface as explained in <a href="#the-anatomy-of-the-adapter">“The anatomy of the adapter”</a> section. The details of the implementation are explained in the following chapters of this guide.</p>
 <pre class="highlight"><code class="js">class MyUploadAdapter {
+    // The constructor method.
     // ...
 
     // Starts the upload process.
@@ -478,6 +480,7 @@
         }
     }
 
+    // More methods.
     // ...
 }
 </code></pre>
@@ -485,6 +488,7 @@
 <p>Let’s see what the <code>_initRequest()</code> method looks like in your custom upload adapter. It should prepare the <code>XMLHttpRequest</code> object before it can be used to upload an image.</p>
 <div class="info-box notice"><p>Note that for the sake of keeping the code simple, in this example implementation no particular security mechanism is used that would prevent your application and services from being abused.</p><p>We <strong>strongly recommend</strong> using both authentication and <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29"><abbr title="Cross-site request forgery">CSRF</abbr> protection</a> mechanisms (i.e. CSRF tokens) in your application. For instance, they can be implemented as <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/setRequestHeader"><code>XMLHttpRequest</code></a> headers.</p></div>
 <pre class="highlight"><code class="js">class MyUploadAdapter {
+    // More methods.
     // ...
 
     // Initializes the XMLHttpRequest object using the URL passed to the constructor.
@@ -503,6 +507,7 @@
 <p>Now let’s focus on the <code>_initListeners()</code> method which attaches the <code>error</code>, <code>abort</code>, <code>load</code>, and <code>progress</code> event listeners to the <code>XMLHttpRequest</code> object created in the last step.</p>
 <p>A successful image upload will finish when the upload promise is resolved upon the <code>load</code> event fired by the <code>XMLHttpRequest</code> request. The promise must be resolved with an object containing information about the image. See the documentation of the <a href="../../../api/module_upload_filerepository-UploadAdapter.html#function-upload"><code>upload()</code></a> method to learn more.</p>
 <pre class="highlight"><code class="js">class MyUploadAdapter {
+    // More methods.
     // ...
 
     // Initializes XMLHttpRequest listeners.
@@ -552,6 +557,7 @@
 <p>Last but not least, the <code>_sendRequest()</code> method sends the <code>XMLHttpRequest</code>. In this example, the <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData"><code>FormData</code></a> interface is used to pass the file provided by the <a href="../../../api/module_upload_filerepository-FileRepository.html#function-createLoader">file loader</a>.</p>
 <div class="info-box notice"><p>Note that both the data format and actual data passed to <code>XMLHttpRequest.send()</code> in this example implementation are arbitrary. Your implementation could be different and it will depend on the back–end of your application and interfaces it provides.</p></div>
 <pre class="highlight"><code class="js">class MyUploadAdapter {
+    // More methods.
     // ...
 
     // Prepares the data and sends the request.
@@ -590,22 +596,28 @@
 <p>The <a href="../../../api/module_image_imageupload-ImageUpload.html">image upload</a> plugin, which is capable of handling multiple image sizes returned by the upload adapter, will automatically add the URLs to other images sizes to the <code>srcset</code> attribute of the image in the content.</p>
 <div class="info-box notice"><p>The <a href="../../../features/images/image-upload/easy-image.html">Easy Image</a> feature provides responsive image support <a href="../../../features/images/image-upload/easy-image.html#responsive-images">out of the box</a>.</p></div>
 <p>Knowing that, you can implement the <code>XMLHttpRequest#load</code> listener that resolves the upload promise in the <a href="#using-xmlhttprequest-in-an-adapter">previous section</a> so that it passes the entire <code>urls</code> property of the server response to the image upload plugin:</p>
-<pre class="highlight"><code class="js">// ...
+<pre class="highlight"><code class="js">// Rest of the MyUploadAdapter class definition.
+// ...
 
 xhr.addEventListener( 'load', () =&gt; {
     const response = xhr.response;
 
+    // Response handling.
     // ...
 
     // response.urls = {
     // 	default: 'http://example.com/images/image–default-size.png',
     // 	'160': '...',
     // 	'500': '...',
-    // 	// ...
+    // 	More response urls.
+    //  ...
     // 	'1052': 'http://example.com/images/image–default-size.png'
     // }
     resolve( response.urls );
 } );
+
+// Rest of the MyUploadAdapter class definition.
+// ...
 </code></pre>
 <h3 id="passing-additional-data-to-the-response"><a class="headerlink" href="#passing-additional-data-to-the-response">#</a> Passing additional data to the response</h3>
 <p>There is a chance you might need to pass some data from the server to provide additional data to some features. In order to do that, you need to wrap all URLs in the <code>urls</code> property and pass additional data in the top level of the object.</p>
@@ -624,6 +636,7 @@ xhr.addEventListener( 'load', () =&gt; {
 <pre class="highlight"><code class="js">import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 class MyUploadAdapter {
+    // MyUploadAdapter class definition.
     // ...
 }
 
@@ -639,6 +652,7 @@ function MyCustomUploadAdapterPlugin( editor ) {
     .create( document.querySelector( '#editor' ), {
         extraPlugins: [ MyCustomUploadAdapterPlugin ],
 
+        // More configuration options.
         // ...
     } )
     .catch( error =&gt; {
@@ -743,8 +757,6 @@ function MyCustomUploadAdapterPlugin( editor ) {
     }
 }
 
-// ...
-
 function MyCustomUploadAdapterPlugin( editor ) {
     editor.plugins.get( 'FileRepository' ).createUploadAdapter = ( loader ) =&gt; {
         // Configure the URL to the upload script in your back-end here!
@@ -752,12 +764,11 @@ function MyCustomUploadAdapterPlugin( editor ) {
     };
 }
 
-// ...
-
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
         extraPlugins: [ MyCustomUploadAdapterPlugin ],
 
+        // More configuration options.
         // ...
     } )
     .catch( error =&gt; {
@@ -836,7 +847,7 @@ ClassicEditor
                                                 </div>
                                                 <ul class="tree__item-nested-list">
                                                         <li><a href="../plugins/abbreviation-plugin/abbreviation-plugin-level-1.html">
-                                                            <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Creating a toolbar button</span>
+                                                            <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Defining a model and a view</span>
                                                             </div></a></li>
                                                         <li><a href="../plugins/abbreviation-plugin/abbreviation-plugin-level-2.html">
                                                             <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting user input with a custom UI</span>

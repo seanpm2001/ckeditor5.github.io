@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Feb 13 2023 04:04:19 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:27 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Event system - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -134,7 +134,7 @@
                                             </div>
                                             <ul class="tree__item-nested-list">
                                                   <li><a href="../plugins/abbreviation-plugin/abbreviation-plugin-level-1.html">
-                                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Creating a toolbar button</span>
+                                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Defining a model and a view</span>
                                                       </div></a></li>
                                                   <li><a href="../plugins/abbreviation-plugin/abbreviation-plugin-level-2.html">
                                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting user input with a custom UI</span>
@@ -308,6 +308,7 @@
 import mix from '@ckeditor/ckeditor5-utils/src/mix';
 
 class AnyClass {
+    // Class's code.
     // ...
 }
 
@@ -315,13 +316,13 @@ mix( AnyClass, EmitterMixin );
 </code></pre>
 <h2 id="listening-to-events"><a class="headerlink" href="#listening-to-events">#</a> Listening to events</h2>
 <p>Adding a callback to an event is simple. You can listen directly on the emitter object and use an anonymous function:</p>
-<pre class="highlight"><code class="js">emitter.on( 'eventName', ( eventInfo, ...args ) =&gt; { ... } );
+<pre class="highlight"><code class="js">emitter.on( 'eventName', ( eventInfo, ...args ) =&gt; { /* ... */ } );
 </code></pre>
 <p>However, a function object is needed if you want to be able to remove the event listener:</p>
 <pre class="highlight"><code class="js">emitter.off( 'eventName', handler );
 </code></pre>
 <p>There is also another way to add an event listener — by using <a href="../../../api/module_utils_emittermixin-Emitter.html#function-listenTo"><code>listenTo()</code></a>. This way one emitter can listen to events on another emitter:</p>
-<pre class="highlight"><code class="js">foo.listenTo( bar, 'eventName', ( eventInfo, ...args ) =&gt; { ... } );
+<pre class="highlight"><code class="js">foo.listenTo( bar, 'eventName', ( eventInfo, ...args ) =&gt; { /* ... */ } );
 </code></pre>
 <p>Now you can easily detach the <code>foo</code> from <code>bar</code> simply by <a href="../../../api/module_utils_emittermixin-Emitter.html#function-stopListening"><code>stopListening()</code></a>.</p>
 <pre class="highlight"><code class="js">// Stop listening to a specific handler.
@@ -336,11 +337,11 @@ foo.stopListening( bar );
 // Stop listening to all events fired by all bound emitters.
 foo.stopListening();
 </code></pre>
-<div class="info-box notice"><p>The <a href="../../../api/module_utils_emittermixin-Emitter.html#function-on"><code>on()</code></a> and <a href="../../../api/module_utils_emittermixin-Emitter.html#function-off"><code>off()</code></a> methods are shorthands for <a href="../../../api/module_utils_emittermixin-Emitter.html#function-listenTo"><code>listenTo( this, ... )</code></a> and <a href="../../../api/module_utils_emittermixin-Emitter.html#function-stopListening"><code>stopListening( this, ... )</code></a> (the emitter is bound to itself).</p></div>
+<div class="info-box notice"><p>The <a href="../../../api/module_utils_emittermixin-Emitter.html#function-on"><code>on()</code></a> and <a href="../../../api/module_utils_emittermixin-Emitter.html#function-off"><code>off()</code></a> methods are shorthands for <a href="../../../api/module_utils_emittermixin-Emitter.html#function-listenTo"><code>listenTo( this, /* ... */ )</code></a> and <a href="../../../api/module_utils_emittermixin-Emitter.html#function-stopListening"><code>stopListening( this, /* ... */ )</code></a> (the emitter is bound to itself).</p></div>
 <h3 id="listener-priorities"><a class="headerlink" href="#listener-priorities">#</a> Listener priorities</h3>
 <p>By default, all listeners are bound on the <a href="../../../api/module_utils_priorities-PriorityString.html"><code>normal</code></a> priority, but you can specify the priority when registering a listener:</p>
-<pre class="highlight"><code class="js">this.on( 'eventName', () =&gt; { ... }, { priority: 'high' } );
-this.listenTo( emitter, 'eventName', () =&gt; { ... }, { priority: 'high' } );
+<pre class="highlight"><code class="js">this.on( 'eventName', () =&gt; { /* ... */ }, { priority: 'high' } );
+this.listenTo( emitter, 'eventName', () =&gt; { /* ... */ }, { priority: 'high' } );
 </code></pre>
 <p>There are 5 named priorities:</p>
 <ul>
@@ -378,16 +379,16 @@ emitter.fire( 'eventName' ); // -&gt; 123
 <pre class="highlight"><code class="js">this.fire( 'foo:bar:baz', data );
 </code></pre>
 <p>Then the listeners can be bound to a specific event or the whole namespace:</p>
-<pre class="highlight"><code class="js">this.on( 'foo', () =&gt; { ... } );
-this.on( 'foo:bar', () =&gt; { ... } );
-this.on( 'foo:bar:baz', () =&gt; { ... } );
+<pre class="highlight"><code class="js">this.on( 'foo', () =&gt; { /* ... */ } );
+this.on( 'foo:bar', () =&gt; { /* ... */ } );
+this.on( 'foo:bar:baz', () =&gt; { /* ... */ } );
 </code></pre>
 <p>This way you can have more general events, listening to a broader event (<code>'foo'</code> in this case), or more detailed callbacks listening to specified events (<code>'foo:bar'</code> or <code>'foo:bar:baz'</code>).</p>
 <p>This mechanism is used for instance in the conversion, where thanks to events named as <code>'insert:&lt;elementName&gt;'</code> you can listen to the insertion of a specific element (e.g. <code>'insert:p'</code>) or all elements insertion (<code>'insert'</code>).</p>
 <p><strong>Note</strong>: Listeners registered on the same priority will be fired in the order of the registration (no matter if listening to a whole namespace or to a specific event).</p>
 <h2 id="firing-events"><a class="headerlink" href="#firing-events">#</a> Firing events</h2>
 <p>Once you mix the <a href="../../../api/module_utils_emittermixin-EmitterMixin.html"><code>EmitterMixin</code></a> into your class, you can fire events the following way:</p>
-<pre class="highlight"><code class="js">this.fire( 'eventName', argA, argB, ... );
+<pre class="highlight"><code class="js">this.fire( 'eventName', argA, argB, /* ... */ );
 </code></pre>
 <p>All passed arguments will be available in all listeners that are added to the event.</p>
 <p><strong>Note</strong>: Most base classes (like <a href="../../../api/module_core_command-Command.html"><code>Command</code></a> or <a href="../../../api/module_core_plugin-Plugin.html"><code>Plugin</code></a>) are <a href="../../../api/module_utils_emittermixin-Emitter.html">emitters</a> already and fire their own events.</p>
@@ -399,7 +400,7 @@ this.on( 'foo:bar:baz', () =&gt; { ... } );
 const eventInfo = new EventInfo( this, 'eventName' );
 
 // ...and fire the event.
-this.fire( eventInfo, argA, argB, ... );
+this.fire( eventInfo, argA, argB, /* ... */ );
 
 // Here you can check if the event was stopped.
 if ( eventInfo.stop.called ) {
@@ -413,7 +414,7 @@ if ( eventInfo.stop.called ) {
     eventInfo.return = 123;
 } );
 
-const result = emitter.fire( 'eventName', argA, argB, ... );
+const result = emitter.fire( 'eventName', argA, argB, /* ... */ );
 
 console.log( result ); // -&gt; 123
 </code></pre>
@@ -465,23 +466,28 @@ emitterA.fire( 'foo' );
 <h3 id="listening-to-bubbling-events"><a class="headerlink" href="#listening-to-bubbling-events">#</a> Listening to bubbling events</h3>
 <p>Listeners registered in the context of the view element names:</p>
 <pre class="highlight"><code class="js">this.listenTo( view.document, 'enter', ( evt, data ) =&gt; {
+    // Listener's code.
     // ...
 }, { context: 'blockquote' } );
 
 this.listenTo( view.document, 'enter', ( evt, data ) =&gt; {
+    // Listener's code.
     // ...
 }, { context: 'li' } );
 </code></pre>
 <p>Listeners registered in the virtual contexts:</p>
 <pre class="highlight"><code class="js">this.listenTo( view.document, 'arrowKey', ( evt, data ) =&gt; {
+    // Listener's code.
     // ...
 }, { context: '$text', priority: 'high' } );
 
 this.listenTo( view.document, 'arrowKey', ( evt, data ) =&gt; {
+    // Listener's code.
     // ...
 }, { context: '$root' } );
 
 this.listenTo( view.document, 'arrowKey', ( evt, data ) =&gt; {
+    // Listener's code.
     // ...
 }, { context: '$capture' } );
 </code></pre>
@@ -489,10 +495,12 @@ this.listenTo( view.document, 'arrowKey', ( evt, data ) =&gt; {
 <pre class="highlight"><code class="js">import { isWidget } from '@ckeditor/ckeditor5-widget/src/utils';
 
 this.listenTo( view.document, 'arrowKey', ( evt, data ) =&gt; {
+    // Listener's code.
     // ...
 }, { context: isWidget } );
 
 this.listenTo( view.document, 'arrowKey', ( evt, data ) =&gt; {
+    // Listener's code.
     // ...
 }, { context: isWidget, priority: 'high' } );
 </code></pre>
@@ -673,7 +681,7 @@ this.listenTo( view.document, 'arrowKey', ( evt, data ) =&gt; {
                                                 </div>
                                                 <ul class="tree__item-nested-list">
                                                         <li><a href="../plugins/abbreviation-plugin/abbreviation-plugin-level-1.html">
-                                                            <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Creating a toolbar button</span>
+                                                            <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Defining a model and a view</span>
                                                             </div></a></li>
                                                         <li><a href="../plugins/abbreviation-plugin/abbreviation-plugin-level-2.html">
                                                             <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting user input with a custom UI</span>

@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Feb 13 2023 04:03:57 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:06 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Overview - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -954,12 +954,13 @@
 
 DecoupledEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Pagination, ... ],
+        plugins: [ Pagination, /* ... */ ],
         toolbar: [
             'previousPage',
             'nextPage',
             'pageNavigation', '|',
-            ...
+            // More toolbar items. 
+            // ...
         ],
         pagination: {
             // A4
@@ -975,8 +976,8 @@ DecoupledEditor
         },
         licenseKey: 'your-license-key'
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice"><p>Read more about <a href="../../installation/plugins/installing-plugins.html">installing plugins</a>.</p></div>
 <h2 id="configuration"><a class="headerlink" href="#configuration">#</a> Configuration</h2>
@@ -1027,16 +1028,17 @@ DecoupledEditor
 
 DecoupledEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ Pagination, ... ],
+        plugins: [ Pagination, /* ... */ ],
         toolbar: [
             'previousPage',
             'nextPage',
             'pageNavigation', '|',
-            ...
+            // More toolbar items. 
+            // ...
         ]
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <h2 id="troubleshooting"><a class="headerlink" href="#troubleshooting">#</a> Troubleshooting</h2>
 <p>The pagination feature computes where the page breaks would be in the local browser, but the <a href="../export-pdf.html">export to PDF</a> or <a href="../export-word.html">export to Word</a> features are handled by dedicated HTML to PDF and DOCX converter services of CKEditor Cloud Services. Because of this, it is really important to match the content styles with the ones that are sent to the backend service. Even a minor difference in the margin, padding, font size, etc. setting may lead to inconsistencies between the content in the editor and the generated PDF or Word file and because of this, the local browser could calculate page breaks in incorrect places.</p>

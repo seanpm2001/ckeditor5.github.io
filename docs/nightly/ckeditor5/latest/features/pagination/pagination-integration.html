@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Feb 13 2023 04:03:57 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:05 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Integration with Export to PDF/Word - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -703,7 +703,8 @@ DecoupledEditor
 <p>You will also need to provide a license key for the pagination feature and also the Cloud Services configuration for the exports plugins (which you obtained in <a href="#accessing-authorization-data">step one</a>).</p>
 <div class="info-box notice notice__info"><p>This guide assumes that we do not use any other plugin that needs a <code>cloudServices</code> configuration. If we used, for example, real-time collaboration or the EasyImage plugin, we would have to provide all three values, which are: <code>tokenUrl</code>, <code>webSocketUrl</code> and <code>uploadUrl</code>.</p></div>
 <p>After the <code>table</code> configuration add:</p>
-<pre class="highlight"><code class="js">// ...
+<pre class="highlight"><code class="js">// More editor's configuration.
+// ...
 cloudServices: {
     // Provide correct value here. You can find it in the CKEditor Dashboard:
     // https://dashboard.ckeditor.com/login
@@ -749,6 +750,7 @@ exportWord: {
     }
 },
 licenseKey: 'your-license-key',
+// More editor's configuration.
 // ...
 </code></pre>
 <h3 id="styling-the-editor"><a class="headerlink" href="#styling-the-editor">#</a> Styling the editor</h3>
@@ -783,18 +785,23 @@ licenseKey: 'your-license-key',
 <h3 id="styling-the-content"><a class="headerlink" href="#styling-the-content">#</a> Styling the content</h3>
 <p>Apart from styling the editor’s editable element, there are also styles that control how the content inside the editor looks. When using the pagination feature together with export to PDF and export to Word, you need to make sure that these styles are sent to the converters (which means they will be actually applied to the content when generating the document) and that they do not create a discrepancy between the pagination lines in the editor and page breaks in the generated document.</p>
 <p>Currently, our exports and pagination features use only <a href="https://ckeditor.com/docs/ckeditor5/latest/api/module_export-pdf_exportpdf-ExportPdfConfig.html#member-stylesheets">default editor styles</a>, which in case of PDF/Word export configs are defined as:</p>
-<pre class="highlight"><code class="js">// ...
+<pre class="highlight"><code class="js">// More editor's configuration.
+// ...
 exportPdf: {
     stylesheets: [
         'EDITOR_STYLES'
     ],
-    ...
-...
+    // More configuration of the Export to PDF.
+    // ...
+},
 exportWord: {
     stylesheets: [
         'EDITOR_STYLES'
     ],
-    ...
+    // More configuration of the Export to Word.
+    // ...
+}
+// More editor's configuration.
 // ...
 </code></pre>
 <p>This means that only the default CKEditor styles are sent to the converter when generating the PDF/Word document. This default configuration might be enough in some simple scenarios, but more often than not it will need some adjustments (depending on the content that you create and the environment in which you use the editor).</p>
@@ -817,29 +824,37 @@ exportWord: {
 }
 </code></pre>
 <p>To send the file with custom styles to the converter, update the PDF/Word export configurations like this:</p>
-<pre class="highlight"><code class="js">// ...
+<pre class="highlight"><code class="js">// More editor's configuration.
+// ...
 exportPdf: {
     stylesheets: [
         'EDITOR_STYLES',
         './styles.css'
     ],
-    ...
-...
+    // More configuration of the Export to PDF.
+    // ...
+},
 exportWord: {
     stylesheets: [
         'EDITOR_STYLES',
         './styles.css'
     ],
-    ...
+    // More configuration of the Export to Word.
+    // ...
+}
+// More editor's configuration.
 // ...
 </code></pre>
 <p>And also do not forget to import the CSS file inside <code>app.js</code>:</p>
-<pre class="highlight"><code class="js">// ...
+<pre class="highlight"><code class="js">// More imports.
+// ...
 import './styles.css';
 
 DecoupledEditor
     .create( document.querySelector( '#editor' ), {
-// ...
+    // More of editor's configuartion.
+    // ...
+    }
 </code></pre>
 <p>After updating the configuration and adding styles, rebuild the editor again:</p>
 <pre class="highlight"><code class="bash">npm run build

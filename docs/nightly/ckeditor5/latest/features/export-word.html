@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Feb 13 2023 04:03:50 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 16 2023 04:03:59 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Export to Word - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -561,11 +561,8 @@
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ ExportWord, ... ],
-        toolbar: [
-            'exportWord', '|',
-            ...
-        ],
+        plugins: [ ExportWord, /* ... */ ],
+        toolbar: [ 'exportWord', '|', /* ... */ ],
         exportWord: {
             tokenUrl: 'https://example.com/cs-token-endpoint',
             fileName: 'my-file.docx',
@@ -578,8 +575,8 @@ ClassicEditor
             }
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice"><p>Read more about <a href="../installation/plugins/installing-plugins.html">installing plugins</a>.</p></div>
 <h2 id="configuration"><a class="headerlink" href="#configuration">#</a> Configuration</h2>
@@ -654,17 +651,20 @@ const exportWordConfig = {
 <h2 id="html-to-word-converter-features"><a class="headerlink" href="#html-to-word-converter-features">#</a> HTML to Word converter features</h2>
 <h3 id="styling-a-document"><a class="headerlink" href="#styling-a-document">#</a> Styling a document</h3>
 <p>By default, <a href="../api/module_export-word_exportword-ExportWord.html">Export to Word</a> plugin takes editor content styles and sends them to the CKEditor Cloud Services HTML to DOCX Converter. You can also add your own styles by providing the paths to the external CSS files.</p>
-<pre class="highlight"><code class="js">    // ...
-    exportWord: {
-        fileName: 'document.docx',
-        converterUrl: 'https://docx-converter.cke-cs.com/v1/convert',
-        stylesheets: [
-            'EDITOR_STYLES',
-            'path/to/my-styles.css'
-        ],
-        // ...
-    }
+<pre class="highlight"><code class="js">// More editor's configuration.
+// ...
+exportWord: {
+    fileName: 'document.docx',
+    converterUrl: 'https://docx-converter.cke-cs.com/v1/convert',
+    stylesheets: [
+        'EDITOR_STYLES',
+        'path/to/my-styles.css'
+    ],
+    // More configuration of the Export to Word.
     // ...
+}
+// More editor's configuration.
+// ...
 </code></pre>
 <h4 id="supported-css-properties"><a class="headerlink" href="#supported-css-properties">#</a> Supported CSS properties</h4>
 <p>DOCX Converter supports proper CSS inheritance with a set of whitelisted properties which can be used to style document content.</p>
@@ -687,11 +687,8 @@ import ExportWord from '@ckeditor/ckeditor5-export-pdf/src/exportword';
 
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        plugins: [ ExportWord, ... ],
-        toolbar: [
-            'exportWord', '|',
-            // ...
-        ],
+        plugins: [ ExportWord, /* ... */ ],
+        toolbar: [ 'exportWord', '|', /* ... */ ],
         exportWord: {
             stylesheets: [
                 'EDITOR_STYLES',
@@ -709,8 +706,8 @@ ClassicEditor
             }
         }
     } )
-    .then( ... )
-    .catch( ... );
+    .then( /* ... */ )
+    .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice"><p>This example focuses only on preparing the editable to match the converter settings. Please keep in mind that as a result, the appearance of your editor may change. Depending on your editor type and implementation or even some inherited global styles like <code>box-sizing</code>, applying new <code>padding</code> values may change the size of the editor on your website.</p><p>For the purpose of this example, <code>box-sizing: border-box</code> was implemented to make sure that the editor’s width will not change.</p></div>
 <p>Now set the corresponding editor styles:</p>

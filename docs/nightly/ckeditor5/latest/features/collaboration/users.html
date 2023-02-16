@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Feb 13 2023 04:04:03 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:13 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Users - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -486,10 +486,12 @@ class UsersIntegration extends Plugin {
     }
 }
 
+// More code.
 // ...
 
 ClassicEditor.create( document.querySelector( '#editor' ), {
     extraPlugins: [ UsersIntegration ],
+    // More editor's configuration.
     // ...
 } );
 </code></pre>
@@ -506,6 +508,7 @@ usersPlugin.me.id; // 'anonymous-user'
 <p>The anonymous user’s avatar is a contour of a human face.</p>
 <p>The anonymous user’s ID can be set using <code>config.users.anonymousUserId</code> property:</p>
 <pre class="highlight"><code class="js">ClassicEditor.create( document.querySelector( '#editor' ), {
+    // More editor's configuration.
     // ...
     users: {
         anonymousUserId: '0'
@@ -519,6 +522,7 @@ usersPlugin.me.id; // 'anonymous-user'
 <p>Permissions are set using the <a href="../../api/module_collaboration-core_permissions-Permissions.html"><code>Permissions</code></a> plugin. It is automatically provided if you load any of the collaboration features plugins.</p>
 <p>It is a good practice to set permissions directly after the users are defined:</p>
 <pre class="highlight"><code class="js">class UsersIntegration extends Plugin {
+    // More methods.
     // ...
 
     init() {
@@ -633,6 +637,7 @@ editor.model.on( 'applyOperation', ( evt, args ) =&gt; {
 <pre class="highlight"><code class="js">import './mycolors.css';
 
 ClassicEditor.create( document.querySelector( '#editor' ), {
+    // More editor's configuration.
     // ...
     users: {
         colorsCount: 10

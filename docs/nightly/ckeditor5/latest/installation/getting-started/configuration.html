@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Feb 13 2023 04:04:14 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:22 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Configuration - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -278,16 +278,19 @@ ClassicEditor
 <p>There is an exception to every rule. Although it is impossible to add plugins that have dependencies to <a href="../../api/core.html"><code>@ckeditor/ckeditor5-core</code></a> or <a href="../../api/engine.html"><code>@ckeditor/ckeditor5-engine</code></a> (that includes nearly all existing official plugins) without rebuilding the build, it is still possible to add simple, <strong>dependency-free</strong> plugins.</p>
 <p>You can do that using the <a href="../../api/module_core_editor_editorconfig-EditorConfig.html#member-extraPlugins"><code>config.extraPlugins</code></a> configuration. The <a href="../../api/module_core_plugin-PluginInterface.html">plugin interface</a> allows plugins to be simple functions and you can define them in just a few lines, for instance:</p>
 <pre class="highlight"><code class="js">function MyPlugin( editor ) {
+    // Plugin code.
     // ...
 }
 </code></pre>
 <p>or</p>
 <pre class="highlight"><code class="js">class MyPlugin {
     constructor( editor ) {
+        // Constructor code.
         // ...
     }
 
     init() {
+        // Initializations code.
         // ...
     }
 }
@@ -297,6 +300,7 @@ ClassicEditor
 
 function MyUploadAdapterPlugin( editor ) {
     editor.plugins.get( 'FileRepository' ).createUploadAdapter = function( loader ) {
+        // Custom upload adapter.
         // ...
     };
 }
@@ -305,7 +309,7 @@ function MyUploadAdapterPlugin( editor ) {
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
         extraPlugins: [ MyUploadAdapterPlugin ],
-
+        // More of the editor's configuration.
         // ...
     } )
     .catch( error =&gt; {
