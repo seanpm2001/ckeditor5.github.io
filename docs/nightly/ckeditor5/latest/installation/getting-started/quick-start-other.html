@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:23 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 18 2023 04:11:42 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Customized installation - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -167,8 +167,11 @@
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>
                                     </div>
                                     <ul class="tree__item-nested-list">
-                                          <li><a href="../advanced/alternative-setups/integrating-from-source.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source</span>
+                                          <li><a href="../advanced/alternative-setups/integrating-from-source-webpack.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Webpack</span>
+                                              </div></a></li>
+                                          <li><a href="../advanced/alternative-setups/integrating-from-source-vite.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Vite</span><span class="tree__item__badge tree__item__badge_new" data-badge-tooltip="New or updated content">New</span>
                                               </div></a></li>
                                           <li><a href="../advanced/alternative-setups/dll-builds.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">DLL builds</span>
@@ -334,7 +337,7 @@ module.exports = {
     performance: { hints: false }
 };
 </code></pre>
-<div class="info-box notice"><p>If you cannot use the latest webpack (at the moment of writing this guide, it is 5), the provided configuration will also work with webpack 4.</p></div>
+<div class="info-box notice"><p>If you cannot use the latest webpack (at the moment of writing this guide, it is 5), the provided configuration will also work with webpack 4. There is also a whole guide dedicated to <a href="../advanced/alternative-setups/integrating-from-source-vite.html">Integration from source using Vite</a>.</p></div>
 <h3 id="creating-an-editor"><a class="headerlink" href="#creating-an-editor">#</a> Creating an editor</h3>
 <p>You can now install some of the CKEditor 5 Framework packages which will allow you to initialize a simple rich-text editor. Keep in mind, however, that all packages (excluding <code>@ckeditor/ckeditor5-dev-*</code>) <a href="../plugins/installing-plugins.html#requirements">must have the same version as the base editor package</a>.</p>
 <p>You can start with the <a href="../../examples/builds/classic-editor.html">classic editor</a> with a small set of features.</p>
@@ -455,7 +458,7 @@ For example, use the following command to get to the classic build:</p>
 <p>To make updating easier, you may optionally add the original build repository to your Git remotes:</p>
 <pre class="highlight"><code class="bash">git remote add upstream https://github.com/ckeditor/ckeditor5.git
 </code></pre>
-<div class="info-box notice notice__hint"><p>If you do not want to fork the official build, you can just clone it. However, you will not be able to commit and push your customizations back to GitHub.</p><p>Alternatively, instead of creating a custom build you can <a href="../advanced/alternative-setups/integrating-from-source.html">integrate CKEditor 5 directly from source</a>. This option allows for even more flexibility and requires less overhead (you will not need to fork the official build). However, it requires that you fully control the <code>webpack.config.js</code> file (which is not that easy in some environments — for example in <a href="https://cli.angular.io/"><code>angular-cli</code></a> or <a href="https://github.com/facebook/create-react-app"><code>create-react-app</code></a>).</p></div>
+<div class="info-box notice notice__hint"><p>If you do not want to fork the official build, you can just clone it. However, you will not be able to commit and push your customizations back to GitHub.</p><p>Alternatively, instead of creating a custom build you can <a href="../advanced/alternative-setups/integrating-from-source-webpack.html">integrate CKEditor 5 directly from source</a>. This option allows for even more flexibility and requires less overhead (you will not need to fork the official build). However, it requires that you fully control the <code>webpack.config.js</code> file (which is not that easy in some environments — for example in <a href="https://cli.angular.io/"><code>angular-cli</code></a> or <a href="https://github.com/facebook/create-react-app"><code>create-react-app</code></a>).</p></div>
 <div class="info-box notice notice__warning"><p>It is important that you use the <code>stable</code> branch of a build, not the <code>master</code> branch. The <code>master</code> branch might contain changes which are not yet compatible with the versions of CKEditor 5 source packages that were published on npm.</p></div>
 <h3 id="build-anatomy"><a class="headerlink" href="#build-anatomy">#</a> Build anatomy</h3>
 <p>Every build contains the following files:</p>
@@ -649,8 +652,11 @@ git merge upstream/stable
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>
                                       </div>
                                       <ul class="tree__item-nested-list">
-                                              <li><a href="../advanced/alternative-setups/integrating-from-source.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source</span>
+                                              <li><a href="../advanced/alternative-setups/integrating-from-source-webpack.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Webpack</span>
+                                                  </div></a></li>
+                                              <li><a href="../advanced/alternative-setups/integrating-from-source-vite.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Vite</span><span class="tree__item__badge tree__item__badge_new" data-badge-tooltip="New or updated content">New</span>
                                                   </div></a></li>
                                               <li><a href="../advanced/alternative-setups/dll-builds.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">DLL builds</span>

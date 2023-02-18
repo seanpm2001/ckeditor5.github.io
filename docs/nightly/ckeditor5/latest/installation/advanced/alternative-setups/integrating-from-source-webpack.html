@@ -3,23 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Integrating from source - CKEditor 5 Documentation</title>
+    <title>Integrating from source using Webpack - CKEditor 5 Documentation</title>
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:21 GMT+0000 (Coordinated Universal Time)">
-    <meta property="og:title" content="Integrating from source - CKEditor 5 Documentation">
+    <meta name="x-generated-at" content="Sat Feb 18 2023 04:11:40 GMT+0000 (Coordinated Universal Time)">
+    <meta property="og:title" content="Integrating from source using Webpack - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ckeditor.com/docs/ckeditor5/latest/installation/advanced/alternative-setups/integrating-from-source.html">
+    <meta property="og:url" content="https://ckeditor.com/docs/ckeditor5/latest/installation/advanced/alternative-setups/integrating-from-source-webpack.html">
     <meta property="DC.language" content="en">
     <meta property="DC.publisher" content="CKSource">
     <meta property="DC.creator" content="CKEditor">
-    <meta property="DC.title" content="Integrating from source - CKEditor 5 Documentation">
+    <meta property="DC.title" content="Integrating from source using Webpack - CKEditor 5 Documentation">
     <meta property="DC.format" content="text/html">
     <meta property="DC.type" content="Text">
     <meta property="DC.description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
-    <link rel="canonical" href="https://ckeditor.com/docs/ckeditor5/latest/installation/advanced/alternative-setups/integrating-from-source.html">
+    <link rel="canonical" href="https://ckeditor.com/docs/ckeditor5/latest/installation/advanced/alternative-setups/integrating-from-source-webpack.html">
     <link rel="icon" type="image/png" href="../../../assets/img/favicons/16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="../../../assets/img/favicons/32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="../../../assets/img/favicons/96x96.png" sizes="96x96">
@@ -168,7 +168,10 @@
                                     </div>
                                     <ul class="tree__item-nested-list">
                                           <li><a href="">
-                                              <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Integrating from source</span>
+                                              <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Integrating from source using Webpack</span>
+                                              </div></a></li>
+                                          <li><a href="integrating-from-source-vite.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Vite</span><span class="tree__item__badge tree__item__badge_new" data-badge-tooltip="New or updated content">New</span>
                                               </div></a></li>
                                           <li><a href="dll-builds.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">DLL builds</span>
@@ -202,13 +205,13 @@
     <main class="main">
       <section class="main__content formatted">
         <div class="main__content-inner">
-          <div class="github-contrib"><a href="https://github.com/ckeditor/ckeditor5/blob/master/docs/installation/advanced/integrating-from-source.md" title="Contribute to this guide"><img src="../../../../../assets/2.3.1/img/edit.svg" alt="Contribute to this guide"></a>
+          <div class="github-contrib"><a href="https://github.com/ckeditor/ckeditor5/blob/master/docs/installation/advanced/integrating-from-source-webpack.md" title="Contribute to this guide"><img src="../../../../../assets/2.3.1/img/edit.svg" alt="Contribute to this guide"></a>
           </div>
           <div class="rwd-breadcrumbs"><a href="../../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">Getting started</a>
           </div>
-          <h1 class="main__content-title"><img src="../../../../../assets/2.3.1/img/book.svg" alt="guide">Integrating from source
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#webpack-configuration">webpack configuration</a><ol><li><a href="#webpack-encore">Webpack Encore</a></li></ol></li><li><a href="#running-the-editor-method-1">Running the editor – method 1</a></li><li><a href="#running-the-editor-method-2">Running the editor – method 2</a></li><li><a href="#building">Building</a></li><li><a href="#option-minifying-javascript">Option: Minifying JavaScript</a></li><li><a href="#option-extracting-css">Option: Extracting CSS</a></li><li><a href="#option-building-to-es5-target">Option: Building to ES5 target</a></li></ol></nav>
-<div class="info-box notice"><p>CKEditor 5 is currently built using <a href="https://webpack.js.org/">webpack@5</a>. All builds, examples and demos are generated using this bundler. It should also be possible to build CKEditor 5 using other bundlers (if they are configured properly), such as <a href="https://github.com/rollup/rollup">Rollup</a> or <a href="http://browserify.org/">Browserify</a>, but these setups are not officially supported yet. Also, the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-translations"><code>@ckeditor/ckeditor5-dev-translations</code></a> that allows to localize the editor is only available for webpack. More work on this subject will be done in the future.</p><p>Therefore, a prerequisite to this guide is that you are using webpack as your build tool.</p></div>
+          <h1 class="main__content-title"><img src="../../../../../assets/2.3.1/img/book.svg" alt="guide">Integrating from source using Webpack
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#webpack-configuration">Webpack configuration</a><ol><li><a href="#webpack-encore">Webpack Encore</a></li></ol></li><li><a href="#running-the-editor-method-1">Running the editor – method 1</a></li><li><a href="#running-the-editor-method-2">Running the editor – method 2</a></li><li><a href="#building">Building</a></li><li><a href="#option-minifying-javascript">Option: Minifying JavaScript</a></li><li><a href="#option-extracting-css">Option: Extracting CSS</a></li><li><a href="#option-building-to-es5-target">Option: Building to ES5 target</a></li></ol></nav>
+<div class="info-box notice"><p>CKEditor 5 is currently built using <a href="https://webpack.js.org/">webpack@5</a>. All builds, examples and demos are generated using this bundler. It should also be possible to build CKEditor 5 using other bundlers (if they are configured properly), such as <a href="https://github.com/rollup/rollup">Rollup</a> or <a href="http://browserify.org/">Browserify</a>, but these setups are not officially supported yet. However, there is integration for <a href="integrating-from-source-vite.html">Vite</a>. It is still in an experimental phase and supports a limited number of features. For example, the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-dev-translations"><code>@ckeditor/ckeditor5-dev-translations</code></a> that allows to localize the editor is only available for webpack. More work on this subject will be done in the future.</p><p>Therefore, a prerequisite to this guide is that you are using webpack as your build tool.</p></div>
 <p>This scenario allows you to fully control the building process of CKEditor 5. This means that you will not actually use the builds anymore, but instead build CKEditor from source directly into your project. This integration method gives you full control over which features will be included and how webpack will be configured.</p>
 <div class="info-box notice"><p>Similar results to what this method allows can be achieved by <a href="../../getting-started/quick-start-other.html#building-the-editor-from-source">customizing an existing build</a> and integrating your custom build. This will give faster build times (since CKEditor 5 will be built once and committed), however, it requires maintaining a separate repository and installing the code from that repository into your project (e.g. by publishing a new npm package or using tools like <a href="https://github.com/lerna/lerna">Lerna</a>). This makes it less convenient than the method described in this scenario.</p></div>
 <p>First of all, you need to install source packages that you will use. If you base your integration on one of the existing builds, you can take them from that build’s <code>package.json</code> file (see e.g. <a href="https://github.com/ckeditor/ckeditor5/blob/master/packages/ckeditor5-build-classic/package.json">classic build’s <code>package.json</code></a>). At this moment you can choose the editor creator and the features you want. Keep in mind, however, that all packages (excluding <code>@ckeditor/ckeditor5-dev-*</code>) <a href="../../plugins/installing-plugins.html#requirements">must have the same version as the base editor package</a>.</p>
@@ -245,7 +248,7 @@
     webpack@5 \
     webpack-cli@4
 </code></pre>
-<h2 id="webpack-configuration"><a class="headerlink" href="#webpack-configuration">#</a> webpack configuration</h2>
+<h2 id="webpack-configuration"><a class="headerlink" href="#webpack-configuration">#</a> Webpack configuration</h2>
 <p>You can now configure webpack. There are a couple of things that you need to take care of when building CKEditor 5:</p>
 <ul>
 <li>Handling CSS files of the CKEditor theme. They are included in the CKEditor 5 sources using <code>import 'path/to/styles.css'</code> statements, so you need <a href="https://webpack.js.org/loaders/">proper loaders</a>.</li>
@@ -589,7 +592,7 @@ module.exports = {
           <div class="info-box notice notice__feedback">
             <p>
               Every day, we work hard to keep our documentation complete. Have you spotted outdated information? Is something missing?
-              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22installation%2Fadvanced%2Falternative-setups%2Fintegrating-from-source.html%22&amp;project-version=36.0.1" id="report-widget-issue-tracker">issue tracker</a>.
+              Please report it via our <a href="https://github.com/ckeditor/ckeditor5/issues/new?labels=squad%3Accx%2Ctype%3Adocs&amp;template=7-docs-issue-community.yml&amp;title=Docs+issue+report+from+%22installation%2Fadvanced%2Falternative-setups%2Fintegrating-from-source-webpack.html%22&amp;project-version=36.0.1" id="report-widget-issue-tracker">issue tracker</a>.
             </p>
           </div>
           <script>
@@ -694,7 +697,10 @@ module.exports = {
                                       </div>
                                       <ul class="tree__item-nested-list">
                                               <li><a href="">
-                                                  <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Integrating from source</span>
+                                                  <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Integrating from source using Webpack</span>
+                                                  </div></a></li>
+                                              <li><a href="integrating-from-source-vite.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Vite</span><span class="tree__item__badge tree__item__badge_new" data-badge-tooltip="New or updated content">New</span>
                                                   </div></a></li>
                                               <li><a href="dll-builds.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">DLL builds</span>

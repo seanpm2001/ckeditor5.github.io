@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:23 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 18 2023 04:11:41 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Editor lifecycle - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -170,8 +170,11 @@
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>
                                     </div>
                                     <ul class="tree__item-nested-list">
-                                          <li><a href="../advanced/alternative-setups/integrating-from-source.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source</span>
+                                          <li><a href="../advanced/alternative-setups/integrating-from-source-webpack.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Webpack</span>
+                                              </div></a></li>
+                                          <li><a href="../advanced/alternative-setups/integrating-from-source-vite.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Vite</span><span class="tree__item__badge tree__item__badge_new" data-badge-tooltip="New or updated content">New</span>
                                               </div></a></li>
                                           <li><a href="../advanced/alternative-setups/dll-builds.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">DLL builds</span>
@@ -220,7 +223,7 @@
 <li>Document editor – <a href="../../api/module_editor-decoupled_decouplededitor-DecoupledEditor.html"><code>DecoupledEditor</code></a></li>
 </ul>
 <p>Most of the examples in the documentation use the <code>ClassicEditor</code> class, but things should work in a similar way with other builds.</p>
-<div class="info-box notice"><p>A CKEditor 5 build compiles a specific editor class and a set of plugins. Using builds is the simplest way to include the editor in your application, but you can also <a href="../advanced/alternative-setups/integrating-from-source.html">use the editor classes and plugins directly</a> for greater flexibility.</p></div>
+<div class="info-box notice"><p>A CKEditor 5 build compiles a specific editor class and a set of plugins. Using builds is the simplest way to include the editor in your application, but you can also <a href="../advanced/alternative-setups/integrating-from-source-webpack.html">use the editor classes and plugins directly</a> for greater flexibility.</p></div>
 
 <h2 id="creating-an-editor-with-create"><a class="headerlink" href="#creating-an-editor-with-create">#</a> Creating an editor with <code>create()</code></h2>
 <p>Regardless of the chosen build, creating an editor is done using the static <code>create()</code> method.</p>
@@ -421,8 +424,11 @@
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>
                                       </div>
                                       <ul class="tree__item-nested-list">
-                                              <li><a href="../advanced/alternative-setups/integrating-from-source.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source</span>
+                                              <li><a href="../advanced/alternative-setups/integrating-from-source-webpack.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Webpack</span>
+                                                  </div></a></li>
+                                              <li><a href="../advanced/alternative-setups/integrating-from-source-vite.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Vite</span><span class="tree__item__badge tree__item__badge_new" data-badge-tooltip="New or updated content">New</span>
                                                   </div></a></li>
                                               <li><a href="../advanced/alternative-setups/dll-builds.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">DLL builds</span>

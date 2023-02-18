@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:22 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 18 2023 04:11:41 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="React component - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -169,8 +169,11 @@
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>
                                     </div>
                                     <ul class="tree__item-nested-list">
-                                          <li><a href="../advanced/alternative-setups/integrating-from-source.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source</span>
+                                          <li><a href="../advanced/alternative-setups/integrating-from-source-webpack.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Webpack</span>
+                                              </div></a></li>
+                                          <li><a href="../advanced/alternative-setups/integrating-from-source-vite.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Vite</span><span class="tree__item__badge tree__item__badge_new" data-badge-tooltip="New or updated content">New</span>
                                               </div></a></li>
                                           <li><a href="../advanced/alternative-setups/dll-builds.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">DLL builds</span>
@@ -209,7 +212,7 @@
           <div class="rwd-breadcrumbs"><a href="../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">Getting started</a>
           </div>
           <h1 class="main__content-title"><img src="../../../../assets/2.3.1/img/book.svg" alt="guide">React rich text editor component
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#quick-start">Quick start</a></li><li><a href="#component-properties">Component properties</a></li><li><a href="#context-feature">Context feature</a><ol><li><a href="#context-feature-properties">Context feature properties</a></li></ol></li><li><a href="#customizing-the-builds">Customizing the builds</a><ol><li><a href="#using-the-ckeditor-5-online-builder">Using the CKEditor 5 online builder</a></li><li><a href="#customizing-one-of-the-predefined-builds">Customizing one of the predefined builds</a></li><li><a href="#integrating-the-editor-from-source">Integrating the editor from source</a></li><li><a href="#using-the-document-editor-build">Using the document editor build</a></li><li><a href="#using-the-editor-with-collaboration-plugins">Using the editor with collaboration plugins</a></li></ol></li><li><a href="#integrating-a-build-from-the-online-builder">Integrating a build from the online builder</a><ol><li><a href="#the-javascript-heap-out-of-memory-error">The JavaScript heap out of memory error</a></li></ol></li><li><a href="#integrating-ckeditor-5-built-from-source">Integrating CKEditor 5 built from source</a><ol><li><a href="#using-create-react-app3">Using create-react-app@3+</a><ol><li><a href="#installing-missing-dependencies">Installing missing dependencies</a></li><li><a href="#modifying-the-webpack-configuration">Modifying the webpack configuration</a></li><li><a href="#using-ckeditor-5-source">Using CKEditor 5 source</a></li></ol></li></ol></li><li><a href="#localization">Localization</a><ol><li><a href="#predefined-builds">Predefined builds</a></li><li><a href="#ckeditor-5-built-from-source">CKEditor 5 built from source</a></li></ol></li><li><a href="#contributing-and-reporting-issues">Contributing and reporting issues</a></li></ol></nav>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#quick-start">Quick start</a></li><li><a href="#component-properties">Component properties</a></li><li><a href="#context-feature">Context feature</a><ol><li><a href="#context-feature-properties">Context feature properties</a></li></ol></li><li><a href="#customizing-the-builds">Customizing the builds</a><ol><li><a href="#using-the-ckeditor-5-online-builder">Using the CKEditor 5 online builder</a></li><li><a href="#customizing-one-of-the-predefined-builds">Customizing one of the predefined builds</a></li><li><a href="#integrating-the-editor-from-source">Integrating the editor from source</a></li><li><a href="#using-the-document-editor-build">Using the document editor build</a></li><li><a href="#using-the-editor-with-collaboration-plugins">Using the editor with collaboration plugins</a></li></ol></li><li><a href="#integrating-a-build-from-the-online-builder">Integrating a build from the online builder</a><ol><li><a href="#the-javascript-heap-out-of-memory-error">The JavaScript heap out of memory error</a></li></ol></li><li><a href="#integrating-ckeditor-5-built-from-source">Integrating CKEditor 5 built from source</a><ol><li><a href="#create-react-app3">create-react-app@3+</a><ol><li><a href="#installing-missing-dependencies">Installing missing dependencies</a></li><li><a href="#modifying-the-webpack-configuration">Modifying the webpack configuration</a></li></ol></li><li><a href="#vite">Vite</a><ol><li><a href="#installing-necessary-packages">Installing necessary packages</a></li><li><a href="#configuring-viteconfigjs">Configuring vite.config.js</a></li></ol></li><li><a href="#using-the-editor-from-source">Using the editor from source</a></li></ol></li><li><a href="#localization">Localization</a><ol><li><a href="#predefined-builds">Predefined builds</a></li><li><a href="#ckeditor-5-built-from-source">CKEditor 5 built from source</a></li></ol></li><li><a href="#contributing-and-reporting-issues">Contributing and reporting issues</a></li></ol></nav>
 
 <p>
 	<a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-react" target="_blank" rel="noopener">
@@ -362,7 +365,7 @@ Error details is an object that contains two properties:
 <p>This option requires making changes to a <a href="../getting-started/quick-start-other.html#building-the-editor-from-source">predefined build</a> of your choice. Much like in <a href="#integrating-a-build-from-the-online-builder">the case of online builder</a>, you then need to place the custom editor’s folder next to <code>src/</code> directory and add it as a dependency using <code>yarn add file</code> command.</p>
 <p>Read more about customising a predefined build in the <a href="../plugins/installing-plugins.html">Installing plugins</a> guide.</p>
 <h3 id="integrating-the-editor-from-source"><a class="headerlink" href="#integrating-the-editor-from-source">#</a> Integrating the editor from source</h3>
-<p>In this approach, you will include a CKEditor 5 <a href="../advanced/alternative-setups/integrating-from-source.html">built from source</a>, so you will choose the editor creator you want and the list of plugins, etc. It is more powerful and creates a tighter integration between your application and the WYSIWYG editor, however, it requires adjusting your <code>webpack.config.js</code> to CKEditor 5 needs.</p>
+<p>In this approach, you will include a CKEditor 5 <a href="../advanced/alternative-setups/integrating-from-source-webpack.html">built from source</a>, so you will choose the editor creator you want and the list of plugins, etc. It is more powerful and creates a tighter integration between your application and the WYSIWYG editor, however, it requires adjusting your <code>webpack.config.js</code> to CKEditor 5 needs.</p>
 <p>Read more about this option in the <a href="#integrating-ckeditor-5-built-from-source">Integrating CKEditor 5 from source</a> section.</p>
 <h3 id="using-the-document-editor-build"><a class="headerlink" href="#using-the-document-editor-build">#</a> Using the document editor build</h3>
 <p>If you use the <a href="../../framework/guides/deep-dive/ui/document-editor.html">document (decoupled) editor</a>, you need to <a href="../../api/module_editor-decoupled_decouplededitor-DecoupledEditor.html#static-function-create">add the toolbar to the DOM manually</a>:</p>
@@ -504,8 +507,8 @@ yarn build
 </code></pre>
 <h2 id="integrating-ckeditor-5-built-from-source"><a class="headerlink" href="#integrating-ckeditor-5-built-from-source">#</a> Integrating CKEditor 5 built from source</h2>
 <p>Integrating the rich text editor from source allows you to use the full power of the <a href="../../framework/index.html">CKEditor 5 Framework</a>.</p>
-<p>This guide assumes that you are using the <a href="https://github.com/facebook/create-react-app">Create React App CLI</a> as your boilerplate and it goes through adjusting it to fit CKEditor 5 needs. If you use your custom webpack setup, please read more about <a href="../advanced/alternative-setups/integrating-from-source.html">including CKEditor 5 built from source</a>.</p>
-<h3 id="using-create-react-app3"><a class="headerlink" href="#using-create-react-app3">#</a> Using <code>create-react-app@3+</code></h3>
+<h3 id="create-react-app3"><a class="headerlink" href="#create-react-app3">#</a> <code>create-react-app@3+</code></h3>
+<p>This guide assumes that you are using the <a href="https://github.com/facebook/create-react-app">Create React App CLI</a> as your boilerplate and it goes through adjusting it to fit CKEditor 5 needs. If you use your custom webpack setup, please read more about <a href="../advanced/alternative-setups/integrating-from-source-webpack.html">including CKEditor 5 built from source</a>.</p>
 <p>The configuration needs to be ejected to make it possible to customize the webpack configuration. In order to be able to build CKEditor 5 from source, you need to tell webpack how to handle CKEditor 5’s SVG and CSS files (by adding loaders configuration). Additionally, you need to exclude the CKEditor 5 source from the existing loaders.</p>
 <div class="info-box notice"><p>You can see all the changes described below in this example project: <a href="https://github.com/ckeditor/ckeditor5-react-example/">https://github.com/ckeditor/ckeditor5-react-example/</a>.</p></div>
 <p>Create a sample application using <code>create-react-app@3+</code> first:</p>
@@ -603,7 +606,51 @@ yarn build
     }
 }
 </code></pre>
-<h4 id="using-ckeditor-5-source"><a class="headerlink" href="#using-ckeditor-5-source">#</a> Using CKEditor 5 source</h4>
+<p>Now, your setup with <code>create-react-app</code> is complete. You can also check how to configure Vite in the next section or move straight to <a href="#using-the-editor-from-source">Using the editor from source</a>.</p>
+<h3 id="vite"><a class="headerlink" href="#vite">#</a> Vite</h3>
+<p>This guide assumes that you use <code>create-vite</code> as your boilerplate. To get started with Vite and React, run the command below.</p>
+<pre class="highlight"><code class="bash"># npm 6.x
+npm create vite@latest ckeditor5-react-example --template react
+
+# npm7+, extra double-dash is needed:
+npm create vite@latest ckeditor5-react-example -- --template react
+</code></pre>
+<p>This command will install and execute <code>create-vite</code>, the official project scaffolding tool for Vite.</p>
+<h4 id="installing-necessary-packages"><a class="headerlink" href="#installing-necessary-packages">#</a> Installing necessary packages</h4>
+<p>Besides the CKEditor base and plugins, you need to install additional packages to use it from source with React and Vite: the Vite plugin, the official React component, and the default theme.</p>
+<div class="info-box notice"><p>Using the Vite plugin to build CKEditor 5 from the source in Vite is still in the experimental phase. We encourage you to test it and give us feedback. To read more about integration with Vite or its limitations, check the <a href="../advanced/alternative-setups/integrating-from-source-vite.html">Integrating from source with Vite</a> guide.</p></div>
+<p>Install necessary packages alongside the default theme using the following command.</p>
+<pre class="highlight"><code class="">npm install --save \ 
+    @ckeditor/vite-plugin-ckeditor5 \
+    @ckeditor/ckeditor5-react \
+    @ckeditor/ckeditor5-theme-lark \
+    @ckeditor/ckeditor5-editor-classic \
+    @ckeditor/ckeditor5-essentials \
+    @ckeditor/ckeditor5-paragraph \
+    @ckeditor/ckeditor5-basic-styles
+</code></pre>
+<h4 id="configuring-viteconfigjs"><a class="headerlink" href="#configuring-viteconfigjs">#</a> Configuring <code>vite.config.js</code></h4>
+<p>Configuring CKEditor with React and Vite is simple. Modify the existing config by importing <code>ckeditor5</code> and adding it to the list of plugins.</p>
+<pre class="highlight"><code class="js">// vite.config.js
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import ckeditor5 from '@ckeditor/vite-plugin-ckeditor5';
+
+export default defineConfig( {
+  plugins: [
+    react(),
+    ckeditor5( { theme: require.resolve( '@ckeditor/ckeditor5-theme-lark' ) } )
+  ],
+} )
+</code></pre>
+<p>The configuration slightly differs for ESM projects. If you try to start the dev server using the <code>npm run dev</code> command, you may encounter an error: <code>require.resolve is not a function</code>. In this case, you need some additional lines of code.</p>
+<pre class="highlight"><code class="js">// vite.config.js
+
+import { createRequire } from 'node:module';
+const require = createRequire( import.meta.url );
+</code></pre>
+<h3 id="using-the-editor-from-source"><a class="headerlink" href="#using-the-editor-from-source">#</a> Using the editor from source</h3>
 <p>Once your configuration is updated, you can use CKEditor 5 directly from source. Test it by editing <code>src/App.js</code>:</p>
 <pre class="highlight"><code class="jsx html">import React, { Component } from 'react';
 
@@ -656,7 +703,7 @@ export default App;
 <p>Finally, you can see your application live:</p>
 <pre class="highlight"><code class="">yarn start
 </code></pre>
-<p>You can read more about using CKEditor 5 from source in the <a href="../advanced/alternative-setups/integrating-from-source.html">Advanced setup guide</a>.</p>
+<p>You can read more about using CKEditor 5 from source in the <a href="../advanced/alternative-setups/integrating-from-source-webpack.html">Advanced setup guide</a>.</p>
 <h2 id="localization"><a class="headerlink" href="#localization">#</a> Localization</h2>
 <p>CKEditor 5 supports <a href="../../features/ui-language.html">multiple UI languages</a>, and so does the official React component. Follow the instructions below to translate CKEditor 5 in your React application.</p>
 <h3 id="predefined-builds"><a class="headerlink" href="#predefined-builds">#</a> Predefined builds</h3>
@@ -829,8 +876,11 @@ module.exports = {
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>
                                       </div>
                                       <ul class="tree__item-nested-list">
-                                              <li><a href="../advanced/alternative-setups/integrating-from-source.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source</span>
+                                              <li><a href="../advanced/alternative-setups/integrating-from-source-webpack.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Webpack</span>
+                                                  </div></a></li>
+                                              <li><a href="../advanced/alternative-setups/integrating-from-source-vite.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Vite</span><span class="tree__item__badge tree__item__badge_new" data-badge-tooltip="New or updated content">New</span>
                                                   </div></a></li>
                                               <li><a href="../advanced/alternative-setups/dll-builds.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">DLL builds</span>

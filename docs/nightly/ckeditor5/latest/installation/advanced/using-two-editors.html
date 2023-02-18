@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Feb 16 2023 04:04:21 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Feb 18 2023 04:11:40 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Using two different editors - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -167,8 +167,11 @@
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>
                                     </div>
                                     <ul class="tree__item-nested-list">
-                                          <li><a href="alternative-setups/integrating-from-source.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source</span>
+                                          <li><a href="alternative-setups/integrating-from-source-webpack.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Webpack</span>
+                                              </div></a></li>
+                                          <li><a href="alternative-setups/integrating-from-source-vite.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Vite</span><span class="tree__item__badge tree__item__badge_new" data-badge-tooltip="New or updated content">New</span>
                                               </div></a></li>
                                           <li><a href="alternative-setups/dll-builds.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">DLL builds</span>
@@ -218,7 +221,7 @@
 <h2 id="solutions"><a class="headerlink" href="#solutions">#</a> Solutions</h2>
 <p>If you want to load two different editors on one page you need to make sure that they are built together (once). This can be achieved in at least two ways:</p>
 <ul>
-<li><a href="alternative-setups/integrating-from-source.html">Integrating CKEditor 5 from source</a> directly into your application. Since you build you application once, the editors that you use will be built together, too.</li>
+<li><a href="alternative-setups/integrating-from-source-webpack.html">Integrating CKEditor 5 from source</a> directly into your application. Since you build you application once, the editors that you use will be built together, too.</li>
 <li><a href="#creating-super-builds">Creating a “super build” of CKEditor 5</a>. Instead of creating a build which exports just one editor, you can create a build which exports two or more at the same time.</li>
 </ul>
 <h2 id="creating-super-builds"><a class="headerlink" href="#creating-super-builds">#</a> Creating “super builds”</h2>
@@ -452,8 +455,11 @@ index c57e371..04fc9fe 100644
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Alternative setups</span>
                                       </div>
                                       <ul class="tree__item-nested-list">
-                                              <li><a href="alternative-setups/integrating-from-source.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source</span>
+                                              <li><a href="alternative-setups/integrating-from-source-webpack.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Webpack</span>
+                                                  </div></a></li>
+                                              <li><a href="alternative-setups/integrating-from-source-vite.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating from source using Vite</span><span class="tree__item__badge tree__item__badge_new" data-badge-tooltip="New or updated content">New</span>
                                                   </div></a></li>
                                               <li><a href="alternative-setups/dll-builds.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">DLL builds</span>
