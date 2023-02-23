@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Wed Feb 22 2023 04:15:58 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 23 2023 04:15:44 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Easy Image - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -224,11 +224,23 @@
                           <li><a href="../../export-word.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Export to Word</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                               </div></a></li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">File management</span>
+                            </div>
+                            <ul class="tree__item-nested-list">
+                                  <li><a href="../../file-management/ckbox.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKBox file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                      </div></a></li>
+                                  <li><a href="../../file-management/ckfinder.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKFinder file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                      </div></a></li>
+                            </ul>
+                          </li>
                           <li><a href="../../find-and-replace.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
                               </div></a></li>
                           <li><a href="../../general-html-support.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">General HTML Support</span>
@@ -277,14 +289,11 @@
                                           <li><a href="image-upload.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span>
                                               </div></a></li>
-                                          <li><a href="ckbox.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKBox file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                          <li><a href="using-file-managers.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using file managers</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                                               </div></a></li>
                                           <li><a href="">
                                               <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Easy Image</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
-                                              </div></a></li>
-                                          <li><a href="ckfinder.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKFinder file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                                               </div></a></li>
                                           <li><a href="base64-upload-adapter.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Base64 upload adapter</span>
@@ -460,7 +469,7 @@
           </div>
           <h1 class="main__content-title"><img src="../../../../../assets/2.4.0/img/book.svg" alt="guide">Easy Image integration
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#configuration">Configuration</a><ol><li><a href="#configuring-allowed-file-types">Configuring allowed file types</a><ol><li><a href="#client-side-configuration">Client-side configuration</a></li><li><a href="#server-side-configuration">Server-side configuration</a></li></ol></li></ol></li><li><a href="#responsive-images">Responsive images</a><ol><li><a href="#why-responsive-images">Why responsive images?</a></li><li><a href="#responsive-images-in-the-markup">Responsive images in the markup</a></li></ol></li><li><a href="#installation">Installation</a></li><li><a href="#whats-next">What’s next?</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
-<p>The <a href="https://ckeditor.com/ckeditor-cloud-services/easy-image/">Easy Image</a> feature takes care of handling images with a strong focus on the end–user experience. Its goal is to make the image upload as effortless and intuitive as possible. Unlike the <a href="ckbox.html">CKBox</a> feature, which is a full-fledged file manager, Easy Image concentrates on upload only.</p>
+<p>The <a href="https://ckeditor.com/ckeditor-cloud-services/easy-image/">Easy Image</a> feature takes care of handling images with a strong focus on the end–user experience. Its goal is to make the image upload as effortless and intuitive as possible. Unlike the <a href="../../file-management/ckbox.html">CKBox</a> feature, which is a full-fledged file manager, Easy Image concentrates on upload only.</p>
 <div class="info-box notice notice__info"><p>This is a premium feature and you need a license for it on top of your CKEditor 5 commercial license. <a href="https://ckeditor.com/contact/?sales=true#contact-form">Contact us</a> to receive an offer tailored to your needs.</p><p>You can also sign up for the <a href="https://orders.ckeditor.com/trial/premium-features">CKEditor Premium Features 30-day free trial</a> to test the feature.</p><p>This feature is enabled by default in all <a href="https://ckeditor.com/docs/ckeditor5/latest/installation/getting-started/predefined-builds.html">predefined builds</a> for convenience, but the editor will still work properly without activating it.</p></div>
 <p>Easy Image is part of the CKEditor Cloud Services. It is a <abbr title="Software as a service">SaaS</abbr> product which:</p>
 <ul>
@@ -733,11 +742,23 @@ ClassicEditor
                           <li><a href="../../export-word.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Export to Word</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                               </div></a></li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">File management</span>
+                            </div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="../../file-management/ckbox.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKBox file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                        </div></a></li>
+                                    <li><a href="../../file-management/ckfinder.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKFinder file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                        </div></a></li>
+                            </ul>
+                          </li>
                           <li><a href="../../find-and-replace.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
                               </div></a></li>
                           <li><a href="../../general-html-support.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">General HTML Support</span>
@@ -786,14 +807,11 @@ ClassicEditor
                                               <li><a href="image-upload.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span>
                                                   </div></a></li>
-                                              <li><a href="ckbox.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKBox file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                              <li><a href="using-file-managers.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using file managers</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                                                   </div></a></li>
                                               <li><a href="">
                                                   <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Easy Image</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
-                                                  </div></a></li>
-                                              <li><a href="ckfinder.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKFinder file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                                                   </div></a></li>
                                               <li><a href="base64-upload-adapter.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Base64 upload adapter</span>

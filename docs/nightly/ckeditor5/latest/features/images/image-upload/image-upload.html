@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Wed Feb 22 2023 04:16:00 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 23 2023 04:15:46 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Overview - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -224,11 +224,23 @@
                           <li><a href="../../export-word.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Export to Word</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                               </div></a></li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">File management</span>
+                            </div>
+                            <ul class="tree__item-nested-list">
+                                  <li><a href="../../file-management/ckbox.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKBox file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                      </div></a></li>
+                                  <li><a href="../../file-management/ckfinder.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKFinder file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                      </div></a></li>
+                            </ul>
+                          </li>
                           <li><a href="../../find-and-replace.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
                               </div></a></li>
                           <li><a href="../../general-html-support.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">General HTML Support</span>
@@ -277,14 +289,11 @@
                                           <li><a href="">
                                               <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Overview</span>
                                               </div></a></li>
-                                          <li><a href="ckbox.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKBox file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                          <li><a href="using-file-managers.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using file managers</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                                               </div></a></li>
                                           <li><a href="easy-image.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Easy Image</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
-                                              </div></a></li>
-                                          <li><a href="ckfinder.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKFinder file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                                               </div></a></li>
                                           <li><a href="base64-upload-adapter.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Base64 upload adapter</span>
@@ -462,11 +471,11 @@
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#official-upload-adapters">Official upload adapters</a><ol><li><a href="#ckbox">CKBox</a></li><li><a href="#easy-image">Easy Image</a></li><li><a href="#ckfinder">CKFinder</a></li><li><a href="#simple-adapter">Simple adapter</a></li><li><a href="#base64-adapter">Base64 adapter</a></li></ol></li><li><a href="#implementing-your-own-upload-adapter">Implementing your own upload adapter</a></li><li><a href="#inserting-images-via-url">Inserting images via URL</a></li></ol></nav>
 <p>Inserting <a href="../images-overview.html">images</a> into content created with CKEditor 5 is a very common task. In a properly configured rich-text editor, there are several ways for the end user to insert images:</p>
 <ul>
-<li><strong>Pasting</strong> an image from the clipboard.</li>
-<li><strong>Dragging</strong> a file from the file system.</li>
-<li>Selecting an image through a <strong>file system dialog</strong>.</li>
-<li>Selecting an image from a <strong>media management tool</strong> in your application.</li>
-<li><strong>Pasting</strong> and URL to an image, either into the editor dialog or directly into the content.</li>
+<li><strong>Pasting</strong> an image from the clipboard</li>
+<li><strong>Dragging</strong> a file from the file system</li>
+<li>Selecting an image through a <strong>file system dialog</strong></li>
+<li>Selecting an image from a <strong>media management tool</strong> in your application</li>
+<li><strong>Pasting</strong> a URL to an image, either into the editor dialog or directly into the content</li>
 </ul>
 <p>With the exception of pasting URLs, all other solutions require the image to be uploaded to a server. The server will then be responsible for providing the image URL used by CKEditor 5 to display the image in the document.</p>
 <p>The software that makes the image upload possible is called an <strong>upload adapter</strong>. It is a callback that tells the WYSIWYG editor how to send the file to the server. There are two main strategies of getting the image upload to work that you can adopt in your project:</p>
@@ -477,7 +486,7 @@
 <p>Read our comprehensive blog post about <a href="https://ckeditor.com/blog/managing-images-with-ckeditor-5/">Managing images with CKEditor 5</a> to find out more details about image upload and management and to compare the available options.</p>
 <div class="info-box notice"><p>If you want to get a better look under the hood and learn more about the upload process, you can check out the <a href="../../../framework/guides/deep-dive/upload-adapter.html">“Custom image upload adapter” deep dive guide</a> covering that topic.</p></div>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
-<p>The demo below uses the <a href="../../../installation/getting-started/predefined-builds.html#classic-editor">Classic editor</a> configured to use the <a href="easy-image.html">Easy Image</a> service provided by <a href="https://ckeditor.com/ckeditor-cloud-services">CKEditor Cloud Services</a> and the <code>AutoImage</code> plugin, which allows to <a href="images-inserting.html">paste image URLs directly</a>:</p>
+<p>The demo below uses the <a href="../../../installation/getting-started/predefined-builds.html#classic-editor">Classic editor</a> configured to use the <a href="easy-image.html">Easy Image</a> service provided by <a href="https://ckeditor.com/ckeditor-cloud-services">CKEditor Cloud Services</a> and the <code>AutoImage</code> plugin, which allows you to <a href="images-inserting.html">paste image URLs directly</a>:</p>
 
 <div class="live-snippet"><div id="snippet-image-upload">
 	<p><strong>CKEditor 5</strong> offers multiple ways to include images in your rich content. You can choose whichever you find more comfortable and efficient for your needs. Use classic interface, or boost productivity with the advanced image handling offered.</p>
@@ -486,16 +495,16 @@
 </div>
 <h2 id="official-upload-adapters"><a class="headerlink" href="#official-upload-adapters">#</a> Official upload adapters</h2>
 <h3 id="ckbox"><a class="headerlink" href="#ckbox">#</a> CKBox</h3>
-<p>CKBox is a modern SaaS file management platform with a clean interface, responsive images and top-notch UX. We keep expanding and updating it constantly, adding new features and functions. If you are a part of an organization with many different files to manage, such as images or documents, and regularly have issues finding the right files for the task at hand, CKBox is the right solution.</p>
+<p>CKBox is a modern SaaS file management platform with a clean interface, responsive images, and top-notch UX. We keep expanding and updating it constantly, adding new features and functions. If you are a part of an organization with many different files to manage, such as images or documents, and regularly have issues finding the right files for the task at hand, CKBox is the right solution.</p>
 <p>CKBox is a part of the commercial <a href="https://ckeditor.com/ckeditor-cloud-services/">CKEditor Cloud Services</a> offer.</p>
-<p>With the CKBox platform, users can upload files and categorize them into different groups. They can also change the way the files are organized as various interface modification options exist. For example, you can modify the image thumbnail sizes or decide how many files are displayed within the navigation that users can view. Files can be uploaded, deleted, renamed, and tagged. File properties like dimensions, upload date or size are also easily accessible and can be used to sort the files view alonside a regular search.</p>
-<p><a href="ckbox.html"><strong>Learn how to use CKBox in your project</strong></a>.</p>
+<p>With the CKBox platform, users can upload files and categorize them into different groups. They can also change the way the files are organized as various interface modification options exist. For example, you can modify the image thumbnail sizes or decide how many files are displayed within the navigation that users can view. Files can be uploaded, deleted, renamed, and tagged. File properties like dimensions, upload date or size are also easily accessible and can be used to sort the files view alongside a regular search.</p>
+<p><a href="../../file-management/ckbox.html"><strong>Learn how to use CKBox in your project</strong></a>.</p>
 <h3 id="easy-image"><a class="headerlink" href="#easy-image">#</a> Easy Image</h3>
 <p>The <a href="easy-image.html">Easy Image</a> feature comes with a strong focus on the end–user experience. Its goal is to make the image upload as effortless and intuitive as possible.</p>
 <p>Easy Image is part of the commercial <a href="https://ckeditor.com/ckeditor-cloud-services/">CKEditor Cloud Services</a> offer. It is a <abbr title="Software as a service">SaaS</abbr> product that securely uploads images, takes care of rescaling and optimizing them as well as providing various image sizes (responsive images), and delivers uploaded images through a blazing-fast CDN. All that with virtually zero server setup.</p>
 <p><a href="easy-image.html"><strong>Learn how to use Easy Image in your project</strong></a>.</p>
 <h3 id="ckfinder"><a class="headerlink" href="#ckfinder">#</a> CKFinder</h3>
-<p>The <a href="ckfinder.html">CKFinder feature</a> provides a bridge between the rich-text editor and <a href="https://ckeditor.com/ckfinder/">CKFinder</a>, a browser-based commercial file uploader with its server-side connectors (PHP, Java and ASP.NET).</p>
+<p>The <a href="../../file-management/ckfinder.html">CKFinder feature</a> provides a bridge between the rich-text editor and <a href="https://ckeditor.com/ckfinder/">CKFinder</a>, a browser-based commercial file uploader with its server-side connectors (PHP, Java, and ASP.NET).</p>
 <p>There are two ways you can integrate CKEditor 5 with the CKFinder file manager:</p>
 <ul>
 <li>
@@ -505,14 +514,14 @@
 <p><strong>With both the server-side connector and the client-side file manager</strong> (recommended) – Images dropped and pasted into the editor are uploaded to the server (like in the first option).</p>
 <p>But there are more cool features available, for instance:</p>
 <ul>
-<li><strong>uploading</strong> using the full user interface,</li>
-<li><strong>browsing</strong> previously uploaded images,</li>
-<li><strong>editing</strong> images (cropping, resizing, etc.),</li>
-<li><strong>organizing</strong> or deleting images.</li>
+<li><strong>Uploading</strong> using the full user interface</li>
+<li><strong>Browsing</strong> previously uploaded images</li>
+<li><strong>Editing</strong> images (cropping, resizing, etc.)</li>
+<li><strong>Organizing</strong> or deleting images</li>
 </ul>
 </li>
 </ul>
-<p><a href="ckfinder.html"><strong>Learn how to integrate CKEditor 5 with CKFinder in your project</strong></a>.</p>
+<p><a href="../../file-management/ckfinder.html"><strong>Learn how to integrate CKEditor 5 with CKFinder in your project</strong></a>.</p>
 <h3 id="simple-adapter"><a class="headerlink" href="#simple-adapter">#</a> Simple adapter</h3>
 <p>The <a href="simple-upload-adapter.html">Simple upload adapter</a> allows uploading images to your server using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"><code>XMLHttpRequest</code></a> API with a minimal editor configuration.</p>
 <p><a href="simple-upload-adapter.html"><strong>Learn how to use the Simple upload adapter in CKEditor 5</strong></a>.</p>
@@ -521,10 +530,10 @@
 <div class="info-box notice notice__warning"><p>Please remember that while <code>Base64</code> upload is a very easy solution, it is also highly inefficient. The image file itself is kept as data in the database, generating a much heavier data load and higher transfer. We recommend using alternative ways to upload images into CKEditor 5.</p></div>
 <p><a href="base64-upload-adapter.html"><strong>Learn how to use Base64–encoded images in CKEditor 5</strong></a>.</p>
 <h2 id="implementing-your-own-upload-adapter"><a class="headerlink" href="#implementing-your-own-upload-adapter">#</a> Implementing your own upload adapter</h2>
-<p>CKEditor 5 provides an open API that allows you to develop your own upload adapters. Tailored to your project, a custom adapter will allow you to take the <strong>full control</strong> over the process of sending the files to the server as well as passing the response from the server (e.g. the URL to the saved file) back to the WYSIWYG editor.</p>
+<p>CKEditor 5 provides an open API that allows you to develop your own upload adapters. Tailored to your project, a custom adapter will allow you to take <strong>full control</strong> over the process of sending the files to the server as well as passing the response from the server (e.g. the URL to the saved file) back to the WYSIWYG editor.</p>
 <p><a href="../../../framework/guides/deep-dive/upload-adapter.html"><strong>Learn how to develop your own upload adapter for CKEditor 5</strong></a>.</p>
 <h2 id="inserting-images-via-url"><a class="headerlink" href="#inserting-images-via-url">#</a> Inserting images via URL</h2>
-<p>CKEditor 5 supports inserting images into the document via pasting URLs. These may be pasted both into the image insertion dialog or, thanks to the <code>AutoImage</code> function, directly into content.</p>
+<p>CKEditor 5 supports inserting images into the document via pasting URLs. These may be pasted both into the image insertion dialog or, thanks to the <code>AutoImage</code> function, directly into the content.</p>
 <p><a href="images-inserting.html"><strong>Learn how to paste images into CKEditor 5 using URLs</strong></a>.</p>
 
           <div class="info-box notice notice__feedback">
@@ -686,11 +695,23 @@
                           <li><a href="../../export-word.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Export to Word</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                               </div></a></li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">File management</span>
+                            </div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="../../file-management/ckbox.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKBox file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                        </div></a></li>
+                                    <li><a href="../../file-management/ckfinder.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKFinder file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                        </div></a></li>
+                            </ul>
+                          </li>
                           <li><a href="../../find-and-replace.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
                               </div></a></li>
                           <li><a href="../../general-html-support.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">General HTML Support</span>
@@ -739,14 +760,11 @@
                                               <li><a href="">
                                                   <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Overview</span>
                                                   </div></a></li>
-                                              <li><a href="ckbox.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKBox file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                              <li><a href="using-file-managers.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using file managers</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                                                   </div></a></li>
                                               <li><a href="easy-image.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Easy Image</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
-                                                  </div></a></li>
-                                              <li><a href="ckfinder.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKFinder file manager</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                                                   </div></a></li>
                                               <li><a href="base64-upload-adapter.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Base64 upload adapter</span>

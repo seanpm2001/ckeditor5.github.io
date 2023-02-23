@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Wed Feb 22 2023 04:16:21 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Feb 23 2023 04:16:07 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Content Security Policy - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -262,7 +262,7 @@
 <p><strong>Note</strong>: Use the more strict <code>frame-src 'self'</code> if all the media in the edited content come from the same domain as your application.</p>
 </li>
 </ul>
-<div class="info-box notice"><p>A different set of Content Security Policy directives might be necessary to run <a href="../../features/images/image-upload/ckfinder.html">CKFinder</a> along with CKEditor 5. Check out the file manager <a href="https://ckeditor.com/docs/ckfinder/ckfinder3/#!/guide/dev_integration-section-csp-directives-required-by-ckfinder">documentation</a> to learn more.</p></div>
+<div class="info-box notice"><p>A different set of Content Security Policy directives might be necessary to run <a href="../../features/file-management/ckfinder.html">CKFinder</a> along with CKEditor 5. Check out the file manager <a href="https://ckeditor.com/docs/ckfinder/ckfinder3/#!/guide/dev_integration-section-csp-directives-required-by-ckfinder">documentation</a> to learn more.</p></div>
 <h2 id="strictest-working-configuration"><a class="headerlink" href="#strictest-working-configuration">#</a> Strictest working configuration</h2>
 <p>Knowing the role of each directive, the strictest set of rules that allows CKEditor 5 to run is as follows:</p>
 <pre class="highlight"><code class="">default-src 'none'; connect-src 'self'; script-src 'self'; img-src 'self'; style-src 'self'; frame-src 'self'
