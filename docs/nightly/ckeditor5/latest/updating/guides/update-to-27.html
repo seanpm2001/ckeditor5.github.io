@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Feb 23 2023 04:16:02 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Wed Mar 01 2023 04:12:36 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Update to v27.x - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -178,7 +178,7 @@
 <p>Listed below are the most important changes that require your attention when upgrading to CKEditor 5 v27.1.0.</p>
 <h3 id="disallowing-nesting-tables"><a class="headerlink" href="#disallowing-nesting-tables">#</a> Disallowing nesting tables</h3>
 <p>Prior to version 27.1.0 inserting a table into another table was not allowed.</p>
-<p>If you wish to bring back this restriction, see the <a href="../../features/table.html#disallow-nesting-tables">Disallow nesting tables</a> section of the table feature guide.</p>
+<p>If you wish to bring back this restriction, see the <a href="../../features/tables/tables.html#disallow-nesting-tables">Disallow nesting tables</a> section of the table feature guide.</p>
 <h3 id="disallowing-nesting-block-quotes"><a class="headerlink" href="#disallowing-nesting-block-quotes">#</a> Disallowing nesting block quotes</h3>
 <p>Prior to version 27.1.0 inserting a block quote into another block quote was not allowed.</p>
 <p>If you wish to bring back this restriction, see the <a href="../../features/block-quote.html#disallow-nesting-block-quotes">Disallow nesting block quotes</a> section in the block quote feature guide.</p>
@@ -195,10 +195,10 @@
 <p>The <a href="../../api/module_clipboard_clipboard-Clipboard.html"><code>Clipboard</code></a> plugin became a “glue” plugin that loads ones listed above.</p>
 <p>From v27.0.0, the <a href="../../api/module_clipboard_clipboardpipeline-ClipboardPipeline.html"><code>ClipboardPipeline</code></a> plugin is responsible for firing the <a href="../../api/module_clipboard_clipboardpipeline-ClipboardPipeline.html#event-inputTransformation"><code>ClipboardPipeline#inputTransformation</code></a> event and also the new <a href="../../api/module_clipboard_clipboardpipeline-ClipboardPipeline.html#event-contentInsertion"><code>ClipboardPipeline#contentInsertion</code></a> event.</p>
 <p>The <a href="../../api/module_engine_view_document-Document.html#event-clipboardInput"><code>view.Document#clipboardInput</code></a> and <a href="../../api/module_clipboard_clipboardpipeline-ClipboardPipeline.html#event-inputTransformation"><code>ClipboardPipeline#inputTransformation</code></a> events should not be fired nor stopped in your feature code. The <code>data.content</code> property should be assigned to override the default content instead. You can stop this event only if you want to completely disable pasting/dropping of some specific content.</p>
-<p>You can read about the whole input pipeline in details in the <a href="../../framework/guides/deep-dive/clipboard.html#input-pipeline">Clipboard deep-dive guide</a>.</p>
+<p>You can read about the whole input pipeline in details in the <a href="../../framework/deep-dive/clipboard.html#input-pipeline">Clipboard deep-dive guide</a>.</p>
 <h3 id="the-viewdocument-event-bubbling"><a class="headerlink" href="#the-viewdocument-event-bubbling">#</a> The <code>view.Document</code> event bubbling</h3>
 <p>CKEditor v27.0.0 introduces bubbling of the <a href="../../api/module_engine_view_document-Document.html"><code>view.Document</code></a> events, similar to how bubbling works in the DOM. This allowed us to re-prioritize many listeners that previously had to rely on the <code>priority</code> property. However, it means that existing listeners that use priorities may now be executed at a wrong time (in the different order). These listeners should be reviewed in terms of when they should be executed (in what context/element/phase).</p>
-<p>Read more about bubbling events in the <a href="../../framework/guides/deep-dive/event-system.html#view-events-bubbling">Event system guide</a>.</p>
+<p>Read more about bubbling events in the <a href="../../framework/deep-dive/event-system.html#view-events-bubbling">Event system guide</a>.</p>
 <h4 id="the-delete-event"><a class="headerlink" href="#the-delete-event">#</a> The <code>delete</code> event</h4>
 <p>Previously, the <a href="../../api/module_engine_view_document-Document.html#event-delete"><code>delete</code></a> event was handled by different features on different priority levels to, for example, ensure the precedence of the list item over the block quote that is wrapping it. From v27.0.0 on, this precedence is handled by the events bubbling over the view document tree. Listeners registered for the view elements deeper in the view tree are now triggered before listeners for elements closer to the <a href="../../api/module_engine_view_rooteditableelement-RootEditableElement.html">root element</a>.</p>
 <p>Take a look at the list of <code>delete</code> listeners across the core editor features and their <a href="../../api/module_utils_priorities-PriorityString.html">priorities</a>:</p>
@@ -238,7 +238,7 @@
 </tr>
 </tbody>
 </table>
-<p>Looking at this table, even if your listener was listening on the <code>highest</code> priority, it will be triggered just before the last handler that is listening on the <code>$document</code> at the <code>low</code> priority because the <code>$document</code> is the <a href="../../framework/guides/deep-dive/event-system.html#listening-to-bubbling-events">default context</a> for registering listeners.</p>
+<p>Looking at this table, even if your listener was listening on the <code>highest</code> priority, it will be triggered just before the last handler that is listening on the <code>$document</code> at the <code>low</code> priority because the <code>$document</code> is the <a href="../../framework/deep-dive/event-system.html#listening-to-bubbling-events">default context</a> for registering listeners.</p>
 <p>Here is an example of changes you may need for proper integration with the block quote feature:</p>
 <pre class="highlight"><code class="js">// Old code.
 this.listenTo( view.document, 'delete', ( evt, data ) =&gt; {

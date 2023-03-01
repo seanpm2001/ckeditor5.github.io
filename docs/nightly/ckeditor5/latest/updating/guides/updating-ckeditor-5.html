@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to maintain and keep your CKEditor 5 up-to-date at all times.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Feb 23 2023 04:16:03 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Wed Mar 01 2023 04:12:37 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="CKEditor 5 updating documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -191,7 +191,7 @@
 <p>Imagine that you use the editor version 30.0.0 and you want to update it to version 31.0.0.</p>
 <p>The first step is to identify changes introduced with the 31.0.0 version, so you navigate to the <a href="https://github.com/ckeditor/ckeditor5/blob/master/CHANGELOG.md#3100-2021-10-25">changelog section for version 31.0.0</a>. The release introduced one major breaking change:</p>
 <p><img src="../../assets/img/updating-changelog.png" data-lightbox="true" alt="Breaking change in the changelog." width="778"></p>
-<p>The change affects the <a href="../../features/html-embed.html">HTML embed feature</a>, so if you used this feature’s API in your project, it should be reviewed. Fortunately, the <a href="update-to-31.html#update-to-ckeditor-5-v3100">migration guide for version 31.0.0</a> explains what should be updated in your code!</p>
+<p>The change affects the <a href="../../features/html/html-embed.html">HTML embed feature</a>, so if you used this feature’s API in your project, it should be reviewed. Fortunately, the <a href="update-to-31.html#update-to-ckeditor-5-v3100">migration guide for version 31.0.0</a> explains what should be updated in your code!</p>
 <div class="info-box notice"><p>It is recommended to update regularly. Sometimes, however, it could happen that you skip a few releases and need to update to a non-adjacent version. In such a case, remember to verify the changelog and migration guides for <strong>all</strong> missing versions, not only the one you are updating to.</p></div>
 <p>When you already know what has changed and which parts of your custom code need to be adjusted, it is time to make the update. If you use a predefined build hosted on CDN or a downloaded ZIP package, you can simply visit the <a href="https://ckeditor.com/ckeditor-5/download/">CKEditor 5 download section</a> and get the latest version. However, the most common way for installing CKEditor 5 is using npm packages.</p>
 <p>The example <code>package.json</code> file with the editor version 30.0.0 looks as below:</p>
