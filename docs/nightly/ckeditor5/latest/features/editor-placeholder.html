@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Wed Mar 01 2023 04:12:20 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Mar 02 2023 04:15:17 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Editor placeholder - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -525,16 +525,40 @@
 <li>when the element passed into <code>Editor.create()</code> was not a <code>&lt;textarea&gt;</code> (for instance, a <code>&lt;div&gt;</code> element),</li>
 <li>to override the <code>placeholder</code> text of a <code>&lt;textarea&gt;</code>, if one was passed into <code>Editor.create()</code> but the placeholder text should be different.</li>
 </ul>
-<pre class="highlight"><code class="js">ClassicEditor
-    .create( document.querySelector( '#editor' ), {
+<pre class="highlight"><code class="js">ClassicEditor.create(
+    document.querySelector( '#editor' ),
+    {
         placeholder: 'Type the content here!'
-    } )
-    .then( editor =&gt; {
-        console.log( editor );
-    } )
-    .catch( error =&gt; {
-        console.error( error );
-    } );
+    }
+).then( editor =&gt; {
+    console.log( editor );
+} ).catch( error =&gt; {
+    console.error( error );
+} );
+</code></pre>
+<p>If your editor implementation uses multiple roots, you should pass an object with keys corresponding to the editor roots names and values equal to the placeholder that should be set in each root:</p>
+<pre class="highlight"><code class="js">MultiRootEditor.create(
+    // Roots for the editor:
+    {
+        header: document.querySelector( '#header' ),
+        content: document.querySelector( '#content' ),
+        leftSide: document.querySelector( '#left-side' ),
+        rightSide: document.querySelector( '#right-side' )
+    },
+    // Config:
+    {
+        placeholder: {
+            header: 'Type header...',
+            content: 'Type content...',
+            leftSide: 'Type left-side...',
+            rightSide: 'Type right-side...'
+        }
+    }
+).then( editor =&gt; {
+    console.log( editor );
+} ).catch( error =&gt; {
+    console.error( error );
+} );
 </code></pre>
 <h2 id="styling-the-placeholder"><a class="headerlink" href="#styling-the-placeholder">#</a> Styling the placeholder</h2>
 <p>The editor placeholder text is displayed using a CSS pseudo–element (<code>::before</code>) related to the first empty element in the editor content (usually a paragraph). You can use the following snippet to change the appearance of the placeholder:</p>

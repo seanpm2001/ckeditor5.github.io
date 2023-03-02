@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Wed Mar 01 2023 04:12:42 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Mar 02 2023 04:15:42 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Focus tracking - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -326,7 +326,7 @@
     console.log( `View document is focused: ${ isFocused }.` );
 } );
 </code></pre>
-<p>Click the editable area of the editor and then click somewhere else — the <code>isFocused</code> property will change its value when you do that. The same will also happen if you run an editor with <a href="custom-editor-creator.html"><strong>multiple editing roots</strong></a> and navigate across them.</p>
+<p>Click the editable area of the editor and then click somewhere else — the <code>isFocused</code> property will change its value when you do that. The same will also happen if you run an editor with <a href="../../../examples/builds/multi-root-editor.html"><strong>multiple editing roots</strong></a> and navigate across them.</p>
 <p>To spice things up even more, you should also know <code>isFocused</code> will change when you focus any <a href="../../tutorials/implementing-a-block-widget.html"><strong>nested editable</strong></a> in the content (take, for example, a <a href="../../../features/images/images-captions.html">caption of an image</a>). Sounds weird, right? This is because every nested editable in the content has the <code>contenteditable</code> attribute, too, and for the web browser moving your caret inside it means the main editable element is blurred and the nested one is focused.</p>
 <h3 id="how-to-focus-the-editor"><a class="headerlink" href="#how-to-focus-the-editor">#</a> How to focus the editor?</h3>
 <p>The simplest way to focus the editor is to call the <a href="../../../api/module_core_editor_editor-Editor.html#function-focus"><code>editor.focus()</code></a> method.</p>

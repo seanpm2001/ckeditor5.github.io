@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Wed Mar 01 2023 04:12:38 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Mar 02 2023 04:15:38 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Multi-root editor - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -107,6 +107,9 @@
                                   <li><a href="../builds/document-editor.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Document editor</span>
                                       </div></a></li>
+                                  <li><a href="../builds/multi-root-editor.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Multi-root editor</span>
+                                      </div></a></li>
                             </ul>
                           </li>
                           <li>
@@ -175,50 +178,99 @@
 <p>The main difference between a multi-root editor and using multiple separate editors (like in the <a href="../builds/inline-editor.html">inline editor demo</a>) is the fact that in a multi-root editor all editable areas belong to the same editor instance, share the same toolbar and create one undo stack.</p>
 <p>Out of the box, CKEditor 5 does not offer a ready-to-use multi-root editor yet. However, such an editor can be implemented by using the <a href="../../framework/index.html">CKEditor 5 Framework</a>.</p>
 <p>Check out the <a href="../../framework/deep-dive/ui/custom-editor-creator.html">“Implementing a custom editor creator” guide</a> which contains the source code of the demo below.</p>
-<div class="live-snippet"><div id="snippet-inline-editor">
-	<div id="toolbar"></div>
+<div class="live-snippet"><style>
+	body, html {
+		overflow-x: clip;
+	}
 
-	<header id="header">
-		<h2>Gone traveling</h2>
-		<h3>Monthly travel news and inspiration</h3>
-	</header>
+	.editor {
+		border: #ccced1 1px solid;
+		margin-top: 10px;
+	}
 
-	<div id="content">
-		<h3>Destination of the Month</h3>
+	.boxes {
+		margin-top: 10px;
+		display: flex;
+	}
 
-		<h4>Valletta</h4>
+	.box {
+		margin-top: 0px;
+		width: 50%;
+	}
 
-		<figure class="image image-style-side">
-			<img alt="Picture of a sunlit facade of a Maltan building." src="../../assets/img/malta.jpg" srcset="../../assets/img/malta.jpg, ../../assets/img/malta_2x.jpg 2x">
-			<figcaption>It's siesta time in Valletta.</figcaption>
-		</figure>
+	/*
+		Make the editable "fill" the whole box.
+		The box will grow if the other box grows too.
+		This makes the whole box "clickable".
+	 */
+	.box .ck-editor__editable {
+		height: 100%;
+	}
 
-		<p>The capital city of <a href="https://en.wikipedia.org/wiki/Malta" target="_blank" rel="external">Malta</a> is the top destination this summer. It’s home to a cutting-edge contemporary architecture, baroque masterpieces, delicious local cuisine and at least 8 months of sun. It’s also a top destination for filmmakers, so you can take a tour through locations familiar to you from Game of Thrones, Gladiator, Troy and many more.</p>
-	</div>
+	.box-left {
+		margin-right: 10px;
+	}
 
-	<div class="demo-row">
-		<div class="demo-row__half">
-			<div id="footer-left">
-				<h3>The three greatest things you learn from traveling</h3>
-				<p><a href="#">Find out more</a></p>
+	/*
+		When toolbar receives this class, it becomes sticky.
+		If the toolbar would be scrolled outside of the visible area,
+		instead it is kept at the top edge of the window.
+	 */
+	#toolbar.sticky {
+		position: sticky;
+		top: 100px;
+		z-index: 10;
+	}
+</style>
+
+<div id="toolbar"></div>
+<!--
+	Wrapping the structure inside a pair of
+	contenteditable="true" + contenteditable="false" elements
+	is required to provide proper caret handling when
+	using arrow keys at the start and end of an editable area.
+
+	You can skip them if you don't want to move the
+	caret between editable areas using arrow keys.
+!-->
+<div contenteditable="true">
+	<div contenteditable="false">
+		<div class="editor">
+			<div id="header">
+				<h2>Gone traveling</h2>
+				<h3>Monthly travel news and inspiration</h3>
 			</div>
 		</div>
+		<div class="editor">
+			<div id="content">
+				<h3>Destination of the Month</h3>
 
-		<div class="demo-row__half">
-			<div id="footer-right">
-				<h3>Walking the capitals of Europe: Warsaw</h3>
-				<p><a href="#">Find out more</a></p>
+				<figure class="image image-style-side">
+					<img alt="Picture of a sunlit facade of a Maltan building." src="../../assets/img/malta.jpg" srcset="../../assets/img/malta.jpg, ../../assets/img/malta_2x.jpg 2x">
+					<figcaption>It's siesta time in Valletta.</figcaption>
+				</figure>
+
+				<h4>Valletta</h4>
+
+				<p>The capital city of <a href="https://en.wikipedia.org/wiki/Malta" target="_blank" rel="external">Malta</a> is the top destination this summer. It’s home to cutting-edge contemporary architecture, baroque masterpieces, delicious local cuisine, and at least 8 months of sun. It’s also a top destination for filmmakers, so you can take a tour through locations familiar to you from Game of Thrones, Gladiator, Troy, and many more.</p>
+			</div>
+		</div>
+		<div class="boxes">
+			<div class="box box-left editor">
+				<div id="left-side">
+					<h3>The three greatest things you learn from traveling</h3>
+					<p><a href="#">Find out more</a></p>
+				</div>
+			</div>
+			<div class="box box-right editor">
+				<div id="right-side">
+					<h3>Walking the capitals of Europe: Warsaw</h3>
+					<p><a href="#">Find out more</a></p>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-<style>
-	/* Give the toolbar some space so it does not look like it belongs to the header root only. */
-	#snippet-inline-editor #toolbar {
-		margin-bottom: 1em;
-	}
-</style>
 </div>
 <h2 id="editor-example-configuration"><a class="headerlink" href="#editor-example-configuration">#</a> Editor example configuration</h2>
 <details>
@@ -716,6 +768,9 @@ MultirootEditor
                                         </div></a></li>
                                     <li><a href="../builds/document-editor.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Document editor</span>
+                                        </div></a></li>
+                                    <li><a href="../builds/multi-root-editor.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Multi-root editor</span>
                                         </div></a></li>
                             </ul>
                           </li>

@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Wed Mar 01 2023 04:12:37 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Mar 02 2023 04:15:37 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Update to v35.x - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -220,7 +220,7 @@ editor.plugins.get( 'Annotations' ).add( annotation );
 <p>For the entire list of changes introduced in version 35.1.0, see the <a href="https://github.com/ckeditor/ckeditor5/releases/tag/v35.1.0">release notes for CKEditor 5 v35.1.0</a>.</p>
 <p>Listed below are the most important changes that require your attention when upgrading to CKEditor 5 v35.1.0.</p>
 <h3 id="changes-to-api-providing-the-accessible-navigation-between-editing-roots-and-toolbars-on-kbdaltkbdkbdf10kbd-and-kbdesckbd-keystrokes"><a class="headerlink" href="#changes-to-api-providing-the-accessible-navigation-between-editing-roots-and-toolbars-on-kbdaltkbdkbdf10kbd-and-kbdesckbd-keystrokes">#</a> Changes to API providing the accessible navigation between editing roots and toolbars on <kbd>Alt</kbd>+<kbd>F10</kbd> and <kbd>Esc</kbd> keystrokes</h3>
-<div class="info-box notice"><p>This information applies only to integrators who develop their own <a href="../../framework/deep-dive/ui/custom-editor-creator.html">editor creators</a> from scratch by using the <a href="../../api/module_core_editor_editor-Editor.html"><code>Editor</code></a> and <a href="../../api/module_core_editor_editorui-EditorUI.html"><code>EditorUI</code></a> classes as building blocks.</p></div>
+<div class="info-box notice"><p>This information applies only to integrators who develop their own editor creators from scratch by using the <a href="../../api/module_core_editor_editor-Editor.html"><code>Editor</code></a> and <a href="../../api/module_core_editor_editorui-EditorUI.html"><code>EditorUI</code></a> classes as building blocks.</p></div>
 <ul>
 <li>The <code>enableToolbarKeyboardFocus()</code> helper that allowed the navigation has been removed. To bring this functionality back, use the <a href="../../api/module_core_editor_editorui-EditorUI.html#function-addToolbar"><code>addToolbar</code></a> method instead.</li>
 <li>Also, please note that editable elements are now automatically added to the <a href="../../api/module_core_editor_editorui-EditorUI.html#member-focusTracker">main focus tracker</a> and should not be added individually.</li>
