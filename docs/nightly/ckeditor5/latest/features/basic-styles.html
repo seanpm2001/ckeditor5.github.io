@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Mar 02 2023 04:15:14 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 04 2023 04:17:26 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Basic text styles - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -240,7 +240,7 @@
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>
@@ -492,18 +492,16 @@
           <div class="rwd-breadcrumbs"><a href="../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../assets/2.4.0/img/book.svg" alt="guide">Basic text styles
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#related-features">Related features</a></li><li><a href="#available-text-styles">Available text styles</a><ol><li><a href="#supported-input">Supported input</a></li></ol></li><li><a href="#typing-around-inline-code">Typing around inline code</a></li><li><a href="#installation">Installation</a></li><li><a href="#common-api">Common API</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
-<p>The basic styles feature allows you to apply the most frequently used formatting indispensable for content creation. This package provides essential text styling features such as bold, italic, underline, strikethrough, subscript, superscript, and code. Coupled with more <a href="#related-features">formatting features</a>, these serve as a base for any WYSIWYG editor toolset.</p>
-<div class="info-box notice notice__info"><p>All basic text styles can be removed with the <a href="remove-format.html">remove format</a> feature.</p></div>
-<p>Basic formatting options may be applied with the toolbar buttons (pictured below) or thanks to the <a href="autoformat.html">autoformatting feature</a> with Markdown code as you type. Use one these to format the text:</p>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#available-text-styles">Available text styles</a><ol><li><a href="#supported-input">Supported input</a></li></ol></li><li><a href="#typing-around-inline-code">Typing around inline code</a></li><li><a href="#installation">Installation</a></li><li><a href="#related-features">Related features</a></li><li><a href="#common-api">Common API</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
+<p>The basic styles feature lets you apply the most essential formatting such as bold, italic, underline, strikethrough, subscript, superscript, and code. Coupled with more <a href="#related-features">formatting features</a>, these serve as a base for any WYSIWYG editor toolset.</p>
+<h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
+<p>You may apply basic formatting options with toolbar buttons (pictured below) or thanks to the <a href="autoformat.html">autoformatting feature</a> with Markdown code as you type. Use one of these to format the text:</p>
 <ul>
 <li>Bold – Use the bold toolbar button <span class="editor-icon"><img src="../assets/icons/008a5e88d2.svg" class="editor-icon__image" alt="Bold"></span> or type <code>**text**</code> or <code>__text__</code></li>
 <li>Italic – Use the italic toolbar button <span class="editor-icon"><img src="../assets/icons/ea33035b52.svg" class="editor-icon__image" alt="Italic"></span> or type <code>*text*</code> or <code>_text_</code></li>
 <li>Code – Use the code toolbar button <span class="editor-icon"><img src="../assets/icons/dbf40723d4.svg" class="editor-icon__image" alt="Code"></span> or type <code>`text`</code></li>
 <li>Strikethrough – Use the strikethrough toolbar button <span class="editor-icon"><img src="../assets/icons/11edc23f3a.svg" class="editor-icon__image" alt="Strikethrough"></span> or type <code>~~text~~</code>.</li>
 </ul>
-<div class="info-box notice notice__info"><p>Bold and italic styles are enabled by default in all <a href="../installation/getting-started/predefined-builds.html">predefined builds</a>. Strikethrough and underline are available in the <a href="../installation/getting-started/predefined-builds.html#document-editor">document editor build</a> and <a href="../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only. The code style is present in the <a href="../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only</p></div>
-<h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <div class="live-snippet"><div id="snippet-basic-styles">
 	<p>When you&nbsp;need to make something seem very important, <strong>bold seems to be the right choice</strong>.</p>
 	<p>Italics can be used for foreign words like the Greek&nbsp;<em>t&yacute;pos</em> &mdash; &bdquo;reflection, form&rdquo; and&nbsp;<em>gr&aacute;phō</em> &mdash; &bdquo;I am writing&rdquo;, which form &bdquo;typography&rdquo;.</p>
@@ -514,17 +512,6 @@
 </div>
 </div>
 <div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
-<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
-<p>Check out also these CKEditor 5 features to gain better control over your content style and format:</p>
-<ul>
-<li><a href="font.html">Font styles</a> – Easily and efficiently control the font <a href="font.html#configuring-the-font-family-feature">family</a>, <a href="font.html#configuring-the-font-size-feature">size</a>, <a href="font.html#configuring-the-font-color-and-font-background-color-features">text or background color</a>.</li>
-<li><a href="style.html">Styles</a> – Apply pre-configured styles to existing elements in the editor content.</li>
-<li><a href="text-alignment.html">Text alignment</a> – Because it does matter whether the content is left, right, centered or justified.</li>
-<li><a href="code-blocks.html">Code blocks</a>  – Insert longer, multiline code listings, expanding the inline code style greatly.</li>
-<li><a href="highlight.html">Highlight</a> – Mark important words and passages, aiding a review or drawing attention to specific parts of content.</li>
-<li><a href="autoformat.html">Autoformatting</a> – Format the text on the go with Markdown code.</li>
-<li><a href="remove-format.html">Remove format</a> – Easily clean basic text formatting.</li>
-</ul>
 <h2 id="available-text-styles"><a class="headerlink" href="#available-text-styles">#</a> Available text styles</h2>
 <table>
 <thead>
@@ -582,7 +569,7 @@
 </table>
 <div class="info-box notice notice__info"><p><a href="../api/module_basic-styles_bold-Bold.html"><code>Bold</code></a> and <a href="../api/module_basic-styles_italic-Italic.html"><code>Italic</code></a> are available out–of–the–box in most of the <a href="../installation/getting-started/predefined-builds.html">editor builds</a>.</p><p>The <a href="../api/module_basic-styles_code-Code.html"><code>Code</code></a> feature provides support for inline code formatting. To create blocks of pre-formatted code with a specific programming language assigned, use the <a href="code-blocks.html">code block feature</a>.</p></div>
 <h3 id="supported-input"><a class="headerlink" href="#supported-input">#</a> Supported input</h3>
-<p>By default, each feature can upcast more than one type of the content. Here’s the full list of elements supported by each feature, either when pasting from the clipboard, loading data on start or using the <a href="../api/module_core_editor_utils_dataapimixin-DataApi.html#function-setData">data API</a>.</p>
+<p>By default, each feature can upcast more than one type of content. Here is the full list of elements supported by each feature, either when pasting from the clipboard, loading data on start, or using the <a href="../api/module_core_editor_utils_dataapimixin-DataApi.html#function-setData">data API</a>.</p>
 <table>
 <thead>
 <tr>
@@ -622,13 +609,13 @@
 </tbody>
 </table>
 <h2 id="typing-around-inline-code"><a class="headerlink" href="#typing-around-inline-code">#</a> Typing around inline code</h2>
-<p>CKEditor 5 allows for typing both at inner and outer boundaries of code to make the editing easier for the users.</p>
+<p>CKEditor 5 allows for typing both at the inner and outer boundaries of code to make editing easier for the users.</p>
 <p><strong>To type inside a code element</strong>, move the caret to its (start or end) boundary. As long as the code remains highlighted (by default: less transparent gray), typing and applying formatting will be done within its boundaries:</p>
 <p><img src="../assets/img/typing-inside-code.gif" data-lightbox="true" alt="The animation showing typing inside the code element in CKEditor 5 rich text editor." width="770"></p>
 <p><strong>To type before or after a code element</strong>, move the caret to its boundary, then press the Arrow key (<kbd>→</kbd> or <kbd>←</kbd>) once. The code is no longer highlighted and whatever text you type or formatting you apply will not be enclosed by the code element:</p>
 <p><img src="../assets/img/typing-after-code.gif" data-lightbox="true" alt="The animation showing typing after the code element in CKEditor 5 rich text editor." width="770"></p>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
-<div class="info-box notice notice__info"><p>Selected styles are enabled in certain predefined builds, as enumerated at the beginning of this guide. These installation instructions are for developers interested in building their own, custom editor.</p></div>
+<div class="info-box notice notice__info"><p>Bold and italic styles are enabled by default in all <a href="../installation/getting-started/predefined-builds.html">predefined builds</a>. Strikethrough and underline are available in the <a href="../installation/getting-started/predefined-builds.html#document-editor">document editor build</a> and <a href="../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only. The code style is present in the <a href="../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only. These installation instructions are for developers interested in building their own, custom editor.</p></div>
 <p>To add the basic styles features to your editor install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-basic-styles"><code>@ckeditor/ckeditor5-basic-styles</code></a> package:</p>
 <pre class="highlight"><code class="">npm install --save @ckeditor/ckeditor5-basic-styles
 </code></pre>
@@ -652,13 +639,25 @@ ClassicEditor
     .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice notice__info"><p>Read more about <a href="../installation/plugins/installing-plugins.html">installing plugins</a>.</p></div>
+<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
+<p>Check out also these CKEditor 5 features to gain better control over your content style and format:</p>
+<ul>
+<li><a href="font.html">Font styles</a> – Easily and efficiently control the font <a href="font.html#configuring-the-font-family-feature">family</a>, <a href="font.html#configuring-the-font-size-feature">size</a>, <a href="font.html#configuring-the-font-color-and-font-background-color-features">text or background color</a>.</li>
+<li><a href="style.html">Styles</a> – Apply pre-configured styles to existing elements in the editor content.</li>
+<li><a href="text-alignment.html">Text alignment</a> – Because it does matter whether the content is left, right, centered, or justified.</li>
+<li><a href="code-blocks.html">Code blocks</a>  – Insert longer, multiline code listings, expanding the inline code style greatly.</li>
+<li><a href="highlight.html">Highlight</a> – Mark important words and passages, aiding a review or drawing attention to specific parts of the content.</li>
+<li><a href="autoformat.html">Autoformatting</a> – Format the text on the go with Markdown code.</li>
+<li><a href="remove-format.html">Remove format</a> – Easily clean basic text formatting.</li>
+</ul>
+<div class="info-box notice notice__info"><p>You can remove all basic text styles with the <a href="remove-format.html">remove format</a> feature.</p></div>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
 <p>Each style feature registers a <a href="#available-text-styles">command</a> which can be executed from code. For example, the following snippet will apply the bold style to the current selection in the editor:</p>
 <pre class="highlight"><code class="js">editor.execute( 'bold' );
 </code></pre>
 <div class="info-box notice"><p>We recommend using the official <a href="../framework/development-tools.html#ckeditor-5-inspector">CKEditor 5 inspector</a> for development and debugging. It will give you tons of useful information about the state of the editor such as internal data structures, selection, commands, and many more.</p></div>
 <h2 id="contribute"><a class="headerlink" href="#contribute">#</a> Contribute</h2>
-<p>The source code of the feature is available on GitHub in <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-basic-styles">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-basic-styles</a>.</p>
+<p>The source code of the feature is available on GitHub at <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-basic-styles">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-basic-styles</a>.</p>
 
           <div class="info-box notice notice__feedback">
             <p>
@@ -835,7 +834,7 @@ ClassicEditor
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>

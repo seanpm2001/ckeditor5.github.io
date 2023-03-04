@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Mar 02 2023 04:15:29 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 04 2023 04:17:42 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Editor toolbar - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -240,7 +240,7 @@
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="../headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>
@@ -492,21 +492,9 @@
           <div class="rwd-breadcrumbs"><a href="../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">Editor toolbar
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#basic-toolbar-configuration">Basic toolbar configuration</a></li><li><a href="#demo">Demo</a></li><li><a href="#separating-toolbar-items">Separating toolbar items</a></li><li><a href="#extended-toolbar-configuration-format">Extended toolbar configuration format</a></li><li><a href="#grouping-toolbar-items-in-drop-downs-nested-toolbars">Grouping toolbar items in drop-downs (nested toolbars)</a><ol><li><a href="#customization">Customization</a><ol><li><a href="#displaying-the-label">Displaying the label</a></li><li><a href="#changing-the-icon">Changing the icon</a></li><li><a href="#customizing-the-tooltip">Customizing the tooltip</a></li></ol></li></ol></li><li><a href="#multiline-wrapping-toolbar">Multiline (wrapping) toolbar</a><ol><li><a href="#automatic-toolbar-wrapping">Automatic toolbar wrapping</a></li><li><a href="#explicit-wrapping-breakpoint">Explicit wrapping breakpoint</a></li></ol></li><li><a href="#listing-available-items">Listing available items</a></li><li><a href="#adding-a-custom-button">Adding a custom button</a></li><li><a href="#block-toolbar">Block toolbar</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#basic-toolbar-configuration">Basic toolbar configuration</a></li><li><a href="#separating-toolbar-items">Separating toolbar items</a></li><li><a href="#extended-toolbar-configuration-format">Extended toolbar configuration format</a></li><li><a href="#grouping-toolbar-items-in-drop-downs-nested-toolbars">Grouping toolbar items in drop-downs (nested toolbars)</a><ol><li><a href="#customization">Customization</a><ol><li><a href="#displaying-the-label">Displaying the label</a></li><li><a href="#changing-the-icon">Changing the icon</a></li><li><a href="#customizing-the-tooltip">Customizing the tooltip</a></li></ol></li></ol></li><li><a href="#multiline-wrapping-toolbar">Multiline (wrapping) toolbar</a><ol><li><a href="#automatic-toolbar-wrapping">Automatic toolbar wrapping</a></li><li><a href="#explicit-wrapping-breakpoint">Explicit wrapping breakpoint</a></li></ol></li><li><a href="#listing-available-items">Listing available items</a></li><li><a href="#adding-a-custom-button">Adding a custom button</a></li><li><a href="#block-toolbar">Block toolbar</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
 
-<p>The toolbar is the most basic user interface element of the WYSIWYG editor that gives convenient access to all its features. It contains various items like buttons or dropdowns that you can use to format, manage, insert and alter elements of the content.</p>
-<div class="info-box notice notice__hint"><p>Toolbar configuration is a strict UI-related setting. Removing a toolbar item does not remove the feature from the editor internals. If your goal with the toolbar configuration is to remove features, the right solution is to also remove their respective plugins. Check <a href="../../installation/getting-started/configuration.html#removing-features">removing features</a> for more information.</p></div>
-<h2 id="basic-toolbar-configuration"><a class="headerlink" href="#basic-toolbar-configuration">#</a> Basic toolbar configuration</h2>
-<p>In the builds that contain toolbars an optimal default configuration is defined for it. You may need a different toolbar arrangement, though, and this can be achieved through configuration.</p>
-<p>Each editor may have a different toolbar configuration scheme, so it is recommended to check its documentation. In any case, the following example may give you a general idea:</p>
-<pre class="highlight"><code class="js">ClassicEditor
-    .create( document.querySelector( '#editor' ), {
-        toolbar: [ 'bold', 'italic', 'link', 'undo', 'redo', 'numberedList', 'bulletedList' ]
-    } )
-    .catch( error =&gt; {
-        console.log( error );
-    } );
-</code></pre>
+<p>The toolbar is the most basic user interface element of CKEditor 5 that gives you convenient access to all its features. It has buttons and dropdowns that you can use to format, manage, insert, and change elements of your content.</p>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>This is how a simplified toolbar from the snippet above looks in the CKEditor 5 WYSIWYG editor user interface. Toolbar items can be easily added or removed thanks to this configuration.</p>
 <div class="live-snippet"><div id="toolbar-basic">
@@ -518,6 +506,18 @@
 </div>
 </div>
 <div class="info-box notice notice__info"><p>All demos in this guide only present a limited set of features for clarity. Visit the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
+<h2 id="basic-toolbar-configuration"><a class="headerlink" href="#basic-toolbar-configuration">#</a> Basic toolbar configuration</h2>
+<div class="info-box notice notice__hint"><p>Toolbar configuration is a strict UI-related setting. Removing a toolbar item does not remove the feature from the editor internals. If your goal with the toolbar configuration is to remove features, the right solution is to also remove their respective plugins. Check <a href="../../installation/getting-started/configuration.html#removing-features">removing features</a> for more information.</p></div>
+<p>In the builds that contain toolbars, an optimal default configuration is defined for it. You may need a different toolbar arrangement, though, and this can be achieved through configuration.</p>
+<p>Each editor may have a different toolbar configuration scheme, so it is recommended to check its documentation. In any case, the following example may give you a general idea:</p>
+<pre class="highlight"><code class="js">ClassicEditor
+    .create( document.querySelector( '#editor' ), {
+        toolbar: [ 'bold', 'italic', 'link', 'undo', 'redo', 'numberedList', 'bulletedList' ]
+    } )
+    .catch( error =&gt; {
+        console.log( error );
+    } );
+</code></pre>
 <h2 id="separating-toolbar-items"><a class="headerlink" href="#separating-toolbar-items">#</a> Separating toolbar items</h2>
 <p>You can use <code>'|'</code> to create a separator between groups of toolbar items. It works in both the basic and <a href="#extended-toolbar-configuration-format">extended</a> configuration formats:</p>
 <p>Basic:</p>
@@ -960,7 +960,7 @@
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="../headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>

@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Mar 02 2023 04:15:25 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 04 2023 04:17:38 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Remove formatting - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -240,7 +240,7 @@
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>
@@ -492,10 +492,8 @@
           <div class="rwd-breadcrumbs"><a href="../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../assets/2.4.0/img/book.svg" alt="guide">Remove formatting
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#related-features">Related features</a></li><li><a href="#configuring-the-remove-format-feature">Configuring the remove format feature</a></li><li><a href="#a-short-note-about-content-types-in-the-editor">A short note about content types in the editor</a></li><li><a href="#integrating-with-editor-features">Integrating with editor features</a></li><li><a href="#installation">Installation</a></li><li><a href="#common-api">Common API</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
-<p>The remove format feature allows you to quickly remove any text formatting applied using inline HTML elements and CSS styles, like <a href="basic-styles.html">basic text styles</a> (bold, italic, etc.), <a href="font.html">font family, size, and color</a> and similar.</p>
-<p>Note that block-level formatting (<a href="headings.html">headings</a>, <a href="images/images-overview.html">images</a>) and semantic data (<a href="link.html">links</a>) will not be removed by this feature.</p>
-<div class="info-box notice notice__info"><p>The Remove formatting feature is enabled by default in the <a href="../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only. See the <a href="#installation">installation</a> section to learn how to enable it in your editor.</p></div>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#configuring-the-remove-format-feature">Configuring the remove format feature</a></li><li><a href="#a-short-note-about-content-types-in-the-editor">A short note about content types in the editor</a></li><li><a href="#integrating-with-editor-features">Integrating with editor features</a></li><li><a href="#installation">Installation</a></li><li><a href="#related-features">Related features</a></li><li><a href="#common-api">Common API</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
+<p>The remove format feature lets you quickly remove any text formatting applied using inline HTML elements and CSS styles, like <a href="basic-styles.html">basic text styles</a> (bold, italic) or <a href="font.html">font family, size, and color</a>. This feature does not remove block-level formatting (<a href="headings.html">headings</a>, <a href="images/images-overview.html">images</a>) or semantic data (<a href="link.html">links</a>).</p>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>Select the content you want to clean up and press the remove format button <span class="editor-icon"><img src="../assets/icons/2566d1fe2e.svg" class="editor-icon__image" alt="remove format"></span> in the toolbar:</p>
 <div class="live-snippet"><div id="editor">
@@ -523,13 +521,6 @@
 </div>
 </div>
 <div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
-<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
-<p>There are more CKEditor 5 features that can help you format your content:</p>
-<ul>
-<li><a href="basic-styles.html">Basic text styles</a> – The essentials, like <strong>bold</strong>, <em>italic</em> and others.</li>
-<li><a href="font.html">Font styles</a> – Easily and efficiently control the font <a href="font.html#configuring-the-font-family-feature">family</a>, <a href="font.html#configuring-the-font-size-feature">size</a>, <a href="font.html#configuring-the-font-color-and-font-background-color-features">text or background color</a>.</li>
-<li><a href="text-alignment.html">Text alignment</a> – Align your content left, align it right, center it or justify.</li>
-</ul>
 <h2 id="configuring-the-remove-format-feature"><a class="headerlink" href="#configuring-the-remove-format-feature">#</a> Configuring the remove format feature</h2>
 <p>This feature has no integration–level configuration. Once enabled, it works out–of–the–box with all <a href="index.html">core editor features</a>.</p>
 <h2 id="a-short-note-about-content-types-in-the-editor"><a class="headerlink" href="#a-short-note-about-content-types-in-the-editor">#</a> A short note about content types in the editor</h2>
@@ -562,8 +553,9 @@ function RemoveFormatLinks( editor ) {
         ]
     } )
 </code></pre>
-<p>From now on, the the “Remove Format” button should also remove links in the content. <a href="../api/module_engine_model_schema-Schema.html#function-setAttributeProperties">Learn more about attribute properties.</a></p>
+<p>From now on, the remove format button should also remove links in the content. <a href="../api/module_engine_model_schema-Schema.html#function-setAttributeProperties">Learn more about attribute properties.</a></p>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
+<div class="info-box notice notice__info"><p>The remove format feature is enabled by default in the <a href="../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only.</p></div>
 <p>To add this feature to your rich-text editor, install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-remove-format"><code>@ckeditor/ckeditor5-remove-format</code></a> package:</p>
 <pre class="highlight"><code class="bash">npm install --save @ckeditor/ckeditor5-remove-format
 </code></pre>
@@ -579,6 +571,13 @@ ClassicEditor
     .catch( /* ... */ );
 </code></pre>
 <div class="info-box notice notice__info"><p>Read more about <a href="../installation/plugins/installing-plugins.html">installing plugins</a>.</p></div>
+<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
+<p>CKEditor 5 has more features that can help you format your content:</p>
+<ul>
+<li><a href="basic-styles.html">Basic text styles</a> – The essentials, like <strong>bold</strong>, <em>italic</em>, and others.</li>
+<li><a href="font.html">Font styles</a> – Easily and efficiently control the font <a href="font.html#configuring-the-font-family-feature">family</a>, <a href="font.html#configuring-the-font-size-feature">size</a>, <a href="font.html#configuring-the-font-color-and-font-background-color-features">text or background color</a>.</li>
+<li><a href="text-alignment.html">Text alignment</a> – Align your content left, align it right, center it, or justify.</li>
+</ul>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
 <p>The <a href="../api/module_remove-format_removeformat-RemoveFormat.html"><code>RemoveFormat</code></a> plugin registers the <code>'removeFormat'</code> UI button component and a command of the same name implemented by <a href="../api/module_remove-format_removeformatcommand-RemoveFormatCommand.html"><code>RemoveFormatCommand</code></a>.</p>
 <p>The command can be executed using the <a href="../api/module_core_editor_editor-Editor.html#function-execute"><code>editor.execute()</code></a> method:</p>
@@ -587,7 +586,7 @@ editor.execute( 'removeFormat' );
 </code></pre>
 <div class="info-box notice"><p>We recommend using the official <a href="../framework/development-tools.html#ckeditor-5-inspector">CKEditor 5 inspector</a> for development and debugging. It will give you tons of useful information about the state of the editor such as internal data structures, selection, commands, and many more.</p></div>
 <h2 id="contribute"><a class="headerlink" href="#contribute">#</a> Contribute</h2>
-<p>The source code of the feature is available on GitHub in <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-remove-format">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-remove-format</a>.</p>
+<p>The source code of the feature is available on GitHub at <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-remove-format">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-remove-format</a>.</p>
 
           <div class="info-box notice notice__feedback">
             <p>
@@ -764,7 +763,7 @@ editor.execute( 'removeFormat' );
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>

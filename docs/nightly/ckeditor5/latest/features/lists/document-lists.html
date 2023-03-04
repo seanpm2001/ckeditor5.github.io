@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Mar 02 2023 04:15:16 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 04 2023 04:17:29 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Document lists - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -240,7 +240,7 @@
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="../headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>
@@ -492,11 +492,9 @@
           <div class="rwd-breadcrumbs"><a href="../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">Document list
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#list-styles">List styles</a></li><li><a href="#list-indentation">List indentation</a></li><li><a href="#related-features">Related features</a></li><li><a href="#installation">Installation</a><ol><li><a href="#document-list-feature">Document list feature</a></li><li><a href="#document-list-properties">Document list properties</a></li></ol></li><li><a href="#common-api">Common API</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#list-styles">List styles</a></li><li><a href="#list-indentation">List indentation</a></li><li><a href="#installation">Installation</a><ol><li><a href="#document-list-feature">Document list feature</a></li><li><a href="#document-list-properties">Document list properties</a></li></ol></li><li><a href="#related-features">Related features</a></li><li><a href="#common-api">Common API</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
 
-<p>The document list feature is based on a completely different approach than the regular list. Unlike regular list, which is a content block in itself, the document list plugin will let any part of the content be part of a list. Content blocks and elements – such as blockquotes, tables, paragraphs, and others – can now be put inside a list item, ensuring the continuity of numbering and retaining indentation.</p>
-<p>Just like regular lists, the document list feature supports both ordered and unordered lists.</p>
-<div class="info-box notice notice__info"><p>There are currently two plugins providing lists support for CKEditor 5: the regular <a href="lists.html">lists feature</a> and this new <strong>document lists feature</strong>.</p><p>The document lists feature is not enabled in any builds, you need to <a href="#installation">install it</a> by hand.</p></div>
+<p>The document list feature lets you create ordered and unordered lists. The unique thing about them is that you can put any content inside each list item (including block elements like paragraphs and tables), retaining the continuity of numbering and indentation.</p>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>Use the demo below to add block elements like tables, images or nested lists and see the document retain ordering and list styles. Use the toolbar buttons to insert new ordered <span class="editor-icon"><img src="../../assets/icons/e80ed26aa0.svg" class="editor-icon__image" alt="Insert ordered list"></span> and unordered lists <span class="editor-icon"><img src="../../assets/icons/5fe1945af5.svg" class="editor-icon__image" alt="Insert unordered list"></span> list items.</p>
 <div class="live-snippet"><div id="snippet-lists-document">
@@ -546,17 +544,11 @@
 </div>
 <div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
 <h2 id="list-styles"><a class="headerlink" href="#list-styles">#</a> List styles</h2>
-<p>Document lists offers additional formatting tools that allow controlling the lists, just like regular lists. The list style feature introduces some more styles for the list item markers. When enabled, it adds 3 styles for unordered lists and 6 styles for ordered lists to choose from. The user will be able to set or change the list style via the dropdown that opens when you click the arrow next to the appropriate list button in the toolbar.</p>
+<p>Document lists offer additional formatting tools, just like regular lists. The list style feature introduces some more styles for the list item markers. When enabled, it adds 3 styles for unordered lists and 6 styles for ordered lists to choose from. The user will be able to set or change the list style via the dropdown that opens when you click the arrow next to the appropriate list button in the toolbar.</p>
 <h2 id="list-indentation"><a class="headerlink" href="#list-indentation">#</a> List indentation</h2>
 <p>Refer to the <a href="../indent.html#indenting-lists">Indenting lists</a> section of the Block indentation feature guide.</p>
-<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
-<p>These features also provide similar functionality:</p>
-<ul>
-<li><a href="todo-lists.html">To-do lists</a> – Create a list of interactive checkboxes with labels.</li>
-<li><a href="../indent.html">Block indentation</a> – Set indentation for text blocks such as paragraphs or headings and lists.</li>
-<li><a href="../autoformat.html">Autoformatting</a> – Format the text on the go with Markdown code.</li>
-</ul>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
+<div class="info-box notice notice__info"><p>There are currently two plugins providing list support for CKEditor 5: the regular <a href="lists.html">lists feature</a> and this new <strong>document lists feature</strong>.</p><p>The document lists feature is not enabled in any builds, so you need to install it by hand.</p></div>
 <h3 id="document-list-feature"><a class="headerlink" href="#document-list-feature">#</a> Document list feature</h3>
 <p>To add this feature to your editor, install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-list"><code>@ckeditor/ckeditor5-list</code></a> package:</p>
 <pre class="highlight"><code class="">npm install --save @ckeditor/ckeditor5-list
@@ -596,6 +588,13 @@ ClassicEditor
 </code></pre>
 <div class="info-box notice notice__info"><p>Read more about <a href="../../installation/plugins/installing-plugins.html">installing plugins</a>.</p></div>
 <div class="info-box notice notice__warning"><p>The <a href="../../api/module_list_documentlistproperties-DocumentListProperties.html"><code>DocumentListProperties</code></a> feature overrides UI button implementations from the <a href="../../api/module_list_list_listui-ListUI.html"><code>ListUI</code></a>.</p></div>
+<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
+<p>These features also provide similar functionality:</p>
+<ul>
+<li><a href="todo-lists.html">To-do lists</a> – Create a list of interactive checkboxes with labels.</li>
+<li><a href="../indent.html">Block indentation</a> – Set indentation for text blocks such as paragraphs or headings and lists.</li>
+<li><a href="../autoformat.html">Autoformatting</a> – Format the text on the go with Markdown code.</li>
+</ul>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
 <p>The <a href="../../api/module_list_documentlist-DocumentList.html"><code>DocumentList</code></a> plugin registers:</p>
 <ul>
@@ -636,7 +635,7 @@ ClassicEditor
 </li>
 </ul>
 <h2 id="contribute"><a class="headerlink" href="#contribute">#</a> Contribute</h2>
-<p>The source code of the feature is available on GitHub in <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-list">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-list</a>.</p>
+<p>The source code of the feature is available on GitHub at <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-list">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-list</a>.</p>
 
           <div class="info-box notice notice__feedback">
             <p>
@@ -813,7 +812,7 @@ ClassicEditor
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="../headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>

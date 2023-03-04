@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Mar 02 2023 04:15:15 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 04 2023 04:17:27 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="CKBox - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -240,7 +240,7 @@
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="../headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>
@@ -492,19 +492,17 @@
           <div class="rwd-breadcrumbs"><a href="../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">CKBox
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#installation">Installation</a></li><li><a href="#configuration">Configuration</a><ol><li><a href="#before-you-start">Before you start</a></li><li><a href="#defining-upload-categories">Defining upload categories</a></li><li><a href="#adding-the-id-for-inserted-assets">Adding the ID for inserted assets</a></li><li><a href="#changing-the-language">Changing the language</a></li><li><a href="#providing-the-token-url">Providing the token URL</a></li><li><a href="#configuring-the-api-service-and-assets-origin">Configuring the API service and assets origin</a></li></ol></li><li><a href="#common-api">Common API</a></li><li><a href="#whats-next">What’s next?</a></li><li><a href="#contribute">Contribute</a></li></ol></nav><div class="live-snippet"><script src="https://cdn.ckbox.io/ckbox/latest/ckbox.js"></script>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#additional-feature-information">Additional feature information</a></li><li><a href="#installation">Installation</a></li><li><a href="#configuration">Configuration</a><ol><li><a href="#before-you-start">Before you start</a></li><li><a href="#defining-upload-categories">Defining upload categories</a></li><li><a href="#adding-the-id-for-inserted-assets">Adding the ID for inserted assets</a></li><li><a href="#changing-the-language">Changing the language</a></li><li><a href="#providing-the-token-url">Providing the token URL</a></li><li><a href="#configuring-the-api-service-and-assets-origin">Configuring the API service and assets origin</a></li></ol></li><li><a href="#common-api">Common API</a></li><li><a href="#whats-next">What’s next?</a></li><li><a href="#contribute">Contribute</a></li></ol></nav><div class="live-snippet"><script src="https://cdn.ckbox.io/ckbox/latest/ckbox.js"></script>
 </div>
 
-<p>This CKBox integration feature allows you to effortlessly and intuitively insert images as well as links to other files into the rich-text editor content. CKBox is a file manager and a file uploader that acts as a convenient interface for the cloud storage service. The CKBox feature provides a simple integration with this service for the CKEditor 5 WYSIWYG editor. To find out more about CKBox, the brand-new file manager, visit the <a href="https://ckeditor.com/ckbox/">CKBox website</a> and read the dedicated <a href="https://ckeditor.com/docs/ckbox/latest/guides/index.html">CKBox documentation page</a>.</p>
+<p>The CKBox feature lets you easily insert images and links to other files into your content. CKBox is a modern file management platform with a clean UI and a top-notch UX.</p>
 <div class="info-box notice"><p>This is a premium feature and you need a subscription to use it. You can <a href="https://ckeditor.com/pricing/">purchase it here</a> for your open-source CKEditor implementation. <a href="https://ckeditor.com/contact/?sales=true#contact-form">Contact us</a> if:</p><ul>
 <li>CKEditor commercial license is needed for your application.</li>
 <li>You need on-premises (self-hosted) version of the service.</li>
 <li>You have other licensing questions.</li>
 </ul><p>You can also sign up for the <a href="https://orders.ckeditor.com/trial/premium-features">CKEditor Premium Features 30-day free trial</a> to test the feature.</p><p>This feature is enabled by default in all <a href="https://ckeditor.com/docs/ckeditor5/latest/installation/getting-started/predefined-builds.html">predefined builds</a> for convenience, but the editor will still work properly without activating it.</p></div>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
-<p>Try CKBox in action. Use the Open file manager toolbar button <span class="editor-icon"><img src="../../assets/icons/aa0407b78c.svg" class="editor-icon__image" alt="Open file manager"></span> to invoke the CKBox dialog window. After the dialog opens, find an interesting image and click the Choose button. The selected image will be inserted into the editor content. You can choose more than one file at once. Play around with these, changing the alignment and size.</p>
-<p>Non-embeddable files (e.g. PDF files) will be inserted into editor content as links. To test it, open the CKBox dialog again and choose any PDF file. It should be inserted as a link in the editor content. After clicking this link, it is automatically downloaded.</p>
-<p>The CKBox feature also supports uploading images. Drag any image into the editor content and it will be uploaded into the CKBox cloud storage. The uploaded file is then automatically inserted into the editor content. If you want to upload a non-image file type (such as a PDF or a text file) to the cloud storage, just open the CKBox dialog and use the Upload button.</p>
+<p>Use the open file manager toolbar button <span class="editor-icon"><img src="../../assets/icons/aa0407b78c.svg" class="editor-icon__image" alt="Open file manager"></span> to open the CKBox dialog window. Then select an image and click the Choose button. The selected image will appear in the content. You can choose more than one file at a time. Play around, changing the alignment and size of the images. See more instructions below the demo.</p>
 <div class="live-snippet"><div id="snippet-ckbox">
 	<h2>Diesel locos are really useful!</h2>
 	<p>A diesel locomotive is one that uses a diesel engine as the prime source of power to move and pull the cars.</p>
@@ -515,8 +513,12 @@
 </div>
 </div>
 <div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
+<p>Non-embeddable files (like PDFs) are inserted as links. To test it, open the CKBox dialog again and choose any PDF file. A link will appear in the content. After you click this link, the file will be automatically downloaded.</p>
+<p>The CKBox feature also supports uploading images. Drag any image into the editor content and it will be uploaded into the CKBox cloud storage. The uploaded file will be then automatically inserted into the content. If you want to upload a non-image file type (such as a PDF or a text file) to the cloud storage, just open the CKBox dialog and use the Upload button.</p>
+<h2 id="additional-feature-information"><a class="headerlink" href="#additional-feature-information">#</a> Additional feature information</h2>
+<p>CKBox is a file manager and a file uploader that acts as a convenient interface for the cloud storage service. The CKBox feature provides a simple integration with this service for the CKEditor 5 WYSIWYG editor. To find out more about CKBox, the brand-new file manager, visit the <a href="https://ckeditor.com/ckbox/">CKBox website</a> and read the dedicated <a href="https://ckeditor.com/docs/ckbox/latest/guides/index.html">CKBox documentation page</a>.</p>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
-<div class="info-box notice notice__info"><p>This feature is enabled by default in all predefined builds. The installation instructions are for developers interested in building their own, custom WYSIWYG editor.</p></div>
+<div class="info-box notice notice__info"><p>This feature is enabled by default in all <a href="../../installation/getting-started/predefined-builds.html">predefined builds</a>. The installation instructions are for developers interested in building their own, custom WYSIWYG editor.</p></div>
 <p>To use this feature in your application, you must first load the CKBox library and then enable CKBox integration in your rich-text editor instance.</p>
 <p>The easiest way to load the CKBox library is to include the <code>&lt;script&gt;</code> tag loading the <code>ckbox.js</code> file first:</p>
 <pre class="highlight"><code class="html">&lt;script src="https://cdn.ckbox.io/ckbox/latest/ckbox.js"&gt;&lt;/script&gt;
@@ -553,7 +555,7 @@ ClassicEditor
 <div class="info-box notice"><p>There is a <a href="https://ckeditor.com/pricing/#plan-ckbox">free personal plan</a>. However, it still requires a sign-up.</p></div>
 <p>After you purchase a license, log into the CKEditor Ecosystem customer dashboard to create access credentials, as explained in the {@link @ckbox guides/configuration/authentication CKBox configuration guide}.</p>
 <h3 id="defining-upload-categories"><a class="headerlink" href="#defining-upload-categories">#</a> Defining upload categories</h3>
-<p>By default, the CKBox feature maps the uploaded image type to the category configured on the cloud service. You can override this behavior and provide your own mappings via the <a href="../../api/module_ckbox_ckbox-CKBoxConfig.html#member-defaultUploadCategories"><code>config.ckbox.defaultUploadCategories</code></a> configuration option. It is an object, where the keys define categories and their values are the types of images that will be uploaded to these categories. The categories might be referenced either by their name or by their ID. Referencing by ID is future-proof, because it will not require configuration changes when a category name is changed.</p>
+<p>By default, the CKBox feature maps the uploaded image type to the category configured on the cloud service. You can override this behavior and provide your own mappings via the <a href="../../api/module_ckbox_ckbox-CKBoxConfig.html#member-defaultUploadCategories"><code>config.ckbox.defaultUploadCategories</code></a> configuration option. It is an object, where the keys define categories and their values are the types of images that will be uploaded to these categories. The categories might be referenced either by their name or by their ID. Referencing by ID is future-proof because it will not require configuration changes when a category name changes.</p>
 <pre class="highlight"><code class="js">import CKBox from '@ckeditor/ckeditor5-ckbox/src/ckbox';
 
 ClassicEditor
@@ -847,7 +849,7 @@ ClassicEditor
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="../headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>

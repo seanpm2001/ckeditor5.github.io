@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Mar 02 2023 04:15:22 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 04 2023 04:17:35 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Ordered and unordered lists - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -240,7 +240,7 @@
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="../headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>
@@ -491,18 +491,11 @@
           </div>
           <div class="rwd-breadcrumbs"><a href="../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">Features</a>
           </div>
-          <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">Lists
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#ordered-and-unordered-lists">Ordered and unordered lists</a><ol><li><a href="#demo">Demo</a></li></ol></li><li><a href="#list-properties">List properties</a><ol><li><a href="#list-styles">List styles</a><ol><li><a href="#demo-2">Demo</a></li></ol></li><li><a href="#list-start-index">List start index</a><ol><li><a href="#demo-3">Demo</a></li></ol></li><li><a href="#reversed-list">Reversed list</a><ol><li><a href="#demo-4">Demo</a></li></ol></li></ol></li><li><a href="#list-indentation">List indentation</a></li><li><a href="#related-features">Related features</a></li><li><a href="#installation">Installation</a><ol><li><a href="#list-feature">List feature</a><ol><li><a href="#list-properties-2">List properties</a></li></ol></li></ol></li><li><a href="#common-api">Common API</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
-<p>The list feature lets you create ordered (numbered) and unordered (bulleted) lists. This allows for better structuring and presenting specific content such as enumerating elements, creating tables of content or <a href="todo-lists.html">to-do lists</a>.</p>
-<p>Lists are useful when you want to emphasize selected information, highlight a series of steps, enumerate items of a collection. They draw the reader’s attention and, just like <a href="../block-quote.html">block quotes</a> or <a href="../indent.html">indentation</a>, give the text a structure and breathing room. They help visually separate passages for a better reading experience and make skimming for information easier.</p>
-<p>You may find additional interesting details and examples in the <a href="https://ckeditor.com/blog/Feature-of-the-month-Lists-in-CKEditor-5/">Lists in CKEditor 5</a> blog post after reading this guide.</p>
-<div class="info-box notice notice__info"><p>There are currently two plugins providing lists support for CKEditor 5: this regular <strong>lists feature</strong> and the new <a href="document-lists.html">document lists feature</a>, based on a different approach.</p><p>The lists feature is enabled by default in all <a href="../../installation/getting-started/predefined-builds.html">predefined builds</a>.</p><p>If you wish to switch to the document list feature, you need to <a href="document-lists.html#installation">install it</a> first.</p></div>
+          <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">Ordered and unordered lists
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#list-properties">List properties</a><ol><li><a href="#list-styles">List styles</a><ol><li><a href="#demo-2">Demo</a></li></ol></li><li><a href="#list-start-index">List start index</a><ol><li><a href="#demo-3">Demo</a></li></ol></li><li><a href="#reversed-list">Reversed list</a><ol><li><a href="#demo-4">Demo</a></li></ol></li></ol></li><li><a href="#list-indentation">List indentation</a></li><li><a href="#installation">Installation</a><ol><li><a href="#list-feature">List feature</a><ol><li><a href="#list-properties-2">List properties</a></li></ol></li></ol></li><li><a href="#related-features">Related features</a></li><li><a href="#common-api">Common API</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
+<p>The list feature lets you create ordered (numbered) and unordered (bulleted) lists. You can use ordered lists where the order of the items matters (as in instructions) and unordered lists where it is not that important (as in a list of ingredients).</p>
 
-<h2 id="ordered-and-unordered-lists"><a class="headerlink" href="#ordered-and-unordered-lists">#</a> Ordered and unordered lists</h2>
-<p>The <a href="../../api/module_list_list-List.html">list</a> feature lets you create ordered (numbered) and unordered (bulleted) lists.</p>
-<p>An unordered (bulleted) list can represent items where the order is not important, for example, a list of ingredients required for preparing a dish or a drink.</p>
-<p>An ordered (numbered) list can be used if the order of the items matters, for example, when creating an instruction. Here, the sequence of steps that must be done is important.</p>
-<h3 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h3>
+<h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>Use the editor below to see the CKEditor 5 list feature in action. Toolbar buttons can be used to insert both ordered <span class="editor-icon"><img src="../../assets/icons/e80ed26aa0.svg" class="editor-icon__image" alt="Insert ordered list"></span> and unordered lists <span class="editor-icon"><img src="../../assets/icons/5fe1945af5.svg" class="editor-icon__image" alt="Insert unordered list"></span>.</p>
 <p>A Markdown code provided by the <a href="../autoformat.html">autoformatting feature</a> can also be utilized:</p>
 <ul>
@@ -532,8 +525,9 @@
 </div>
 </div>
 <div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
+<p>After reading this guide, check out the <a href="https://ckeditor.com/blog/Feature-of-the-month-Lists-in-CKEditor-5/">Lists in CKEditor 5</a> blog post where you will find more information about lists with examples.</p>
 <h2 id="list-properties"><a class="headerlink" href="#list-properties">#</a> List properties</h2>
-<p>Beside the basic functionality of creating the ordered and unordered lists, CKEditor 5 offers additional formatting tools that allow controlling the lists. Features such as more styles for list markers, setting the start index or reversing the list order can be enabled separately or all together. Check out the individual demos below or see all list properties working together in the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a>.</p>
+<p>In addition to the basic functionality of creating the ordered and unordered lists, CKEditor 5 offers formatting tools that let you control the lists. Features such as more styles for list markers, setting the start index, or reversing the list order can be enabled separately or all at once. Check out the individual demos below or see all list properties working together in the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a>.</p>
 <div class="info-box notice notice__info"><p>The <a href="../../api/module_list_listproperties-ListProperties.html">list properties feature</a> is enabled by default in the <a href="../../installation/getting-started/predefined-builds.html#document-editor">document editor build</a> only.</p><p>The <a href="../../api/module_list_documentlistproperties-DocumentListProperties.html">document list properties feature</a> is not available in any builds by default.</p><p>See the <a href="#list-properties-2">installation</a> section to learn how to enable these in your editor.</p></div>
 <h3 id="list-styles"><a class="headerlink" href="#list-styles">#</a> List styles</h3>
 <p>The list style feature introduces some more styles for the list item markers. When <a href="../../api/module_list_listproperties-ListPropertiesConfig.html#member-styles">enabled</a>, it adds 3 styles for unordered lists and 6 styles for ordered lists to choose from. The user will be able to set or change the list style via the dropdown that opens when you click the arrow next to the appropriate list button in the toolbar.</p>
@@ -604,7 +598,7 @@
 </div>
 </div>
 <h3 id="reversed-list"><a class="headerlink" href="#reversed-list">#</a> Reversed list</h3>
-<p>The reversed list feature lets the user reverse the numbering order of a list, changing it from ascending to descending. This is especially useful in countdowns and things-to-do lists that need to reproduce steps in a reversed order (for example, in a disassembling instruction in an owners manual).</p>
+<p>The reversed list feature lets the user reverse the numbering order of a list, changing it from ascending to descending. This is especially useful in countdowns and things-to-do lists that need to reproduce steps in a reversed order (for example, in disassembly instructions).</p>
 <p>When this feature is <a href="../../api/module_list_listproperties-ListPropertiesConfig.html#member-reversed">enabled</a>, an additional dropdown switch is available in the ordered list toolbar button. Thanks to it,  the user may easily reverse the order of a list with a single click.</p>
 <h4 id="demo-4"><a class="headerlink" href="#demo-4">#</a> Demo</h4>
 <p>Click the second list and use the ordered list <span class="editor-icon"><img src="../../assets/icons/e80ed26aa0.svg" class="editor-icon__image" alt="Insert ordered list"></span> dropdown switch to choose whether it should be reversed.</p>
@@ -639,14 +633,8 @@
 <div class="info-box notice notice__info"><p>You can see all the list properties together in action in the <a href="../../examples/builds-custom/full-featured-editor.html">Full-featured editor</a> and <a href="../../examples/builds/document-editor.html">Document editor</a> examples.</p></div>
 <h2 id="list-indentation"><a class="headerlink" href="#list-indentation">#</a> List indentation</h2>
 <p>Refer to the <a href="../indent.html#indenting-lists">Indenting lists</a> section of the Block indentation feature guide.</p>
-<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
-<p>These features also provide similar functionality:</p>
-<ul>
-<li><a href="todo-lists.html">To-do lists</a> – Create a list of interactive checkboxes with labels.</li>
-<li><a href="../indent.html">Block indentation</a> – Set indentation for text blocks such as paragraphs or headings and lists.</li>
-<li><a href="../autoformat.html">Autoformatting</a> – Format the text on the go with Markdown code.</li>
-</ul>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
+<div class="info-box notice notice__info"><p>There are currently two plugins providing lists support for CKEditor 5: this regular <strong>lists feature</strong> and the new <a href="document-lists.html">document lists feature</a>, based on a different approach.</p><p>The lists feature is enabled by default in all <a href="../../installation/getting-started/predefined-builds.html">predefined builds</a>.</p><p>If you wish to switch to the document list feature, you need to <a href="document-lists.html#installation">install it</a> first.</p></div>
 <h3 id="list-feature"><a class="headerlink" href="#list-feature">#</a> List feature</h3>
 <div class="info-box notice notice__info"><p>The base list feature is enabled by default in all <a href="../../installation/getting-started/predefined-builds.html">predefined editor builds</a>. The installation instructions are for developers interested in building their own, custom editor.</p></div>
 <p>To add this feature to your editor, install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-list"><code>@ckeditor/ckeditor5-list</code></a> package:</p>
@@ -688,6 +676,13 @@ ClassicEditor
 </code></pre>
 <div class="info-box notice notice__info"><p>Read more about <a href="../../installation/plugins/installing-plugins.html">installing plugins</a>.</p></div>
 <div class="info-box notice notice__warning"><p>The <a href="../../api/module_list_listproperties-ListProperties.html"><code>ListProperties</code></a> feature overrides UI button implementations from the <a href="../../api/module_list_list_listui-ListUI.html"><code>ListUI</code></a>.</p></div>
+<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
+<p>These features provide similar functionality:</p>
+<ul>
+<li><a href="todo-lists.html">To-do lists</a> – Create a list of interactive checkboxes with labels.</li>
+<li><a href="../indent.html">Block indentation</a> – Set indentation for text blocks such as paragraphs or headings and lists.</li>
+<li><a href="../autoformat.html">Autoformatting</a> – Format the text on the go with Markdown code.</li>
+</ul>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
 <p>The <a href="../../api/module_list_list-List.html"><code>List</code></a> plugin registers:</p>
 <ul>
@@ -706,8 +701,8 @@ ClassicEditor
 </code></pre>
 <p>The available types are:</p>
 <ul>
-<li>For bulleted lists: <code>'disc'</code>, <code>'circle'</code> and <code>'square'</code>.</li>
-<li>For numbered lists: <code>'decimal'</code>, <code>'decimal-leading-zero'</code>, <code>'lower-roman'</code>, <code>'upper-roman'</code>, <code>'lower-latin'</code> and <code>'upper-latin'</code>.</li>
+<li>For bulleted lists: <code>'disc'</code>, <code>'circle'</code>, and <code>'square'</code>.</li>
+<li>For numbered lists: <code>'decimal'</code>, <code>'decimal-leading-zero'</code>, <code>'lower-roman'</code>, <code>'upper-roman'</code>, <code>'lower-latin'</code>, and <code>'upper-latin'</code>.</li>
 </ul>
 </li>
 <li>
@@ -728,7 +723,7 @@ ClassicEditor
 </li>
 </ul>
 <h2 id="contribute"><a class="headerlink" href="#contribute">#</a> Contribute</h2>
-<p>The source code of the feature is available on GitHub in <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-list">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-list</a>.</p>
+<p>The source code of the feature is available on GitHub at <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-list">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-list</a>.</p>
 
           <div class="info-box notice notice__feedback">
             <p>
@@ -905,7 +900,7 @@ ClassicEditor
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Find and replace</span>
                               </div></a></li>
                           <li><a href="../font.html">
-                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size and color</span>
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Font family, size, and color</span>
                               </div></a></li>
                           <li><a href="../headings.html">
                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Headings</span>
