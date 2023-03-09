@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Mar 06 2023 04:18:06 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Mar 09 2023 04:17:19 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Features comparison - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -488,7 +488,7 @@
           </div>
           <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">Import from Word vs Paste from Word comparison
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#paste-from-word">Paste From Word</a></li><li><a href="#import-from-word">Import from Word</a></li><li><a href="#features-comparison">Features comparison</a><ol><li><a href="#collaboration-features">Collaboration features</a></li><li><a href="#inline-formatting">Inline formatting</a></li><li><a href="#paragraphs">Paragraphs</a></li><li><a href="#headings">Headings</a></li><li><a href="#lists">Lists</a></li><li><a href="#tables">Tables</a></li><li><a href="#images">Images</a></li><li><a href="#page-breaks">Page breaks</a></li><li><a href="#horizontal-lines">Horizontal lines</a></li><li><a href="#word-styles">Word Styles</a></li><li><a href="#default-styles">Default styles</a></li><li><a href="#sections">Sections</a></li><li><a href="#complex-objects">Complex objects</a></li></ol></li><li><a href="#technical-details">Technical details</a></li></ol></nav>
-<p>The CKEditor 5 WYSIWYG editor offers a simpler <a href="../pasting/paste-from-word.html">Paste from Word</a> plugin, which allows you to paste content from Microsoft Word into your editor and maintain the original structure and formatting. There are, however, significant differences between these two solutions.</p>
+<p>In addition to Import from Word, there is a simpler <a href="../pasting/paste-from-word.html">Paste from Word</a> plugin that lets you paste content from Microsoft Word while maintaining its original structure and formatting. However, these two solutions differ in many ways.</p>
 <h2 id="paste-from-word"><a class="headerlink" href="#paste-from-word">#</a> Paste From Word</h2>
 <p>The <a href="../pasting/paste-from-word.html">paste from Word</a> feature allows you to paste content from Microsoft Word into your CKEditor 5 WYSIWYG editor and maintain the original structure and formatting. After creating a document in Microsoft Word you can simply copy it to CKEditor 5 and retain basic text styling, heading levels, links, lists, tables and images – as long as these features are supported by the editor itself.</p>
 <ul>
@@ -499,7 +499,7 @@
 </ul>
 <p>This operation is fast and easy, but can only be done “by hand”.</p>
 <h2 id="import-from-word"><a class="headerlink" href="#import-from-word">#</a> Import from Word</h2>
-<p>The Import from Word service can be automated and does not need the presence of the WYSIWYG editor, nor the human supervision to convert files. Compared to Paste from Word, Import can work with any {@link @cs guides/import-from-word/content-formatting content formatting} and is not limited by features supported by the editor.</p>
+<p>The Import from Word service can be automated and does not need the presence of the WYSIWYG editor, nor human supervision to convert files. Compared to Paste from Word, Import can work with any {@link @cs guides/import-from-word/content-formatting content formatting} and is not limited by features supported by the editor.</p>
 <ul>
 <li>Allows for converting large documents into HTML that can be easily imported to CKEditor 5 and other tools.</li>
 <li>Operates directly on XML, which includes more information about the document and Word instance settings.</li>
@@ -1088,7 +1088,7 @@
 </tbody>
 </table>
 <h3 id="default-styles"><a class="headerlink" href="#default-styles">#</a> Default styles</h3>
-<p>Default styles requires enabling <code>config.default_styles</code> configuration option, both for CKEditor 5 Import from Word plugin and REST API.</p>
+<p>Default styles require enabling <code>config.default_styles</code> configuration option, both for CKEditor 5 Import from Word plugin and REST API.</p>
 <table>
 <thead>
 <tr>
@@ -1181,13 +1181,13 @@
 </tbody>
 </table>
 <ul>
-<li>⚠️ Paste: Table of Contents text only is preserved, but the structure and styling is lost.</li>
-<li>⚠️ Import: Content of a table of contents is preserved, but it does not support content bookmarks.</li>
-<li>⚠️ Form objects: text and styling is retained only.</li>
+<li>⚠️ Paste: Table of Contents text only is preserved, but the structure and styling are lost.</li>
+<li>⚠️ Import: The content of a table of contents is preserved, but it does not support content bookmarks.</li>
+<li>⚠️ Form objects: text and styling are retained only.</li>
 </ul>
 <h2 id="technical-details"><a class="headerlink" href="#technical-details">#</a> Technical details</h2>
 <p>To better understand the differences between these two products, it is worth learning how both features work on a technical level. In the case of Paste From Word, the editor uses the operating system’s clipboard, which is fed with Word content in HTML upon copying it from the document. That HTML is delivered by the Word application itself and includes the essential formatting of the document. When the user pastes something from the Word document, CKEditor 5 cleans that HTML up and makes it semantically correct, so it can be consumed by the editor. However, that operation has its own limitations, as CKEditor 5 is only able to understand as much content, as it gets from the clipboard and depends entirely on the clipboard implementation of the Microsoft Word application.</p>
-<p>The Import from Word feature does not have this limitation. As it has a direct access to the document, it is able to retrieve as much information from the document, as Word itself. Therefore, it is possible to support things like collaboration features, document settings, and other, which would normally not  be available when operating on clipboard content only. We are no longer limited by the MS Word application and thanks to that, Import from Word produces a more advanced HTML than Paste from Word.</p>
+<p>The Import from Word feature does not have this limitation. As it has direct access to the document, it is able to retrieve as much information from the document, as Word itself. Therefore, it is possible to support things like collaboration features, document settings, and others, which would not be normally available when operating on clipboard content only. We are no longer limited by the MS Word application and thanks to that, Import from Word produces a more advanced HTML than Paste from Word.</p>
 
           <div class="info-box notice notice__feedback">
             <p>

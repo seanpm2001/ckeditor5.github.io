@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Mar 06 2023 04:18:10 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Mar 09 2023 04:17:22 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Import from Word - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -490,18 +490,14 @@
           <div class="rwd-breadcrumbs"><a href="../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">Import from Word
-          </h1><p>The import from Word feature allows you to easily import <code>.docx</code> (Word document files) or <code>.dotx</code> (Word template files) into CKEditor 5 WYSIWYG editor, retaining formatting and rich media, as well as comments and tracked changes (requires <a href="../collaboration/comments/comments.html">comments</a> and <a href="../collaboration/track-changes/track-changes.html">track changes</a> features).</p>
-<p>The feature sends the selected Word file to the CKEditor Cloud Services DOCX to HTML converter service. The service returns an HTML code generated from the uploaded file and then inserts it into the editor content in place of the document selection.</p>
-<p>Please note that while there exists the <a href="../pagination/pagination.html">pagination plugin</a>, it cannot be used to reflect the original pages division in content imported from Word. It is an export-only feature.</p>
+          </h1><p>The import from Word feature lets you easily import <code>.docx</code> (Word document) or <code>.dotx</code> (Word template) files into the editor. The process preserves formatting and rich media as well as <a href="../collaboration/comments/comments.html">comments</a> and <a href="../collaboration/track-changes/track-changes.html">tracked changes</a> (if these features are enabled).</p>
 <div class="info-box notice"><p>This is a premium feature and you need a subscription to use it. You can <a href="https://ckeditor.com/pricing/">purchase it here</a> for your open source CKEditor implementation. <a href="https://ckeditor.com/contact/?sales=true#contact-form">Contact us</a> if:</p><ul>
 <li>CKEditor commercial license is needed for your application.</li>
 <li>You need on-premises (self-hosted) version of the service.</li>
 <li>You have other licensing questions.</li>
 </ul><p>You can also sign up for the <a href="https://orders.ckeditor.com/trial/premium-features">CKEditor Premium Features 30-day free trial</a>.</p></div>
-<div class="info-box notice"><p>This feature is not available in any of <a href="../../installation/getting-started/predefined-builds.html">predefined builds</a>. See the <a href="#installation">installation</a> section to learn how to enable it in your editor.</p></div>
-<div class="info-box notice notice__info"><p>Note that some formatting or content may be stripped if you do not enable related CKEditor 5 plugins.</p><p>Read more in the <a href="#automatic-content-filtering">Automatic content filtering</a> section below.</p></div>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
-<p>The demo below allows you to import a Word file into the editor. To test the feature, you can download the <a href="../../assets/pd_policy.docx">sample Word document</a> and import it into CKEditor 5 below. Click the “Import from Word” toolbar button <span class="editor-icon"><img src="../../assets/icons/045e489c1f.svg" class="editor-icon__image" alt="Import from Word"></span> to send the selected Word file to the CKEditor Cloud Services DOCX to HTML converter service. After a short while you should see that the Word file content has been inserted into the editor.</p>
+<p>The demo below allows you to import a Word file into the editor. To test the feature, you can download the <a href="../../assets/pd_policy.docx">sample Word document</a> and import it into CKEditor 5 below. Click the import from Word toolbar button <span class="editor-icon"><img src="../../assets/icons/045e489c1f.svg" class="editor-icon__image" alt="Import from Word"></span> to send the selected Word file to the CKEditor Cloud Services DOCX to HTML converter service. After a short while, the Word file content will appear in the editor.</p>
 <div class="live-snippet"><div class="editor-holder">
 	<div class="editor-container">
 		<div id="snippet-import-word"></div>
@@ -542,6 +538,10 @@
 </style>
 </div>
 <div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
+<h2 id="additional-feature-information"><a class="headerlink" href="#additional-feature-information">#</a> Additional feature information</h2>
+<p>The import from Word feature sends the selected Word file to the CKEditor Cloud Services DOCX to HTML converter service. The service returns HTML code generated from the uploaded file and then inserts it into the editor content in place of the document selection.</p>
+<div class="info-box notice notice__info"><p>Note that some formatting or content may be stripped if you do not enable related CKEditor 5 plugins.</p><p>Read more in the <a href="#automatic-content-filtering">Automatic content filtering</a> section below.</p></div>
+<p>Please note that while there exists the <a href="../pagination/pagination.html">pagination plugin</a>, it cannot be used to reflect the original pages division in content imported from Word. It is an export-only feature.</p>
 <h2 id="importing-styles"><a class="headerlink" href="#importing-styles">#</a> Importing styles</h2>
 <p>CKEditor 5 supports two strategies for importing styles from Word:</p>
 <ol>
@@ -557,12 +557,6 @@
 <p>The <a href="../pasting/paste-from-word.html">paste from Word</a> feature allows you to paste content from Microsoft Word into your CKEditor 5 WYSIWYG editor and maintain the original structure and formatting. After creating a document in Microsoft Word you can simply copy it to CKEditor 5 and retain basic text styling, heading levels, links, lists, tables and images on condition, that these features are supported by the installed CKEditor 5 plugins (e.g. if font colors are not explicitly turned on in the editor instance, they will be dropped). This operation is fast and easy, but can only be done “by hand”.</p>
 <p>The {@link @cs guides/import-from-word/overview import from Word}, however, is much more advanced. First of all, it can be automated and does not need the presence of CKEditor 5 editor, nor the human supervision to convert files. These can be fed into the service and converted automatically, becoming a part of a larger process.</p>
 <p>While the paste from Word feature can only retain the formatting currently supported by the editor instance, this limitation does not concern the Import from Word service. You can read more about the differences and specific supported features in the <a href="features-comparison.html">dedicated comparison guide</a>.</p>
-<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
-<ul>
-<li>The <a href="../pasting/paste-from-word.html">paste from Word</a> feature allows you to paste content from Microsoft Word and maintain the original structure and formatting.</li>
-<li>The <a href="../export-word.html">export to Word</a> feature allows you to generate editable <code>.docx</code> files out of your editor-created content.</li>
-<li>The <a href="../export-pdf.html">export to PDF</a> feature allows you to generate portable PDF files out of your editor-created content.</li>
-</ul>
 <h2 id="automatic-content-filtering"><a class="headerlink" href="#automatic-content-filtering">#</a> Automatic content filtering</h2>
 <p>Due to the CKEditor 5 <a href="../../framework/index.html">custom data model</a>, only content which is handled by the editor plugins will be preserved. This guarantees that the output provided by CKEditor 5 will be clean and semantic.</p>
 <p>However, this also means that you may need to enable some additional plugins in your rich-text editor to prevent stripping content or formatting (e.g. <a href="../font.html">font family and font size</a> features to handle font formatting).</p>
@@ -586,6 +580,7 @@
 </ul>
 <div class="info-box notice notice__info"><p>The import from Word feature requires the <a href="../lists/document-lists.html">document lists</a> feature to work. Be sure to <a href="../lists/document-lists.html#installation">install it</a> before you start.</p></div>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
+<div class="info-box notice"><p>This feature is not available in any of <a href="../../installation/getting-started/predefined-builds.html">predefined builds</a>.</p></div>
 <p>To add the import from Word feature to your editor, first install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-import-word"><code>@ckeditor/ckeditor5-import-word</code></a> package:</p>
 <pre class="highlight"><code class="">npm install --save @ckeditor/ckeditor5-import-word
 </code></pre>
@@ -673,6 +668,22 @@ ClassicEditor
 <li><code>'none'</code> – Comment text is imported without any styling.</li>
 <li><code>'full'</code> – All styles are preserved (not recommended).</li>
 </ul>
+<h2 id="known-limitations"><a class="headerlink" href="#known-limitations">#</a> Known limitations</h2>
+<ul>
+<li><strong>The <a href="../lists/document-lists.html">document lists</a> feature must be enabled to properly handle lists items.</strong></li>
+<li>CKEditor 5 does not support lists with skipped intermediate levels.</li>
+<li>Due to lists merging in CKEditor 5, custom starting values are sometimes discarded by the editor.</li>
+<li>CKEditor 5 may overwrite some table borders with its built-in styles.</li>
+<li>Document headers and footers are not supported yet.</li>
+<li>For track changes and comments, check the <a href="features-comparison.html#collaboration-features">feature comparison guide</a> for current development.</li>
+<li>The feature does not support <code>.doc</code> files.</li>
+</ul>
+<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
+<ul>
+<li>The <a href="../pasting/paste-from-word.html">paste from Word</a> feature allows you to paste content from Microsoft Word and maintain the original structure and formatting.</li>
+<li>The <a href="../export-word.html">export to Word</a> feature allows you to generate editable <code>.docx</code> files out of your editor-created content.</li>
+<li>The <a href="../export-pdf.html">export to PDF</a> feature allows you to generate portable PDF files out of your editor-created content.</li>
+</ul>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
 <p>The <a href="../../api/module_import-word_importword-ImportWord.html"><code>ImportWord</code></a> plugin registers:</p>
 <ul>
@@ -699,16 +710,6 @@ ClassicEditor
 <h2 id="collaboration-features-integration"><a class="headerlink" href="#collaboration-features-integration">#</a> Collaboration features integration</h2>
 <p>Import from word automatically integrates with the <a href="../collaboration/comments/comments.html">comments</a> and <a href="../collaboration/track-changes/track-changes.html">track changes</a> features, if these features are properly enabled and configured in your editor build.</p>
 <p>When collaboration features are enabled, the <code>data</code> parameter in the <code>dataInsert</code> event may include the <code>comment_threads</code> and <code>suggestions</code> fields, which will hold data from the imported Word file.</p>
-<h2 id="known-limitations"><a class="headerlink" href="#known-limitations">#</a> Known limitations</h2>
-<ul>
-<li><strong>The <a href="../lists/document-lists.html">document lists</a> feature must be enabled to properly handle lists items.</strong></li>
-<li>CKEditor 5 does not support lists with skipped intermediate levels.</li>
-<li>Due to lists merging in CKEditor 5, custom starting values are sometimes discarded by the editor.</li>
-<li>CKEditor 5 may overwrite some table borders with its built-in styles.</li>
-<li>Document headers and footers are not supported yet.</li>
-<li>For track changes and comments, check the <a href="features-comparison.html#collaboration-features">feature comparison guide</a> for current development.</li>
-<li>The feature does not support <code>.doc</code> files.</li>
-</ul>
 
           <div class="info-box notice notice__feedback">
             <p>

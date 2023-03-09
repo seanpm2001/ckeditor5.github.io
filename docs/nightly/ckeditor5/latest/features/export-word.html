@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Mar 06 2023 04:18:06 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Mar 09 2023 04:17:18 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Export to Word - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -490,16 +490,12 @@
           <div class="rwd-breadcrumbs"><a href="../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../assets/2.4.0/img/book.svg" alt="guide">Export to Word
-          </h1><p>The export to Word feature allows you to generate a <code>.docx</code> file directly from the CKEditor 5 WYSIWYG editor content.</p>
-<p>When enabled, this feature sends the content of your editor together with the styles that are used to display it to the CKEditor Cloud Services HTML to DOCX converter service. The service then generates a Word document that can be downloaded by the user. This allows you to easily export your content to the Microsoft Word format. You can read more about the converter and the plugin in a <a href="https://ckeditor.com/blog/feature-spotlight-html-to-word-converter/">dedicated Feature spotlight blog post</a>.</p>
-<div class="info-box notice"><p>This is a premium feature and you need a subscription to use it. You can <a href="https://ckeditor.com/pricing/">purchase it here</a> for your open source CKEditor implementation. <a href="https://ckeditor.com/contact/?sales=true#contact-form">Contact us</a> if:</p><ul>
+          </h1><p>The export to Word feature lets you generate a <code>.docx</code> file directly from the editor.</p>
+<div class="info-box notice"><p>This is a premium feature and you need a subscription to use it. You can <a href="https://ckeditor.com/pricing/">purchase it here</a> for your open-source CKEditor implementation. <a href="https://ckeditor.com/contact/?sales=true#contact-form">Contact us</a> if:</p><ul>
 <li>CKEditor commercial license is needed for your application.</li>
 <li>You need on-premises (self-hosted) version of the service.</li>
 <li>You have other licensing questions.</li>
 </ul><p>You can also sign up for the <a href="https://orders.ckeditor.com/trial/premium-features">CKEditor Premium Features 30-day free trial</a> to test the feature.</p><p>If this feature is used without authentication, the resulting document will be watermarked.</p></div>
-<p>The complementary <a href="pagination/pagination.html">pagination feature</a> allows you to see where page breaks would be after the document is exported to Word. Thanks to the live preview, the user is able to fine-tune the structure of the output document when editing it. In addition to this, the pagination feature shows you the page count and allows to easily navigate between the document pages.</p>
-<div class="info-box notice"><p>Please note that the generated <code>.docx</code> file may not be fully compatible with older versions of Word. At the time of writing this guide the generated document was fully compatible with Word in Office 365.</p></div>
-<div class="info-box notice notice__info"><p>This feature is enabled by default in the <a href="../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only. See the <a href="#installation">installation</a> section to learn how to enable it in your editor.</p></div>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>The demo below allows you to generate a Word file based on the editor content. Craft the document content in the WYSIWYG editor, then click the “Export to Word” toolbar button <span class="editor-icon"><img src="../assets/icons/e87b1d7a0b.svg" class="editor-icon__image" alt="Export to Word"></span> to save it as a Word file.</p>
 <div class="live-snippet"><div class="document-container">
@@ -571,12 +567,10 @@
 <div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
 <div class="info-box notice"><p>If you have already tried the export to Word feature, please <strong>help us develop it by sharing your feedback</strong> with <a href="https://www.surveymonkey.com/r/ZYJBCZT">this short survey</a>. It only takes about 2 minutes, but will be invaluable for the development team. Thank you!</p></div>
 <h2 id="how-it-works"><a class="headerlink" href="#how-it-works">#</a> How it works</h2>
-<p>The export to Microsoft Word feature collects the HTML generated with the <a href="../api/module_editor-classic_classiceditor-ClassicEditor.html#function-getData"><code>editor.getData()</code></a> method and the <a href="../installation/advanced/content-styles.html#the-full-list-of-content-styles">default editor content styles</a> combined with the styles provided by you in the configuration. It then sends them to the CKEditor Cloud Services HTML to DOCX converter service. The service generates a Word file and returns it to the user’s browser so they can save it in the Word format on their disk.</p>
-<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
-<ul>
-<li>The complementary <a href="pagination/pagination.html">pagination feature</a> provides live preview of the document’s page breaks, ensuring the output document looks correct.</li>
-<li>If you would like to export your content to a portable, universal format, using the <a href="export-pdf.html">export to PDF</a> feature will allow you to generate PDF files out of your editor-created content.</li>
-</ul>
+<p>The export to Microsoft Word feature collects the HTML generated with the <a href="../api/module_editor-classic_classiceditor-ClassicEditor.html#function-getData"><code>editor.getData()</code></a> method and the <a href="../installation/advanced/content-styles.html#the-full-list-of-content-styles">default editor content styles</a> combined with the styles provided by you in the configuration. It then sends them to the CKEditor Cloud Services HTML to DOCX converter service. The service generates a Word file and returns it to the user’s browser so they can save it in the Word format on their disk.<br>
+You can read more about the converter and the plugin in a <a href="https://ckeditor.com/blog/feature-spotlight-html-to-word-converter/">dedicated Feature spotlight blog post</a>.</p>
+<div class="info-box notice"><p>Please note that the generated <code>.docx</code> file may not be fully compatible with older versions of Word. At the time of writing this guide the generated document was fully compatible with Word in Office 365.</p></div>
+<p>The complementary <a href="pagination/pagination.html">pagination feature</a> allows you to see where page breaks would be after the document is exported to Word. Thanks to the live preview, the user is able to fine-tune the structure of the output document when editing it. In addition to this, the pagination feature shows you the page count and lets you easily navigate between the document pages.</p>
 <h2 id="before-you-start"><a class="headerlink" href="#before-you-start">#</a> Before you start</h2>
 <div class="info-box notice"><p>This is an additionally payable feature. <a href="https://ckeditor.com/contact/?sales=true#contact-form">Contact us</a> to receive an offer tailored to your needs. If you already have a valid license, please log into your <a href="https://dashboard.ckeditor.com/">user dashboard</a> to access the feature settings.</p><p>You can also sign up for the <a href="https://orders.ckeditor.com/trial/premium-features">CKEditor Premium Features 30-day free trial</a> to test the feature.</p></div>
 <p>After you purchase a license, follow the steps below, as explained in the {@link @cs guides/export-to-word/quick-start Export to Word quick start guide}:</p>
@@ -586,6 +580,7 @@
 <li><a href="#installation">Install</a> and <a href="#configuration">configure</a> the CKEditor 5 export to Word plugin.</li>
 </ul>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
+<div class="info-box notice notice__info"><p>This feature is enabled by default in the <a href="../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only.</p></div>
 <p>To add the export to Word feature to your editor, install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-export-word"><code>@ckeditor/ckeditor5-export-word</code></a> package:</p>
 <pre class="highlight"><code class="">npm install --save @ckeditor/ckeditor5-export-word
 </code></pre>
@@ -664,7 +659,7 @@ const exportWordConfig = {
 </li>
 <li>
 <p><strong><a href="../api/module_export-word_exportword-ExportWordConfig.html#member-tokenUrl"><code>config.exportWord.tokenUrl</code></a></strong></p>
-<p>A token URL or a token request function. This field is optional and should be used when a different <a href="../api/module_cloud-services_cloudservices-CloudServicesConfig.html#member-tokenUrl"><code>tokenUrl</code></a> is required for the Export to Word feature. You can skip this option if you use the <code>cloudServices</code> configuration to provide the same <code>tokenUrl</code> (in fact in most cases you will probably want to provide the token in <code>cloudServices</code>, as other plugins like <a href="images/image-upload/easy-image.html">EasyImage</a> or <a href="collaboration/real-time-collaboration/real-time-collaboration.html">real-time collaboration</a> will use this token as well. For the purpose of this guide, to explicitly show that this value is needed, we leave it the inside <code>exportWord</code> config).</p>
+<p>A token URL or a token request function. This field is optional and should be used when a different <a href="../api/module_cloud-services_cloudservices-CloudServicesConfig.html#member-tokenUrl"><code>tokenUrl</code></a> is required for the Export to Word feature. You can skip this option if you use the <code>cloudServices</code> configuration to provide the same <code>tokenUrl</code> (in fact, in most cases you will probably want to provide the token in <code>cloudServices</code>, as other plugins like <a href="images/image-upload/easy-image.html">EasyImage</a> or <a href="collaboration/real-time-collaboration/real-time-collaboration.html">real-time collaboration</a> will use this token as well. For the purpose of this guide, to explicitly show that this value is needed, we leave it inside the <code>exportWord</code> config).</p>
 </li>
 <li>
 <p><strong><a href="../api/module_export-word_exportword-ExportWordConfig.html#member-converterOptions"><code>config.exportWord.converterOptions</code></a></strong></p>
@@ -673,7 +668,7 @@ const exportWordConfig = {
 <li>
 <p><strong><a href="../api/module_export-word_exportword-ExportWordConfig.html#member-dataCallback"><code>config.exportWord.dataCallback</code></a></strong></p>
 <p>By default, the plugin uses <code>editor.getData( { pagination: true } )</code> to gather the HTML to be sent to the conversion service. You can use this option to customize the editor’s data.</p>
-<p>When using the <a href="pagination/pagination.html">pagination</a> feature, the <code>pagination:true</code> option inserts additional markers into editor’s data. Thanks to that, the DOCX converter creates a Word document similar to what is displayed in the editor.</p>
+<p>When using the <a href="pagination/pagination.html">pagination</a> feature, the <code>pagination:true</code> option inserts additional markers into the editor’s data. Thanks to that, the DOCX converter creates a Word document similar to what is displayed in the editor.</p>
 </li>
 </ul>
 <div class="info-box notice"><p>The <a href="../api/module_export-word_exportword-ExportWordConfig.html#member-dataCallback"><code>config.exportWord.dataCallback</code></a> option may be useful when handling:</p><ul>
@@ -711,7 +706,7 @@ exportWord: {
 </ul>
 <p>can be applied to the following elements: <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code>, <code>p</code>, <code>span</code>, <code>td</code>, <code>th</code>, <code>strong</code>, <code>i</code>, <code>u</code>, <code>s</code>, <code>sub</code>, <code>sup</code>, <code>mark</code>.</p>
 <p>You can also position images using <code>float</code> CSS property, supporting <code>left</code>, <code>right</code>, and <code>none</code> values.</p>
-<div class="info-box notice"><p>You can use any CSS selector to style the above elements, including classes, attributes, and <code>*</code> selector.</p></div>
+<div class="info-box notice"><p>You can use any CSS selector to style the above elements, including classes, attributes, and the <code>*</code> selector.</p></div>
 <h3 id="setting-the-page-format"><a class="headerlink" href="#setting-the-page-format">#</a> Setting the page format</h3>
 <p>Consistency is an important factor. To make sure that the editor content and the generated Word file look exactly the same, you need to match their format settings. You can modify your existing stylesheet or use a new one, for example, <code>format.css</code>. By default the CKEditor Cloud Services HTML to DOCX converter is set to A4 format, but you may change this setting in your configuration.</p>
 <p>Assuming that you want to create a document in the US Letter format, with the standard margins (<code>19mm</code> for each side), here is the example code you can use:</p>
@@ -759,7 +754,7 @@ ClassicEditor
 </code></pre>
 <p>With these settings, the content in the generated Word file should have the same US Letter format layout as it has in the editor.</p>
 <h3 id="header-and-footer"><a class="headerlink" href="#header-and-footer">#</a> Header and footer</h3>
-<p>The converter allows you to set the document’s header and footer in a similar way as you do this in your Microsoft Word or Google Docs files.</p>
+<p>The converter lets you set the document’s header and footer similarly to Microsoft Word or Google Docs.</p>
 <pre class="highlight"><code class="js">// Let's keep the CSS string as a variable to avoid unnecessary string duplication.
 const templateCSS = '.styled { font-weight: bold; text-align: center; }'
 
@@ -822,6 +817,11 @@ const converterOptions = {
 <ul>
 <li>Inline and block formatting <a href="collaboration/track-changes/track-changes.html">suggestions</a> – Such suggestions are not included in the exported document.</li>
 <li><a href="collaboration/comments/comments.html">Comments</a> applied to whole widgets (e.g. tables) – Such comments are not included in the exported document.</li>
+</ul>
+<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
+<ul>
+<li>The complementary <a href="pagination/pagination.html">pagination feature</a> provides live preview of the document’s page breaks, ensuring the output document looks correct.</li>
+<li>If you would like to export your content to a portable, universal format, using the <a href="export-pdf.html">export to PDF</a> feature will allow you to generate PDF files out of your editor-created content.</li>
 </ul>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
 <p>The <a href="../api/module_export-word_exportword-ExportWord.html"><code>ExportWord</code></a> plugin registers:</p>

@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Mon Mar 06 2023 04:18:13 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Mar 09 2023 04:17:25 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Overview - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -500,12 +500,8 @@
 }
 </style>
 
-<p>The pagination feature is a dedicated <a href="../../examples/builds/document-editor.html">decoupled editor</a> plugin which allows you to see where page breaks would be after the document is <a href="../export-pdf.html">exported to PDF</a> or <a href="../export-word.html">to Word</a>. It also respects page breaks inserted by the user with the <a href="../page-break.html">page break feature</a>.</p>
-<p>In addition to this, the pagination feature shows you the page numbering as well as the total number of pages in the document. It also introduces a dedicated toolbar that allows you to easily go to the next or previous page of the document or jump straight to a particular page.</p>
+<p>The pagination feature is a dedicated <a href="../../examples/builds/document-editor.html">decoupled editor</a> plugin that lets you see where page breaks will be after the document is <a href="../export-pdf.html">exported to PDF</a> or <a href="../export-word.html">to Word</a>. The feature respects page breaks inserted by the user with the <a href="../page-break.html">page break feature</a>.</p>
 <div class="info-box notice"><p>This is a premium feature and you need a license for it on top of your CKEditor 5 commercial license. <a href="https://ckeditor.com/contact/?sales=true#contact-form">Contact us</a> to receive an offer tailored to your needs.</p><p>You can also sign up for the <a href="https://orders.ckeditor.com/trial/premium-features">CKEditor Premium Features 30-day free trial</a> to test the feature.</p></div>
-<p>The pagination feature is complementary to the <a href="../export-pdf.html">export to PDF</a> and <a href="../export-word.html">export to Word</a> features of CKEditor 5, ensuring the proper output every time. Combined with other CKEditor 5 features, these plugins allow for advanced editing and document creation implementations. This kind of practical application is shown in the <a href="https://ckeditor.com/blog/How-to-create-ready-to-print-documents-with-page-structure-in-WYSIWYG-editor---CKEditor-5-pagination-feature/">How to create ready-to-print documents with CKEditor 5 pagination feature</a> blog post.</p>
-<p>Please note that the pagination plugin cannot be used to reflect the original pages division in content <a href="../import-word/import-word.html">imported from Word</a>. This is an export-only feature.</p>
-<div class="info-box notice"><p>This feature is dedicated for use with the <a href="../../examples/builds/document-editor.html">decoupled editor</a> only. If used with different types of editor builds, it may result in certain issues, for example incorrect rendering of the toolbar. If you need support for the pagination feature in other editor types, feel free to <a href="https://ckeditor.com/contact/">contact us</a> and inquire.</p></div>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>The demo below allows you to see the page break lines that would match page boundaries when the document is exported to a PDF or a DOCX file. Use the pagination feature toolbar buttons to navigate back <span class="editor-icon"><img src="../../assets/icons/a385792547.svg" class="editor-icon__image" alt="Previous page"></span> and forth <span class="editor-icon"><img src="../../assets/icons/32227684f9.svg" class="editor-icon__image" alt="Next page"></span> between pages.</p>
 <div class="invalid-browser">
@@ -959,22 +955,20 @@
 </style>
 </div>
 <div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
-<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
-<p>Here are some useful CKEditor 5 features that you can use together with the pagination plugin for an all-around paged editing experience:</p>
-<ul>
-<li>The <a href="../page-break.html">page break feature</a> allows you to manually insert a page break into your document.</li>
-<li>The <a href="../export-word.html">export to Word</a> feature will allow you to generate editable <code>.docx</code> files out of your editor-created content.</li>
-<li>The <a href="../export-pdf.html">export to PDF</a> feature will allow you to generate portable PDF files out of your editor-created content.</li>
-</ul>
+<h2 id="additional-feature-information"><a class="headerlink" href="#additional-feature-information">#</a> Additional feature information</h2>
+<p>In addition to page breaks, the pagination feature shows you page numbers and the total number of pages in the document. The feature also introduces a dedicated toolbar that lets you easily go to the next or previous page of the document or jump straight to a particular page.</p>
+<p>The pagination feature is complementary to the <a href="../export-pdf.html">export to PDF</a> and <a href="../export-word.html">export to Word</a> features of CKEditor 5, ensuring the proper output every time. Combined with other CKEditor 5 features, these plugins allow for advanced editing and document creation implementations. This kind of practical application is shown in the <a href="https://ckeditor.com/blog/How-to-create-ready-to-print-documents-with-page-structure-in-WYSIWYG-editor---CKEditor-5-pagination-feature/">How to create ready-to-print documents with CKEditor 5 pagination feature</a> blog post.</p>
+<p>Please note that the pagination plugin cannot be used to reflect the original pages division in content <a href="../import-word/import-word.html">imported from Word</a>. This is an export-only feature.</p>
+<div class="info-box notice"><p>This feature is dedicated for use with the <a href="../../examples/builds/document-editor.html">decoupled editor</a> only. If used with different types of editor builds, it may result in certain issues, for example incorrect rendering of the toolbar. If you need support for the pagination feature in other editor types, feel free to <a href="https://ckeditor.com/contact/">contact us</a> and inquire.</p></div>
 <h2 id="before-you-start"><a class="headerlink" href="#before-you-start">#</a> Before you start</h2>
 <h3 id="pagination-license"><a class="headerlink" href="#pagination-license">#</a> Pagination license</h3>
-<div class="info-box notice"><p>This is an additionally payable feature. <a href="https://ckeditor.com/contact/?sales=true#contact-form">Contact us</a> to receive an offer tailored to your needs. If you already have a valid license, please log into your <a href="https://dashboard.ckeditor.com/">user dashboard</a> to access the feature settings.</p><p>You can also sign up for the <a href="https://orders.ckeditor.com/trial/premium-features">CKEditor Premium Features 30-day free trial</a> to test the feature.</p><p>If you have more than one license for CKEditor premium features (Comments, Track changes, Revision history, or Pagination), you may use any key of those in your CKEditor configuration to activate all of the features.</p><p>Since the introduction of single key for all premium features (Comments, Track changes, Revision history, or Pagination), the one key can be used to activate any and all of the features.</p></div>
+<div class="info-box notice"><p>This is an additionally payable feature. <a href="https://ckeditor.com/contact/?sales=true#contact-form">Contact us</a> to receive an offer tailored to your needs. If you already have a valid license, please log into your <a href="https://dashboard.ckeditor.com/">user dashboard</a> to access the feature settings.</p><p>You can also sign up for the <a href="https://orders.ckeditor.com/trial/premium-features">CKEditor Premium Features 30-day free trial</a> to test the feature.</p><p>If you have more than one license for CKEditor premium features (Comments, Track changes, Revision history, or Pagination), you may use any key of those in your CKEditor configuration to activate all of the features.</p><p>Since the introduction of a single key for all premium features (Comments, Track changes, Revision history, or Pagination), the one key can be used to activate any and all of the features.</p></div>
 <p>After you purchase a license, follow the steps below to obtain important information needed during the configuration phase.</p>
 <h3 id="log-in-to-the-ckeditor-ecosystem-dashboard"><a class="headerlink" href="#log-in-to-the-ckeditor-ecosystem-dashboard">#</a> Log in to the CKEditor Ecosystem dashboard</h3>
 <p>Log in to the <a href="https://dashboard.ckeditor.com">CKEditor Ecosystem dashboard</a>. You will receive a confirmation email and will be asked to create a password for your account. Keep it safe. Navigate to “Your products &gt; CKEditor”.</p>
 <p>From the list of available subscriptions in the dashboard choose the Pagination subscription and press the “Manage” link.</p>
 <p><img src="../../assets/img/management.png" data-lightbox="true" alt="CKEditor with Premium Features view." width="744"></p>
-<p>On the next page you will see the subscription parameters overview together with the management area.</p>
+<p>On the next page, you will see the subscription parameters overview together with the management area.</p>
 <h3 id="access-the-license-key"><a class="headerlink" href="#access-the-license-key">#</a> Access the license key</h3>
 <p>Once you enter the management console for pagination, you have access to the license key needed to run the feature. This key is necessary to activate the feature during installation. Do not share it with anyone.</p>
 <p><img src="../../assets/img/access-code.png" data-lightbox="true" alt="Pagination license key in the management console." width="934"></p>
@@ -1015,7 +1009,7 @@ DecoupledEditor
 <div class="info-box notice"><p>Read more about <a href="../../installation/plugins/installing-plugins.html">installing plugins</a>.</p></div>
 <h2 id="configuration"><a class="headerlink" href="#configuration">#</a> Configuration</h2>
 <div class="info-box notice"><p>For more technical details, please check the <a href="../../api/module_pagination_pagination-PaginationConfig.html">plugin configuration API</a>.</p></div>
-<p>The configuration is the key to allow the pagination feature to measure where the page breaks would be. These configuration values must match the <a href="../../api/module_export-pdf_exportpdf-ExportPdfConfig.html">export to PDF</a> or the <a href="../../api/module_export-word_exportword-ExportWordConfig.html">export to Word</a> configuration. Note that the structure of both configurations is different.</p>
+<p>The configuration is crucial for allowing the pagination feature to measure where the page breaks would be. These configuration values must match the <a href="../../api/module_export-pdf_exportpdf-ExportPdfConfig.html">export to PDF</a> or the <a href="../../api/module_export-word_exportword-ExportWordConfig.html">export to Word</a> configuration. Note that the structure of both configurations is different.</p>
 <h3 id="example-configuration"><a class="headerlink" href="#example-configuration">#</a> Example configuration</h3>
 <pre class="highlight"><code class="js">{
     pagination: {
@@ -1034,7 +1028,7 @@ DecoupledEditor
 }
 </code></pre>
 <h3 id="plugin-options"><a class="headerlink" href="#plugin-options">#</a> Plugin options</h3>
-<p>The plugin options tell the pagination feature what the format of the page and the page margins are. There is also an additional configuration option that allows you to enable the pagination in all browsers, including the officially unsupported ones.</p>
+<p>The plugin options tell the pagination feature what the format of the page and the page margins are. There is also an additional configuration option that allows you to enable pagination in all browsers, including the officially unsupported ones.</p>
 <ul>
 <li>
 <p><strong><a href="../../api/module_pagination_pagination-PaginationConfig.html#member-pageWidth"><code>config.pagination.pageWidth</code></a></strong>, <strong><a href="../../api/module_pagination_pagination-PaginationConfig.html#member-pageHeight"><code>config.pagination.pageHeight</code></a></strong></p>
@@ -1120,7 +1114,7 @@ DecoupledEditor
 </li>
 </ul>
 <h3 id="ckeditor-5-initialization"><a class="headerlink" href="#ckeditor-5-initialization">#</a> CKEditor 5 initialization</h3>
-<p>If you want to create the editor detached and attach it to the DOM tree later, remember to call <code>editor.ui.update();</code> after editor is attached.</p>
+<p>If you want to create the editor detached and attach it to the DOM tree later, remember to call <code>editor.ui.update();</code> after the editor is attached.</p>
 <pre class="highlight"><code class="js">DecoupledEditor
     .create( initialData, config )
     .then( editor =&gt; {
@@ -1145,7 +1139,7 @@ DecoupledEditor
 <li><a href="../export-word.html#known-issues">Export to Word - known issues</a></li>
 </ul>
 <h3 id="browser-compatibility"><a class="headerlink" href="#browser-compatibility">#</a> Browser compatibility</h3>
-<p>Currently the pagination feature works best with the following web browsers:</p>
+<p>Currently, the pagination feature works best with the following web browsers:</p>
 <ul>
 <li>Chrome</li>
 <li>Chromium</li>
@@ -1154,6 +1148,13 @@ DecoupledEditor
 </ul>
 <p>The pagination plugin does not work in Firefox as of yet. There are also some glitches in Safari. To prevent users from seeing potentially invalid pagination, the plugin disables itself after detecting these unsupported browsers.</p>
 <p>If you want to enable the pagination feature in an unsupported browser, you can set the <a href="../../api/module_pagination_pagination-PaginationConfig.html#member-enableOnUnsupportedBrowsers"><code>config.pagination.enableOnUnsupportedBrowsers</code></a> configuration option to <code>true</code> or enable it at runtime by calling <code>editor.plugins.get( 'Pagination' ).clearForceDisabled( 'browserCheck' )</code>.</p>
+<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
+<p>Here are some useful CKEditor 5 features that you can use together with the pagination plugin for an all-around paged editing experience:</p>
+<ul>
+<li>The <a href="../page-break.html">page break feature</a> allows you to manually insert a page break into your document.</li>
+<li>The <a href="../export-word.html">export to Word</a> feature will allow you to generate editable <code>.docx</code> files out of your editor-created content.</li>
+<li>The <a href="../export-pdf.html">export to PDF</a> feature will allow you to generate portable PDF files out of your editor-created content.</li>
+</ul>
 <h2 id="common-api"><a class="headerlink" href="#common-api">#</a> Common API</h2>
 <p>The <a href="../../api/module_pagination_pagination-Pagination.html"><code>Pagination</code></a> plugin registers:</p>
 <ul>
