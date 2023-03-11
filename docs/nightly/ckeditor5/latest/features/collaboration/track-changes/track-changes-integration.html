@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Mar 09 2023 04:17:31 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 11 2023 04:19:46 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Integration - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -640,7 +640,14 @@ ClassicEditor.defaultConfig = {
             container: document.querySelector( '#sidebar' )
         },
         toolbar: {
-            items: [ 'bold', 'italic', '|', 'trackChanges' ]
+            items: [
+                'undo', 'redo',
+                '|', 'comment',
+                '|', 'heading',
+                '|', 'bold', 'italic',
+                '|', 'link',
+                '|', 'bulletedList', 'numberedList'
+            ]
         }
     } )
     .catch( error =&gt; console.error( error ) );
@@ -778,7 +785,14 @@ const appData = {
             container: document.querySelector( '#sidebar' )
         },
         toolbar: {
-            items: [ 'bold', 'italic', '|', 'trackChanges' ]
+            items: [
+                'undo', 'redo',
+                '|', 'comment',
+                '|', 'heading',
+                '|', 'bold', 'italic',
+                '|', 'link',
+                '|', 'bulletedList', 'numberedList'
+            ]
         }
     } )
     .catch( error =&gt; console.error( error ) );
@@ -795,7 +809,14 @@ const appData = {
             container: document.querySelector( '#sidebar' )
         },
         toolbar: {
-            items: [ 'bold', 'italic', '|', 'trackChanges' ]
+            items: [
+                'undo', 'redo',
+                '|', 'comment',
+                '|', 'heading',
+                '|', 'bold', 'italic',
+                '|', 'link',
+                '|', 'bulletedList', 'numberedList'
+            ]
         }
     } )
     .then( editor =&gt; {
@@ -976,7 +997,14 @@ const appData = {
                     container: document.querySelector( '#sidebar' )
                 },
                 toolbar: {
-                    items: [ 'bold', 'italic', '|', 'trackChanges' ]
+                    items: [
+                        'undo', 'redo',
+                        '|', 'comment',
+                        '|', 'heading',
+                        '|', 'bold', 'italic',
+                        '|', 'link',
+                        '|', 'bulletedList', 'numberedList'
+                    ]
                 }
             } )
             .then( editor =&gt; {
@@ -1233,7 +1261,14 @@ ClassicEditor
             container: document.querySelector( '#sidebar' )
         },
         toolbar: {
-            items: [ 'bold', 'italic', '|', 'trackChanges' ]
+            items: [
+                'undo', 'redo',
+                '|', 'comment',
+                '|', 'heading',
+                '|', 'bold', 'italic',
+                '|', 'link',
+                '|', 'bulletedList', 'numberedList'
+            ]
         }
     } )
     .catch( error =&gt; console.error( error ) );
@@ -1421,7 +1456,14 @@ ClassicEditor
                     container: document.querySelector( '#sidebar' )
                 },
                 toolbar: {
-                    items: [ 'bold', 'italic', '|', 'trackChanges' ]
+                    items: [
+                        'undo', 'redo',
+                        '|', 'comment',
+                        '|', 'heading',
+                        '|', 'bold', 'italic',
+                        '|', 'link',
+                        '|', 'bulletedList', 'numberedList'
+                    ]
                 }
             } )
             .catch( error =&gt; console.error( error ) );

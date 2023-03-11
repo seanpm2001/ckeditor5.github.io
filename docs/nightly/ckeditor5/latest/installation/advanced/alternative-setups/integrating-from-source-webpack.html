@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Mar 09 2023 04:17:49 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 11 2023 04:20:05 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Integrating from source using webpack - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -217,6 +217,7 @@
 <p>First of all, you need to install source packages that you will use. If you base your integration on one of the existing builds, you can take them from that build’s <code>package.json</code> file (see e.g. <a href="https://github.com/ckeditor/ckeditor5/blob/master/packages/ckeditor5-build-classic/package.json">classic build’s <code>package.json</code></a>). At this moment you can choose the editor creator and the features you want. Keep in mind, however, that all packages (excluding <code>@ckeditor/ckeditor5-dev-*</code>) <a href="../../plugins/installing-plugins.html#requirements">must have the same version as the base editor package</a>.</p>
 <p>Copy these dependencies to your <code>package.json</code> and call <code>npm install</code> to install them. The <code>dependencies</code> (or <code>devDependencies</code>) section of <code>package.json</code> should look more or less like this:</p>
 <pre class="highlight"><code class="js">"dependencies": {
+    // More dependencies.
     // ...
 
     "@ckeditor/ckeditor5-adapter-ckfinder": "^x.y.z",
@@ -234,6 +235,7 @@
     "@ckeditor/ckeditor5-theme-lark": "^x.y.z",
     "@ckeditor/ckeditor5-upload": "^x.y.z"
 
+    // More dependencies.
     // ...
 }
 </code></pre>
@@ -261,6 +263,7 @@ const { styles } = require( '@ckeditor/ckeditor5-dev-utils' );
 
 module.exports = {
     plugins: [
+        // More plugins.
         // ...
 
         new CKEditorTranslationsPlugin( {
@@ -312,7 +315,8 @@ module.exports = {
 const { styles } = require( '@ckeditor/ckeditor5-dev-utils' );
 
 Encore.
-    // ... your configuration ...
+    // Your configuration.
+    // ...
 
     .addPlugin( new CKEditorTranslationsPlugin( {
         // See https://ckeditor.com/docs/ckeditor5/latest/features/ui-language.html
@@ -515,9 +519,11 @@ ClassicEditor
 <pre class="highlight"><code class="js">const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
 module.exports = {
+    // More configuration. 
     // ...
 
     plugins: [
+        // More plugins.
         // ...
 
         new MiniCssExtractPlugin( {
@@ -575,7 +581,8 @@ module.exports = {
                 }
             ]
         },
-        ...
+        // More rules.
+        // ...
     ]
 }
 </code></pre>
@@ -583,7 +590,8 @@ module.exports = {
 <pre class="highlight"><code class="js">entry: [
     require.resolve( 'regenerator-runtime/runtime.js' ),
 
-    // Your entries...
+    // Your entries.
+    // ...
 ]
 </code></pre>
 <div class="info-box notice"><p>This setup ensures that the source code is transpiled to ES5. However, it does not ensure that all ES6 polyfills are loaded. Therefore, if you would like to, for example, give <a href="https://github.com/ckeditor/ckeditor5/issues/330">bringing IE11 compatibility</a> a try, make sure to also load <a href="https://babeljs.io/docs/usage/polyfill/"><code>babel-polyfill</code></a>.</p></div>

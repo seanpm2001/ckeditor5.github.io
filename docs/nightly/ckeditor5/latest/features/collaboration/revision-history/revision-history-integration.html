@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Thu Mar 09 2023 04:17:27 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 11 2023 04:19:43 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Integration - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -649,7 +649,17 @@ ClassicEditor.defaultConfig = {
             viewerSidebarContainer: document.querySelector( '#revision-viewer-sidebar' )
         },
         toolbar: {
-            items: [ 'bold', 'italic', '|', 'revisionHistory' ]
+            items: [
+                'undo', 'redo',
+                '|', 'revisionHistory', '|', 'trackChanges', 'comment',
+                '|', 'heading',
+                '|', 'fontsize', 'fontfamily', 'fontColor', 'fontBackgroundColor',
+                '-', 'bold', 'italic', 'underline',
+                '|', 'link', 'uploadImage', 'insertTable', 'blockQuote', 'codeBlock',
+                '|', 'alignment',
+                '|', 'bulletedList', 'numberedList'
+            ],
+            shouldNotGroupWhenFull: true
         }
     } )
     .catch( error =&gt; console.error( error ) );
@@ -1813,7 +1823,17 @@ ClassicEditor
                 viewerSidebarContainer: document.querySelector( '#revision-viewer-sidebar' )
             },
             toolbar: {
-                items: [ 'bold', 'italic', '|', 'revisionHistory' ]
+                items: [
+                    'undo', 'redo',
+                    '|', 'revisionHistory', '|', 'trackChanges', 'comment',
+                    '|', 'heading',
+                    '|', 'fontsize', 'fontfamily', 'fontColor', 'fontBackgroundColor',
+                    '-', 'bold', 'italic', 'underline',
+                    '|', 'link', 'uploadImage', 'insertTable', 'blockQuote', 'codeBlock',
+                    '|', 'alignment',
+                    '|', 'bulletedList', 'numberedList'
+                ],
+                shouldNotGroupWhenFull: true
             }
         } )
         .catch( error =&gt; console.error( error ) );
