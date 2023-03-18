@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Fri Mar 17 2023 04:21:35 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 18 2023 04:24:54 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="CKEditor 5 features overview - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -288,6 +288,9 @@
                                   <li><a href="images/images-linking.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                       </div></a></li>
+                                  <li><a href="images/images-inserting.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                      </div></a></li>
                                   <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                     </div>
@@ -306,9 +309,6 @@
                                               </div></a></li>
                                           <li><a href="images/image-upload/simple-upload-adapter.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                              </div></a></li>
-                                          <li><a href="images/image-upload/images-inserting.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                               </div></a></li>
                                     </ul>
                                   </li>
@@ -490,7 +490,7 @@
           </div>
           <h1 class="main__content-title"><img src="../../../assets/2.4.0/img/book.svg" alt="guide">CKEditor 5 features overview
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#using-ckeditor-5-features">Using CKEditor 5 features</a></li><li><a href="#ckeditor-5-wysiwyg-editor-features-and-functions">CKEditor 5 WYSIWYG editor features and functions</a><ol><li><a href="#collaboration">Collaboration</a></li><li><a href="#output-and-exports">Output and exports</a></li><li><a href="#formatting-features">Formatting features</a></li><li><a href="#advanced-content-editing">Advanced content editing</a></li><li><a href="#productivity-features">Productivity features</a></li><li><a href="#customizable-user-experience">Customizable user experience</a></li><li><a href="#cross-platform-interoperability">Cross-platform interoperability</a></li></ol></li><li><a href="#backwards-feature-compatibility">Backwards feature compatibility</a></li><li><a href="#feature-availability">Feature availability</a></li><li><a href="#feature-examples">Feature examples</a></li><li><a href="#looking-for-more">Looking for more?</a></li><li><a href="#how-about-creating-your-own-features">How about creating your own features?</a></li></ol></nav>
-<p>The number of features available for CKEditor 5 is constantly growing. You can find the most recent list of the available ones on the left. CKEditor 5 is in active development now and new features are added all the time, while the existing ones are being expanded and improved. Newly added or meaningfully updated feature guides are marked with a <span class="tree__item__badge tree__item__badge_new">NEW</span> icon for easy spotting. Premium features, which require an additional license to work, are marked with a <span class="tree__item__badge tree__item__badge_premium"><span class="tree__item__badge__text">Premium feature</span></span> icon.</p>
+<p>CKEditor 5 has many features, and the number is constantly growing. You can find the most recent list of features on the left. In addition to working on new features, we also expand and improve the existing ones. Newly added or meaningfully updated feature guides are marked with a <span class="tree__item__badge tree__item__badge_new">NEW</span> icon. Premium features, which require an additional license to work, have a <span class="tree__item__badge tree__item__badge_premium"><span class="tree__item__badge__text">Premium feature</span></span> icon.</p>
 <span class="navigation-hint_mobile">
 <div class="info-box notice"><p>Use the <strong>main menu button in the upper-left corner</strong> to navigate through the documentation.</p></div>
 </span>
@@ -501,10 +501,10 @@
 <h3 id="collaboration"><a class="headerlink" href="#collaboration">#</a> Collaboration</h3>
 <p>The <a href="../framework/index.html">CKEditor 5 Framework</a> was created with <a href="collaboration/collaboration.html">collaboration</a> in mind.</p>
 <p>The <a href="collaboration/users.html">users API</a> is used by functions such as <a href="collaboration/track-changes/track-changes.html">track changes</a>, that allow the users to follow any changes made to the edited document in real time. Accepting or rejecting those changes is done with a single click from a convenient side panel.</p>
-<p>Where tracking changes is not enough, the <a href="collaboration/comments/comments.html">comments</a> come in, offering perfect collaboration communication platform for writing and editing as a team.</p>
-<p>Additionally, CKEditor 5 offers the <a href="restricted-editing.html">restricted editing mode</a> where only selected part of the content may be edited by selected users, based on permissions system. And when there is a need for even more control, there is the <a href="read-only.html">read-only editor mode</a> that lets the user access the content, but not edit it.</p>
+<p>Where tracking changes is not enough, the <a href="collaboration/comments/comments.html">comments</a> come in, offering a perfect collaboration communication platform for writing and editing as a team.</p>
+<p>Additionally, CKEditor 5 offers the <a href="restricted-editing.html">restricted editing mode</a> where only selected parts of the content may be edited by selected users, based on permissions system. And when there is a need for even more control, there is the <a href="read-only.html">read-only editor mode</a> that lets the user access the content, but not edit it.</p>
 <p><img src="../assets/img/features-collaboration.png" data-lightbox="true" alt="CKEditor 5 collaboration features." width="800"></p>
-<p>You can also easily track the progress and changes done in the content with the <a href="collaboration/revision-history/revision-history.html">revision history</a> feature. This modern and robust document versioning tool lets you create named versions, compare changes and restore previous document versions at ease, tracking all progress — also when multiple editors work together.</p>
+<p>You can also easily track the progress and changes done in the content with the <a href="collaboration/revision-history/revision-history.html">revision history</a> feature. This modern and robust document versioning tool lets you create named versions, compare changes, and restore previous document versions at ease, tracking all progress — also when multiple editors work together.</p>
 <p><img src="../assets/img/features-revision-history.png" data-lightbox="true" alt="CKEditor 5 document versioning feature." width="800"></p>
 <h3 id="output-and-exports"><a class="headerlink" href="#output-and-exports">#</a> Output and exports</h3>
 <p>If you need to share the document outside your team, use the <a href="export-pdf.html">export to PDF</a> feature to produce industry standard, portable, cross-platform final files. If you need to work further on the document, choose the <a href="export-word.html">export to Word</a> feature instead — and keep your comments and changes in the resulting document, ready to be edited further. These two are accompanied by the <a href="pagination/pagination.html">pagination</a> feature, to ensure all produced documents will always look the way they should.</p>
@@ -516,10 +516,10 @@
 <p>Most of these formatting options can be applied from the <a href="toolbar/toolbar.html">toolbar</a> or on the go, as you type, thanks to the <a href="autoformat.html">autoformatting feature</a> that employs Markdown syntax, and as easily removed with the <a href="remove-format.html">remove format feature</a>.</p>
 <p><img src="../assets/img/features-basic-formatting.png" data-lightbox="true" alt="CKEditor 5 formatting features." width="800"></p>
 <h3 id="advanced-content-editing"><a class="headerlink" href="#advanced-content-editing">#</a> Advanced content editing</h3>
-<p>Rich text would not be rich without images. You can upload them, caption them, style them, you can even paste them straight from the URL with the help of the <a href="images/images-overview.html">image feature</a> and create responsive design. If that is not enough, <a href="media-embed.html">embed media</a> into your content.</p>
+<p>Rich text would not be rich without images. You can upload them, caption them, style them, you can even paste them straight from the URL with the help of the <a href="images/images-overview.html">image feature</a> and create a responsive design. If that is not enough, <a href="media-embed.html">embed media</a> into your content.</p>
 <p>An essential feature for online content are <a href="link.html">links</a> - these can be easily pasted, changed and attributed.</p>
-<p>Provide clear and accessible data using <a href="tables/tables.html">tables</a> (you can even nest them to create advanced layouts), ordered and unordered <a href="lists/lists.html">lists</a> with various markers to choose from and <a href="lists/todo-lists.html">to-do lists</a>. Use <a href="indent.html">indents and outdents</a> as well as <a href="block-quote.html">block quotes</a> to structure the content and draw reader’s attention to it.</p>
-<p>Enrich you content further by <a href="html/html-embed.html">embedding HTML code</a> - this one is especially useful for webmasters. If you need to present code instead of employing it - use the <a href="code-blocks.html">code block</a> that let you produce code listing with a syntax highlight, too!</p>
+<p>Provide clear and accessible data using <a href="tables/tables.html">tables</a> (you can even nest them to create advanced layouts), ordered and unordered <a href="lists/lists.html">lists</a> with various markers to choose from and <a href="lists/todo-lists.html">to-do lists</a>. Use <a href="indent.html">indents and outdents</a> as well as <a href="block-quote.html">block quotes</a> to structure the content and draw the reader’s attention to it.</p>
+<p>Enrich you content further by <a href="html/html-embed.html">embedding HTML code</a> - this one is especially useful for webmasters. If you need to present code instead of employing it - use the <a href="code-blocks.html">code block</a> that lets you produce code listing with a syntax highlight, too!</p>
 <p><img src="../assets/img/features-images.png" data-lightbox="true" alt="CKEditor 5 image feature." width="800"></p>
 <h3 id="productivity-features"><a class="headerlink" href="#productivity-features">#</a> Productivity features</h3>
 <p>Keep full control of your work. Be safe and never lose anything thanks to the <a href="collaboration/real-time-collaboration/real-time-collaboration-integration.html#the-autosave-plugin">autosave plugin</a>. Configure <a href="toolbar/toolbar.html">the toolbar</a> any way you like, use an additional <a href="toolbar/blocktoolbar.html">block toolbar</a> and choose the right <a href="../installation/index.html">editor build</a> to suit your needs.</p>
@@ -527,7 +527,7 @@
 <p>Use <a href="autoformat.html">Markdown syntax</a> to format content on the go to speed the editing process, employ <a href="text-transformation.html">automatic text transformations</a> (also known as autocorrect) and the <a href="spelling-and-grammar-checking.html">spell checker</a> to ensure everything is correct. Create multi-language documents and correct them on the go with automatic language detection and <a href="language.html">text part language</a> feature.</p>
 <p><img src="../assets/img/features-spellcheck-multilanguage.png" data-lightbox="true" alt="CKEditor 5 spell-checking feature." width="800"></p>
 <h3 id="customizable-user-experience"><a class="headerlink" href="#customizable-user-experience">#</a> Customizable user experience</h3>
-<p>Work as you like it - choose user interface approach from <a href="../installation/getting-started/predefined-builds.html">several predefined builds</a>, add or remove features easily to your build with the <a href="https://ckeditor.com/ckeditor-5/online-builder/">online builder</a> or utilize the <a href="../installation/advanced/alternative-setups/dll-builds.html">DLL builds</a>. Then taylor the user interface to your needs with our customizable <a href="toolbar/toolbar.html">editor toolbar</a> arranging features buttons, dropdowns and other items whatever way you need them.</p>
+<p>Work as you like it - choose user interface approach from <a href="../installation/getting-started/predefined-builds.html">several predefined builds</a>, add or remove features easily to your build with the <a href="https://ckeditor.com/ckeditor-5/online-builder/">online builder</a> or utilize the <a href="../installation/advanced/alternative-setups/dll-builds.html">DLL builds</a>. Then tailor the user interface to your needs with our customizable <a href="toolbar/toolbar.html">editor toolbar</a> arranging features buttons, dropdowns, and other items in whatever way you need them.</p>
 <p><img src="../assets/img/toolbar.png" data-lightbox="true" alt="CKEditor 5 customizable UI." width="800"></p>
 <h3 id="cross-platform-interoperability"><a class="headerlink" href="#cross-platform-interoperability">#</a> Cross-platform interoperability</h3>
 <p>Do not get stopped by technology differences - CKEditor 5 offers cross-platform interoperability. Being a <a href="../framework/index.html">web-based JavaScript framework</a> it works in any and all environments. What is more, you can easily use documents from other editors: easily paste content <a href="pasting/paste-from-word.html">from MS Word</a>, paste from <a href="pasting/paste-from-google-docs.html">from Google Docs</a> and we even have extended support for <a href="pasting/paste-plain-text.html">pasting plain text</a> to inherit formatting for convenience.</p>
@@ -761,6 +761,9 @@ We are gradually enhancing the <a href="../framework/index.html">CKEditor 5 Fram
                                     <li><a href="images/images-linking.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                         </div></a></li>
+                                    <li><a href="images/images-inserting.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                        </div></a></li>
                                     <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                       </div>
@@ -779,9 +782,6 @@ We are gradually enhancing the <a href="../framework/index.html">CKEditor 5 Fram
                                                   </div></a></li>
                                               <li><a href="images/image-upload/simple-upload-adapter.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                                  </div></a></li>
-                                              <li><a href="images/image-upload/images-inserting.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                                   </div></a></li>
                                       </ul>
                                     </li>

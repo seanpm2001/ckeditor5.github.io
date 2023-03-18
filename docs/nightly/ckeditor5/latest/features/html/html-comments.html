@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Fri Mar 17 2023 04:21:33 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 18 2023 04:24:51 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="HTML comment element - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -291,6 +291,9 @@
                                   <li><a href="../images/images-linking.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                       </div></a></li>
+                                  <li><a href="../images/images-inserting.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                      </div></a></li>
                                   <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                     </div>
@@ -309,9 +312,6 @@
                                               </div></a></li>
                                           <li><a href="../images/image-upload/simple-upload-adapter.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                              </div></a></li>
-                                          <li><a href="../images/image-upload/images-inserting.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                               </div></a></li>
                                     </ul>
                                   </li>
@@ -492,11 +492,10 @@
           <div class="rwd-breadcrumbs"><a href="../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">HTML comment element
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#related-features">Related features</a></li><li><a href="#installation">Installation</a></li><li><a href="#known-issues">Known issues</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#installation">Installation</a></li><li><a href="#known-issues">Known issues</a></li><li><a href="#related-features">Related features</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
 
-<p>By default, all HTML comments are filtered out during the editor initialization. The <a href="../../api/module_html-support_htmlcomment-HtmlComment.html"><code>HtmlComment</code></a> feature allows developers to keep them in the document content and retrieve them back, e.g. while <a href="../../installation/getting-started/getting-and-setting-data.html">saving the editor data</a>. The comments are transparent from the users point of view and they are not displayed in the editable content.</p>
+<p>By default, the editor filters out all HTML comments on initialization. The <a href="../../api/module_html-support_htmlcomment-HtmlComment.html"><code>HtmlComment</code></a> feature lets developers keep HTML comments in the document without displaying them to the user.</p>
 <div class="info-box notice notice__warning"><p>The HTML comments feature is <strong>experimental and not yet production-ready</strong>.</p><p>The support for HTML comments is at the basic level so far - see the <a href="#known-issues">known issues</a> section below.</p></div>
-<div class="info-box notice notice__info"><p>This feature is enabled by default in the <a href="../../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only. See the <a href="#installation">installation</a> section to learn how to enable it in your editor.</p></div>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>The CKEditor 5 instance below is configured to keep the HTML comments in the document content. You can view the source of the document using <a href="../source-editing.html">source editing</a> feature. Toggle the source editing mode <span class="editor-icon"><img src="../../assets/icons/091bc0faa9.svg" class="editor-icon__image" alt="Source editing"></span> to see that the HTML comment is present in the document source. You can uncomment the paragraph below the picture and upon leaving the source editing mode, you will see this paragraph in the editable area.</p>
 <div class="live-snippet"><div id="snippet-html-comment">
@@ -511,13 +510,8 @@
 	<p>Getting used to an entirely different culture can be challenging. While it’s also nice to learn about cultures online or from books, nothing comes close to experiencing the cultural diversity in person. You learn to appreciate each and every single one of the differences while you become more culturally fluid.</p>
 </div>
 </div>
-<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
-<p>There are other HTML editing related CKEditor 5 features you may want to check:</p>
-<ul>
-<li><a href="../source-editing.html">Source editing</a> – Provides the ability for viewing and editing the source of the document. When paired, these two plugins let the user gain powerful control over the content editing.</li>
-<li><a href="html-embed.html">HTML embed</a> – Allows embedding an arbitrary HTML snippet in the editor. It is a more constrained and controllable approach to arbitrary HTML than GHS.</li>
-</ul>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
+<div class="info-box notice notice__info"><p>This feature is enabled by default in the <a href="../../installation/getting-started/predefined-builds.html#superbuild">superbuild</a> only.</p></div>
 <p>To add this feature to your rich-text editor, install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-html-support"><code>@ckeditor/ckeditor5-html-support</code></a> package:</p>
 <pre class="highlight"><code class="plaintext">npm install --save @ckeditor/ckeditor5-html-support
 </code></pre>
@@ -536,8 +530,14 @@ ClassicEditor
 <h2 id="known-issues"><a class="headerlink" href="#known-issues">#</a> Known issues</h2>
 <p>The main issue with the HTML comments feature is that comments can be easily repositioned or lost in various cases <a href="https://github.com/ckeditor/ckeditor5/issues/10118">#10118</a>, <a href="https://github.com/ckeditor/ckeditor5/issues/10119">#10119</a>. Also copying and pasting (or dragging and dropping) elements containing HTML comments within the editor does not work as expected <a href="https://github.com/ckeditor/ckeditor5/issues/10127">#10127</a>.</p>
 <p>We are open for feedback, so if you find any issue, feel free to report it in the <a href="https://github.com/ckeditor/ckeditor5/issues/">main CKEditor 5 repository</a>.</p>
+<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related features</h2>
+<p>CKEditor 5 has other features related to HTML editing you may want to check:</p>
+<ul>
+<li><a href="../source-editing.html">Source editing</a> – Provides the ability for viewing and editing the source of the document. When paired, these two plugins let the user gain powerful control over the content editing.</li>
+<li><a href="html-embed.html">HTML embed</a> – Allows embedding an arbitrary HTML snippet in the editor. It is a more constrained and controllable approach to arbitrary HTML than GHS.</li>
+</ul>
 <h2 id="contribute"><a class="headerlink" href="#contribute">#</a> Contribute</h2>
-<p>The source code of the feature is available on GitHub in https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-html-support.</p>
+<p>The source code of the feature is available on GitHub at https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-html-support.</p>
 
           <div class="info-box notice notice__feedback">
             <p>
@@ -765,6 +765,9 @@ ClassicEditor
                                     <li><a href="../images/images-linking.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                         </div></a></li>
+                                    <li><a href="../images/images-inserting.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                        </div></a></li>
                                     <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                       </div>
@@ -783,9 +786,6 @@ ClassicEditor
                                                   </div></a></li>
                                               <li><a href="../images/image-upload/simple-upload-adapter.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                                  </div></a></li>
-                                              <li><a href="../images/image-upload/images-inserting.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                                   </div></a></li>
                                       </ul>
                                     </li>

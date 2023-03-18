@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Fri Mar 17 2023 04:21:37 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 18 2023 04:24:56 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Content minimap - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -291,6 +291,9 @@
                                   <li><a href="images/images-linking.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                       </div></a></li>
+                                  <li><a href="images/images-inserting.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                      </div></a></li>
                                   <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                     </div>
@@ -309,9 +312,6 @@
                                               </div></a></li>
                                           <li><a href="images/image-upload/simple-upload-adapter.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                              </div></a></li>
-                                          <li><a href="images/image-upload/images-inserting.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                               </div></a></li>
                                     </ul>
                                   </li>
@@ -490,9 +490,8 @@
           <div class="rwd-breadcrumbs"><a href="../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../assets/2.4.0/img/book.svg" alt="guide">Content minimap
-          </h1><p>The content minimap feature renders a content minimap which, when placed next to the editor, helps the users navigate their content. It enables navigating the content and provides a visual overview when the document is longer than its visible portion on the screen.</p>
-<div class="info-box notice notice__warning"><p>This is a <strong>feature preview</strong>, and as such it is not recommended for production use. For more information, comments and feature requests, please refer to the <a href="https://github.com/ckeditor/ckeditor5/issues/10089">issue on GitHub</a>.</p></div>
-<div class="info-box notice notice__info"><p>This feature is not available in any of the <a href="../installation/getting-started/predefined-builds.html">predefined builds</a>. See the <a href="#installation">installation</a> section to learn how to enable it in your editor.</p></div>
+          </h1><p>The content minimap feature shows a miniature overview of your content. It helps you navigate a document that is too long to fit on the screen.</p>
+<div class="info-box notice notice__warning"><p>This is a <strong>feature preview</strong>, and as such it is not recommended for production use. For more information, comments, and feature requests, please refer to the <a href="https://github.com/ckeditor/ckeditor5/issues/10089">issue on GitHub</a>.</p></div>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>Scroll the content and the minimap in the sidebar will show your current location. Drag the box marking the visible portion of the content to quickly navigate the document. You can also simply click anywhere on the minimap to move around instantly.</p>
 <div class="live-snippet"><div class="document-container">
@@ -1094,6 +1093,7 @@ DecoupledEditor
     .catch( /* ... */ );
 </code></pre>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
+<div class="info-box notice notice__info"><p>This feature is not available in any of the <a href="../installation/getting-started/predefined-builds.html">predefined builds</a>.</p></div>
 <p>To add the content minimap feature to your editor, install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-minimap"><code>@ckeditor/ckeditor5-minimap</code></a> package:</p>
 <pre class="highlight"><code class="">npm install --save @ckeditor/ckeditor5-minimap
 </code></pre>
@@ -1131,10 +1131,10 @@ DecoupledEditor
     .catch( /* ... */ );
 </code></pre>
 <h3 id="content-styles-and-classes"><a class="headerlink" href="#content-styles-and-classes">#</a> Content styles and classes</h3>
-<p>The minimap feature uses <code>&lt;iframe&gt;</code> internally. For a proper look and operation, is is essential for the content (clone) inside the <code>&lt;iframe&gt;</code> to have exactly the same styles as the main editor document. If the content of your editor inherits styles from parent containers, you may need to pass the class names of these containers in the feature configuration to maintain style parity. See the <a href="../api/module_minimap_minimap-MinimapConfig.html#member-extraClasses">detailed classes documentation</a> to learn more.</p>
+<p>The minimap feature uses <code>&lt;iframe&gt;</code> internally. For a proper look and operation, it is essential for the content (clone) inside the <code>&lt;iframe&gt;</code> to have exactly the same styles as the main editor document. If the content of your editor inherits styles from parent containers, you may need to pass the class names of these containers in the feature configuration to maintain style parity. See the <a href="../api/module_minimap_minimap-MinimapConfig.html#member-extraClasses">detailed classes documentation</a> to learn more.</p>
 <div class="info-box notice"><p>We recommend using the official <a href="../framework/development-tools.html#ckeditor-5-inspector">CKEditor 5 inspector</a> for development and debugging. It will give you tons of useful information about the state of the editor such as internal data structures, selection, commands, and many more.</p></div>
 <h2 id="contribute"><a class="headerlink" href="#contribute">#</a> Contribute</h2>
-<p>The source code of the feature is available on GitHub in <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-minimap">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-minimap</a>.</p>
+<p>The source code of the feature is available on GitHub at <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-minimap">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-minimap</a>.</p>
 
           <div class="info-box notice notice__feedback">
             <p>
@@ -1362,6 +1362,9 @@ DecoupledEditor
                                     <li><a href="images/images-linking.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                         </div></a></li>
+                                    <li><a href="images/images-inserting.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                        </div></a></li>
                                     <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                       </div>
@@ -1380,9 +1383,6 @@ DecoupledEditor
                                                   </div></a></li>
                                               <li><a href="images/image-upload/simple-upload-adapter.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                                  </div></a></li>
-                                              <li><a href="images/image-upload/images-inserting.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                                   </div></a></li>
                                       </ul>
                                     </li>

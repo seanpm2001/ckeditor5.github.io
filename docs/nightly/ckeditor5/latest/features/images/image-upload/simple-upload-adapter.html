@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Fri Mar 17 2023 04:21:40 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 18 2023 04:24:59 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Simple upload adapter - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -288,6 +288,9 @@
                                   <li><a href="../images-linking.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                       </div></a></li>
+                                  <li><a href="../images-inserting.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                      </div></a></li>
                                   <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                     </div>
@@ -306,9 +309,6 @@
                                               </div></a></li>
                                           <li><a href="">
                                               <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                              </div></a></li>
-                                          <li><a href="images-inserting.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                               </div></a></li>
                                     </ul>
                                   </li>
@@ -490,8 +490,7 @@
           </div>
           <h1 class="main__content-title"><img src="../../../../../assets/2.4.0/img/book.svg" alt="guide">Simple upload adapter
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#installation">Installation</a></li><li><a href="#configuration">Configuration</a><ol><li><a href="#configuring-allowed-file-types">Configuring allowed file types</a><ol><li><a href="#client-side-configuration">Client-side configuration</a></li><li><a href="#server-side-configuration">Server-side configuration</a></li></ol></li></ol></li><li><a href="#server-side-configuration-2">Server-side configuration</a><ol><li><a href="#communication-protocol">Communication protocol</a></li><li><a href="#successful-upload">Successful upload</a></li><li><a href="#error-handling">Error handling</a></li><li><a href="#upload-progress">Upload progress</a></li></ol></li><li><a href="#whats-next">What’s next?</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
-<p>The simple upload adapter allows uploading images to your server using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"><code>XMLHttpRequest</code></a> API with a minimal <a href="#configuration">editor configuration</a>.</p>
-<p>See the <a href="#server-side-configuration">Server–side configuration</a> section to learn about the requirements your server–side application must meet to support this upload adapter.</p>
+<p>The simple upload adapter lets you upload images to your server using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"><code>XMLHttpRequest</code></a> API with a minimal <a href="#configuration">editor configuration</a>. See the <a href="#server-side-configuration">Server-side configuration</a> section to learn about the requirements for your server-side application.</p>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
 <div class="info-box notice notice__info"><p>This feature is not available in any of the <a href="../../../installation/getting-started/predefined-builds.html">predefined builds</a>. See the <a href="#installation">installation</a> section to learn how to enable it in your editor.</p><p>First, install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-upload"><code>@ckeditor/ckeditor5-upload</code></a> package:</p><pre class="highlight"><code class="plaintext">npm install --save @ckeditor/ckeditor5-upload
 </code></pre><p>Add the <a href="../../../api/module_upload_adapters_simpleuploadadapter-SimpleUploadAdapter.html"><code>SimpleUploadAdapter</code></a> to your plugin list and <a href="#configuration">configure</a> the feature. For instance:</p><pre class="highlight"><code class="js">import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
@@ -541,15 +540,15 @@ ClassicEditor
 </ul>
 <h4 id="client-side-configuration"><a class="headerlink" href="#client-side-configuration">#</a> Client-side configuration</h4>
 <p>Use the <a href="../../../api/module_image_imageupload-ImageUploadConfig.html#member-types"><code>image.upload.types</code></a> configuration option to define the allowed image MIME types that can be uploaded to CKEditor 5.</p>
-<p>By default, users are allowed to upload <code>jpeg</code>, <code>png</code>, <code>gif</code>, <code>bmp</code>, <code>webp</code> and <code>tiff</code> files, but you can customize this behavior to accept, for example, SVG files.</p>
+<p>By default, users are allowed to upload <code>jpeg</code>, <code>png</code>, <code>gif</code>, <code>bmp</code>, <code>webp</code>, and <code>tiff</code> files, but you can customize this behavior to accept, for example, SVG files.</p>
 <h4 id="server-side-configuration"><a class="headerlink" href="#server-side-configuration">#</a> Server-side configuration</h4>
 <p>It is up to you to implement any filtering mechanisms on your server in order to restrict the types of images that are allowed to be uploaded.</p>
 <h2 id="server-side-configuration-2"><a class="headerlink" href="#server-side-configuration-2">#</a> Server-side configuration</h2>
-<p>To use this upload adapter, you must provide a server–side application that will handle the uploads and communicate with the editor, as described in the following sections.</p>
+<p>To use this upload adapter, you must provide a server-side application that will handle the uploads and communicate with the editor, as described in the following sections.</p>
 <h3 id="communication-protocol"><a class="headerlink" href="#communication-protocol">#</a> Communication protocol</h3>
 <p>When the image upload process is initiated, the adapter sends a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST"><code>POST</code></a> request under <a href="../../../api/module_upload_adapters_simpleuploadadapter-SimpleUploadConfig.html#member-uploadUrl"><code>config.simpleUpload.uploadUrl</code></a>.</p>
 <p>You can send additional <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">headers</a> along with the <code>XMLHttpRequest</code> to the upload server, e.g. to authenticate the user, using the <a href="../../../api/module_upload_adapters_simpleuploadadapter-SimpleUploadConfig.html#member-uploadUrl"><code>config.simpleUpload.headers</code></a> object.</p>
-<p>If you use the <a href="../../../api/module_upload_adapters_simpleuploadadapter-SimpleUploadConfig.html#member-withCredentials"><code>config.simpleUpload.withCredentials</code></a> configuration, you may need some <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">extra HTTP headers</a> for the cross–site request to work properly.</p>
+<p>If you use the <a href="../../../api/module_upload_adapters_simpleuploadadapter-SimpleUploadConfig.html#member-withCredentials"><code>config.simpleUpload.withCredentials</code></a> configuration, you may need some <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">extra HTTP headers</a> for the cross-site request to work properly.</p>
 <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType"><code>responseType</code></a> of the request is always <code>json</code>. See the <a href="#successful-upload">Successful upload</a> and <a href="#error-handling">Error handling</a> sections to learn more.</p>
 <h3 id="successful-upload"><a class="headerlink" href="#successful-upload">#</a> Successful upload</h3>
 <p>If the upload is successful, the server should return:</p>
@@ -596,7 +595,7 @@ ClassicEditor
 <p>Check out the comprehensive <a href="image-upload.html">Image upload overview</a> to learn more about different ways of uploading images in CKEditor 5.</p>
 <p>See the <a href="../images-overview.html">Image feature guide</a> to find out more about handling images in CKEditor 5 WYSIWYG editor.</p>
 <h2 id="contribute"><a class="headerlink" href="#contribute">#</a> Contribute</h2>
-<p>The source code of the feature is available on GitHub in <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-upload">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-upload</a>.</p>
+<p>The source code of the feature is available on GitHub at <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-upload">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-upload</a>.</p>
 
           <div class="info-box notice notice__feedback">
             <p>
@@ -824,6 +823,9 @@ ClassicEditor
                                     <li><a href="../images-linking.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                         </div></a></li>
+                                    <li><a href="../images-inserting.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                        </div></a></li>
                                     <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                       </div>
@@ -842,9 +844,6 @@ ClassicEditor
                                                   </div></a></li>
                                               <li><a href="">
                                                   <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                                  </div></a></li>
-                                              <li><a href="images-inserting.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                                   </div></a></li>
                                       </ul>
                                     </li>

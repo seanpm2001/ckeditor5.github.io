@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Fri Mar 17 2023 04:21:45 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 18 2023 04:25:04 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Watchdog - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -288,6 +288,9 @@
                                   <li><a href="images/images-linking.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                       </div></a></li>
+                                  <li><a href="images/images-inserting.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                      </div></a></li>
                                   <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                     </div>
@@ -306,9 +309,6 @@
                                               </div></a></li>
                                           <li><a href="images/image-upload/simple-upload-adapter.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                              </div></a></li>
-                                          <li><a href="images/image-upload/images-inserting.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                               </div></a></li>
                                     </ul>
                                   </li>
@@ -489,18 +489,20 @@
           <div class="rwd-breadcrumbs"><a href="../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../assets/2.4.0/img/book.svg" alt="guide">Watchdog
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#usage">Usage</a><ol><li><a href="#editor-watchdog">Editor watchdog</a><ol><li><a href="#controlling-editor-creation-and-destruction">Controlling editor creation and destruction</a></li><li><a href="#editor-watchdog-api">Editor watchdog API</a></li></ol></li><li><a href="#context-watchdog">Context watchdog</a><ol><li><a href="#context-watchdog-api">Context watchdog API</a></li></ol></li></ol></li><li><a href="#configuration">Configuration</a></li><li><a href="#limitations">Limitations</a></li></ol></nav>
-<p>Every non-trivial piece of software has bugs. Despite our high quality standards like 100% code coverage, regression testing and manual tests before every release, CKEditor 5 is not free of bugs. Neither is the browser used by the user, your application in which CKEditor 5 is integrated, or any third-party addons that you used.</p>
-<p>In order to limit the effect of an editor crash on the user experience, you can automatically restart the WYSIWYG editor with the content saved just before the crash.</p>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#additional-feature-information">Additional feature information</a></li><li><a href="#usage">Usage</a><ol><li><a href="#editor-watchdog">Editor watchdog</a><ol><li><a href="#controlling-editor-creation-and-destruction">Controlling editor creation and destruction</a></li><li><a href="#editor-watchdog-api">Editor watchdog API</a></li></ol></li><li><a href="#context-watchdog">Context watchdog</a><ol><li><a href="#context-watchdog-api">Context watchdog API</a></li></ol></li></ol></li><li><a href="#configuration">Configuration</a></li><li><a href="#limitations">Limitations</a></li></ol></nav>
+<p>The watchdog utility protects you from data loss in case the editor crashes. It saves your content just before the crash and creates a new instance of the editor with your content intact.</p>
+<h2 id="additional-feature-information"><a class="headerlink" href="#additional-feature-information">#</a> Additional feature information</h2>
+<p>Every non-trivial piece of software has bugs. Despite our high-quality standards like 100% code coverage, regression testing, and manual tests before every release, CKEditor 5 is not free of bugs. Neither is the browser used by the user, your application in which CKEditor 5 is integrated, or any third-party add-ons that you used.</p>
+<p>To limit the effect of an editor crash on the user experience, you can automatically restart the WYSIWYG editor with the content saved just before the crash.</p>
 <p>The watchdog utility allows you to do exactly that. It ensures that an editor instance is running, despite a potential crash. It works by detecting that an editor crashed, destroying it, and automatically creating a new instance of that editor with the content of the previous editor.</p>
-<p>Note that the most “dangerous” places in the CKEditor 5 API, like <code>editor.model.change()</code>, <code>editor.editing.view.change()</code> or emitters, are covered with checks and <code>try-catch</code> blocks that allow detecting unknown errors and restart the editor when they occur.</p>
+<p>Note that the most “dangerous” places in the CKEditor 5 API, like <code>editor.model.change()</code>, <code>editor.editing.view.change()</code> or emitters, are covered with checks and <code>try-catch</code> blocks that can detect unknown errors and restart the editor when they occur.</p>
 <p>There are two available types of watchdogs:</p>
 <ul>
 <li><a href="#editor-watchdog">Editor watchdog</a> – To be used with a single editor instance.</li>
 <li><a href="#context-watchdog">Context watchdog</a> – To be used when your application uses the context.</li>
 </ul>
-<div class="info-box notice"><p>Note: A watchdog can be used only with an <a href="../installation/advanced/alternative-setups/integrating-from-source-webpack.html">editor built from source</a>.</p></div>
 <h2 id="usage"><a class="headerlink" href="#usage">#</a> Usage</h2>
+<div class="info-box notice"><p>Note: A watchdog can be used only with an <a href="../installation/advanced/alternative-setups/integrating-from-source-webpack.html">editor built from source</a>.</p></div>
 <h3 id="editor-watchdog"><a class="headerlink" href="#editor-watchdog">#</a> Editor watchdog</h3>
 <p>Install the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-watchdog"><code>@ckeditor/ckeditor5-watchdog</code></a> package:</p>
 <pre class="highlight"><code class="">npm install --save @ckeditor/ckeditor5-watchdog
@@ -767,7 +769,7 @@ watchdog.on( 'itemRestart', ( _, { itemId } ) =&gt; {
 <ul>
 <li><code>crashNumberLimit</code> – A threshold specifying the number of errors (defaults to <code>3</code>). After this limit is reached and the time between last errors is shorter than <code>minimumNonErrorTimePeriod</code>, the watchdog changes its state to <code>crashedPermanently</code> and it stops restarting the editor. This prevents an infinite restart loop.</li>
 <li><code>minimumNonErrorTimePeriod</code> – An average number of milliseconds between the last editor errors (defaults to 5000). When the period of time between errors is lower than that and the <code>crashNumberLimit</code> is also reached, the watchdog changes its state to <code>crashedPermanently</code> and it stops restarting the editor. This prevents an infinite restart loop.</li>
-<li><code>saveInterval</code> – A minimum number of milliseconds between saving the editor data internally (defaults to 5000). Note that for large documents this might impact the editor performance.</li>
+<li><code>saveInterval</code> – A minimum number of milliseconds between saving the editor data internally (defaults to 5000). Note that for large documents this might impact the editor’s performance.</li>
 </ul>
 <pre class="highlight"><code class="js">const editorWatchdog = new EditorWatchdog( ClassicEditor, {
     minimumNonErrorTimePeriod: 2000,
@@ -777,7 +779,7 @@ watchdog.on( 'itemRestart', ( _, { itemId } ) =&gt; {
 </code></pre>
 <div class="info-box notice"><p>Note that the context watchdog passes its configuration to editor watchdogs that it creates for added editors.</p></div>
 <h2 id="limitations"><a class="headerlink" href="#limitations">#</a> Limitations</h2>
-<p>The watchdogs do not handle errors thrown during the editor or context initialization (e.g. in <code>Editor.create()</code>) and editor destruction (e.g. in <code>Editor#destroy()</code>). Errors thrown at these stages mean that there is a problem in the code integrating the editor with your application and such problem cannot be fixed by restarting the editor.</p>
+<p>The watchdogs do not handle errors thrown during the editor or context initialization (e.g. in <code>Editor.create()</code>) and editor destruction (e.g. in <code>Editor#destroy()</code>). Errors thrown at these stages mean that there is a problem in the code integrating the editor with your application and such a problem cannot be fixed by restarting the editor.</p>
 
           <div class="info-box notice notice__feedback">
             <p>
@@ -1005,6 +1007,9 @@ watchdog.on( 'itemRestart', ( _, { itemId } ) =&gt; {
                                     <li><a href="images/images-linking.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                         </div></a></li>
+                                    <li><a href="images/images-inserting.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                        </div></a></li>
                                     <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                       </div>
@@ -1023,9 +1028,6 @@ watchdog.on( 'itemRestart', ( _, { itemId } ) =&gt; {
                                                   </div></a></li>
                                               <li><a href="images/image-upload/simple-upload-adapter.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                                  </div></a></li>
-                                              <li><a href="images/image-upload/images-inserting.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                                   </div></a></li>
                                       </ul>
                                     </li>

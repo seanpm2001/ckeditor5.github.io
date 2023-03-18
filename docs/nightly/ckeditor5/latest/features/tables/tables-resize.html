@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Fri Mar 17 2023 04:21:41 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 18 2023 04:25:00 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Table column resizing - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -291,6 +291,9 @@
                                   <li><a href="../images/images-linking.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                       </div></a></li>
+                                  <li><a href="../images/images-inserting.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                      </div></a></li>
                                   <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                     </div>
@@ -309,9 +312,6 @@
                                               </div></a></li>
                                           <li><a href="../images/image-upload/simple-upload-adapter.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                              </div></a></li>
-                                          <li><a href="../images/image-upload/images-inserting.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                               </div></a></li>
                                     </ul>
                                   </li>
@@ -494,9 +494,7 @@
           <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">Table column resize
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#installation">Installation</a></li><li><a href="#common-api">Common API</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
 
-<p>The <a href="../../api/module_table_tablecolumnresize-TableColumnResize.html"><code>TableColumnResize</code></a> plugin adds support for resizing tables and table columns. It gives the content creator full control over the column width. It is a great tool to control both the content and the look of the table. By resizing individual columns, the authors can adjust them to their needs, depending on content inside.</p>
-<p>The column resize feature is compatible with the <a href="../export-word.html">Export to Word</a> feature. The converter will respect the column width set in the editor and retain it in the effecting .DOCX file.</p>
-<div class="info-box notice"><p>By default, the table column resize feature is not included in the <a href="../../installation/getting-started/predefined-builds.html">predefined builds</a> and must be installed separately.</p></div>
+<p>The <a href="../../api/module_table_tablecolumnresize-TableColumnResize.html"><code>TableColumnResize</code></a> plugin lets you resize tables and individual table columns. It gives you complete control over column width.</p>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
 <p>To resize a column, simply hover your pointer over the column edge until it gets highlighted. Just drag the column edge until you achieve the desired size and release.</p>
 <div class="live-snippet"><div id="snippet-table-column-resize">
@@ -682,7 +680,9 @@
 </div>
 </div>
 <div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
+<p>The column resize feature is compatible with the <a href="../export-word.html">Export to Word</a> feature. The converter will respect the column width set in the editor and retain it in the created .DOCX file.</p>
 <h2 id="installation"><a class="headerlink" href="#installation">#</a> Installation</h2>
+<div class="info-box notice"><p>By default, the table column resize feature is not included in the <a href="../../installation/getting-started/predefined-builds.html">predefined builds</a> and must be installed separately.</p></div>
 <p>To enable the table column resize feature in your editor, you need to have the <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-table"><code>@ckeditor/ckeditor5-table</code></a> package installed (it is already present in the predefined builds):</p>
 <pre class="highlight"><code class="">npm install --save @ckeditor/ckeditor5-table
 </code></pre>
@@ -703,7 +703,7 @@ ClassicEditor
 <!-- Only drag handle, so this needs to be checked. No commands, tho. -->
 <div class="info-box notice"><p>We recommend using the official <a href="../../framework/development-tools.html#ckeditor-5-inspector">CKEditor 5 inspector</a> for development and debugging. It will give you tons of useful information about the state of the editor such as internal data structures, selection, commands, and many more.</p></div>
 <h2 id="contribute"><a class="headerlink" href="#contribute">#</a> Contribute</h2>
-<p>The source code of the feature is available on GitHub in <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-table">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-table</a>.</p>
+<p>The source code of the feature is available on GitHub at <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-table">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-table</a>.</p>
 
           <div class="info-box notice notice__feedback">
             <p>
@@ -931,6 +931,9 @@ ClassicEditor
                                     <li><a href="../images/images-linking.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                         </div></a></li>
+                                    <li><a href="../images/images-inserting.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                        </div></a></li>
                                     <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                       </div>
@@ -949,9 +952,6 @@ ClassicEditor
                                                   </div></a></li>
                                               <li><a href="../images/image-upload/simple-upload-adapter.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                                  </div></a></li>
-                                              <li><a href="../images/image-upload/images-inserting.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                                   </div></a></li>
                                       </ul>
                                     </li>

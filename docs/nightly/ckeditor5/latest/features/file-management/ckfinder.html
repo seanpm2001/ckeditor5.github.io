@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Fri Mar 17 2023 04:21:28 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 18 2023 04:24:46 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="CKFinder - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -291,6 +291,9 @@
                                   <li><a href="../images/images-linking.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                       </div></a></li>
+                                  <li><a href="../images/images-inserting.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                      </div></a></li>
                                   <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                     </div>
@@ -309,9 +312,6 @@
                                               </div></a></li>
                                           <li><a href="../images/image-upload/simple-upload-adapter.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                              </div></a></li>
-                                          <li><a href="../images/image-upload/images-inserting.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                               </div></a></li>
                                     </ul>
                                   </li>
@@ -492,7 +492,7 @@
           <div class="rwd-breadcrumbs"><a href="../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">CKFinder
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demos">Demos</a><ol><li><a href="#image-upload-only">Image upload only</a></li><li><a href="#full-integration">Full integration</a></li></ol></li><li><a href="#configuration">Configuration</a><ol><li><a href="#configuring-the-image-upload-only">Configuring the image upload only</a></li><li><a href="#configuring-the-full-integration">Configuring the full integration</a><ol><li><a href="#configuring-the-opener">Configuring the opener</a></li></ol></li><li><a href="#configuring-allowed-file-types">Configuring allowed file types</a><ol><li><a href="#client-side-configuration">Client-side configuration</a></li><li><a href="#server-side-configuration">Server-side configuration</a></li></ol></li></ol></li><li><a href="#installation">Installation</a></li><li><a href="#common-api">Common API</a></li><li><a href="#whats-next">What’s next?</a></li><li><a href="#contribute">Contribute</a></li></ol></nav><div class="live-snippet"><script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demos">Demos</a><ol><li><a href="#image-upload-only">Image upload only</a></li><li><a href="#full-integration">Full integration</a></li></ol></li><li><a href="#additional-feature-information">Additional feature information</a></li><li><a href="#configuration">Configuration</a><ol><li><a href="#configuring-the-image-upload-only">Configuring the image upload only</a></li><li><a href="#configuring-the-full-integration">Configuring the full integration</a><ol><li><a href="#configuring-the-opener">Configuring the opener</a></li></ol></li><li><a href="#configuring-allowed-file-types">Configuring allowed file types</a><ol><li><a href="#client-side-configuration">Client-side configuration</a></li><li><a href="#server-side-configuration">Server-side configuration</a></li></ol></li></ol></li><li><a href="#installation">Installation</a></li><li><a href="#common-api">Common API</a></li><li><a href="#whats-next">What’s next?</a></li><li><a href="#contribute">Contribute</a></li></ol></nav><div class="live-snippet"><script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
 
 <style>
 	#ckf-modal {
@@ -533,7 +533,7 @@
 </div>
 </div>
 <div class="info-box notice notice__info"><p>These demos only presents a limited set of features. Visit the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
-## Additional feature information
+<h2 id="additional-feature-information"><a class="headerlink" href="#additional-feature-information">#</a> Additional feature information</h2>
 <p>The CKFinder integration feature is a bridge between the CKEditor 5 WYSIWYG editor and the <a href="https://ckeditor.com/ckfinder">CKFinder</a> file manager and uploader. CKFinder is a commercial application that was designed with CKEditor compatibility in mind. It is currently available as version 3.x for PHP, ASP.NET, and Java and version 2.x for ASP and ColdFusion.</p>
 <p>This feature can be used in the rich-text editor in two different ways:</p>
 <ul>
@@ -915,6 +915,9 @@ ClassicEditor
                                     <li><a href="../images/images-linking.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                         </div></a></li>
+                                    <li><a href="../images/images-inserting.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                        </div></a></li>
                                     <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                       </div>
@@ -933,9 +936,6 @@ ClassicEditor
                                                   </div></a></li>
                                               <li><a href="../images/image-upload/simple-upload-adapter.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                                  </div></a></li>
-                                              <li><a href="../images/image-upload/images-inserting.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                                   </div></a></li>
                                       </ul>
                                     </li>

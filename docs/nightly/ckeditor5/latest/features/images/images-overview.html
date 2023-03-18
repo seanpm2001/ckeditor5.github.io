@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Fri Mar 17 2023 04:21:34 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 18 2023 04:24:52 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Basics - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -291,6 +291,9 @@
                                   <li><a href="images-linking.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                       </div></a></li>
+                                  <li><a href="images-inserting.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                      </div></a></li>
                                   <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                     </div>
@@ -309,9 +312,6 @@
                                               </div></a></li>
                                           <li><a href="image-upload/simple-upload-adapter.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                              </div></a></li>
-                                          <li><a href="image-upload/images-inserting.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                               </div></a></li>
                                     </ul>
                                   </li>
@@ -494,9 +494,9 @@
           <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">Images in CKEditor 5 (overview)
           </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#base-image-feature">Base image feature</a></li><li><a href="#image-features">Image features</a></li><li><a href="#image-contextual-toolbar">Image contextual toolbar</a></li><li><a href="#responsive-images">Responsive images</a></li><li><a href="#typing-around-images">Typing around images</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
 
-<p>CKEditor 5 comes with various tools to work with images. The editor allows inserting (uploading), resizing, styling, captioning and linking images. All these features work both with block, inline, and responsive images out-of-the-box.</p>
-<p>To see the all image features in action, check out the <a href="#demo"><strong>demo</strong></a> below. To learn more about individual plugins (sub-features) in the image ecosystem, see the <a href="#image-features"><strong>Image features</strong></a> section.</p>
+<p>CKEditor 5 comes with various tools to insert, upload, resize, style, caption, and link images. All these features work out of the box with block, inline, and responsive images alike.</p>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
+<p>To see all the image features in action, check out the demo below. To learn more about individual plugins (sub-features) in the image ecosystem, see the <a href="#image-features"><strong>Image features</strong></a> section.</p>
 <div class="live-snippet"><div id="snippet-image-full">
 	<h2>Walking the capitals of Europe: <img src="../../assets/img/warsaw_coa.jpg" alt="Coat of arms of Warsaw" style="width: 24px">&nbsp;Warsaw</h2>
 
@@ -554,15 +554,15 @@
 <h2 id="base-image-feature"><a class="headerlink" href="#base-image-feature">#</a> Base image feature</h2>
 <p>The base image feature does not support any user interface for inserting or managing images. Its sole purpose is to lay ground for other plugins (listed below) to build the target user experience. This pattern (composition of atomic features) is common for CKEditor 5 and allows the developers to build their own customized experience by implementing specific subfeatures differently.</p>
 <h2 id="image-features"><a class="headerlink" href="#image-features">#</a> Image features</h2>
-<p>The <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-image"><code>@ckeditor/ckeditor5-image</code></a> package contains multiple plugins that implement various image-related features. The <a href="../../api/module_image_image-Image.html"><code>Image</code></a> plugin is at the core of the ecosystem. Available in all <a href="../../installation/getting-started/predefined-builds.html">ready-to-use editor builds</a>, it provides the basic support for block and inline images. There are many other features that extend the editor capabilities:</p>
+<p>The <a href="https://www.npmjs.com/package/@ckeditor/ckeditor5-image"><code>@ckeditor/ckeditor5-image</code></a> package contains multiple plugins that implement various image-related features. The <a href="../../api/module_image_image-Image.html"><code>Image</code></a> plugin is at the core of the ecosystem. Available in all <a href="../../installation/getting-started/predefined-builds.html">ready-to-use editor builds</a>, it provides the basic support for block and inline images. There are many other features that extend the editor’s capabilities:</p>
 <ul>
 <li>The <a href="#image-contextual-toolbar">contextual toolbar</a> available on mouse click gives access to image features.</li>
 <li><a href="images-captions.html">Image captions</a> allow adding descriptive text under the image.</li>
-<li>The <a href="images-styles.html">image styles</a> help control the placement, size and other characteristics with predefined styles.</li>
-<li>The <a href="images-text-alternative.html">text alternative</a> tag aids accessibility and SEO, provides additional image description and supports better navigation.</li>
+<li>The <a href="images-styles.html">image styles</a> help control the placement, size, and other characteristics with predefined styles.</li>
+<li>The <a href="images-text-alternative.html">text alternative</a> tag aids accessibility and SEO, provides additional image description, and supports better navigation.</li>
 <li><a href="images-resizing.html">Image resizing</a> lets the user control the dimensions of images in the content.</li>
 <li><a href="images-linking.html">Linking images</a> makes it possible to use them as URL anchors.</li>
-<li>A selection of <a href="image-upload/image-upload.html">image upload methods</a> allows for the most convenient way of adding images. These include support for <a href="image-upload/images-inserting.html#inserting-images-via-pasting-url-into-editor">inserting an image via URL</a> and even <a href="image-upload/images-inserting.html#inserting-images-via-source-url">via pasting a URL into the editor</a> along with custom integrations.</li>
+<li>A selection of <a href="image-upload/image-upload.html">image upload methods</a> allows for the most convenient way of adding images. These include support for <a href="images-inserting.html#inserting-images-via-pasting-a-url-into-the-editor">inserting an image via a URL</a> and even <a href="images-inserting.html#inserting-images-via-a-source-url">via pasting a URL into the editor</a> along with custom integrations.</li>
 </ul>
 <p>The availability of these plugins varies in different <a href="../../installation/getting-started/predefined-builds.html">predefined editor builds</a> but the most important ones are present in all builds as presented in the table below:</p>
 <figure class="table">
@@ -715,7 +715,7 @@
 <p>You can also use the <strong>Insert paragraph</strong> handles on the bottom or top edge of the selected image to add a paragraph below or above the image, respectively.</p>
 <p><img src="../../assets/img/image-insert-paragraph.png" data-lightbox="true" alt="Paragraph insertion handles." width="640"></p>
 <h2 id="contribute"><a class="headerlink" href="#contribute">#</a> Contribute</h2>
-<p>The source code of the feature is available on GitHub in <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-image">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-image</a>.</p>
+<p>The source code of the feature is available on GitHub at <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-image">https://github.com/ckeditor/ckeditor5/tree/master/packages/ckeditor5-image</a>.</p>
 
           <div class="info-box notice notice__feedback">
             <p>
@@ -943,6 +943,9 @@
                                     <li><a href="images-linking.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                         </div></a></li>
+                                    <li><a href="images-inserting.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                        </div></a></li>
                                     <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                       </div>
@@ -961,9 +964,6 @@
                                                   </div></a></li>
                                               <li><a href="image-upload/simple-upload-adapter.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                                  </div></a></li>
-                                              <li><a href="image-upload/images-inserting.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                                   </div></a></li>
                                       </ul>
                                     </li>

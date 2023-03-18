@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Fri Mar 17 2023 04:21:43 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Sat Mar 18 2023 04:25:02 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Editor toolbar - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -291,6 +291,9 @@
                                   <li><a href="../images/images-linking.html">
                                       <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                       </div></a></li>
+                                  <li><a href="../images/images-inserting.html">
+                                      <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                      </div></a></li>
                                   <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                     </div>
@@ -309,9 +312,6 @@
                                               </div></a></li>
                                           <li><a href="../images/image-upload/simple-upload-adapter.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                              </div></a></li>
-                                          <li><a href="../images/image-upload/images-inserting.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                               </div></a></li>
                                     </ul>
                                   </li>
@@ -492,11 +492,11 @@
           <div class="rwd-breadcrumbs"><a href="../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">Editor toolbar
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#basic-toolbar-configuration">Basic toolbar configuration</a></li><li><a href="#separating-toolbar-items">Separating toolbar items</a></li><li><a href="#extended-toolbar-configuration-format">Extended toolbar configuration format</a></li><li><a href="#grouping-toolbar-items-in-drop-downs-nested-toolbars">Grouping toolbar items in drop-downs (nested toolbars)</a><ol><li><a href="#customization">Customization</a><ol><li><a href="#displaying-the-label">Displaying the label</a></li><li><a href="#changing-the-icon">Changing the icon</a></li><li><a href="#customizing-the-tooltip">Customizing the tooltip</a></li></ol></li></ol></li><li><a href="#multiline-wrapping-toolbar">Multiline (wrapping) toolbar</a><ol><li><a href="#automatic-toolbar-wrapping">Automatic toolbar wrapping</a></li><li><a href="#explicit-wrapping-breakpoint">Explicit wrapping breakpoint</a></li></ol></li><li><a href="#listing-available-items">Listing available items</a></li><li><a href="#adding-a-custom-button">Adding a custom button</a></li><li><a href="#block-toolbar">Block toolbar</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#basic-toolbar-configuration">Basic toolbar configuration</a></li><li><a href="#separating-toolbar-items">Separating toolbar items</a></li><li><a href="#extended-toolbar-configuration-format">Extended toolbar configuration format</a></li><li><a href="#multiline-wrapping-toolbar">Multiline (wrapping) toolbar</a><ol><li><a href="#automatic-toolbar-wrapping">Automatic toolbar wrapping</a></li><li><a href="#explicit-wrapping-breakpoint">Explicit wrapping breakpoint</a></li></ol></li><li><a href="#grouping-toolbar-items-in-drop-downs-nested-toolbars">Grouping toolbar items in drop-downs (nested toolbars)</a><ol><li><a href="#customization">Customization</a><ol><li><a href="#displaying-the-label">Displaying the label</a></li><li><a href="#changing-the-icon">Changing the icon</a></li><li><a href="#customizing-the-tooltip">Customizing the tooltip</a></li></ol></li></ol></li><li><a href="#listing-available-items">Listing available items</a></li><li><a href="#adding-a-custom-button">Adding a custom button</a></li><li><a href="#block-toolbar">Block toolbar</a></li><li><a href="#contribute">Contribute</a></li></ol></nav>
 
 <p>The toolbar is the most basic user interface element of CKEditor 5 that gives you convenient access to all its features. It has buttons and dropdowns that you can use to format, manage, insert, and change elements of your content.</p>
 <h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
-<p>This is how a simplified toolbar from the snippet above looks in the CKEditor 5 WYSIWYG editor user interface. Toolbar items can be easily added or removed thanks to this configuration.</p>
+<p>Below is a sample toolbar with a basic set of features. Toolbar items can be easily added or removed which will be presented further.</p>
 <div class="live-snippet"><div id="toolbar-basic">
 
 	<p>
@@ -508,26 +508,18 @@
 <div class="info-box notice notice__info"><p>All demos in this guide only present a limited set of features for clarity. Visit the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
 <h2 id="basic-toolbar-configuration"><a class="headerlink" href="#basic-toolbar-configuration">#</a> Basic toolbar configuration</h2>
 <div class="info-box notice notice__hint"><p>Toolbar configuration is a strict UI-related setting. Removing a toolbar item does not remove the feature from the editor internals. If your goal with the toolbar configuration is to remove features, the right solution is to also remove their respective plugins. Check <a href="../../installation/getting-started/configuration.html#removing-features">removing features</a> for more information.</p></div>
-<p>In the builds that contain toolbars, an optimal default configuration is defined for it. You may need a different toolbar arrangement, though, and this can be achieved through configuration.</p>
+<p>In the builds that contain toolbars, an optimal default tollbar set is defined for it. You may need a different toolbar arrangement, though, and this can be achieved through configuration.</p>
 <p>Each editor may have a different toolbar configuration scheme, so it is recommended to check its documentation. In any case, the following example may give you a general idea:</p>
 <pre class="highlight"><code class="js">ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        toolbar: [ 'bold', 'italic', 'link', 'undo', 'redo', 'numberedList', 'bulletedList' ]
+        toolbar: [ 'undo', 'redo', 'bold', 'italic', 'numberedList', 'bulletedList' ]
     } )
     .catch( error =&gt; {
         console.log( error );
     } );
 </code></pre>
 <h2 id="separating-toolbar-items"><a class="headerlink" href="#separating-toolbar-items">#</a> Separating toolbar items</h2>
-<p>You can use <code>'|'</code> to create a separator between groups of toolbar items. It works in both the basic and <a href="#extended-toolbar-configuration-format">extended</a> configuration formats:</p>
-<p>Basic:</p>
-<pre class="highlight"><code class="js">toolbar: [ 'bold', 'italic', '|', 'undo', 'redo', '|', 'numberedList', 'bulletedList' ]
-</code></pre>
-<p>Extended:</p>
-<pre class="highlight"><code class="js">toolbar: {
-    items: [ 'bold', 'italic', '|', 'undo', 'redo', '|', 'numberedList', 'bulletedList' ]
-}
-</code></pre>
+<p>You can use <code>'|'</code> to create a separator between groups of toolbar items. It works in both the basic and extended configuration formats:</p>
 <p>Below you can find an example of a simple toolbar with button grouping. The group separators (<code>'|'</code>) set in the configuration help organize the toolbar.</p>
 <div class="live-snippet"><div id="toolbar-separator">
 
@@ -538,10 +530,26 @@
 </div>
 </div>
 <h2 id="extended-toolbar-configuration-format"><a class="headerlink" href="#extended-toolbar-configuration-format">#</a> Extended toolbar configuration format</h2>
+<p>There are two available toolbar configuration formats:</p>
+<p>Basic, as presented above:</p>
+<pre class="highlight"><code class="js">toolbar: [ 'bold', 'italic', '|', 'undo', 'redo', '|', 'numberedList', 'bulletedList' ]
+</code></pre>
+<p>And extended:</p>
+<pre class="highlight"><code class="js">toolbar: {
+    items: [ 'bold', 'italic', '|', 'undo', 'redo', '|', 'numberedList', 'bulletedList' ]
+}
+</code></pre>
 <p>You can use the extended <a href="../../api/module_core_editor_editorconfig-EditorConfig.html#member-toolbar">toolbar configuration</a> format to access additional options:</p>
 <pre class="highlight"><code class="js">toolbar: {
-    items: [ 'bold', 'italic', '|', 'undo', 'redo', '-', 'numberedList', 'bulletedList' ],
-    shouldNotGroupWhenFull: true
+    items: [
+        'undo', 'redo',
+        '|', 'heading',
+        '|', 'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor',
+        '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'code',
+        '|', 'link', 'uploadImage', 'blockQuote', 'codeBlock',
+        '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'
+    ],
+    shouldNotGroupWhenFull: false
 }
 </code></pre>
 <ul>
@@ -561,6 +569,67 @@
 <h2>The space race</h2>
 
 <p>It is no longer a secret &mdash; though it was for a long time &mdash; that the Soviet Union raced the United States to the Moon and only after accepting the failure did they focus on the orbital station program known widely as Salyut. The reason for their lunar failure &mdash; we learned that only in the late 1990&rsquo;s after the fall of the USSR &mdash; was the lack of a proper plan. Apparently, the Soviets never intended to go there in the first place. The greatest minds of that nation were involved, but the undertaking had no heart. And no real favors on the part of the Communist Party. No passion, no fire, no feeling to take that Soviet Man, grab him with the mighty hand formed from the collective effort of the workers and scientists, and cast him into lunar orbit like a gauntlet cast in the face of the American opponent. And most of all &mdash; no time. They were so behind their counterparts from the USA that they just could not make up the lost time.</p>
+
+</div>
+</div>
+<h2 id="multiline-wrapping-toolbar"><a class="headerlink" href="#multiline-wrapping-toolbar">#</a> Multiline (wrapping) toolbar</h2>
+<p>In the <a href="#extended-toolbar-configuration-format">extended toolbar configuration format</a> it is also possible to arrange toolbar items into multiple lines. Here is how to achieve this:</p>
+<ul>
+<li>Set the <code>shouldNotGroupWhenFull</code> option to <code>true</code>, so items will not be grouped when the toolbar overflows but will wrap to the new line instead.</li>
+<li>Additionally, the <code>'-'</code> separator can be used inside the items list to set the breaking point explicitly.</li>
+</ul>
+<pre class="highlight"><code class="js">toolbar: {
+    items: [ 'bold', 'italic', '|', 'undo', 'redo', '-', 'numberedList', 'bulletedList' ],
+    shouldNotGroupWhenFull: true
+}
+</code></pre>
+<h3 id="automatic-toolbar-wrapping"><a class="headerlink" href="#automatic-toolbar-wrapping">#</a> Automatic toolbar wrapping</h3>
+<p>When <code>shouldNotGroupWhenFull</code> is set to <code>true</code>, by default the toolbar items are automatically wrapped into a new line once they do not fit the editor width. The mechanism is automatic and only wraps excess items. Notice that while the toolbar group separators <code>'|'</code> are preserved, the groups may be split when they overflow.</p>
+<pre class="highlight"><code class="js">toolbar: {
+    items: [
+        'undo', 'redo',
+        '|', 'heading',
+        '|', 'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor',
+        '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'code',
+        '|', 'link', 'uploadImage', 'blockQuote', 'codeBlock',
+        '|', 'alignment',
+        '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'
+    ],
+    shouldNotGroupWhenFull: true
+}
+</code></pre>
+<p>See how it works in practice. You may play with the browser window width to see how the buttons behave when the toolbar gets wrapped into multiple lines.</p>
+<div class="live-snippet"><div id="toolbar-wrapping">
+
+<h2>The space stations</h2>
+<p>The Soviet <em>Salyut</em> space station line was, in fact, two different programs. One was a military <em>Almaz</em> programme with <em>OPS</em> station design, and the other was civilian <em>Salyut</em> with their <em>DOS</em> design. The <em>DOS</em> was, in fact, the hull of an <em>OPS</em> outfitted with additional hardware. The original <em>OPS</em> was designed in the mid-1960&rsquo;s by the <em>OKB-52</em> secret facility lead by Chelomei. As they struggled with funding and fell behind schedule, the original design was &ldquo;borrowed&rdquo; by engineers from <em>OKB-1</em>, lead by Korolev.</p>
+
+<p>His people used Chelomei&rsquo;s main hull and outfitted it with the engines, solar panels, and docking and transfer systems from their own space craft, <em>Soyuz</em> (which was, primarily, developed to fly to the Moon; once it never did, it flew to low Earth orbit in 1967 and still does so, ferrying astronauts and cosmonauts to the <em>ISS</em> in 2021!). Korolev&rsquo;s people used somebody else&rsquo;s experience, but did their own work, and in 1971 for the first time in history they put a space base in orbit. And manned it. And it was a success.</p>
+
+</div>
+</div>
+<h3 id="explicit-wrapping-breakpoint"><a class="headerlink" href="#explicit-wrapping-breakpoint">#</a> Explicit wrapping breakpoint</h3>
+<p>Setting an explicit break point in the toolbar configuration with <code>'-'</code> lets you create your own predefined multiline toolbar configuration. Toolbar items will then be grouped and put in lines as declared in the configuration.</p>
+<pre class="highlight"><code class="js">toolbar: {
+    items: [
+        'undo', 'redo',
+        '|', 'heading',
+        '|', 'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor',
+        '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'code',
+        '-', // break point
+        '|', 'alignment',
+        'link', 'uploadImage', 'blockQuote', 'codeBlock',
+        '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'
+    ],
+    shouldNotGroupWhenFull: true
+}
+</code></pre>
+<div class="live-snippet"><div id="toolbar-breakpoint">
+
+<h2>The nice Canadian</h2>
+<p>Remember Chris Hadfield? Of course, everyone has seen &ldquo;Space Oddity&rdquo; played and sung onboard the <em>ISS</em>. But have you seen the videos he recorded for schools? Short pieces on living in space, brushing your teeth in space, and sleeping in zero gravity? Kids love them. Teachers love them. Schools use them. This is a gift, a thank you gesture, a hand extended back. This humble man made his dream come true, he flew to the stars. But not even once did he forget the people that put him there &ndash; the engineers, designers, scientists.&nbsp;Those before him that went into space and those who gave their life to make this dream possible.</p>
+
+<p>Now he helps bring up a new generation that will build better, safer, faster spaceships. That will once more reach the surface of the Moon, will leave the Earth orbit and fly to Mars, to Venus. Those are years to come and the goals will take a lot of patience. But what he does is gold. He is honest, humble, and true in what he did up there and the generation that came can see that, share in his activities and grab that passion.</p>
 
 </div>
 </div>
@@ -650,34 +719,37 @@
 </ul>
 <p>Here is an example:</p>
 <pre class="highlight"><code class="js">toolbar: [
+    'undo', 'redo', '|',
     {
         // This drop-down uses a default icon because none was specified.
         label: 'Fonts',
         items: [ 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor' ]
     },
+    '|',
     {
-                // This drop-down has the icon disabled and a text label instead.
-        label: 'Lists',
-        icon: false,
-        items: [ 'bulletedList', 'numberedList', 'todoList' ]
+        label: 'A drop-down with a custom icon',
+        // If you want your icon to change the color dynamically (e.g. when opened)
+        // avoid fill="..." and stroke="..." styling attributes.
+        // Use solid shapes and avoid paths with strokes.
+        // eslint-disable-next-line max-len
+        icon: '&lt;svg viewBox="0 0 68 64" xmlns="http://www.w3.org/2000/svg"&gt;&lt;g fill="none" fill-rule="evenodd"&gt;&lt;path d="M43.71 11.025a11.508 11.508 0 0 0-1.213 5.159c0 6.42 5.244 11.625 11.713 11.625.083 0 .167 0 .25-.002v16.282a5.464 5.464 0 0 1-2.756 4.739L30.986 60.7a5.548 5.548 0 0 1-5.512 0L4.756 48.828A5.464 5.464 0 0 1 2 44.089V20.344c0-1.955 1.05-3.76 2.756-4.738L25.474 3.733a5.548 5.548 0 0 1 5.512 0l12.724 7.292z" fill="#FFF"/&gt;&lt;path d="M45.684 8.79a12.604 12.604 0 0 0-1.329 5.65c0 7.032 5.744 12.733 12.829 12.733.091 0 .183-.001.274-.003v17.834a5.987 5.987 0 0 1-3.019 5.19L31.747 63.196a6.076 6.076 0 0 1-6.037 0L3.02 50.193A5.984 5.984 0 0 1 0 45.003V18.997c0-2.14 1.15-4.119 3.019-5.19L25.71.804a6.076 6.076 0 0 1 6.037 0L45.684 8.79zm-29.44 11.89c-.834 0-1.51.671-1.51 1.498v.715c0 .828.676 1.498 1.51 1.498h25.489c.833 0 1.51-.67 1.51-1.498v-.715c0-.827-.677-1.498-1.51-1.498h-25.49.001zm0 9.227c-.834 0-1.51.671-1.51 1.498v.715c0 .828.676 1.498 1.51 1.498h18.479c.833 0 1.509-.67 1.509-1.498v-.715c0-.827-.676-1.498-1.51-1.498H16.244zm0 9.227c-.834 0-1.51.671-1.51 1.498v.715c0 .828.676 1.498 1.51 1.498h25.489c.833 0 1.51-.67 1.51-1.498v-.715c0-.827-.677-1.498-1.51-1.498h-25.49.001zm41.191-14.459c-5.835 0-10.565-4.695-10.565-10.486 0-5.792 4.73-10.487 10.565-10.487C63.27 3.703 68 8.398 68 14.19c0 5.791-4.73 10.486-10.565 10.486v-.001z" fill="#1EBC61" fill-rule="nonzero"/&gt;&lt;path d="M60.857 15.995c0-.467-.084-.875-.251-1.225a2.547 2.547 0 0 0-.686-.88 2.888 2.888 0 0 0-1.026-.531 4.418 4.418 0 0 0-1.259-.175c-.134 0-.283.006-.447.018-.15.01-.3.034-.446.07l.075-1.4h3.587v-1.8h-5.462l-.214 5.06c.319-.116.682-.21 1.089-.28.406-.071.77-.107 1.088-.107.218 0 .437.021.655.063.218.041.413.114.585.218s.313.244.422.419c.109.175.163.391.163.65 0 .424-.132.745-.396.961a1.434 1.434 0 0 1-.938.325c-.352 0-.656-.1-.912-.3-.256-.2-.43-.453-.523-.762l-1.925.588c.1.35.258.664.472.943.214.279.47.514.767.706.298.191.63.339.995.443.365.104.749.156 1.151.156.437 0 .86-.064 1.272-.193.41-.13.778-.323 1.1-.581a2.8 2.8 0 0 0 .775-.981c.193-.396.29-.864.29-1.405h-.001z" fill="#FFF" fill-rule="nonzero"/&gt;&lt;/g&gt;&lt;/svg&gt;',
+        items: [ 'bold', 'italic', 'strikethrough', 'superscript', 'subscript' ]
     },
+    '|',
     {
         // A "plus" sign icon works best for content insertion tools.
         label: 'Insert',
         icon: 'plus',
         items: [ 'uploadImage', 'insertTable' ]
     },
-    {
-        label: 'A drop-down with a custom icon',
-        // If you want your icon to change the color dynamically (e.g. when opened)
-        // avoid fill="..." and stroke="..." styling attributes.
-        // Use solid shapes and avoid paths with strokes.
-        icon: '&lt;svg viewBox="0 0 68 64" xmlns="http://www.w3.org/2000/svg"&gt;&lt;g fill="none" fill-rule="evenodd"&gt;&lt;path d="M43.71 11.025a11.508 11.508 0 0 0-1.213 5.159c0 6.42 5.244 11.625 11.713 11.625.083 0 .167 0 .25-.002v16.282a5.464 5.464 0 0 1-2.756 4.739L30.986 60.7a5.548 5.548 0 0 1-5.512 0L4.756 48.828A5.464 5.464 0 0 1 2 44.089V20.344c0-1.955 1.05-3.76 2.756-4.738L25.474 3.733a5.548 5.548 0 0 1 5.512 0l12.724 7.292z" fill="#FFF"/&gt;&lt;path d="M45.684 8.79a12.604 12.604 0 0 0-1.329 5.65c0 7.032 5.744 12.733 12.829 12.733.091 0 .183-.001.274-.003v17.834a5.987 5.987 0 0 1-3.019 5.19L31.747 63.196a6.076 6.076 0 0 1-6.037 0L3.02 50.193A5.984 5.984 0 0 1 0 45.003V18.997c0-2.14 1.15-4.119 3.019-5.19L25.71.804a6.076 6.076 0 0 1 6.037 0L45.684 8.79zm-29.44 11.89c-.834 0-1.51.671-1.51 1.498v.715c0 .828.676 1.498 1.51 1.498h25.489c.833 0 1.51-.67 1.51-1.498v-.715c0-.827-.677-1.498-1.51-1.498h-25.49.001zm0 9.227c-.834 0-1.51.671-1.51 1.498v.715c0 .828.676 1.498 1.51 1.498h18.479c.833 0 1.509-.67 1.509-1.498v-.715c0-.827-.676-1.498-1.51-1.498H16.244zm0 9.227c-.834 0-1.51.671-1.51 1.498v.715c0 .828.676 1.498 1.51 1.498h25.489c.833 0 1.51-.67 1.51-1.498v-.715c0-.827-.677-1.498-1.51-1.498h-25.49.001zm41.191-14.459c-5.835 0-10.565-4.695-10.565-10.486 0-5.792 4.73-10.487 10.565-10.487C63.27 3.703 68 8.398 68 14.19c0 5.791-4.73 10.486-10.565 10.486v-.001z" fill="#1EBC61" fill-rule="nonzero"/&gt;&lt;path d="M60.857 15.995c0-.467-.084-.875-.251-1.225a2.547 2.547 0 0 0-.686-.88 2.888 2.888 0 0 0-1.026-.531 4.418 4.418 0 0 0-1.259-.175c-.134 0-.283.006-.447.018-.15.01-.3.034-.446.07l.075-1.4h3.587v-1.8h-5.462l-.214 5.06c.319-.116.682-.21 1.089-.28.406-.071.77-.107 1.088-.107.218 0 .437.021.655.063.218.041.413.114.585.218s.313.244.422.419c.109.175.163.391.163.65 0 .424-.132.745-.396.961a1.434 1.434 0 0 1-.938.325c-.352 0-.656-.1-.912-.3-.256-.2-.43-.453-.523-.762l-1.925.588c.1.35.258.664.472.943.214.279.47.514.767.706.298.191.63.339.995.443.365.104.749.156 1.151.156.437 0 .86-.064 1.272-.193.41-.13.778-.323 1.1-.581a2.8 2.8 0 0 0 .775-.981c.193-.396.29-.864.29-1.405h-.001z" fill="#FFF" fill-rule="nonzero"/&gt;&lt;/g&gt;&lt;/svg&gt;',
-        items: [ 'bold', 'italic' ]
-    },
     '|',
-    'undo', 'redo'
-]
+    {
+        // This drop-down has the icon disabled and a text label instead.
+        label: 'Lists',
+        icon: false,
+        items: [ 'bulletedList', 'numberedList', 'todoList' ]
+    }
+],
 </code></pre>
 <p>And here is the effect:</p>
 <div class="live-snippet"><div id="toolbar-nested-icon">
@@ -702,76 +774,6 @@
 	<p>
 		The Mars 2020 mission was, again, very special for robots visiting the Red Planet. It carried the very first martial helicopter that landed on the surface and took off into thin martian air on 19 April 2021. There are also other operational robots on Mars, both from the USA and China, roaming around and waiting for humans to finally arrive.
 	</p>
-</div>
-</div>
-<h2 id="multiline-wrapping-toolbar"><a class="headerlink" href="#multiline-wrapping-toolbar">#</a> Multiline (wrapping) toolbar</h2>
-<p>In the <a href="#extended-toolbar-configuration-format">extended toolbar configuration format</a> it is also possible to arrange toolbar items into multiple lines. Here is how to achieve this:</p>
-<ul>
-<li>Set the <code>shouldNotGroupWhenFull</code> option to <code>true</code>, so items will not be grouped when the toolbar overflows but will wrap to the new line instead.</li>
-<li>Additionally, the <code>'-'</code> separator can be used inside the items list to set the breaking point explicitly.</li>
-</ul>
-<pre class="highlight"><code class="js">toolbar: {
-    [ 'bold', 'italic', '|', 'undo', 'redo', '-', 'numberedList', 'bulletedList' ],
-    shouldNotGroupWhenFull: true
-}
-</code></pre>
-<h3 id="automatic-toolbar-wrapping"><a class="headerlink" href="#automatic-toolbar-wrapping">#</a> Automatic toolbar wrapping</h3>
-<p>When <code>shouldNotGroupWhenFull</code> is set to <code>true</code>, by default the toolbar items are automatically wrapped into a new line once they do not fit the editor width. The mechanism is automatic and only wraps excess items. Notice that while the toolbar group separators <code>'|'</code> are preserved, the groups may be split when they overflow.</p>
-<pre class="highlight"><code class="js">toolbar: {
-    items: [
-        'heading', '|',
-        'fontfamily', 'fontsize', '|',
-        'alignment', '|',
-        'fontColor', 'fontBackgroundColor', '|',
-        'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
-        'link', '|',
-        'outdent', 'indent', '|',
-        'bulletedList', 'numberedList', 'todoList', '|',
-        'code', 'codeBlock', '|',
-        'insertTable', '|',
-        'uploadImage', 'blockQuote', '|',
-        'undo', 'redo'
-    ],
-    shouldNotGroupWhenFull: true
-}
-</code></pre>
-<p>See how it works in practice. You may play with the browser window width to see how the buttons behave when the toolbar gets wrapped into multiple lines.</p>
-<div class="live-snippet"><div id="toolbar-wrapping">
-
-<h2>The space stations</h2>
-<p>The Soviet <em>Salyut</em> space station line was, in fact, two different programs. One was a military <em>Almaz</em> programme with <em>OPS</em> station design, and the other was civilian <em>Salyut</em> with their <em>DOS</em> design. The <em>DOS</em> was, in fact, the hull of an <em>OPS</em> outfitted with additional hardware. The original <em>OPS</em> was designed in the mid-1960&rsquo;s by the <em>OKB-52</em> secret facility lead by Chelomei. As they struggled with funding and fell behind schedule, the original design was &ldquo;borrowed&rdquo; by engineers from <em>OKB-1</em>, lead by Korolev.</p>
-
-<p>His people used Chelomei&rsquo;s main hull and outfitted it with the engines, solar panels, and docking and transfer systems from their own space craft, <em>Soyuz</em> (which was, primarily, developed to fly to the Moon; once it never did, it flew to low Earth orbit in 1967 and still does so, ferrying astronauts and cosmonauts to the <em>ISS</em> in 2021!). Korolev&rsquo;s people used somebody else&rsquo;s experience, but did their own work, and in 1971 for the first time in history they put a space base in orbit. And manned it. And it was a success.</p>
-
-</div>
-</div>
-<h3 id="explicit-wrapping-breakpoint"><a class="headerlink" href="#explicit-wrapping-breakpoint">#</a> Explicit wrapping breakpoint</h3>
-<p>Setting an explicit break point in the toolbar configuration with <code>'-'</code> lets you create your own predefined multiline toolbar configuration. Toolbar items will then be grouped and put in lines as declared in the configuration.</p>
-<pre class="highlight"><code class="js">toolbar: {
-    items: [
-        'heading', '|',
-        'alignment', '|',
-        'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
-        'link', '|',
-        'bulletedList', 'numberedList', 'todoList',
-        '-', // break point
-        'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor', '|',
-        'code', 'codeBlock', '|',
-        'insertTable', '|',
-        'outdent', 'indent', '|',
-        'uploadImage', 'blockQuote', '|',
-        'undo', 'redo'
-    ],
-    shouldNotGroupWhenFull: true
-}
-</code></pre>
-<div class="live-snippet"><div id="toolbar-breakpoint">
-
-<h2>The nice Canadian</h2>
-<p>Remember Chris Hadfield? Of course, everyone has seen &ldquo;Space Oddity&rdquo; played and sung onboard the <em>ISS</em>. But have you seen the videos he recorded for schools? Short pieces on living in space, brushing your teeth in space, and sleeping in zero gravity? Kids love them. Teachers love them. Schools use them. This is a gift, a thank you gesture, a hand extended back. This humble man made his dream come true, he flew to the stars. But not even once did he forget the people that put him there &ndash; the engineers, designers, scientists.&nbsp;Those before him that went into space and those who gave their life to make this dream possible.</p>
-
-<p>Now he helps bring up a new generation that will build better, safer, faster spaceships. That will once more reach the surface of the Moon, will leave the Earth orbit and fly to Mars, to Venus. Those are years to come and the goals will take a lot of patience. But what he does is gold. He is honest, humble, and true in what he did up there and the generation that came can see that, share in his activities and grab that passion.</p>
-
 </div>
 </div>
 <h2 id="listing-available-items"><a class="headerlink" href="#listing-available-items">#</a> Listing available items</h2>
@@ -1011,6 +1013,9 @@
                                     <li><a href="../images/images-linking.html">
                                         <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Linking images</span>
                                         </div></a></li>
+                                    <li><a href="../images/images-inserting.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
+                                        </div></a></li>
                                     <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Image upload</span>
                                       </div>
@@ -1029,9 +1034,6 @@
                                                   </div></a></li>
                                               <li><a href="../images/image-upload/simple-upload-adapter.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple upload adapter</span>
-                                                  </div></a></li>
-                                              <li><a href="../images/image-upload/images-inserting.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inserting images via URL</span>
                                                   </div></a></li>
                                       </ul>
                                     </li>
@@ -1208,12 +1210,12 @@ transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_rank
     <script src="../../snippets/features/toolbar-basic/snippet.js"></script>
     <script src="../../snippets/features/toolbar-separator/snippet.js"></script>
     <script src="../../snippets/features/toolbar-grouping/snippet.js"></script>
+    <script src="../../snippets/features/toolbar-wrapping/snippet.js"></script>
+    <script src="../../snippets/features/toolbar-breakpoint/snippet.js"></script>
     <script src="../../snippets/features/toolbar-nested-simple/snippet.js"></script>
     <script src="../../snippets/features/toolbar-nested-label/snippet.js"></script>
     <script src="../../snippets/features/toolbar-nested-icon/snippet.js"></script>
     <script src="../../snippets/features/toolbar-nested-tooltip/snippet.js"></script>
-    <script src="../../snippets/features/toolbar-wrapping/snippet.js"></script>
-    <script src="../../snippets/features/toolbar-breakpoint/snippet.js"></script>
     <script src="../../assets/buildwarningbanner.js" async></script>
   </body>
 </html>
