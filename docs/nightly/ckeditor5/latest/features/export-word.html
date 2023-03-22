@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Tue Mar 21 2023 04:25:07 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Wed Mar 22 2023 04:25:39 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Export to Word - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -756,28 +756,28 @@ ClassicEditor
 <h3 id="header-and-footer"><a class="headerlink" href="#header-and-footer">#</a> Header and footer</h3>
 <p>The converter lets you set the document’s header and footer similarly to Microsoft Word or Google Docs.</p>
 <pre class="highlight"><code class="js">// Let's keep the CSS string as a variable to avoid unnecessary string duplication.
-const templateCSS = '.styled { font-weight: bold; text-align: center; }'
+const templateCSS = '.styled { color: #4b22aa; text-align: center; }'
 
 const converterOptions = {
     header: [
         // Header template for all headers (without the `type` property).
-        { html: '&lt;div class="styled"&gt;Default header content&lt;/div&gt;', css: templateCSS },
+        { html: '&lt;p class="styled"&gt;Default header content&lt;/p&gt;', css: templateCSS },
         // Header template only for the first page of the document.
-        { html: '&lt;div class="styled"&gt;First document page header content&lt;/div&gt;', css: templateCSS, type: 'first' },
+        { html: '&lt;p class="styled"&gt;First document page header content&lt;/p&gt;', css: templateCSS, type: 'first' },
         // Header template for every even page of the document.
-        { html: '&lt;div class="styled"&gt;Every even page header content&lt;/div&gt;', css: templateCSS, type: 'even' },
+        { html: '&lt;p class="styled"&gt;Every even page header content&lt;/p&gt;', css: templateCSS, type: 'even' },
         // Header template for every odd page of the document.
-        { html: '&lt;div class="styled"&gt;Every odd page header content&lt;/div&gt;', css: templateCSS, type: 'odd' }
+        { html: '&lt;p class="styled"&gt;Every odd page header content&lt;/p&gt;', css: templateCSS, type: 'odd' }
     ],
     footer: [
         // Footer template for all footers (without the `type` property).
-        { html: '&lt;div class="styled"&gt;Default footer content&lt;/div&gt;', css: templateCSS },
+        { html: '&lt;p class="styled"&gt;Default footer content&lt;/p&gt;', css: templateCSS },
         // Footer template only for the first page of the document.
-        { html: '&lt;div class="styled"&gt;First document page footer content&lt;/div&gt;', css: templateCSS, type: 'first' },
+        { html: '&lt;p class="styled"&gt;First document page footer content&lt;/p&gt;', css: templateCSS, type: 'first' },
         // Footer template for every even page of the document.
-        { html: '&lt;div class="styled"&gt;Every even page footer content&lt;/div&gt;', css: templateCSS, type: 'even' },
+        { html: '&lt;p class="styled"&gt;Every even page footer content&lt;/p&gt;', css: templateCSS, type: 'even' },
         // Footer template for every odd page of the document.
-        { html: '&lt;div class="styled"&gt;Every odd page footer content&lt;/div&gt;', css: templateCSS, type: 'odd' }
+        { html: '&lt;p class="styled"&gt;Every odd page footer content&lt;/p&gt;', css: templateCSS, type: 'odd' }
     ],
 }
 </code></pre>
