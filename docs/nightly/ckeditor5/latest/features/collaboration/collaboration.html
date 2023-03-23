@@ -7,7 +7,7 @@
     <meta name="description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta name="twitter:site" content="@ckeditor">
-    <meta name="x-generated-at" content="Wed Mar 22 2023 04:25:37 GMT+0000 (Coordinated Universal Time)">
+    <meta name="x-generated-at" content="Thu Mar 23 2023 04:26:43 GMT+0000 (Coordinated Universal Time)">
     <meta property="og:title" content="Overview - CKEditor 5 Documentation">
     <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 5 Builds and how to work with CKEditor 5 Framework, customize it, create your own plugins and custom editors, change the UI or even bring your own UI to the editor. API reference and examples included.">
     <meta property="og:type" content="website">
@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
     <link rel="stylesheet" href="../../../../assets/2.4.0/css/styles.css" type="text/css" media="all">
     <link rel="stylesheet" href="../../assets/styles.css" type="text/css">
+    <link rel="stylesheet" href="../../snippets/features/revision-history-build/snippet.css" type="text/css" data-cke="true">
+    <link rel="stylesheet" href="../../assets/snippet-styles.css" type="text/css" data-cke="true">
+    <link rel="stylesheet" href="../../snippets/assets.css" type="text/css" data-cke="true">
     <script>if ( ["ckeditor5.github.io"].indexOf( location.hostname ) !== -1 ) {
       	function pageView() {
       		ga( 'send', 'pageview', location.pathname + location.search + location.hash );
@@ -148,6 +151,18 @@
                                     </ul>
                                   </li>
                                   <li>
+                                    <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Revision history</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                    </div>
+                                    <ul class="tree__item-nested-list">
+                                          <li><a href="revision-history/revision-history.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span>
+                                              </div></a></li>
+                                          <li><a href="revision-history/revision-history-integration.html">
+                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integration</span>
+                                              </div></a></li>
+                                    </ul>
+                                  </li>
+                                  <li>
                                     <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Real-time collaboration</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                                     </div>
                                     <ul class="tree__item-nested-list">
@@ -159,18 +174,6 @@
                                               </div></a></li>
                                           <li><a href="real-time-collaboration/users-in-real-time-collaboration.html">
                                               <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Users in real-time collaboration</span>
-                                              </div></a></li>
-                                    </ul>
-                                  </li>
-                                  <li>
-                                    <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Revision history</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
-                                    </div>
-                                    <ul class="tree__item-nested-list">
-                                          <li><a href="revision-history/revision-history.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span>
-                                              </div></a></li>
-                                          <li><a href="revision-history/revision-history-integration.html">
-                                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integration</span>
                                               </div></a></li>
                                     </ul>
                                   </li>
@@ -489,26 +492,106 @@
           <div class="rwd-breadcrumbs"><a href="../../../../index.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="../../index.html">CKEditor 5</a><span class="rwd-breadcrumbs__separator">/</span><a href="../index.html">Features</a>
           </div>
           <h1 class="main__content-title"><img src="../../../../assets/2.4.0/img/book.svg" alt="guide">Collaboration overview
-          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#comments">Comments</a></li><li><a href="#track-changes">Track changes</a></li><li><a href="#real-time-collaboration">Real-time collaboration</a></li></ol></nav>
-<p>The CKEditor 5 architecture was designed and rewritten from scratch to bring the collaborative editing features where multiple authors work on the same rich text document.</p>
-<p>See the CKEditor 5 collaboration features in action in the screencast below.</p>
-<iframe width="600" height="337" src="https://www.youtube.com/embed/TQG4yNVnGV4?rel=0&amp;" frameborder="0" allowfullscreen=""></iframe>
-<p>The collaboration is provided by three easy-to-integrate plugins delivering different features. You will find more information about each feature in the dedicated guides. You may also look for additional interesting details and examples in the <a href="https://ckeditor.com/blog/Feature-of-the-month-Collaborative-writing-in-CKEditor-5/">Collaborative writing in CKEditor 5</a> blog post after reading these guides.</p>
-<h2 id="comments"><a class="headerlink" href="#comments">#</a> Comments</h2>
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#demo">Demo</a></li><li><a href="#available-collaboration-features">Available collaboration features</a><ol><li><a href="#comments">Comments</a></li><li><a href="#track-changes">Track changes</a></li><li><a href="#revision-history">Revision history</a></li></ol></li><li><a href="#real-time-vs-asynchronous-collaboration">Real-time vs asynchronous collaboration</a><ol><li><a href="#non-real-time-collaboration">Non real-time collaboration</a></li><li><a href="#real-time-collaboration">Real-time collaboration</a></li></ol></li></ol></nav>
+
+<p>The CKEditor 5 architecture was designed and written to bring the collaborative editing features where multiple authors can easily work on the same rich text documents.</p>
+<h2 id="demo"><a class="headerlink" href="#demo">#</a> Demo</h2>
+<p>Use the set of collaboration features in the demo below: turn on tracking changes <span class="editor-icon"><img src="../../assets/icons/806eff75c2.svg" class="editor-icon__image" alt="Track changes"></span>, add comments <span class="editor-icon"><img src="../../assets/icons/24bbf6d500.svg" class="editor-icon__image" alt="Comments"></span> and follow the revision history <span class="editor-icon"><img src="../../assets/icons/f88c7839bd.svg" class="editor-icon__image" alt="Revision history"></span> of the document.</p>
+<div class="live-snippet"><div class="live-snippet__container loaded revision-integration">
+	<div class="row">
+        <div class="editors-holder">
+            <div id="editor-container">
+                <div class="editor-container">
+                    <div id="editor"></div>
+                    <div class="sidebar sidebar-container" id="sidebar-container"></div>
+                </div>
+            </div>
+
+            <div id="revision-viewer-container">
+                <div class="editor-container">
+                    <div id="revision-viewer-editor"></div>
+                    <div class="sidebar-container" id="revision-viewer-sidebar"></div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+
+<style>
+    .editors-holder {
+        width: 100%;
+    }
+
+    .editor-container {
+        display: flex;
+    }
+
+    #revision-viewer-container {
+        display: none;
+    }
+
+    .sidebar-container {
+        min-width: 300px;
+        font-size: 20px;
+        border: 1px solid var(--ck-color-toolbar-border);
+        margin-left: -1px;
+        background: var(--ck-color-toolbar-background);
+    }
+
+    .ck-sidebar-item {
+        max-width: 275px;
+    }
+
+    .live-snippet .ck.ck-editor {
+        min-width: 450px;
+        overflow: hidden;
+    }
+
+    .ck.ck-revision-history-sidebar {
+		height: 100%;
+	}
+
+    #editor-container .sidebar-container {
+        padding: 0px 10px;
+        overflow: hidden;
+    }
+
+    @media only screen and (min-width: 1600px) {
+        .main .main__content-inner {
+            width: 905px;
+        }
+    }
+</style>
+</div>
+<!-- redo this stuff into a standalone -->
+<div class="info-box notice notice__info"><p>This demo only presents a limited set of features. Visit the <a href="../../examples/builds-custom/full-featured-editor.html">full-featured editor example</a> to see more in action.</p></div>
+<h2 id="available-collaboration-features"><a class="headerlink" href="#available-collaboration-features">#</a> Available collaboration features</h2>
+<p>The collaboration capabilities are provided by three easy-to-integrate plugins delivering different features – comments, track changes and revision history. You will find more information about each feature in the dedicated guides. You may also look for additional interesting details and examples in the <a href="https://ckeditor.com/blog/Feature-of-the-month-Collaborative-writing-in-CKEditor-5/">Collaborative writing in CKEditor 5</a> blog post after reading these guides.</p>
+<p>These features can be used stand-alone or together, depending on the users’ needs. The collaboration can also be <a href="#real-time-vs-asynchronous-collaboration">either in real-time or asynchronous</a>.</p>
+<h3 id="comments"><a class="headerlink" href="#comments">#</a> Comments</h3>
 <p>The comments feature lets the users add sidenotes to marked fragments of the document, including text and block elements such as images. It also allows the users to discuss in threads and remove comments when they finish the discussion.</p>
-<p>You can define where you want to store the discussion by creating a simple adapter. If you want to automatically synchronize the comments discussion between users, you can also use comments as a part of the real-time collaboration.</p>
+<p>You can define where you want to store the comments data. In order to load and save it, you will also you need to provide a proper <a href="comments/comments-integration.html">integration with your database</a>. If you want to automatically synchronize the comments discussion between users, you can also use comments as a part of the real-time collaboration.</p>
 <p>Comment threads can be displayed in a sidebar or inline:</p>
 <p><img src="../../assets/img/collaboration-comments-preview.jpg" data-lightbox="true" alt="Comments feature for CKEditor 5 WYSIWYG editor"></p>
 <p>Refer to the <a href="comments/comments.html">comments</a> guide for more information.</p>
-<h2 id="track-changes"><a class="headerlink" href="#track-changes">#</a> Track changes</h2>
+<h3 id="track-changes"><a class="headerlink" href="#track-changes">#</a> Track changes</h3>
 <p>The track changes feature brings automatic suggestion marking for the document as you change it. When editing the document, the user is able to switch to the track changes mode. All their changes will then create suggestions that can be accepted or discarded.</p>
-<p>You can define where you want to store suggestions by creating a simple adapter. If you want to automatically synchronize the suggestions between users, you can also use track changes as a part of the real-time collaboration.</p>
+<p>You can define where you want to store the suggestions data. In order to load and save it, you will also you need to provide a proper <a href="track-changes/track-changes-integration.html">integration with your database</a>. If you want to automatically synchronize the suggestions between users, you can also use track changes as a part of the real-time collaboration.</p>
 <p>Suggestion annotations can be displayed in a sidebar or inline:</p>
 <p><img src="../../assets/img/collaboration-track-changes-preview.jpg" data-lightbox="true" alt="Track changes feature for CKEditor 5 WYSIWYG editor"></p>
 <p>Refer to the <a href="track-changes/track-changes.html">track changes</a> guide for more information.</p>
-<h2 id="real-time-collaboration"><a class="headerlink" href="#real-time-collaboration">#</a> Real-time collaboration</h2>
-<p>Real-time collaboration is a complex feature that is available for CKEditor 5 thanks to its modern architecture. It lets multiple users simultaneously work on the same document — even on the same part of it, with no content locking.</p>
-<p>You can enable comments and track changes features in the real-time collaboration mode where they will be synchronized automatically between users. Thanks to this, collaborating users will not only be able to edit a rich text document at the same time but also discuss in comments.</p>
+<h3 id="revision-history"><a class="headerlink" href="#revision-history">#</a> Revision history</h3>
+<p>The revision history feature is a document versioning tool. It allows CKEditor 5 users to create and view the chronological revision history of their content. These versions are listed in the side panel.  The preview mode allows for easy viewing of content development between revisions. You can rename, compare and restore older revisions on the go.</p>
+<p><img src="../../assets/img/revision-history-preview.jpg" data-lightbox="true" alt="Revision history feature for CKEditor 5 WYSIWYG editor"></p>
+<p>Refer to the <a href="revision-history/revision-history.html">revision history</a> guide for more information.</p>
+<h2 id="real-time-vs-asynchronous-collaboration"><a class="headerlink" href="#real-time-vs-asynchronous-collaboration">#</a> Real-time vs asynchronous collaboration</h2>
+<p>There are two available collaboration modes in CKEditor 5: real-time collaboration (often referred to as RTC) and non-RTC collaboration. Both collaborative workflows allow your users to work together within a single application, without the need for third-party tools. They can either collaborate on documents asynchronously or use a real-time editor to write, review and comment on content in a live mode. All available collaboration plugins can be used in both modes.</p>
+<h3 id="non-real-time-collaboration"><a class="headerlink" href="#non-real-time-collaboration">#</a> Non real-time collaboration</h3>
+<p>The non-real-time collaboration is perfect for linear workflow, where content creation, revision and edition is done sequentially and there is no need for user to work simultaneously. It is perfect for professional environments working on business deals, legal documents, academic research papers, contract management and many more use-cases.</p>
+<p>Non-RTC approach can also be beneficial in terms of cost efficiency and it requires less dedicated infrastructure. Also, non-RTC approach gives you more control over your data. Because you are fully responsible for loading, saving and storing all of the data, it is on-premise by default.</p>
+<h3 id="real-time-collaboration"><a class="headerlink" href="#real-time-collaboration">#</a> Real-time collaboration</h3>
+<p>Real-time collaboration, on the other hand, lets multiple users simultaneously work on the same document — even on the same part of it, with no content locking. Comments and track changes will be synchronized automatically between users, on the go. It automatically solves all conflicts if users make changes at the same time. All users currently involved in the editing process are listed.</p>
+<p>Thanks to this, collaborating users will not only be able to edit a rich text document at the same time but also discuss the process in comments. This is perfect for fast-paced content-creation situations like news agencies, social media management entities, research sessions and many more. And it can still be used in a single-user mode, just like the non-RTC solution.</p>
 <p>Real-time collaboration comes with a ready-to-use back-end which can be used as a SaaS solution with CKEditor Cloud Services or installed on your machines (on-premises).</p>
 <p><img src="../../assets/img/docs-collaboration-overview.png" data-lightbox="true" alt="Real-time collaboration features for CKEditor 5 WYSIWYG editor"></p>
 <p>Refer to the <a href="real-time-collaboration/real-time-collaboration.html">real-time collaboration</a> guide for more information.</p>
@@ -599,6 +682,18 @@
                                       </ul>
                                     </li>
                                     <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Revision history</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
+                                      </div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="revision-history/revision-history.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span>
+                                                  </div></a></li>
+                                              <li><a href="revision-history/revision-history-integration.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integration</span>
+                                                  </div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
                                       <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Real-time collaboration</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
                                       </div>
                                       <ul class="tree__item-nested-list">
@@ -610,18 +705,6 @@
                                                   </div></a></li>
                                               <li><a href="real-time-collaboration/users-in-real-time-collaboration.html">
                                                   <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Users in real-time collaboration</span>
-                                                  </div></a></li>
-                                      </ul>
-                                    </li>
-                                    <li>
-                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Revision history</span><span class="tree__item__badge tree__item__badge_premium" data-badge-tooltip="Premium feature"><span class="tree__item__badge__text">Premium feature</span></span>
-                                      </div>
-                                      <ul class="tree__item-nested-list">
-                                              <li><a href="revision-history/revision-history.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span>
-                                                  </div></a></li>
-                                              <li><a href="revision-history/revision-history-integration.html">
-                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integration</span>
                                                   </div></a></li>
                                       </ul>
                                     </li>
@@ -930,6 +1013,10 @@ transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_rank
 });
 </script>
     <script src="../../../../assets/2.4.0/scripts/app.js"></script>
+    <script src="../../assets/snippet.js"></script>
+    <script src="../../snippets/assets.js"></script>
+    <script src="../../snippets/features/revision-history-build/snippet.js"></script>
+    <script src="../../snippets/features/collaboration/snippet.js"></script>
     <script src="../../assets/buildwarningbanner.js" async></script>
   </body>
 </html>
